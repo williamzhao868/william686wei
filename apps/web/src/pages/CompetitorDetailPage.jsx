@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import { Calendar, ChevronLeft, ChevronRight, Tag, Building2, AlertCircle } from 'lucide-react';
+import { Calendar, ChevronLeft, ChevronRight, Tag, Building2, AlertCircle, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
@@ -119,6 +119,20 @@ function CompetitorDetailPage() {
                     </div>
                   </div>
                 </div>
+
+                {item.websiteUrl && (
+                  <div className="mt-5">
+                    <a
+                      href={item.websiteUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-2 text-sm font-medium text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                    >
+                      <ExternalLink className="h-4 w-4" />
+                      {language === 'zh' ? '原文链接' : 'Original post'}
+                    </a>
+                  </div>
+                )}
               </header>
 
               {/* Featured Image */}
