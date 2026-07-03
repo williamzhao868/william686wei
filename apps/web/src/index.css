@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Outfit", sans-serif;
+  overflow-x: clip;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 230 40% 10%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 230 40% 10%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 40% 10%;
+    
+    --primary: 190 90% 40%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 230 40% 10%;
+    
+    --muted: 215 25% 95%;
+    --muted-foreground: 215 16% 47%;
+    
+    --accent: 190 90% 40%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 190 90% 40%;
+    
+    --radius: 0.75rem;
+
+    /* Company Colors - Deep Blue/Cyan Aesthetic */
+    --company-google: 217 89% 61%;
+    --company-microsoft: 200 98% 39%;
+    --company-openai: 175 70% 40%;
+    --company-apple: 215 20% 40%;
+    --company-amazon: 195 80% 45%;
+    --company-meta: 220 90% 56%;
+    --company-tesla: 205 60% 45%;
+    --company-nvidia: 160 80% 35%;
+    --company-anthropic: 280 50% 50%;
+  }
+  
+  .dark {
+    --background: 225 50% 8%;
+    --foreground: 210 40% 98%;
+    
+    --card: 225 45% 12%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 225 45% 12%;
+    --popover-foreground: 210 40% 98%;
+    
+    --primary: 190 90% 50%;
+    --primary-foreground: 225 50% 8%;
+    
+    --secondary: 225 40% 16%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --muted: 225 40% 16%;
+    --muted-foreground: 215 20% 65%;
+    
+    --accent: 190 90% 50%;
+    --accent-foreground: 225 50% 8%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 225 40% 20%;
+    --input: 225 40% 20%;
+    --ring: 190 90% 50%;
+
+    /* Company Colors - Dark Mode Adjustments */
+    --company-google: 217 89% 71%;
+    --company-microsoft: 200 98% 59%;
+    --company-openai: 175 70% 60%;
+    --company-apple: 215 20% 70%;
+    --company-amazon: 195 80% 65%;
+    --company-meta: 220 90% 76%;
+    --company-tesla: 205 60% 65%;
+    --company-nvidia: 160 80% 55%;
+    --company-anthropic: 280 50% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  .keyword-cloud-item {
+    @apply inline-block cursor-pointer transition-all duration-300 ease-out hover:text-primary hover:scale-105;
+  }
+  .keyword-cloud-item.active {
+    @apply text-primary font-bold drop-shadow-[0_0_6px_rgba(6,182,212,0.4)];
+  }
+  .tag-badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer border border-transparent hover:border-primary/20;
+  }
+  .company-badge {
+    @apply inline-flex items-center px-2 py-1 rounded-md text-xs font-medium transition-all duration-200 cursor-pointer border shadow-sm hover:shadow-md hover:-translate-y-0.5;
+  }
+  
+  /* Compact Filter Styles */
+  .filter-section-container {
+    @apply flex flex-col gap-4 w-full max-w-5xl mx-auto;
+  }
+  .compact-badge {
+    @apply inline-flex items-center gap-1 px-2 py-1 rounded-md text-xs font-medium transition-colors border;
+  }
+  .compact-badge-active {
+    @apply bg-primary text-primary-foreground border-primary shadow-sm;
+  }
+  .compact-badge-inactive {
+    @apply bg-background text-muted-foreground border-border hover:bg-muted hover:text-foreground;
+  }
+
+  /* Modal / Detail View Styles */
+  .modal-overlay {
+    @apply fixed inset-0 z-50 bg-background/80 backdrop-blur-sm transition-all;
+  }
+  .modal-content-wrapper {
+    @apply fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6;
+  }
+  .modal-card {
+    @apply relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-card border border-border shadow-2xl rounded-2xl flex flex-col outline-none;
+  }
+
+  /* React Quill overrides for dark mode compatibility */
+  .ql-toolbar {
+    @apply bg-muted/50 border-border rounded-t-md !important;
+  }
+  .ql-container {
+    @apply bg-background border-border rounded-b-md text-foreground min-h-[200px] !important;
+  }
+  .ql-editor {
+    @apply min-h-[200px] text-foreground !important;
+  }
+  .ql-stroke {
+    @apply stroke-foreground !important;
+  }
+  .ql-fill {
+    @apply fill-foreground !important;
+  }
+  .ql-picker {
+    @apply text-foreground !important;
+  }
+  .ql-snow .ql-picker-options {
+    @apply bg-popover border-border text-popover-foreground !important;
+  }
+}
