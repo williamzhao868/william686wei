@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button.jsx';
 import { labNewsData } from '@/data/labNewsData.js';
 import { useLanguage } from '@/context/LanguageContext.jsx';
 import { toast } from 'sonner';
+import { downloadPdfRecord, hasPdfAsset, resolvePdfFilename } from '@/lib/pdfUtils.js';
 
 const categoryColors = {
   'Research Update': 'bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20',
@@ -64,17 +65,22 @@ function LabNewsDetailPage() {
     { year: 'numeric', month: 'long', day: 'numeric' }
   );
 
-  const hasPdf = Boolean((newsItem.pdfFileName && newsItem.pdfFileName.trim() !== '') || (newsItem.pdfUrl && newsItem.pdfUrl.trim() !== ''));
-  const pdfUrl = newsItem.pdfUrl || (newsItem.pdfFileName ? `https://engma-ai-lab-1447133791.cos.ap-shanghai.myqcloud.com/reports/pdf/${newsItem.pdfFileName}` : '');
+  const hasPdf = hasPdfAsset(newsItem);
+  const pdfFilename = resolvePdfFilename(newsItem, 'news.pdf');
 
-  const handleDownload = (e) => {
+  const handleDownload = async (e) => {
     e.preventDefault();
-    if (!pdfUrl) {
+    if (!hasPdf) {
       toast.error(language === 'zh' ? 'PDF文件不可用' : 'PDF not available');
       return;
     }
-    window.open(pdfUrl, '_blank', 'noopener,noreferrer');
-    toast.success(language === 'zh' ? '开始下载PDF...' : 'PDF download initiated...');
+    try {
+      await downloadPdfRecord(newsItem, { fallbackName: pdfFilename });
+      toast.success(language === 'zh' ? '开始下载PDF...' : 'PDF download initiated...');
+    } catch (err) {
+      console.error('Download error:', err);
+      toast.error(language === 'zh' ? '下载PDF失败。请重试。' : 'Failed to download PDF. Please try again.');
+    }
   };
 
   return (

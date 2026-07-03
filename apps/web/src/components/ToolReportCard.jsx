@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button.jsx';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext.jsx';
 import { toast } from 'sonner';
-import pb from '@/lib/pocketbaseClient.js';
+import { downloadPdfRecord, hasPdfAsset, resolvePdfFilename } from '@/lib/pdfUtils.js';
 
 function ToolReportCard({ report, index = 0 }) {
   const { language } = useLanguage();
@@ -18,18 +18,8 @@ function ToolReportCard({ report, index = 0 }) {
     day: 'numeric'
   }) : '';
 
-  const hasPdf = Boolean(report.pdfFileName && report.pdfFileName.trim() !== '');
-  const directPdfUrl = (() => {
-    if (report.pdfUrl && /^https?:\/\//i.test(report.pdfUrl)) {
-      return report.pdfUrl;
-    }
-
-    if (report.pdfFileName) {
-      return `https://engma-ai-lab-1447133791.cos.ap-shanghai.myqcloud.com/reports/pdf/${report.pdfFileName}`;
-    }
-
-    return '';
-  })();
+  const hasPdf = hasPdfAsset(report);
+  const pdfFilename = resolvePdfFilename(report, 'report.pdf');
   
   // Generate a random score on initial mount (3.5, 4, 4.5, or 5)
   const [randomScore] = useState(() => {
@@ -50,31 +40,7 @@ function ToolReportCard({ report, index = 0 }) {
     
     setIsDownloading(true);
     try {
-      let fileUrl = directPdfUrl;
-      
-      try {
-        // 1. Retrieve the pdfFileName from the tool record and construct URL
-        const response = await fetch(pb.files.getURL(report, report.pdfFileName));
-        
-        if (response.ok) {
-          const blob = await response.blob();
-          fileUrl = window.URL.createObjectURL(blob);
-        }
-      } catch (fetchErr) {
-        console.warn('Tool PDF fetch failed, falling back to direct URL.', fetchErr);
-      }
-
-      const a = document.createElement('a');
-      a.href = fileUrl;
-      a.download = report.pdfFileName || 'report.pdf';
-      document.body.appendChild(a);
-      a.click();
-      
-      // Clean up object URLs when we created one
-      if (fileUrl.startsWith('blob:')) {
-        window.URL.revokeObjectURL(fileUrl);
-      }
-      document.body.removeChild(a);
+      await downloadPdfRecord(report, { fallbackName: pdfFilename });
 
       toast.success(language === 'zh' ? '下载完成' : 'Download completed');
     } catch (err) {

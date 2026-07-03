@@ -3,8 +3,7 @@ import { Calendar, FileText, ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/ui/badge.jsx';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext.jsx';
-
-const COS_BASE_URL = 'https://engma-ai-lab-1447133791.cos.ap-shanghai.myqcloud.com/reports/pdf/';
+import { hasPdfAsset, resolvePdfFilename, resolvePdfUrl } from '@/lib/pdfUtils.js';
 
 function InsightCard({ insight, index = 0 }) {
   const { language } = useLanguage();
@@ -16,8 +15,9 @@ function InsightCard({ insight, index = 0 }) {
     day: 'numeric'
   }) : '';
 
-  const pdfHref = insight.pdfFileName ? COS_BASE_URL + insight.pdfFileName : '';
-  const hasPdf = Boolean(insight.pdfFileName && insight.pdfFileName.trim() !== '');
+  const pdfHref = resolvePdfUrl(insight);
+  const hasPdf = hasPdfAsset(insight);
+  const pdfFilename = resolvePdfFilename(insight, 'insight.pdf');
 
   return (
     <motion.article
@@ -52,6 +52,7 @@ function InsightCard({ insight, index = 0 }) {
         <div className="mt-auto pt-4 border-t border-border/50">
           <a
             href={pdfHref}
+            download={pdfFilename}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-4 py-2 bg-primary text-primary-foreground rounded-lg font-medium transition-all duration-200 hover:brightness-110 active:scale-[0.98] w-full sm:w-auto"

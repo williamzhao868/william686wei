@@ -2,14 +2,14 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Bot, ExternalLink, Star, ThumbsUp, ThumbsDown, FileText } from 'lucide-react';
 import { motion } from 'framer-motion';
-
-const COS_BASE_URL = 'https://engma-ai-lab-1447133791.cos.ap-shanghai.myqcloud.com/reports/pdf/';
+import { hasPdfAsset, resolvePdfFilename, resolvePdfUrl } from '@/lib/pdfUtils.js';
 
 function ToolCard({ tool, index = 0 }) {
   const navigate = useNavigate();
 
-  const pdfHref = tool.pdfFileName ? COS_BASE_URL + tool.pdfFileName : '';
-  const hasPdf = Boolean(tool.pdfFileName && tool.pdfFileName.trim() !== '');
+  const pdfHref = resolvePdfUrl(tool);
+  const hasPdf = hasPdfAsset(tool);
+  const pdfFilename = resolvePdfFilename(tool, 'tool-report.pdf');
 
   return (
     <motion.div
@@ -61,6 +61,7 @@ function ToolCard({ tool, index = 0 }) {
           {hasPdf && (
             <a 
               href={pdfHref}
+              download={pdfFilename}
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}

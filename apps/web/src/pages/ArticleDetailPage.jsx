@@ -11,9 +11,9 @@ import BackButton from '@/components/BackButton.jsx';
 import { useLanguage } from '@/context/LanguageContext.jsx';
 import { motion } from 'framer-motion';
 import pb from '@/lib/pocketbaseClient.js';
-import apiServerClient from '@/lib/apiServerClient.js';
 import { fallbackArticles } from '@/data/articlesFallbackData.js';
 import { getLocalInsightByRecord, markdownToHtml, mergeWithLocalContent } from '@/data/localContentData.js';
+import { downloadPdfRecord, hasPdfAsset, resolvePdfFilename } from '@/lib/pdfUtils.js';
 import { toast } from 'sonner';
 
 const getLocalArticleById = (id) =>
@@ -120,18 +120,8 @@ export default function ArticleDetailPage() {
     year: 'numeric', month: 'long', day: 'numeric' 
   }) : '';
 
-  const hasPdf = Boolean((article.pdfFileName && article.pdfFileName.trim() !== '') || (article.pdfUrl && article.pdfUrl.trim() !== ''));
-  const directPdfUrl = (() => {
-    if (article.pdfUrl && /^https?:\/\//i.test(article.pdfUrl)) {
-      return article.pdfUrl;
-    }
-
-    if (article.pdfFileName) {
-      return `https://engma-ai-lab-1447133791.cos.ap-shanghai.myqcloud.com/reports/pdf/${article.pdfFileName}`;
-    }
-
-    return '';
-  })();
+  const hasPdf = hasPdfAsset(article);
+  const pdfFilename = resolvePdfFilename(article, 'article.pdf');
 
   const handleDownload = async (e) => {
     e.preventDefault();
@@ -144,32 +134,7 @@ export default function ArticleDetailPage() {
     
     setIsDownloading(true);
     try {
-      const a = document.createElement('a');
-      let downloadUrl = directPdfUrl;
-
-      try {
-        const response = await apiServerClient.fetch(`/pdf-download/${article.id}`);
-        if (response.ok) {
-          const data = await response.json();
-          if (data.pdfUrl && /^https?:\/\//i.test(data.pdfUrl)) {
-            downloadUrl = data.pdfUrl;
-          }
-        }
-      } catch (serverError) {
-        console.warn('PDF download server unavailable, falling back to direct URL.', serverError);
-      }
-
-      if (!downloadUrl) {
-        throw new Error('PDF URL is missing');
-      }
-
-      a.href = downloadUrl;
-      a.download = article.pdfFileName || 'article.pdf';
-      a.target = '_blank';
-      a.rel = 'noopener noreferrer';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
+      await downloadPdfRecord(article, { fallbackName: pdfFilename });
 
       toast.success(language === 'zh' ? '开始下载PDF...' : 'PDF download initiated...');
     } catch (err) {

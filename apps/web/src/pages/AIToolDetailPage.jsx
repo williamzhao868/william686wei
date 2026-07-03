@@ -14,6 +14,7 @@ import pb from '@/lib/pocketbaseClient.js';
 import { fallbackArticles } from '@/data/articlesFallbackData.js';
 import { getLocalToolByRecord, markdownToHtml, mergeWithLocalContent } from '@/data/localContentData.js';
 import { toast } from 'sonner';
+import { downloadPdfRecord, hasPdfAsset, resolvePdfFilename } from '@/lib/pdfUtils.js';
 
 export default function AIToolDetailPage() {
   const { toolId } = useParams();
@@ -103,17 +104,22 @@ export default function AIToolDetailPage() {
     year: 'numeric', month: 'long', day: 'numeric' 
   }) : '';
 
-  const hasPdf = Boolean((tool.pdfFileName && tool.pdfFileName.trim() !== '') || (tool.pdfUrl && tool.pdfUrl.trim() !== ''));
-  const pdfUrl = tool.pdfUrl || (tool.pdfFileName ? `https://engma-ai-lab-1447133791.cos.ap-shanghai.myqcloud.com/reports/pdf/${tool.pdfFileName}` : '');
+  const hasPdf = hasPdfAsset(tool);
+  const pdfFilename = resolvePdfFilename(tool, 'tool-report.pdf');
 
-  const handleDownload = (e) => {
+  const handleDownload = async (e) => {
     e.preventDefault();
-    if (!pdfUrl) {
+    if (!hasPdf) {
       toast.error(language === 'zh' ? 'PDF文件不可用' : 'PDF not available');
       return;
     }
-    window.open(pdfUrl, '_blank', 'noopener,noreferrer');
-    toast.success(language === 'zh' ? '开始下载PDF...' : 'PDF download initiated...');
+    try {
+      await downloadPdfRecord(tool, { fallbackName: pdfFilename });
+      toast.success(language === 'zh' ? '开始下载PDF...' : 'PDF download initiated...');
+    } catch (err) {
+      console.error('Download error:', err);
+      toast.error(language === 'zh' ? '下载PDF失败。请重试。' : 'Failed to download PDF. Please try again.');
+    }
   };
 
   return (
