@@ -90,6 +90,13 @@ function clone(value) {
   return structuredClone(value);
 }
 
+function isEmptyListResponse(response) {
+  if (!response) return true;
+  if (Array.isArray(response)) return response.length === 0;
+  if (Array.isArray(response.items)) return response.items.length === 0;
+  return false;
+}
+
 function fallbackCollection(collectionName) {
   const isFallbackCollection = FALLBACK_COLLECTIONS.has(collectionName);
 
@@ -172,9 +179,20 @@ pocketbaseClient.collection = function collectionWithFallback(collectionName) {
   const liveCollection = realCollection(collectionName);
   const fallback = fallbackCollection(collectionName);
 
+  const shouldFallbackToLocal = (result) => {
+    if (!FALLBACK_COLLECTIONS.has(collectionName)) return false;
+    return isEmptyListResponse(result);
+  };
+
   const wrap = (methodName) => async (...args) => {
     try {
-      return await liveCollection[methodName](...args);
+      const result = await liveCollection[methodName](...args);
+
+      if ((methodName === 'getList' || methodName === 'getFullList') && shouldFallbackToLocal(result)) {
+        return fallback[methodName](...args);
+      }
+
+      return result;
     } catch (error) {
       if (!FALLBACK_COLLECTIONS.has(collectionName)) {
         throw error;
