@@ -16,7 +16,9 @@ function AIActivitiesPage() {
   const { t, language } = useLanguage();
 
   const localize = (item) => (language === 'zh' && item.zh ? { ...item, ...item.zh } : item);
-  const localizedData = aiActivitiesData.map(localize);
+  const localizedData = aiActivitiesData
+    .map(localize)
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
 
   const eventTypes = ['All', ...new Set(localizedData.map(event => event.eventType))];
 
@@ -29,6 +31,8 @@ function AIActivitiesPage() {
     
     return matchesType && matchesSearch;
   });
+
+  const visibleEvents = filteredEvents.slice(0, 10);
 
   return (
     <>
@@ -92,13 +96,13 @@ function AIActivitiesPage() {
           <section className="py-12 bg-background">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <div className="mb-6 flex items-center justify-between text-sm font-medium text-muted-foreground">
-                <span>{t('common.showing')} {filteredEvents.length} {t('common.events')}</span>
+                <span>{t('common.showing')} {Math.min(filteredEvents.length, 10)} {t('common.events')}</span>
               </div>
 
-              {filteredEvents.length > 0 ? (
+              {visibleEvents.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                   <AnimatePresence mode="popLayout">
-                    {filteredEvents.map((event, index) => (
+                    {visibleEvents.map((event, index) => (
                       <EventCard key={event.id} event={event} index={index} />
                     ))}
                   </AnimatePresence>
