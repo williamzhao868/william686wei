@@ -13,6 +13,7 @@ import { motion } from 'framer-motion';
 import pb from '@/lib/pocketbaseClient.js';
 import apiServerClient from '@/lib/apiServerClient.js';
 import { fallbackArticles } from '@/data/articlesFallbackData.js';
+import { getLocalInsightByRecord, markdownToHtml, mergeWithLocalContent } from '@/data/localContentData.js';
 import { toast } from 'sonner';
 
 const getLocalArticleById = (id) =>
@@ -39,11 +40,13 @@ export default function ArticleDetailPage() {
         filter: 'type="A"',
         $autoCancel: false
       });
-      setArticle(record);
+      const localContent = getLocalInsightByRecord(record) || getLocalArticleById(id);
+      const mergedRecord = mergeWithLocalContent(record, localContent);
+      setArticle(mergedRecord);
 
-      if (record.category) {
+      if (mergedRecord.category) {
         const related = await pb.collection('articles').getList(1, 3, {
-          filter: `id != "${id}" && type="A" && category = "${record.category}"`,
+          filter: `id != "${id}" && type="A" && category = "${mergedRecord.category}"`,
           sort: '-date,-created',
           $autoCancel: false
         });
@@ -53,7 +56,8 @@ export default function ArticleDetailPage() {
       console.error('Error fetching article:', err);
       const localArticle = getLocalArticleById(id);
       if (localArticle) {
-        setArticle(localArticle);
+        const localContent = getLocalInsightByRecord(localArticle) || localArticle;
+        setArticle(mergeWithLocalContent(localArticle, localContent));
         const related = fallbackArticles
           .filter((item) => item.type === 'A' && item.id !== id && item.category === localArticle.category)
           .sort((a, b) => new Date(b.date || b.created || 0) - new Date(a.date || a.created || 0))
@@ -235,7 +239,14 @@ export default function ArticleDetailPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            {article.content ? (
+            {article.contentMarkdown ? (
+              <div 
+                className="prose prose-lg dark:prose-invert max-w-none 
+                  prose-headings:font-bold prose-headings:tracking-tight
+                  prose-a:text-primary hover:prose-a:text-primary/80 transition-colors"
+                dangerouslySetInnerHTML={{ __html: markdownToHtml(article.contentMarkdown || '') }}
+              />
+            ) : article.content && article.content.trim() !== 'Full report available in PDF.' && !article.content.includes('暂无完整内容提供') ? (
               <div 
                 className="prose prose-lg dark:prose-invert max-w-none 
                   prose-headings:font-bold prose-headings:tracking-tight

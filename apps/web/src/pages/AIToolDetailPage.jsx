@@ -12,10 +12,8 @@ import { useLanguage } from '@/context/LanguageContext.jsx';
 import { motion } from 'framer-motion';
 import pb from '@/lib/pocketbaseClient.js';
 import { fallbackArticles } from '@/data/articlesFallbackData.js';
+import { getLocalToolByRecord, markdownToHtml, mergeWithLocalContent } from '@/data/localContentData.js';
 import { toast } from 'sonner';
-
-const getLocalToolById = (id) =>
-  fallbackArticles.find((article) => article.type === 'C' && article.id === id) || null;
 
 export default function AIToolDetailPage() {
   const { toolId } = useParams();
@@ -36,12 +34,14 @@ export default function AIToolDetailPage() {
         filter: 'type="C"',
         $autoCancel: false
       });
-      setTool(record);
+      const localTool = getLocalToolByRecord(record) || fallbackArticles.find((article) => article.type === 'C' && article.id === toolId) || null;
+      setTool(mergeWithLocalContent(record, localTool));
     } catch (err) {
       console.error('Error fetching tool:', err);
-      const localTool = getLocalToolById(toolId);
+      const localTool = fallbackArticles.find((article) => article.type === 'C' && article.id === toolId) || null;
       if (localTool) {
-        setTool(localTool);
+        const localContent = getLocalToolByRecord(localTool) || localTool;
+        setTool(mergeWithLocalContent(localTool, localContent));
       } else {
         toast.error(language === 'zh' ? '加载工具详情失败' : 'Failed to load tool details');
       }
@@ -200,7 +200,14 @@ export default function AIToolDetailPage() {
                 <h2 className="text-2xl font-bold mb-6 text-foreground">
                   {language === 'zh' ? '详细评测' : 'Detailed Review'}
                 </h2>
-                {tool.content ? (
+                {tool.contentMarkdown ? (
+                  <div 
+                    className="prose prose-lg dark:prose-invert max-w-none 
+                      prose-headings:font-bold prose-headings:tracking-tight
+                      prose-a:text-primary hover:prose-a:text-primary/80 transition-colors"
+                    dangerouslySetInnerHTML={{ __html: markdownToHtml(tool.contentMarkdown || '') }}
+                  />
+                ) : tool.content && tool.content.trim() !== 'Full benchmark report available in PDF.' && !tool.content.includes('暂无完整评测内容') ? (
                   <div 
                     className="prose prose-lg dark:prose-invert max-w-none 
                       prose-headings:font-bold prose-headings:tracking-tight
