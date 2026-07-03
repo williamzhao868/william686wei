@@ -10,6 +10,7 @@ function EventCard({ event, index = 0 }) {
     day: 'numeric',
     year: 'numeric'
   });
+  const eventUrl = event.websiteUrl || event.registrationLink || '#';
 
   return (
     <motion.div
@@ -44,7 +45,7 @@ function EventCard({ event, index = 0 }) {
         </p>
 
         <Button variant="outline" className="w-full mt-auto group" asChild>
-          <a href={event.registrationLink} target="_blank" rel="noopener noreferrer">
+          <a href={eventUrl} target="_blank" rel="noopener noreferrer">
             Learn More
           </a>
         </Button>
