@@ -11,9 +11,22 @@ import ToolReportCard from '@/components/ToolReportCard.jsx';
 import EventCard from '@/components/EventCard.jsx';
 import { aiActivitiesData } from '@/data/aiActivitiesData.js';
 import { labNewsData } from '@/data/labNewsData.js';
+import { fallbackArticles } from '@/data/articlesFallbackData.js';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext.jsx';
 import pb from '@/lib/pocketbaseClient.js';
+
+const getLocalInsights = () =>
+  fallbackArticles
+    .filter((article) => article.type === 'A')
+    .sort((a, b) => new Date(b.date || b.created || 0) - new Date(a.date || a.created || 0))
+    .slice(0, 4);
+
+const getLocalTools = () =>
+  fallbackArticles
+    .filter((article) => article.type === 'C')
+    .sort((a, b) => new Date(b.date || b.created || 0) - new Date(a.date || a.created || 0))
+    .slice(0, 4);
 
 function HomePage() {
   const { t, language } = useLanguage();
@@ -40,10 +53,11 @@ function HomePage() {
         sort: '-created', 
         $autoCancel: false 
       });
-      setInsights(res.items);
+      const liveItems = res.items || [];
+      setInsights(liveItems.length > 0 ? liveItems : getLocalInsights());
     } catch (err) {
       console.error('Failed to fetch insights:', err);
-      setInsightsError(true);
+      setInsights(getLocalInsights());
     } finally {
       setInsightsLoading(false);
     }
@@ -58,10 +72,11 @@ function HomePage() {
         sort: '-created', 
         $autoCancel: false 
       });
-      setTools(res.items);
+      const liveItems = res.items || [];
+      setTools(liveItems.length > 0 ? liveItems : getLocalTools());
     } catch (err) {
       console.error('Failed to fetch tools:', err);
-      setToolsError(true);
+      setTools(getLocalTools());
     } finally {
       setToolsLoading(false);
     }

@@ -11,7 +11,11 @@ import BackButton from '@/components/BackButton.jsx';
 import { useLanguage } from '@/context/LanguageContext.jsx';
 import { motion } from 'framer-motion';
 import pb from '@/lib/pocketbaseClient.js';
+import { fallbackArticles } from '@/data/articlesFallbackData.js';
 import { toast } from 'sonner';
+
+const getLocalToolById = (id) =>
+  fallbackArticles.find((article) => article.type === 'C' && article.id === id) || null;
 
 export default function AIToolDetailPage() {
   const { toolId } = useParams();
@@ -35,7 +39,12 @@ export default function AIToolDetailPage() {
       setTool(record);
     } catch (err) {
       console.error('Error fetching tool:', err);
-      toast.error(language === 'zh' ? '加载工具详情失败' : 'Failed to load tool details');
+      const localTool = getLocalToolById(toolId);
+      if (localTool) {
+        setTool(localTool);
+      } else {
+        toast.error(language === 'zh' ? '加载工具详情失败' : 'Failed to load tool details');
+      }
     } finally {
       setLoading(false);
     }

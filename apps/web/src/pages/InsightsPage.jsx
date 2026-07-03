@@ -11,6 +11,12 @@ import { Skeleton } from '@/components/ui/skeleton.jsx';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext.jsx';
 import pb from '@/lib/pocketbaseClient.js';
+import { fallbackArticles } from '@/data/articlesFallbackData.js';
+
+const getLocalInsights = () =>
+  fallbackArticles
+    .filter((article) => article.type === 'A')
+    .sort((a, b) => new Date(b.date || b.created || 0) - new Date(a.date || a.created || 0));
 
 function InsightsPage() {
   const [articles, setArticles] = useState([]);
@@ -37,10 +43,11 @@ function InsightsPage() {
         filter: 'type="A"',
         $autoCancel: false
       });
-      setArticles(records.items || []);
+      const liveItems = records.items || [];
+      setArticles(liveItems.length > 0 ? liveItems : getLocalInsights());
     } catch (err) {
       console.error('Error fetching articles:', err);
-      setError(language === 'zh' ? '加载文章失败，请重试。' : 'Failed to load articles. Please try again.');
+      setArticles(getLocalInsights());
     } finally {
       setLoading(false);
     }

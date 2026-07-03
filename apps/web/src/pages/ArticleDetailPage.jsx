@@ -12,7 +12,11 @@ import { useLanguage } from '@/context/LanguageContext.jsx';
 import { motion } from 'framer-motion';
 import pb from '@/lib/pocketbaseClient.js';
 import apiServerClient from '@/lib/apiServerClient.js';
+import { fallbackArticles } from '@/data/articlesFallbackData.js';
 import { toast } from 'sonner';
+
+const getLocalArticleById = (id) =>
+  fallbackArticles.find((article) => article.type === 'A' && article.id === id) || null;
 
 export default function ArticleDetailPage() {
   const { id } = useParams();
@@ -47,8 +51,15 @@ export default function ArticleDetailPage() {
       }
     } catch (err) {
       console.error('Error fetching article:', err);
-      // Don't show toast for 404s, we already render a "Not Found" state
-      if (err.status !== 404) {
+      const localArticle = getLocalArticleById(id);
+      if (localArticle) {
+        setArticle(localArticle);
+        const related = fallbackArticles
+          .filter((item) => item.type === 'A' && item.id !== id && item.category === localArticle.category)
+          .sort((a, b) => new Date(b.date || b.created || 0) - new Date(a.date || a.created || 0))
+          .slice(0, 3);
+        setRelatedArticles(related);
+      } else if (err.status !== 404) {
         toast.error(language === 'zh' ? '加载文章失败' : 'Failed to load article');
       }
     } finally {

@@ -11,6 +11,12 @@ import { Skeleton } from '@/components/ui/skeleton.jsx';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext.jsx';
 import pb from '@/lib/pocketbaseClient.js';
+import { fallbackArticles } from '@/data/articlesFallbackData.js';
+
+const getLocalTools = () =>
+  fallbackArticles
+    .filter((article) => article.type === 'C')
+    .sort((a, b) => new Date(b.date || b.created || 0) - new Date(a.date || a.created || 0));
 
 function AIToolsPage() {
   const [reports, setReports] = useState([]);
@@ -38,10 +44,11 @@ function AIToolsPage() {
         filter: "type='C'",
         $autoCancel: false
       });
-      setReports(records.items || []);
+      const liveItems = records.items || [];
+      setReports(liveItems.length > 0 ? liveItems : getLocalTools());
     } catch (err) {
       console.error('Error fetching tool reports:', err);
-      setError(language === 'zh' ? '加载工具报告失败，请重试。' : 'Failed to load tool reports. Please try again.');
+      setReports(getLocalTools());
     } finally {
       setLoading(false);
     }
