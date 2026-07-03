@@ -138,7 +138,7 @@ function ToolReportCard({ report, index = 0 }) {
                 className="w-full rounded-xl text-xs opacity-70 cursor-not-allowed"
               >
                 <FileText className="w-3.5 h-3.5 mr-1.5 opacity-50" />
-                {language === 'zh' ? 'PDF 报告制作中' : 'PDF Report Pending'}
+                {language === 'zh' ? '下载评测 PDF' : 'Download Benchmark PDF'}
               </Button>
             )}
           </div>
