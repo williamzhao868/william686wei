@@ -101,7 +101,7 @@ function normalizeToolContent(tool) {
     score: tool.score || tool.overallScore || (tool.recommendationStars ? tool.recommendationStars * 2 : 0),
     websiteUrl: tool.websiteUrl || tool.website || '',
     website: tool.website || tool.websiteUrl || '',
-    pdfUrl: tool.pdfUrl || '',
+    pdfUrl: tool.pdfUrl || (tool.pdfFileName ? `/reports/pdf/${tool.pdfFileName}` : ''),
     pdfFileName: tool.pdfFileName || '',
   };
 }
