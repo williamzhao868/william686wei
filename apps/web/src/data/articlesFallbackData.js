@@ -117,11 +117,11 @@ https://openai.com/index/how-agents-are-transforming-work/
 
 AI 已经不只是模型能力的比赛，而是在变成“使用深度、区域扩张、研究证据、工作流接管”四条线同时推进的系统竞争。
 `,
-    "pdfUrl": "",
+    "pdfUrl": "/reports/pdf/Engma_A_AI_Insight_Daily_07032026.pdf",
     "toolName": "",
     "websiteUrl": "https://openai.com/index/how-chatgpt-adoption-has-expanded/",
     "score": 0,
-    "pdfFileName": ""
+    "pdfFileName": "Engma_A_AI_Insight_Daily_07032026.pdf"
   },
   {
     "author": "",
@@ -238,11 +238,11 @@ https://www.anthropic.com/news/claude-code-security
 
 Anthropic 这几天最重要的变化不是单个模型，而是它把性能、价格、安全和科研工作台一起推上来了，AI 正在从“能聊天”转向“能被组织信任地使用”。
 `,
-    "pdfUrl": "",
+    "pdfUrl": "/reports/pdf/Engma_A_AI_Insight_Daily_07022026.pdf",
     "toolName": "",
     "websiteUrl": "https://www.anthropic.com/news/claude-sonnet-5",
     "score": 0,
-    "pdfFileName": ""
+    "pdfFileName": "Engma_A_AI_Insight_Daily_07022026.pdf"
   },
   {
     "author": "",
@@ -361,11 +361,11 @@ https://blogs.nvidia.com/blog/claude-science-bionemo-agent-toolkit/
 
 AI 已经从“模型竞赛”走向“算力、成本、工作台和行业链路”的系统竞争，基础设施和垂直工作流会比单个 demo 更重要。
 `,
-    "pdfUrl": "",
+    "pdfUrl": "/reports/pdf/Engma_A_AI_Insight_Daily_07012026.pdf",
     "toolName": "",
     "websiteUrl": "https://blogs.nvidia.com/blog/nvidia-unlocks-ai-compute-at-scale-capital-partners-to-power-ai-infrastructure-buildout/",
     "score": 0,
-    "pdfFileName": ""
+    "pdfFileName": "Engma_A_AI_Insight_Daily_07012026.pdf"
   },
   {
     "author": "",
@@ -485,11 +485,11 @@ https://blogs.nvidia.com/blog/claude-science-bionemo-agent-toolkit/
 
 科学 AI 这条线已经很清楚：下一步比拼的不是谁会聊天，而是谁能把评测、工作台和算力接成一个可被研究人员长期使用的系统。
 `,
-    "pdfUrl": "",
+    "pdfUrl": "/reports/pdf/Engma_A_AI_Insight_Daily_06302026.pdf",
     "toolName": "",
     "websiteUrl": "https://openai.com/index/introducing-genebench-pro/",
     "score": 0,
-    "pdfFileName": ""
+    "pdfFileName": "Engma_A_AI_Insight_Daily_06302026.pdf"
   },
   {
     "author": "",

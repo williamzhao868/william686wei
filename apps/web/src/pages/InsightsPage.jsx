@@ -12,11 +12,29 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext.jsx';
 import pb from '@/lib/pocketbaseClient.js';
 import { fallbackArticles } from '@/data/articlesFallbackData.js';
+import {
+  getLocalInsightArticleByRecord,
+  getLocalInsightArticles,
+  mergeWithLocalContent,
+} from '@/data/localContentData.js';
 
-const getLocalInsights = () =>
-  fallbackArticles
-    .filter((article) => article.type === 'A')
+const getLocalInsights = () => {
+  const byTitle = new Map();
+
+  for (const article of fallbackArticles.filter((item) => item.type === 'A')) {
+    const localArticle = getLocalInsightArticleByRecord(article);
+    const merged = mergeWithLocalContent(article, localArticle);
+    byTitle.set(String(merged.title || '').trim(), merged);
+  }
+
+  for (const article of getLocalInsightArticles()) {
+    const title = String(article.title || '').trim();
+    if (!byTitle.has(title)) byTitle.set(title, article);
+  }
+
+  return [...byTitle.values()]
     .sort((a, b) => new Date(b.date || b.created || 0) - new Date(a.date || a.created || 0));
+};
 
 function InsightsPage() {
   const [articles, setArticles] = useState([]);
@@ -43,8 +61,21 @@ function InsightsPage() {
         filter: 'type="A"',
         $autoCancel: false
       });
-      const liveItems = records.items || [];
-      setArticles(liveItems.length > 0 ? liveItems : getLocalInsights());
+      const localItems = getLocalInsights();
+      const localByTitle = new Map(localItems.map((item) => [String(item.title || '').trim(), item]));
+      const mergedLiveItems = (records.items || []).map((item) =>
+        mergeWithLocalContent(
+          item,
+          getLocalInsightArticleByRecord(item) || localByTitle.get(String(item.title || '').trim())
+        )
+      );
+      const liveTitles = new Set(mergedLiveItems.map((item) => String(item.title || '').trim()));
+      const mergedItems = [
+        ...mergedLiveItems,
+        ...localItems.filter((item) => !liveTitles.has(String(item.title || '').trim())),
+      ].sort((a, b) => new Date(b.date || b.created || 0) - new Date(a.date || a.created || 0));
+
+      setArticles(mergedItems);
     } catch (err) {
       console.error('Error fetching articles:', err);
       setArticles(getLocalInsights());

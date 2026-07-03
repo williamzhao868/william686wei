@@ -1,11 +1,12 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, FileText, ChevronRight } from 'lucide-react';
+import { Calendar, FileText, ChevronRight, Download } from 'lucide-react';
 import { Badge } from '@/components/ui/badge.jsx';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext.jsx';
 import pb from '@/lib/pocketbaseClient.js';
+import { hasPdfAsset, resolvePdfFilename, resolvePdfUrl } from '@/lib/pdfUtils.js';
 
 const IMAGE_CATEGORIES = {
   AI_TECH: [
@@ -80,6 +81,9 @@ function ArticleCard({ article, index = 0 }) {
   });
 
   const imageUrl = getArticleImage(article, index);
+  const hasPdf = hasPdfAsset(article);
+  const pdfHref = resolvePdfUrl(article);
+  const pdfFilename = resolvePdfFilename(article, 'insight.pdf');
 
   return (
     <motion.article
@@ -127,13 +131,24 @@ function ArticleCard({ article, index = 0 }) {
             {article.summary}
           </p>
 
-          <div className="flex items-center justify-between text-xs text-muted-foreground mt-auto pt-4 border-t border-border/50">
+          <div className="flex items-center justify-between gap-3 text-xs text-muted-foreground mt-auto pt-4 border-t border-border/50">
             <div className="flex items-center gap-2">
               <Calendar className="h-3.5 w-3.5" />
               <time dateTime={article.date}>{formattedDate}</time>
             </div>
             
             <div className="flex items-center gap-4">
+              {hasPdf && (
+                <a
+                  href={pdfHref}
+                  download={pdfFilename}
+                  className="flex items-center text-primary font-medium hover:text-primary/80 transition-colors"
+                  onClick={(event) => event.stopPropagation()}
+                >
+                  <Download className="h-3.5 w-3.5 mr-1" />
+                  {language === 'zh' ? '下载 PDF' : 'Download PDF'}
+                </a>
+              )}
               <Link 
                 to={`/article/${article.id}`} 
                 className="flex items-center text-primary font-medium group-hover:text-primary/80 transition-colors"

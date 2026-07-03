@@ -86,6 +86,19 @@ const toolTitleMap = new Map((contentData.tools || []).map((item) => [String(ite
 const insightPdfMap = new Map((contentData.insights || []).map((item) => [String(item.pdfFileName || '').trim(), item]));
 const toolPdfMap = new Map((contentData.tools || []).map((item) => [String(item.pdfFileName || '').trim(), item]));
 
+function normalizeInsightContent(insight) {
+  if (!insight) return null;
+
+  return {
+    ...insight,
+    type: 'A',
+    summary: insight.summary || insight.shortDescription || insight.description || '',
+    content: insight.content || insight.contentMarkdown || '',
+    pdfUrl: insight.pdfUrl || (insight.pdfFileName ? `/reports/pdf/${insight.pdfFileName}` : ''),
+    pdfFileName: insight.pdfFileName || '',
+  };
+}
+
 function normalizeToolContent(tool) {
   if (!tool) return null;
 
@@ -137,6 +150,14 @@ export function getLocalInsightByRecord(record) {
     pickFirstMatch(record, [insightPdfMap], ['pdfFileName']) ||
     null
   );
+}
+
+export function getLocalInsightArticleByRecord(record) {
+  return normalizeInsightContent(getLocalInsightByRecord(record));
+}
+
+export function getLocalInsightArticles() {
+  return (contentData.insights || []).map((insight) => normalizeInsightContent(insight)).filter(Boolean);
 }
 
 export function getLocalToolByRecord(record) {
