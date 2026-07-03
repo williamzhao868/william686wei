@@ -86,6 +86,26 @@ const toolTitleMap = new Map((contentData.tools || []).map((item) => [String(ite
 const insightPdfMap = new Map((contentData.insights || []).map((item) => [String(item.pdfFileName || '').trim(), item]));
 const toolPdfMap = new Map((contentData.tools || []).map((item) => [String(item.pdfFileName || '').trim(), item]));
 
+function normalizeToolContent(tool) {
+  if (!tool) return null;
+
+  return {
+    ...tool,
+    type: 'C',
+    toolName: tool.toolName || tool.name || '',
+    title: tool.title || (tool.name ? `${tool.name}｜AI Tool Benchmark Report` : ''),
+    summary: tool.summary || tool.shortDescription || tool.fullDescription || '',
+    shortDescription: tool.shortDescription || tool.summary || tool.fullDescription || '',
+    fullDescription: tool.fullDescription || tool.content || tool.summary || '',
+    content: tool.content || tool.fullDescription || tool.shortDescription || '',
+    score: tool.score || tool.overallScore || (tool.recommendationStars ? tool.recommendationStars * 2 : 0),
+    websiteUrl: tool.websiteUrl || tool.website || '',
+    website: tool.website || tool.websiteUrl || '',
+    pdfUrl: tool.pdfUrl || '',
+    pdfFileName: tool.pdfFileName || '',
+  };
+}
+
 export function getLocalInsightById(id) {
   return insightMap.get(id) || null;
 }
@@ -128,19 +148,39 @@ export function getLocalToolByRecord(record) {
   );
 }
 
+export function getLocalToolArticleByRecord(record) {
+  return normalizeToolContent(getLocalToolByRecord(record));
+}
+
+export function getLocalToolArticles() {
+  return (contentData.tools || []).map((tool) => normalizeToolContent(tool)).filter(Boolean);
+}
+
 export function mergeWithLocalContent(liveRecord, localRecord) {
   if (!localRecord) return liveRecord;
 
-  const merged = { ...localRecord, ...liveRecord };
-  const fallbackFields = ['content', 'contentMarkdown', 'pdfFileName', 'pdfUrl', 'websiteUrl', 'summary', 'title', 'date', 'category'];
+  const merged = { ...liveRecord };
+  const preferredFields = [
+    'content',
+    'contentMarkdown',
+    'pdfFileName',
+    'pdfUrl',
+    'websiteUrl',
+    'website',
+    'summary',
+    'shortDescription',
+    'fullDescription',
+    'title',
+    'date',
+    'category',
+    'toolName',
+    'score',
+  ];
 
-  for (const field of fallbackFields) {
-    const liveValue = liveRecord?.[field];
-    const fallbackValue = localRecord?.[field];
-    if (liveValue == null || liveValue === '' || (field === 'content' && String(liveValue).includes('Full report available in PDF.'))) {
-      if (fallbackValue != null && fallbackValue !== '') {
-        merged[field] = fallbackValue;
-      }
+  for (const field of preferredFields) {
+    const localValue = localRecord?.[field];
+    if (localValue != null && localValue !== '') {
+      merged[field] = localValue;
     }
   }
 

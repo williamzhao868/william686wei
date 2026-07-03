@@ -7,7 +7,8 @@
   },
   "counts": {
     "A": 12,
-    "C": 14
+    "C": 14,
+    "tools": 17
   },
   "insights": [
     {
@@ -575,6 +576,99 @@
       "pdfFileName": "Engma_C_AI_Tool_Benchmark_Readywhen_06242026.pdf",
       "sourceFileName": "Engma_C_AI_Tool_Benchmark_Readywhen_06242026.md",
       "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-06-24\n\n## 工具名称\n\nReadywhen\n\n官网：  \nhttps://www.producthunt.com/posts/readywhen-2\n\n## 测试任务\n\n看它能不能帮人盯住会议、邮件、Slack 里的 follow-up。\n\n## 结果数据\n\n它像一个很轻的 AI Chief of Staff。重点不是写内容，而是提醒你谁还没回、你答应了什么、下一步该做什么。\n\n## 优缺点\n\n优点：场景清楚，适合管理者、销售、项目负责人。  \n缺点：依赖邮件、日历、Slack 接入，权限和隐私要注意。\n\n## 推荐指数\n\n推荐指数：4 星\n\n一句话：  \n小工具，但实用。适合用来减少漏事。\n\n来源：  \nhttps://www.producthunt.com/posts/readywhen-2"
+    },
+    {
+      "id": "c-20260701-continuu-it",
+      "targetTab": "AI 工具",
+      "category": "C｜AI Tool Benchmark Report",
+      "name": "continuu.it",
+      "title": "continuu.it｜AI Tool Benchmark Report",
+      "date": "2026-07-01",
+      "website": "https://www.continuu.it/",
+      "shortDescription": "continuu.it 会把项目拆成下一步任务，并保存之前的决定、阻碍和进度。项目 14 天没有变化时，会提醒选择继续、暂停、完成或放弃。",
+      "fullDescription": "continuu.it 会把项目拆成下一步任务，并保存之前的决定、阻碍和进度。项目 14 天没有变化时，会提醒选择继续、暂停、完成或放弃。当前为内测版，免费版支持 3 个活跃项目、50 个任务和每天 15 条 AI 消息。",
+      "testTask": "看它能不能帮助人把长期没做完的项目重新推进。",
+      "prosConsText": "优点：场景很具体，重点是“完成”，不是继续增加任务。 缺点：仍在内测，实际提醒效果和稳定性需要继续观察。",
+      "recommendationStars": 4.0,
+      "overallScore": 8.0,
+      "ratings": {
+        "speed": 8.0,
+        "accuracy": 8.0,
+        "costEfficiency": 8.0,
+        "easeOfUse": 8.0
+      },
+      "pricing": "免费版支持 3 个活跃项目、50 个任务和每天 15 条 AI 消息",
+      "useCases": [
+        "企业效率",
+        "内容生产",
+        "工作流测试"
+      ],
+      "pdfFileName": "Engma_C_AI_Tool_Benchmark_continuu_it_07012026.pdf",
+      "pdfUrl": "/reports/pdf/Engma_C_AI_Tool_Benchmark_continuu_it_07012026.pdf",
+      "sourceFileName": "Engma_C_AI_Tool_Benchmark_continuu_it_07012026.md",
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-01\n\n## 工具名称\n\ncontinuu.it\n\n官网：  \nhttps://www.continuu.it/\n\n## 测试任务\n\n看它能不能帮助人把长期没做完的项目重新推进。\n\n## 结果数据\n\n它会把项目拆成下一步任务，并保存之前的决定、阻碍和进度。项目 14 天没有变化时，会提醒选择继续、暂停、完成或放弃。\n\n目前为内测版。免费版支持 3 个活跃项目、50 个任务和每天 15 条 AI 消息。\n\n本次为公开资料验证，未进入内测后台。\n\n## 优缺点\n\n优点：场景很具体，重点是“完成”，不是继续增加任务。  \n缺点：仍在内测，实际提醒效果和稳定性需要继续观察。\n\n## 推荐指数\n\n推荐指数：4 星\n\n一句话：  \n适合项目多、容易搁置的人。小工具，但思路很实用。\n\n来源：  \nhttps://www.continuu.it/\n"
+    },
+    {
+      "id": "c-20260702-acti",
+      "targetTab": "AI 工具",
+      "category": "C｜AI Tool Benchmark Report",
+      "name": "Acti",
+      "title": "Acti｜AI Tool Benchmark Report",
+      "date": "2026-07-02",
+      "website": "https://openacti.com/",
+      "shortDescription": "Acti 是一款 iOS 和 Android 的 Agent 键盘。用户在输入框里写出需求，长按 Acti Bar，即可查地点、找文档、生成会议链接或执行日历操作。",
+      "fullDescription": "Acti 是一款 iOS 和 Android 的 Agent 键盘。用户在输入框里写出需求，长按 Acti Bar，即可查地点、找文档、生成会议链接或执行日历操作。早期测试用户两周内创建了超过 1,000 个自定义 Skills，产品目前免费。",
+      "testTask": "看它能不能在手机聊天时减少来回切换 App。",
+      "prosConsText": "优点：入口自然，不需要反复打开 AI App。 缺点：部分功能需要完整键盘权限，隐私和权限要谨慎。",
+      "recommendationStars": 4.0,
+      "overallScore": 8.0,
+      "ratings": {
+        "speed": 8.0,
+        "accuracy": 8.0,
+        "costEfficiency": 8.0,
+        "easeOfUse": 8.0
+      },
+      "pricing": "免费",
+      "useCases": [
+        "企业效率",
+        "内容生产",
+        "工作流测试"
+      ],
+      "pdfFileName": "Engma_C_AI_Tool_Benchmark_Acti_07022026.pdf",
+      "pdfUrl": "/reports/pdf/Engma_C_AI_Tool_Benchmark_Acti_07022026.pdf",
+      "sourceFileName": "Engma_C_AI_Tool_Benchmark_Acti_07022026.md",
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-02\n\n## 工具名称\n\nActi\n\n官网：  \nhttps://openacti.com/\n\n## 测试任务\n\n看它能不能在手机聊天时减少来回切换 App。\n\n## 结果数据\n\nActi 是一款 iOS 和 Android 的 Agent 键盘。用户在输入框里写出需求，长按 Acti Bar，即可查地点、找文档、生成会议链接或执行日历操作。\n\n早期测试用户两周内创建了超过 1,000 个自定义 Skills。产品目前免费。\n\n本次为公开资料验证，未授权手机键盘权限实测。\n\n## 优缺点\n\n优点：入口自然，不需要反复打开 AI App。  \n缺点：部分功能需要完整键盘权限，隐私和权限要谨慎。\n\n## 推荐指数\n\n推荐指数：4 星\n\n一句话：  \n想法很好，适合高频手机办公，但先小范围试用。\n\n来源：  \nhttps://openacti.com/\n\nhttps://techcrunch.com/2026/06/30/acti-puts-ai-agents-directly-into-your-smartphone-keyboard/\n"
+    },
+    {
+      "id": "c-20260703-tabstack",
+      "targetTab": "AI 工具",
+      "category": "C｜AI Tool Benchmark Report",
+      "name": "Tabstack",
+      "title": "Tabstack｜AI Tool Benchmark Report",
+      "date": "2026-07-03",
+      "website": "https://tabstack.ai/",
+      "shortDescription": "Tabstack 可以接收网页地址和指定字段，用一次 API 请求返回 JSON 数据，也支持网页研究和浏览器自动操作。官网提供 10,000 个免费 credits，不需要信用卡。",
+      "fullDescription": "Tabstack 可以接收网页地址和指定字段，用一次 API 请求返回 JSON 数据，也支持网页研究和浏览器自动操作。官网提供 10,000 个免费 credits，不需要信用卡。",
+      "testTask": "判断它能不能把招聘网站上的职位信息，直接整理成结构化数据。",
+      "prosConsText": "优点：不用自己维护浏览器和爬虫，适合做固定网页监测。 缺点：偏开发者工具，实际准确率和额度消耗还需要真实测试。",
+      "recommendationStars": 4.0,
+      "overallScore": 8.0,
+      "ratings": {
+        "speed": 8.0,
+        "accuracy": 8.0,
+        "costEfficiency": 8.0,
+        "easeOfUse": 8.0
+      },
+      "pricing": "以官网为准",
+      "useCases": [
+        "企业效率",
+        "内容生产",
+        "工作流测试"
+      ],
+      "pdfFileName": "Engma_C_AI_Tool_Benchmark_Tabstack_07032026.pdf",
+      "pdfUrl": "/reports/pdf/Engma_C_AI_Tool_Benchmark_Tabstack_07032026.pdf",
+      "sourceFileName": "Engma_C_AI_Tool_Benchmark_Tabstack_07032026.md",
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-03\n\n## 工具名称\n\nTabstack\n\n官网：  \nhttps://tabstack.ai/\n\n## 测试任务\n\n判断它能不能把招聘网站上的职位信息，直接整理成结构化数据。\n\n## 结果数据\n\nTabstack 可以接收网页地址和指定字段，用一次 API 请求返回 JSON 数据，也支持网页研究和浏览器自动操作。\n\n官网提供 10,000 个免费 credits，不需要信用卡。\n\n本次为官网与技术文档验证，未使用 API Key 进行正式抓取。\n\n## 优缺点\n\n优点：不用自己维护浏览器和爬虫，适合做固定网页监测。  \n缺点：偏开发者工具，实际准确率和额度消耗还需要真实测试。\n\n## 推荐指数\n\n推荐指数：4 星\n\n一句话：  \n适合把日常网页情报采集做成自动化，但要先拿一个招聘网站小范围测试。\n\n来源：  \nhttps://tabstack.ai/\n\nhttps://docs.tabstack.ai/guides/how-to-use-automate-endpoint/\n"
     }
   ]
 }

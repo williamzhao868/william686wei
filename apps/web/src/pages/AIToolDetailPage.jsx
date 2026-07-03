@@ -11,8 +11,7 @@ import BackButton from '@/components/BackButton.jsx';
 import { useLanguage } from '@/context/LanguageContext.jsx';
 import { motion } from 'framer-motion';
 import pb from '@/lib/pocketbaseClient.js';
-import { fallbackArticles } from '@/data/articlesFallbackData.js';
-import { getLocalToolByRecord, markdownToHtml, mergeWithLocalContent } from '@/data/localContentData.js';
+import { getLocalToolArticleByRecord, getLocalToolArticles, markdownToHtml, mergeWithLocalContent } from '@/data/localContentData.js';
 import { toast } from 'sonner';
 import { downloadPdfRecord, hasPdfAsset, resolvePdfFilename } from '@/lib/pdfUtils.js';
 
@@ -35,14 +34,13 @@ export default function AIToolDetailPage() {
         filter: 'type="C"',
         $autoCancel: false
       });
-      const localTool = getLocalToolByRecord(record) || fallbackArticles.find((article) => article.type === 'C' && article.id === toolId) || null;
-      setTool(mergeWithLocalContent(record, localTool));
+      const localTool = getLocalToolArticleByRecord(record) || getLocalToolArticles().find((article) => article.id === toolId) || null;
+      setTool(localTool ? mergeWithLocalContent(record, localTool) : record);
     } catch (err) {
       console.error('Error fetching tool:', err);
-      const localTool = fallbackArticles.find((article) => article.type === 'C' && article.id === toolId) || null;
+      const localTool = getLocalToolArticles().find((article) => article.id === toolId) || null;
       if (localTool) {
-        const localContent = getLocalToolByRecord(localTool) || localTool;
-        setTool(mergeWithLocalContent(localTool, localContent));
+        setTool(localTool);
       } else {
         toast.error(language === 'zh' ? '加载工具详情失败' : 'Failed to load tool details');
       }

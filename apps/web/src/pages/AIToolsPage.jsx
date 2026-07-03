@@ -11,10 +11,10 @@ import { Skeleton } from '@/components/ui/skeleton.jsx';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext.jsx';
 import pb from '@/lib/pocketbaseClient.js';
-import { fallbackArticles } from '@/data/articlesFallbackData.js';
+import { getLocalToolArticleByRecord, getLocalToolArticles, mergeWithLocalContent } from '@/data/localContentData.js';
 
 const getLocalTools = () =>
-  fallbackArticles
+  getLocalToolArticles()
     .filter((article) => article.type === 'C')
     .sort((a, b) => new Date(b.date || b.created || 0) - new Date(a.date || a.created || 0));
 
@@ -38,14 +38,24 @@ function AIToolsPage() {
     setLoading(true);
     setError(null);
     try {
-      // Fetch articles typed as 'C' (AI Tools) along with all their properties (including 'score')
       const records = await pb.collection('articles').getList(1, 50, {
         sort: '-date,-created',
         filter: "type='C'",
         $autoCancel: false
       });
       const liveItems = records.items || [];
-      setReports(liveItems.length > 0 ? liveItems : getLocalTools());
+      const localItems = getLocalTools();
+      const localById = new Map(localItems.map((item) => [item.id, item]));
+      const mergedLiveItems = liveItems.map((item) => {
+        const localItem = getLocalToolArticleByRecord(item) || localById.get(item.id) || null;
+        return localItem ? mergeWithLocalContent(item, localItem) : item;
+      });
+      const merged = [
+        ...mergedLiveItems,
+        ...localItems.filter((item) => !mergedLiveItems.some((liveItem) => liveItem.id === item.id)),
+      ].sort((a, b) => new Date(b.date || b.created || 0) - new Date(a.date || a.created || 0));
+
+      setReports(merged.length > 0 ? merged : localItems);
     } catch (err) {
       console.error('Error fetching tool reports:', err);
       setReports(getLocalTools());
