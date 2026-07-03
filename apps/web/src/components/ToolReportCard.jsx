@@ -19,6 +19,17 @@ function ToolReportCard({ report, index = 0 }) {
   }) : '';
 
   const hasPdf = Boolean(report.pdfFileName && report.pdfFileName.trim() !== '');
+  const directPdfUrl = (() => {
+    if (report.pdfUrl && /^https?:\/\//i.test(report.pdfUrl)) {
+      return report.pdfUrl;
+    }
+
+    if (report.pdfFileName) {
+      return `https://engma-ai-lab-1447133791.cos.ap-shanghai.myqcloud.com/reports/pdf/${report.pdfFileName}`;
+    }
+
+    return '';
+  })();
   
   // Generate a random score on initial mount (3.5, 4, 4.5, or 5)
   const [randomScore] = useState(() => {
@@ -39,27 +50,30 @@ function ToolReportCard({ report, index = 0 }) {
     
     setIsDownloading(true);
     try {
-      // 1. Retrieve the pdfFileName from the tool record and construct URL
-      const fileUrl = pb.files.getURL(report, report.pdfFileName);
+      let fileUrl = directPdfUrl;
       
-      // 2. Trigger download using fetch
-      const response = await fetch(fileUrl);
-      
-      if (!response.ok) {
-        throw new Error(`Failed to fetch PDF file: ${response.statusText}`);
+      try {
+        // 1. Retrieve the pdfFileName from the tool record and construct URL
+        const response = await fetch(pb.files.getURL(report, report.pdfFileName));
+        
+        if (response.ok) {
+          const blob = await response.blob();
+          fileUrl = window.URL.createObjectURL(blob);
+        }
+      } catch (fetchErr) {
+        console.warn('Tool PDF fetch failed, falling back to direct URL.', fetchErr);
       }
-      
-      const blob = await response.blob();
-      const downloadUrl = window.URL.createObjectURL(blob);
-      
+
       const a = document.createElement('a');
-      a.href = downloadUrl;
+      a.href = fileUrl;
       a.download = report.pdfFileName || 'report.pdf';
       document.body.appendChild(a);
       a.click();
       
-      // Clean up
-      window.URL.revokeObjectURL(downloadUrl);
+      // Clean up object URLs when we created one
+      if (fileUrl.startsWith('blob:')) {
+        window.URL.revokeObjectURL(fileUrl);
+      }
       document.body.removeChild(a);
 
       toast.success(language === 'zh' ? '下载完成' : 'Download completed');

@@ -106,6 +106,17 @@ export default function ArticleDetailPage() {
   }) : '';
 
   const hasPdf = Boolean((article.pdfFileName && article.pdfFileName.trim() !== '') || (article.pdfUrl && article.pdfUrl.trim() !== ''));
+  const directPdfUrl = (() => {
+    if (article.pdfUrl && /^https?:\/\//i.test(article.pdfUrl)) {
+      return article.pdfUrl;
+    }
+
+    if (article.pdfFileName) {
+      return `https://engma-ai-lab-1447133791.cos.ap-shanghai.myqcloud.com/reports/pdf/${article.pdfFileName}`;
+    }
+
+    return '';
+  })();
 
   const handleDownload = async (e) => {
     e.preventDefault();
@@ -118,18 +129,26 @@ export default function ArticleDetailPage() {
     
     setIsDownloading(true);
     try {
-      const response = await apiServerClient.fetch(`/pdf-download/${article.id}`);
-      if (!response.ok) {
-        throw new Error('Failed to fetch PDF URL from server');
-      }
-      
-      const data = await response.json();
-      if (!data.pdfUrl) {
-        throw new Error('PDF URL is missing in the response');
+      const a = document.createElement('a');
+      let downloadUrl = directPdfUrl;
+
+      try {
+        const response = await apiServerClient.fetch(`/pdf-download/${article.id}`);
+        if (response.ok) {
+          const data = await response.json();
+          if (data.pdfUrl && /^https?:\/\//i.test(data.pdfUrl)) {
+            downloadUrl = data.pdfUrl;
+          }
+        }
+      } catch (serverError) {
+        console.warn('PDF download server unavailable, falling back to direct URL.', serverError);
       }
 
-      const a = document.createElement('a');
-      a.href = data.pdfUrl;
+      if (!downloadUrl) {
+        throw new Error('PDF URL is missing');
+      }
+
+      a.href = downloadUrl;
       a.download = article.pdfFileName || 'article.pdf';
       a.target = '_blank';
       a.rel = 'noopener noreferrer';
