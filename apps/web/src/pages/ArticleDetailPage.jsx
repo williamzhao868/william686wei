@@ -246,7 +246,7 @@ export default function ArticleDetailPage() {
                   prose-a:text-primary hover:prose-a:text-primary/80 transition-colors"
                 dangerouslySetInnerHTML={{ __html: markdownToHtml(article.contentMarkdown || '') }}
               />
-            ) : article.content && article.content.trim() !== 'Full report available in PDF.' && !article.content.includes('暂无完整内容提供') ? (
+            ) : article.content && article.content.trim() !== 'Full report available in PDF.' ? (
               <div 
                 className="prose prose-lg dark:prose-invert max-w-none 
                   prose-headings:font-bold prose-headings:tracking-tight
@@ -254,13 +254,7 @@ export default function ArticleDetailPage() {
                   prose-img:rounded-2xl prose-img:border prose-img:border-border prose-img:shadow-sm"
                 dangerouslySetInnerHTML={{ __html: article.content }}
               />
-            ) : (
-              <div className="prose prose-lg dark:prose-invert max-w-none">
-                <p className="text-lg leading-relaxed text-muted-foreground italic">
-                  {language === 'zh' ? '暂无完整内容提供。' : 'No full content available.'}
-                </p>
-              </div>
-            )}
+            ) : null}
 
             <div className="mt-12 p-8 bg-card border border-border rounded-2xl shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6">
               <div className="flex items-center gap-4">

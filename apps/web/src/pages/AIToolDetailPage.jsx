@@ -207,18 +207,14 @@ export default function AIToolDetailPage() {
                       prose-a:text-primary hover:prose-a:text-primary/80 transition-colors"
                     dangerouslySetInnerHTML={{ __html: markdownToHtml(tool.contentMarkdown || '') }}
                   />
-                ) : tool.content && tool.content.trim() !== 'Full benchmark report available in PDF.' && !tool.content.includes('暂无完整评测内容') ? (
+                ) : tool.content && tool.content.trim() !== 'Full benchmark report available in PDF.' ? (
                   <div 
                     className="prose prose-lg dark:prose-invert max-w-none 
                       prose-headings:font-bold prose-headings:tracking-tight
                       prose-a:text-primary hover:prose-a:text-primary/80 transition-colors"
                     dangerouslySetInnerHTML={{ __html: tool.content }}
                   />
-                ) : (
-                  <p className="text-lg leading-relaxed text-muted-foreground italic">
-                    {language === 'zh' ? '暂无完整评测内容。' : 'No detailed review content available.'}
-                  </p>
-                )}
+                ) : null}
               </div>
 
               {hasPdf ? (
