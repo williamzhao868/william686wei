@@ -25,7 +25,9 @@ function CompetitorDynamicsPage() {
   const itemsPerPage = 8;
 
   const localize = (item) => (language === 'zh' && item.zh ? { ...item, ...item.zh } : item);
-  const localizedData = chinaCompetitorNewsData.map(localize);
+  const localizedData = chinaCompetitorNewsData
+    .map(localize)
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
 
   const keywordsData = useMemo(() => {
     const kwMap = {};

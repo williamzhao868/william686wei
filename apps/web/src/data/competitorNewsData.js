@@ -11,6 +11,144 @@ const getImg = (i) => images[i % images.length];
 
 export const competitorNewsData = [
   {
+    id: 'comp-20260630-alibaba-ai-growth',
+    title: 'Alibaba Consolidates AI Operations and Accelerates Infrastructure Expansion',
+    summary: 'Alibaba brought its core AI teams into the Alibaba Token Hub while advancing Qwen models and expanding its global cloud footprint.',
+    fullContent: 'Alibaba outlined major first-half milestones in its AI strategy. The company established the Alibaba Token Hub business group to bring Tongyi Laboratory, Model-as-a-Service, Qwen, Wukong and AI application teams under one organization. It also highlighted advances including Qwen3.7-Max and the HappyHorse 1.1 video model, while expanding Alibaba Cloud to 105 availability zones across 32 regions. The move shows Alibaba combining models, chips, infrastructure and applications into a more tightly coordinated full-stack AI business.',
+    date: '2026-06-30',
+    category: ['Platform Strategy'],
+    tags: ['Cloud Computing', 'Foundation Models'],
+    keywords: ['Qwen', 'Infrastructure', 'Enterprise AI'],
+    impactLevel: 'High',
+    companies: [{ en: 'Alibaba', zh: '阿里巴巴', type: 'domestic' }],
+    imageUrl: getImg(0),
+    websiteUrl: 'https://www.alibabacloud.com/press-room/alibaba-positions-for-accelerated-ai-growth-in-sec',
+    zh: {
+      title: '阿里整合 AI 业务并加速扩张基础设施',
+      summary: '阿里将核心 AI 团队整合进 Alibaba Token Hub，同时推进千问模型并扩大全球云基础设施。',
+      fullContent: '阿里公布了 2026 年上半年 AI 战略的重要进展。公司成立 Alibaba Token Hub 业务集团，将通义实验室、MaaS、千问、悟空及 AI 应用团队纳入统一组织；同时推进 Qwen3.7-Max、HappyHorse 1.1 视频模型等产品，并将阿里云扩展至 32 个地域的 105 个可用区。这表明阿里正在把模型、芯片、云基础设施和应用整合为协同更紧密的全栈 AI 业务。',
+      category: ['平台战略'],
+      tags: ['云计算', '基础模型'],
+      keywords: ['千问', '基础设施', '企业 AI'],
+      impactLevel: 'High'
+    }
+  },
+  {
+    id: 'comp-20260629-alibaba-flink-agentic-streaming',
+    title: 'Alibaba Cloud Pushes Apache Flink Toward Agentic Streaming',
+    summary: 'Alibaba Cloud is evolving Flink from cloud-native streaming toward real-time multimodal data infrastructure for always-on AI agents.',
+    fullContent: 'At Flink Forward Asia 2026, Alibaba Cloud shared plans for Apache Flink 3.0 and an agentic streaming architecture. The company introduced multimodal stream processing for text, images, audio, video and sensor data, alongside an agentic lake built around Apache Paimon and Apache Fluss. The strategy gives AI agents live data, persistent memory and fault-tolerant processing, strengthening Alibaba Cloud\'s position in the data layer beneath enterprise agents.',
+    date: '2026-06-29',
+    category: ['Technology Update'],
+    tags: ['Open Source', 'Data Infrastructure'],
+    keywords: ['Flink', 'Agents', 'Multimodal'],
+    impactLevel: 'High',
+    companies: [{ en: 'Alibaba Cloud', zh: '阿里云', type: 'domestic' }],
+    imageUrl: getImg(1),
+    websiteUrl: 'https://www.alibabacloud.com/blog/alibaba-cloud-pushes-open-source-apache-flink-toward-agentic-streaming-for-ai_603313',
+    zh: {
+      title: '阿里云推动 Apache Flink 迈向 Agentic Streaming',
+      summary: '阿里云正推动 Flink 从云原生流处理升级为面向常驻智能体的实时多模态数据基础设施。',
+      fullContent: '在 Flink Forward Asia 2026 上，阿里云公布了 Apache Flink 3.0 与 Agentic Streaming 架构方向，推出覆盖文本、图像、音频、视频及传感器数据的多模态流处理能力，并围绕 Apache Paimon 和 Apache Fluss 构建 Agentic Lake。该体系为 AI 智能体提供实时数据、持久记忆和容错处理能力，强化了阿里云在企业智能体底层数据设施上的竞争位置。',
+      category: ['技术更新'],
+      tags: ['开源生态', '数据基础设施'],
+      keywords: ['Flink', '智能体', '多模态'],
+      impactLevel: 'High'
+    }
+  },
+  {
+    id: 'comp-20260625-qwen-agentworld',
+    title: 'Alibaba Releases Qwen-AgentWorld for General Agent Training',
+    summary: 'Qwen-AgentWorld simulates seven interaction environments and gives developers a new foundation for training and evaluating general agents.',
+    fullContent: 'Alibaba released Qwen-AgentWorld, a language world model trained to simulate seven agent environments: MCP, search, terminal, software engineering, web, operating systems and Android. The accompanying AgentWorldBench provides paired observations from real environments. By training on more than ten million interaction trajectories, the project aims to make agent reinforcement learning more scalable, controllable and transferable across tasks.',
+    date: '2026-06-25',
+    category: ['Open Source Release'],
+    tags: ['Foundation Models', 'Agents'],
+    keywords: ['World Model', 'Agent Training', 'Benchmark'],
+    impactLevel: 'High',
+    companies: [{ en: 'Alibaba', zh: '阿里巴巴', type: 'domestic' }],
+    imageUrl: getImg(2),
+    websiteUrl: 'https://www.alibabacloud.com/blog/qwen-agentworld-language-world-models-for-general-agents_603304',
+    zh: {
+      title: '阿里发布面向通用智能体训练的 Qwen-AgentWorld',
+      summary: 'Qwen-AgentWorld 可模拟七类交互环境，为通用智能体训练与评测提供新的基础模型。',
+      fullContent: '阿里发布 Qwen-AgentWorld，这是一款能够模拟 MCP、搜索、终端、软件工程、网页、操作系统和 Android 七类智能体环境的语言世界模型，并同步推出基于真实环境配对观测的 AgentWorldBench。项目使用超过一千万条环境交互轨迹训练，目标是让智能体强化学习更具扩展性、可控性，并能跨任务迁移。',
+      category: ['开源发布'],
+      tags: ['基础模型', '智能体'],
+      keywords: ['世界模型', '智能体训练', '评测'],
+      impactLevel: 'High'
+    }
+  },
+  {
+    id: 'comp-20260605-tencent-agent-suite',
+    title: 'Tencent Cloud Launches a Full Productivity Agent Suite',
+    summary: 'Tencent bundled WorkBuddy Enterprise, CodeBuddy, ADP 4.0 and agent infrastructure into an end-to-end productivity portfolio.',
+    fullContent: 'Tencent Cloud launched a broad Productivity Agent Suite for individuals and enterprises. The portfolio includes WorkBuddy Enterprise, CodeBuddy, office collaboration agents and the ADP 4.0 AgentOps platform. Tencent says CodeBuddy now supports more than 95% of its engineers and cuts coding time by 40%. Its upgraded agent runtime also targets production deployment with elastic scheduling, memory services and secure access across more than 20 industries.',
+    date: '2026-06-05',
+    category: ['Product Launch'],
+    tags: ['Enterprise AI', 'Productivity'],
+    keywords: ['WorkBuddy', 'CodeBuddy', 'AgentOps'],
+    impactLevel: 'High',
+    companies: [{ en: 'Tencent', zh: '腾讯', type: 'domestic' }],
+    imageUrl: getImg(3),
+    websiteUrl: 'https://www.tencent.com/en-us/articles/2202350.html',
+    zh: {
+      title: '腾讯云发布全栈生产力智能体套件',
+      summary: '腾讯将 WorkBuddy Enterprise、CodeBuddy、ADP 4.0 与智能体基础设施整合为端到端生产力产品组合。',
+      fullContent: '腾讯云面向个人与企业推出生产力智能体套件，覆盖 WorkBuddy Enterprise、CodeBuddy、办公协作智能体和 ADP 4.0 AgentOps 平台。腾讯表示，CodeBuddy 已服务超过 95% 的内部工程师，并使整体编码时间减少 40%。升级后的 Agent Runtime 还提供弹性调度、记忆服务和安全访问能力，面向超过 20 个行业推进智能体生产部署。',
+      category: ['产品发布'],
+      tags: ['企业 AI', '生产力'],
+      keywords: ['WorkBuddy', 'CodeBuddy', 'AgentOps'],
+      impactLevel: 'High'
+    }
+  },
+  {
+    id: 'comp-20260501-tencent-hy3-preview',
+    title: 'Tencent Hy3 Preview Targets Complex Real-World Agent Workflows',
+    summary: 'Tencent upgraded Hunyuan reasoning, coding and tool use while integrating the model across its consumer and workplace products.',
+    fullContent: 'Tencent introduced Hy3 Preview as its most capable Hunyuan model so far, with improvements in reasoning, long-context understanding, coding and tool use. The model has been integrated into Yuanbao, ima, CodeBuddy, WorkBuddy, QQ and Tencent Docs. Tencent reports that Hy3 can reliably support agent workflows up to 495 steps and has improved response speed and task completion time in production products.',
+    date: '2026-05-01',
+    category: ['Model Release'],
+    tags: ['Foundation Models', 'Agents'],
+    keywords: ['Hunyuan', 'Tool Use', 'Long Context'],
+    impactLevel: 'High',
+    companies: [{ en: 'Tencent', zh: '腾讯', type: 'domestic' }],
+    imageUrl: getImg(4),
+    websiteUrl: 'https://www.tencent.com/en-us/articles/2202320.html',
+    zh: {
+      title: '腾讯混元 Hy3 Preview 瞄准复杂真实智能体工作流',
+      summary: '腾讯升级混元的推理、编码和工具调用能力，并将模型接入消费与办公产品矩阵。',
+      fullContent: '腾讯推出 Hy3 Preview，将其定位为目前能力最强的混元模型，在推理、长上下文理解、编码和工具调用方面均有提升。模型已接入元宝、ima、CodeBuddy、WorkBuddy、QQ 和腾讯文档。腾讯称 Hy3 能稳定支撑最长 495 步的复杂智能体工作流，并在实际产品中提升首响应速度、缩短任务完成时间。',
+      category: ['模型发布'],
+      tags: ['基础模型', '智能体'],
+      keywords: ['混元', '工具调用', '长上下文'],
+      impactLevel: 'High'
+    }
+  },
+  {
+    id: 'comp-20260518-baidu-ai-cloud-growth',
+    title: 'Baidu AI Cloud Infrastructure Revenue Jumps 79% in Q1',
+    summary: 'Baidu reported rapid growth in AI cloud infrastructure while expanding its portfolio of productivity and self-evolving agents.',
+    fullContent: 'Baidu reported RMB 8.8 billion in first-quarter AI Cloud Infrastructure revenue, up 79% year over year, while GPU Cloud revenue increased 184%. The company also expanded its application layer with DuMate, Miaoda 3.0, Famou Agent 2.0 and GenFlow 4.0. Together, the results show Baidu shifting more of its business mix toward AI infrastructure and agent applications as legacy online marketing declines.',
+    date: '2026-05-18',
+    category: ['Financial Results'],
+    tags: ['Cloud Computing', 'Enterprise AI'],
+    keywords: ['AI Cloud', 'GPU', 'Agents'],
+    impactLevel: 'High',
+    companies: [{ en: 'Baidu', zh: '百度', type: 'domestic' }],
+    imageUrl: getImg(5),
+    websiteUrl: 'https://ir.baidu.com/node/14561/pdf',
+    zh: {
+      title: '百度一季度 AI 云基础设施收入同比增长 79%',
+      summary: '百度 AI 云基础设施保持高速增长，同时扩展生产力智能体与自进化智能体产品组合。',
+      fullContent: '百度公布一季度 AI 云基础设施收入 88 亿元，同比增长 79%，其中 GPU 云收入同比增长 184%。公司同时在应用层推出或升级 DuMate、秒哒 3.0、伐谋 Agent 2.0 和 GenFlow 4.0。相关数据表明，在传统在线营销业务承压的同时，百度正加速把业务重心转向 AI 基础设施和智能体应用。',
+      category: ['财务业绩'],
+      tags: ['云计算', '企业 AI'],
+      keywords: ['AI 云', 'GPU', '智能体'],
+      impactLevel: 'High'
+    }
+  },
+  {
     id: 'comp-20260630-anthropic-sonnet-5',
     title: 'Anthropic Pushes Claude Sonnet 5 Toward Agentic Workflows',
     summary: 'Anthropic says Sonnet 5 can plan, use tools, and run autonomously, making the model a stronger competitor for coding and professional work.',
@@ -378,4 +516,4 @@ export const chinaCompetitorNewsData = competitorNewsData.filter(
     Array.isArray(item.companies) &&
     item.companies.length > 0 &&
     item.companies.every((company) => company.type !== 'global')
-);
+).sort((a, b) => new Date(b.date) - new Date(a.date));
