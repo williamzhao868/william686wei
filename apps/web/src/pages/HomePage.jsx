@@ -15,6 +15,11 @@ import { fallbackArticles } from '@/data/articlesFallbackData.js';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext.jsx';
 import pb from '@/lib/pocketbaseClient.js';
+import {
+  getLocalToolArticleByRecord,
+  getLocalToolArticles,
+  mergeWithLocalContent,
+} from '@/data/localContentData.js';
 
 const getLocalInsights = () =>
   fallbackArticles
@@ -23,8 +28,7 @@ const getLocalInsights = () =>
     .slice(0, 4);
 
 const getLocalTools = () =>
-  fallbackArticles
-    .filter((article) => article.type === 'C')
+  getLocalToolArticles()
     .sort((a, b) => new Date(b.date || b.created || 0) - new Date(a.date || a.created || 0))
     .slice(0, 4);
 
@@ -67,13 +71,29 @@ function HomePage() {
     setToolsLoading(true);
     setToolsError(false);
     try {
-      const res = await pb.collection('articles').getList(1, 4, { 
-        filter: 'type="C"', 
-        sort: '-created', 
-        $autoCancel: false 
+      const res = await pb.collection('articles').getList(1, 50, {
+        filter: 'type="C"',
+        sort: '-date,-created',
+        $autoCancel: false
       });
       const liveItems = res.items || [];
-      setTools(liveItems.length > 0 ? liveItems : getLocalTools());
+      const localItems = getLocalToolArticles();
+      const mergedLiveItems = liveItems.map((item) => {
+        const localItem = getLocalToolArticleByRecord(item);
+        return localItem ? mergeWithLocalContent(item, localItem) : item;
+      });
+      const localIds = new Set(mergedLiveItems.map((item) => item.id));
+      const localTitles = new Set(mergedLiveItems.map((item) => String(item.title || '').trim()));
+      const mergedItems = [
+        ...mergedLiveItems,
+        ...localItems.filter((item) =>
+          !localIds.has(item.id) && !localTitles.has(String(item.title || '').trim())
+        ),
+      ]
+        .sort((a, b) => new Date(b.date || b.created || 0) - new Date(a.date || a.created || 0))
+        .slice(0, 4);
+
+      setTools(mergedItems.length > 0 ? mergedItems : getLocalTools());
     } catch (err) {
       console.error('Failed to fetch tools:', err);
       setTools(getLocalTools());
