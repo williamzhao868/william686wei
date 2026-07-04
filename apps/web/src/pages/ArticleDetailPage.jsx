@@ -12,12 +12,19 @@ import { useLanguage } from '@/context/LanguageContext.jsx';
 import { motion } from 'framer-motion';
 import pb from '@/lib/pocketbaseClient.js';
 import { fallbackArticles } from '@/data/articlesFallbackData.js';
-import { getLocalInsightArticleByRecord, markdownToHtml, mergeWithLocalContent } from '@/data/localContentData.js';
+import {
+  getLocalInsightArticleByRecord,
+  getLocalInsightById,
+  markdownToHtml,
+  mergeWithLocalContent,
+} from '@/data/localContentData.js';
 import { downloadPdfRecord, hasPdfAsset, resolvePdfFilename } from '@/lib/pdfUtils.js';
 import { toast } from 'sonner';
 
 const getLocalArticleById = (id) =>
-  fallbackArticles.find((article) => article.type === 'A' && article.id === id) || null;
+  fallbackArticles.find((article) => article.type === 'A' && article.id === id) ||
+  getLocalInsightById(id) ||
+  null;
 
 function getInsightPdfRecord(article) {
   const date = String(article?.date || article?.created || '').slice(0, 10);
