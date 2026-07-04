@@ -11,6 +11,121 @@ const getImg = (i) => images[i % images.length];
 
 export const competitorNewsData = [
   {
+    id: 'comp-20260624-beisen-mavens',
+    title: 'Beisen Transforms into an AI Application Company and Launches Mavens',
+    summary: 'Beisen introduced Mavens, an AI HR expert platform built on SenGPT, SenClaw and its People Science capabilities.',
+    fullContent: 'Beisen announced that it is moving beyond the traditional HR software category to become an AI application company. Its new Mavens platform is positioned as a team of digital HR experts that can work alongside human HR professionals, rather than as a lightweight AI add-on. Mavens combines Beisen\'s SenGPT vertical model, SenClaw agent framework and People Science expertise. The company says its AI product contracts exceeded RMB 87 million in 2025, growing tenfold, with more than 1,400 AI customers.',
+    date: '2026-06-24',
+    category: ['Product Launch', 'Platform Strategy'],
+    tags: ['HR Technology', 'Enterprise AI'],
+    keywords: ['Mavens', 'AI HR', 'Digital Employee'],
+    impactLevel: 'High',
+    companies: [{ en: 'Beisen', zh: '北森', type: 'hrtech' }],
+    imageUrl: getImg(0),
+    websiteUrl: 'https://www.beisen.com/news/670.html',
+    zh: {
+      title: '北森全面转型 AI 应用公司并发布 Mavens',
+      summary: '北森发布基于 SenGPT、SenClaw 与 People Science 的一站式 AI HR 专家平台 Mavens。',
+      fullContent: '北森宣布从传统 HR 软件厂商全面升级为 HR 领域的 AI 应用公司，并推出一站式 AI HR 专家平台 Mavens。该平台并非附着在旧系统上的轻量 AI 插件，而是由数字 HR 专家与真人 HR 协作完成任务。Mavens 融合北森自研 SenGPT 垂直模型、SenClaw Agent 体系与 People Science 能力。北森披露，2025 年 AI 产品合同额突破 8700 万元，同比增长 10 倍，AI 客户超过 1400 家。',
+      category: ['产品发布', '平台战略'],
+      tags: ['人力资源科技', '企业 AI'],
+      keywords: ['Mavens', 'AI HR', '数字员工'],
+      impactLevel: 'High'
+    }
+  },
+  {
+    id: 'comp-20260514-moka-ai-eva',
+    title: 'Moka Upgrades Its HR SaaS Business into Moka AI',
+    summary: 'Moka launched Recruiting Eva, HR Eva, BP Eva and Moka AI Studio as an AI-native HR product portfolio.',
+    fullContent: 'At Moka Ascend 2026, Moka announced its largest product strategy upgrade since the company was founded. The company upgraded its HR SaaS brand to Moka AI and introduced three AI coworkers: Recruiting Eva, HR Eva and BP Eva. It also launched Moka AI Studio as the underlying engine for enterprise customization and data accumulation. The product shift moves Moka from workflow software toward proactive AI agents spanning recruitment, personnel operations and talent decision support.',
+    date: '2026-05-14',
+    category: ['Product Launch'],
+    tags: ['HR Technology', 'Recruitment Tech'],
+    keywords: ['Moka AI', 'Eva', 'AI Coworker'],
+    impactLevel: 'High',
+    companies: [{ en: 'Moka', zh: 'Moka', type: 'hrtech' }],
+    imageUrl: getImg(1),
+    websiteUrl: 'https://www.mokahr.com/blog/34557.html',
+    zh: {
+      title: 'Moka 将 HR SaaS 全面升级为 Moka AI',
+      summary: 'Moka 推出招聘 Eva、人事 Eva、BP Eva 与 Moka AI 工坊，形成 AI 原生 HR 产品矩阵。',
+      fullContent: '在 Moka Ascend 2026 产品发布会上，Moka 完成创立以来规模最大的产品战略升级，将 HR SaaS 主品牌全面升级为 Moka AI，并推出招聘 Eva、人事 Eva、BP Eva 三位 AI 同事，以及用于企业 AI 定制和数据沉淀的 Moka AI 工坊。此次转型推动 Moka 从流程型软件走向覆盖招聘、人事运营和人才决策的主动式智能体产品。',
+      category: ['产品发布'],
+      tags: ['人力资源科技', '招聘科技'],
+      keywords: ['Moka AI', 'Eva', 'AI 同事'],
+      impactLevel: 'High'
+    }
+  },
+  {
+    id: 'comp-20260407-beisen-workforce-scheduling',
+    title: 'Beisen Expands Intelligent Workforce Scheduling for Complex Industries',
+    summary: 'Beisen is applying forecasting and optimization algorithms to workforce scheduling in retail, manufacturing and automotive companies.',
+    fullContent: 'Beisen described a broader rollout of intelligent workforce scheduling across retail, equipment manufacturing and new-energy automotive scenarios. Its system combines historical demand data with simulated annealing, neural networks and multiple constraints such as employee skills, availability, preferences and labor regulations. The product reflects a shift in domestic HR technology from administrative workflow automation toward operational forecasting and optimized labor allocation.',
+    date: '2026-04-07',
+    category: ['Technology Update'],
+    tags: ['Workforce Management', 'HR Technology'],
+    keywords: ['Scheduling', 'Forecasting', 'Optimization'],
+    impactLevel: 'Medium',
+    companies: [{ en: 'Beisen', zh: '北森', type: 'hrtech' }],
+    imageUrl: getImg(2),
+    websiteUrl: 'https://www.beisen.com/res/2342.html',
+    zh: {
+      title: '北森加速智能排班在复杂行业落地',
+      summary: '北森将需求预测与优化算法应用于零售、制造和汽车等行业的劳动力调度。',
+      fullContent: '北森正在连锁零售、装备制造和汽车新能源等场景扩大智能排班应用。其系统结合历史业务需求数据、退火算法、神经网络，并综合员工技能、可用时间、排班偏好和劳动法规等多重约束，自动生成更优的人力配置方案。这反映出国内 HR 科技正从行政流程自动化走向经营预测和劳动力资源优化。',
+      category: ['技术更新'],
+      tags: ['劳动力管理', '人力资源科技'],
+      keywords: ['智能排班', '需求预测', '优化'],
+      impactLevel: 'Medium'
+    }
+  },
+  {
+    id: 'comp-20260313-kingdee-ai-hr-refresh',
+    title: 'Kingdee Refreshes Its AI HR Platform for Large Enterprises',
+    summary: 'Kingdee expanded its AI HR offering across organization, workforce and talent management for medium and large enterprises.',
+    fullContent: 'Kingdee unveiled a refreshed AI HR portfolio at its AI and Human Resources forum in Shenzhen. The company is positioning AI HR as a full-scenario platform across organization management, workforce operations and talent management, with a stronger focus on skills-based organizations and dynamic talent allocation. The release deepens Kingdee\'s competition with specialist HCM SaaS vendors by combining HR applications with its broader enterprise management and data platform.',
+    date: '2026-03-13',
+    category: ['Product Launch'],
+    tags: ['HR Technology', 'Enterprise Software'],
+    keywords: ['AI HR', 'Skills', 'Talent Management'],
+    impactLevel: 'High',
+    companies: [{ en: 'Kingdee', zh: '金蝶', type: 'hrtech' }],
+    imageUrl: getImg(3),
+    websiteUrl: 'https://www.kingdee.com/resources/articles/1493979358712008641',
+    zh: {
+      title: '金蝶焕新 AI HR 平台，覆盖大中型企业全场景',
+      summary: '金蝶升级覆盖组织、人力与人才管理的 AI HR 产品，面向大中型企业强化全场景能力。',
+      fullContent: '金蝶在深圳举办的 AI+人力资源论坛上发布焕新的 AI HR 产品组合，覆盖组织管理、人力运营和人才管理，重点支持技能型组织与动态人才配置。此次发布让金蝶凭借更广泛的企业管理与数据平台能力，进一步参与国内 HCM SaaS 竞争，并与垂直型 HR 科技厂商形成差异化竞争。',
+      category: ['产品发布'],
+      tags: ['人力资源科技', '企业软件'],
+      keywords: ['AI HR', '技能管理', '人才管理'],
+      impactLevel: 'High'
+    }
+  },
+  {
+    id: 'comp-20260210-irenshi-global-hr',
+    title: 'iHR Builds an AI-Powered Cross-Border Employment Compliance Solution',
+    summary: 'Litan iHR combines HR SaaS, aPaaS and AI to support Chinese companies managing overseas workforces and local compliance.',
+    fullContent: 'Litan iHR presented its Global HR solution for Chinese companies expanding overseas. The platform combines HR SaaS, aPaaS and AI capabilities for employee self-service, compliance alerts, data insights and policy adaptation across Belt and Road markets. Through open APIs and integration with offline HR services, iHR aims to provide a unified system for cross-border logistics, manufacturing and retail companies facing fragmented local employment rules.',
+    date: '2026-02-10',
+    category: ['Product Update', 'Expansion'],
+    tags: ['HR Technology', 'Global Workforce'],
+    keywords: ['Compliance', 'Global HR', 'aPaaS'],
+    impactLevel: 'Medium',
+    companies: [{ en: 'Litan iHR', zh: '利唐 i人事', type: 'hrtech' }],
+    imageUrl: getImg(4),
+    websiteUrl: 'https://irenshi.cn/article/34301.html',
+    zh: {
+      title: '利唐 i人事推出 AI 驱动的跨境用工合规方案',
+      summary: '利唐 i人事融合 HR SaaS、aPaaS 与 AI，帮助中国企业管理海外员工及本地用工合规。',
+      fullContent: '利唐 i人事面向中国企业出海推出 Global HR 方案，以 HR SaaS、aPaaS 与 AI 为核心，覆盖员工自助、合规预警、数据洞察及“一带一路”相关市场的政策适配。平台通过开放 API 与线下人力资源服务衔接，为跨境物流、制造和新零售企业应对分散的本地劳动规则提供统一系统。',
+      category: ['产品更新', '业务扩张'],
+      tags: ['人力资源科技', '全球用工'],
+      keywords: ['用工合规', 'Global HR', 'aPaaS'],
+      impactLevel: 'Medium'
+    }
+  },
+  {
     id: 'comp-20260630-alibaba-ai-growth',
     title: 'Alibaba Consolidates AI Operations and Accelerates Infrastructure Expansion',
     summary: 'Alibaba brought its core AI teams into the Alibaba Token Hub while advancing Qwen models and expanding its global cloud footprint.',
