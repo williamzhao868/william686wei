@@ -49,6 +49,10 @@ const timelineEvents = [
   }
 ];
 
+const sortedTimelineEvents = [...timelineEvents].sort(
+  (a, b) => new Date(b.date) - new Date(a.date)
+);
+
 function LabNewsPage() {
   const { t, language } = useLanguage();
   const navigate = useNavigate();
@@ -165,39 +169,6 @@ function LabNewsPage() {
             </section>
           )}
 
-          {/* Team Members Section */}
-          <section className="py-20 bg-muted/30 border-t border-border/50">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="mb-12 flex items-center gap-3"
-              >
-                <Users className="w-8 h-8 text-primary" />
-                <h2 className="text-3xl font-bold tracking-tight">{t('news.teamMembers')}</h2>
-              </motion.div>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                {teamMembers.map((member, index) => (
-                  <motion.div
-                    key={member.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                  >
-                    <TeamMemberCard 
-                      name={member.name}
-                      avatarUrl={member.avatarUrl}
-                    />
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </section>
-
           {/* Lab Dynamics Timeline Section */}
           <section className="py-20 border-t border-border/50">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
@@ -211,8 +182,41 @@ function LabNewsPage() {
                 <Activity className="w-8 h-8 text-primary" />
                 <h2 className="text-3xl font-bold tracking-tight">{t('news.timelineTitle')}</h2>
               </motion.div>
-              
-              <LabTimeline events={timelineEvents} />
+
+              <LabTimeline events={sortedTimelineEvents} />
+            </div>
+          </section>
+
+          {/* Team Members Section */}
+          <section className="py-20 bg-muted/30 border-t border-border/50">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="mb-12 flex items-center gap-3"
+              >
+                <Users className="w-8 h-8 text-primary" />
+                <h2 className="text-3xl font-bold tracking-tight">{t('news.teamMembers')}</h2>
+              </motion.div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                {teamMembers.map((member, index) => (
+                  <motion.div
+                    key={member.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                  >
+                    <TeamMemberCard
+                      name={member.name}
+                      avatarUrl={member.avatarUrl}
+                    />
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </section>
 
