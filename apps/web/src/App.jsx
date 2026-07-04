@@ -70,6 +70,7 @@ function App() {
             <Route path="/ai-tools" element={<AIToolsPage />} />
             <Route path="/ai-tools/:toolId" element={<AIToolDetailPage />} />
             <Route path="/competitors" element={<CompetitorDynamicsPage />} />
+            <Route path="/competitor-dynamics" element={<CompetitorDynamicsPage />} />
             <Route path="/competitor/:id" element={<CompetitorDetailPage />} />
             <Route path="/lab-news" element={<LabNewsPage />} />
             <Route path="/lab-news/:id" element={<LabNewsDetailPage />} />

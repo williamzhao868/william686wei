@@ -548,11 +548,11 @@ GPT-5.6 Sol
 
 https://openai.com/index/previewing-gpt-5-6-sol/
 `,
-    "pdfUrl": "",
+    "pdfUrl": "/reports/pdf/Engma_C_AI_Tool_Benchmark_GPT_5_6_Sol_06262026.pdf",
     "toolName": "GPT-5.6 Sol",
     "websiteUrl": "https://openai.com/index/previewing-gpt-5-6-sol/",
     "score": 0,
-    "pdfFileName": ""
+    "pdfFileName": "Engma_C_AI_Tool_Benchmark_GPT_5_6_Sol_06262026.pdf"
   },
   {
     "author": "",
@@ -611,11 +611,11 @@ Claude Sonnet 5
 
 https://www.anthropic.com/news/claude-sonnet-5
 `,
-    "pdfUrl": "",
+    "pdfUrl": "/reports/pdf/Engma_C_AI_Tool_Benchmark_Claude_Sonnet_5_06302026.pdf",
     "toolName": "Claude Sonnet 5",
     "websiteUrl": "https://www.anthropic.com/news/claude-sonnet-5",
     "score": 0,
-    "pdfFileName": ""
+    "pdfFileName": "Engma_C_AI_Tool_Benchmark_Claude_Sonnet_5_06302026.pdf"
   },
   {
     "author": "",
@@ -675,11 +675,11 @@ Claude Science
 
 https://www.anthropic.com/news/claude-science-ai-workbench
 `,
-    "pdfUrl": "",
+    "pdfUrl": "/reports/pdf/Engma_C_AI_Tool_Benchmark_Claude_Science_06302026.pdf",
     "toolName": "Claude Science",
     "websiteUrl": "https://www.anthropic.com/news/claude-science-ai-workbench",
     "score": 0,
-    "pdfFileName": ""
+    "pdfFileName": "Engma_C_AI_Tool_Benchmark_Claude_Science_06302026.pdf"
   },
   {
     "author": "",
@@ -738,11 +738,11 @@ NVIDIA BioNeMo Agent Toolkit
 
 https://blogs.nvidia.com/blog/claude-science-bionemo-agent-toolkit/
 `,
-    "pdfUrl": "",
+    "pdfUrl": "/reports/pdf/Engma_C_AI_Tool_Benchmark_NVIDIA_BioNeMo_Agent_Toolkit_06302026.pdf",
     "toolName": "NVIDIA BioNeMo Agent Toolkit",
     "websiteUrl": "https://blogs.nvidia.com/blog/claude-science-bionemo-agent-toolkit/",
     "score": 0,
-    "pdfFileName": ""
+    "pdfFileName": "Engma_C_AI_Tool_Benchmark_NVIDIA_BioNeMo_Agent_Toolkit_06302026.pdf"
   },
   {
     "author": "",

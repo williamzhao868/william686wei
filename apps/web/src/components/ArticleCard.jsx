@@ -84,6 +84,7 @@ function ArticleCard({ article, index = 0 }) {
   const hasPdf = hasPdfAsset(article);
   const pdfHref = resolvePdfUrl(article);
   const pdfFilename = resolvePdfFilename(article, 'insight.pdf');
+  const isDailyInsight = /^AI Insight Daily[｜|]/.test(article.title || '');
 
   return (
     <motion.article
@@ -122,7 +123,11 @@ function ArticleCard({ article, index = 0 }) {
           </div>
 
           <Link to={`/article/${article.id}`} className="block mb-3 group/link">
-            <h3 className="text-xl font-semibold leading-snug group-hover/link:text-primary transition-colors duration-200 line-clamp-2">
+            <h3 className={`${
+              isDailyInsight
+                ? 'text-[clamp(0.8rem,1.1vw,1rem)] tracking-tight whitespace-nowrap'
+                : 'text-xl line-clamp-2'
+            } font-semibold leading-snug group-hover/link:text-primary transition-colors duration-200`}>
               {article.title}
             </h3>
           </Link>

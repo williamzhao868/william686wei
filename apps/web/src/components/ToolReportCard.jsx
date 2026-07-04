@@ -21,11 +21,14 @@ function ToolReportCard({ report, index = 0 }) {
   const hasPdf = hasPdfAsset(report);
   const pdfFilename = resolvePdfFilename(report, 'report.pdf');
   
-  // Generate a random score on initial mount (3.5, 4, 4.5, or 5)
-  const [randomScore] = useState(() => {
-    const scores = [3.5, 4, 4.5, 5];
-    return scores[Math.floor(Math.random() * scores.length)];
-  });
+  const rawScore = Number(
+    report.recommendationStars ||
+    report.recommendationScore ||
+    report.score ||
+    report.overallScore ||
+    4
+  );
+  const displayScore = Math.max(0, Math.min(5, rawScore > 5 ? rawScore / 2 : rawScore));
 
   const handleDownloadPDF = async (e) => {
     e.preventDefault();
@@ -80,7 +83,7 @@ function ToolReportCard({ report, index = 0 }) {
               Score
             </span>
             <div className="flex items-baseline text-xl font-extrabold text-primary" style={{ fontVariantNumeric: 'tabular-nums' }}>
-              {randomScore}
+              {Number.isInteger(displayScore) ? displayScore : displayScore.toFixed(1)}
               <span className="text-xs font-semibold text-muted-foreground ml-0.5">/5</span>
             </div>
           </div>

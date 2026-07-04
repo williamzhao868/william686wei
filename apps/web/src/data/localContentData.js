@@ -1,4 +1,5 @@
 import contentData from './Hostinger_A_C_Content_Data.json';
+import { fallbackArticles } from './articlesFallbackData.js';
 
 function escapeHtml(value) {
   return String(value)
@@ -80,11 +81,22 @@ export function markdownToHtml(markdown = '') {
 }
 
 const insightMap = new Map((contentData.insights || []).map((item) => [item.id, item]));
-const toolMap = new Map((contentData.tools || []).map((item) => [item.id, item]));
+const allToolItems = [...(contentData.tools || [])];
+const knownToolNames = new Set(allToolItems.map((item) => String(item.toolName || item.name || '').trim().toLowerCase()));
+
+for (const item of fallbackArticles.filter((article) => article.type === 'C')) {
+  const toolName = String(item.toolName || item.name || '').trim().toLowerCase();
+  if (toolName && !knownToolNames.has(toolName)) {
+    allToolItems.push(item);
+    knownToolNames.add(toolName);
+  }
+}
+
+const toolMap = new Map(allToolItems.map((item) => [item.id, item]));
 const insightTitleMap = new Map((contentData.insights || []).map((item) => [String(item.title || '').trim(), item]));
-const toolTitleMap = new Map((contentData.tools || []).map((item) => [String(item.title || '').trim(), item]));
+const toolTitleMap = new Map(allToolItems.map((item) => [String(item.title || '').trim(), item]));
 const insightPdfMap = new Map((contentData.insights || []).map((item) => [String(item.pdfFileName || '').trim(), item]));
-const toolPdfMap = new Map((contentData.tools || []).map((item) => [String(item.pdfFileName || '').trim(), item]));
+const toolPdfMap = new Map(allToolItems.map((item) => [String(item.pdfFileName || '').trim(), item]));
 const insightDateMap = new Map((contentData.insights || []).map((item) => [String(item.date || '').slice(0, 10), item]));
 
 function normalizeInsightContent(insight) {
@@ -180,7 +192,7 @@ export function getLocalToolArticleByRecord(record) {
 }
 
 export function getLocalToolArticles() {
-  return (contentData.tools || []).map((tool) => normalizeToolContent(tool)).filter(Boolean);
+  return allToolItems.map((tool) => normalizeToolContent(tool)).filter(Boolean);
 }
 
 export function mergeWithLocalContent(liveRecord, localRecord) {

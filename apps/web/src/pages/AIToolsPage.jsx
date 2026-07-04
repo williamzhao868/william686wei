@@ -50,9 +50,15 @@ function AIToolsPage() {
         const localItem = getLocalToolArticleByRecord(item) || localById.get(item.id) || null;
         return localItem ? mergeWithLocalContent(item, localItem) : item;
       });
+      const mergedToolNames = new Set(
+        mergedLiveItems.map((item) => String(item.toolName || item.title || '').trim().toLowerCase())
+      );
       const merged = [
         ...mergedLiveItems,
-        ...localItems.filter((item) => !mergedLiveItems.some((liveItem) => liveItem.id === item.id)),
+        ...localItems.filter((item) => {
+          const toolName = String(item.toolName || item.title || '').trim().toLowerCase();
+          return !mergedLiveItems.some((liveItem) => liveItem.id === item.id) && !mergedToolNames.has(toolName);
+        }),
       ].sort((a, b) => new Date(b.date || b.created || 0) - new Date(a.date || a.created || 0));
 
       setReports(merged.length > 0 ? merged : localItems);
