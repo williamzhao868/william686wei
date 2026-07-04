@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop.jsx';
 import HomePage from './pages/HomePage.jsx';
@@ -20,37 +20,8 @@ import ProtectedRoute from './components/ProtectedRoute.jsx';
 import { LanguageProvider } from './context/LanguageContext.jsx';
 import { AuthProvider } from './context/AuthContext.jsx';
 import { Toaster } from 'sonner';
-import apiServerClient from '@/lib/apiServerClient.js';
 
 function App() {
-  useEffect(() => {
-    const fixPdfFilenames = async () => {
-      const isFixed = localStorage.getItem('pdfFileNameFixed');
-      if (isFixed === 'true') {
-        console.log('PDF filenames already fixed, skipping API call');
-        return;
-      }
-
-      try {
-        const response = await apiServerClient.fetch('/fix-pdf-filenames', {
-          method: 'POST'
-        });
-        const data = await response.json();
-        
-        if (response.ok) {
-          localStorage.setItem('pdfFileNameFixed', 'true');
-          console.log('PDF filenames fixed successfully:', data);
-        } else {
-          console.error('Failed to fix PDF filenames:', data);
-        }
-      } catch (error) {
-        console.error('Error calling fix-pdf-filenames endpoint:', error);
-      }
-    };
-
-    fixPdfFilenames();
-  }, []);
-
   return (
     <LanguageProvider>
       <AuthProvider>
