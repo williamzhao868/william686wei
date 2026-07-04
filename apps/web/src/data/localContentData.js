@@ -85,6 +85,7 @@ const insightTitleMap = new Map((contentData.insights || []).map((item) => [Stri
 const toolTitleMap = new Map((contentData.tools || []).map((item) => [String(item.title || '').trim(), item]));
 const insightPdfMap = new Map((contentData.insights || []).map((item) => [String(item.pdfFileName || '').trim(), item]));
 const toolPdfMap = new Map((contentData.tools || []).map((item) => [String(item.pdfFileName || '').trim(), item]));
+const insightDateMap = new Map((contentData.insights || []).map((item) => [String(item.date || '').slice(0, 10), item]));
 
 function normalizeInsightContent(insight) {
   if (!insight) return null;
@@ -146,6 +147,11 @@ function pickFirstMatch(record, maps, fields = []) {
 export function getLocalInsightByRecord(record) {
   return (
     pickFirstMatch(record, [insightMap], ['id']) ||
+    pickFirstMatch(
+      { reportDate: String(record?.date || record?.created || '').slice(0, 10) },
+      [insightDateMap],
+      ['reportDate']
+    ) ||
     pickFirstMatch(record, [insightTitleMap], ['title']) ||
     pickFirstMatch(record, [insightPdfMap], ['pdfFileName']) ||
     null

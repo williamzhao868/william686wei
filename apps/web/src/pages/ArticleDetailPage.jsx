@@ -12,7 +12,7 @@ import { useLanguage } from '@/context/LanguageContext.jsx';
 import { motion } from 'framer-motion';
 import pb from '@/lib/pocketbaseClient.js';
 import { fallbackArticles } from '@/data/articlesFallbackData.js';
-import { getLocalInsightByRecord, markdownToHtml, mergeWithLocalContent } from '@/data/localContentData.js';
+import { getLocalInsightArticleByRecord, markdownToHtml, mergeWithLocalContent } from '@/data/localContentData.js';
 import { downloadPdfRecord, hasPdfAsset, resolvePdfFilename } from '@/lib/pdfUtils.js';
 import { toast } from 'sonner';
 
@@ -40,7 +40,7 @@ export default function ArticleDetailPage() {
         filter: 'type="A"',
         $autoCancel: false
       });
-      const localContent = getLocalInsightByRecord(record) || getLocalArticleById(id);
+      const localContent = getLocalInsightArticleByRecord(record) || getLocalArticleById(id);
       const mergedRecord = mergeWithLocalContent(record, localContent);
       setArticle(mergedRecord);
 
@@ -56,7 +56,7 @@ export default function ArticleDetailPage() {
       console.error('Error fetching article:', err);
       const localArticle = getLocalArticleById(id);
       if (localArticle) {
-        const localContent = getLocalInsightByRecord(localArticle) || localArticle;
+        const localContent = getLocalInsightArticleByRecord(localArticle) || localArticle;
         setArticle(mergeWithLocalContent(localArticle, localContent));
         const related = fallbackArticles
           .filter((item) => item.type === 'A' && item.id !== id && item.category === localArticle.category)
