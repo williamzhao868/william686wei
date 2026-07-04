@@ -19,6 +19,21 @@ import { toast } from 'sonner';
 const getLocalArticleById = (id) =>
   fallbackArticles.find((article) => article.type === 'A' && article.id === id) || null;
 
+function getInsightPdfRecord(article) {
+  const date = String(article?.date || article?.created || '').slice(0, 10);
+  const match = date.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!match) return article;
+
+  const [, year, month, day] = match;
+  const pdfFileName = `Engma_A_AI_Insight_Daily_${month}${day}${year}.pdf`;
+
+  return {
+    ...article,
+    pdfFileName,
+    pdfUrl: `/reports/pdf/${pdfFileName}`,
+  };
+}
+
 export default function ArticleDetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -120,8 +135,9 @@ export default function ArticleDetailPage() {
     year: 'numeric', month: 'long', day: 'numeric' 
   }) : '';
 
-  const hasPdf = hasPdfAsset(article);
-  const pdfFilename = resolvePdfFilename(article, 'article.pdf');
+  const pdfRecord = getInsightPdfRecord(article);
+  const hasPdf = hasPdfAsset(pdfRecord);
+  const pdfFilename = resolvePdfFilename(pdfRecord, 'article.pdf');
 
   const handleDownload = async (e) => {
     e.preventDefault();
@@ -134,7 +150,7 @@ export default function ArticleDetailPage() {
     
     setIsDownloading(true);
     try {
-      await downloadPdfRecord(article, { fallbackName: pdfFilename });
+      await downloadPdfRecord(pdfRecord, { fallbackName: pdfFilename });
 
       toast.success(language === 'zh' ? '开始下载PDF...' : 'PDF download initiated...');
     } catch (err) {
@@ -232,7 +248,7 @@ export default function ArticleDetailPage() {
                   </h4>
                   <p className="text-sm text-muted-foreground">
                     {hasPdf 
-                      ? (article.pdfFileName || (language === 'zh' ? '文档准备就绪' : 'Document ready'))
+                      ? (pdfFilename || (language === 'zh' ? '文档准备就绪' : 'Document ready'))
                       : (language === 'zh' ? '暂无可用 PDF' : 'PDF not available')}
                   </p>
                 </div>
