@@ -3,7 +3,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { Helmet } from 'react-helmet';
 import { Search, ChevronLeft, ChevronRight, FileX } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { competitorNewsData } from '@/data/competitorNewsData.js';
+import { chinaCompetitorNewsData } from '@/data/competitorNewsData.js';
 import ArticleCard from '@/components/ArticleCard.jsx';
 import KeywordCloud from '@/components/KeywordCloud.jsx';
 import ActiveFilters from '@/components/ActiveFilters.jsx';
@@ -25,12 +25,12 @@ function CompetitorDynamicsPage() {
   const itemsPerPage = 8;
 
   const localize = (item) => (language === 'zh' && item.zh ? { ...item, ...item.zh } : item);
-  const localizedData = competitorNewsData.map(localize);
+  const localizedData = chinaCompetitorNewsData.map(localize);
 
   const keywordsData = useMemo(() => {
     const kwMap = {};
 
-    competitorNewsData.forEach(item => {
+    chinaCompetitorNewsData.forEach(item => {
       const itemKeywordsEn = item.keywords || [];
       const itemKeywordsZh = item.zh?.keywords || [];
       
@@ -88,7 +88,7 @@ function CompetitorDynamicsPage() {
     const matchesTags = activeTags.length === 0 || 
       activeTags.some(t => combinedTags.includes(t));
 
-    const originalArticle = competitorNewsData.find(a => a.id === article.id);
+    const originalArticle = chinaCompetitorNewsData.find(a => a.id === article.id);
     const matchesCompanies = activeCompanies.length === 0 ||
       (originalArticle?.companies && activeCompanies.some(c => originalArticle.companies.some(ac => ac.en === c)));
 

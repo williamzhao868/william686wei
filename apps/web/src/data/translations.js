@@ -52,8 +52,8 @@ export const translations = {
     },
     competitors: {
       title: 'Competitor Dynamics',
-      desc: 'Track and analyze the latest moves, product launches, and strategic shifts of key industry players.',
-      badge: 'Market Intelligence',
+      desc: 'Track product launches, investment activity, and strategic shifts across leading Chinese AI and HR technology companies.',
+      badge: 'China Market Intelligence',
       noResults: 'No news found',
       noResultsDesc: 'Try adjusting your filters or search terms to find what you are looking for.'
     },
@@ -133,8 +133,8 @@ export const translations = {
     },
     competitors: {
       title: '竞争对手动态',
-      desc: '跟踪和分析关键行业参与者的最新动向、产品发布和战略转变。',
-      badge: '市场情报',
+      desc: '聚焦中国 AI 与人力资源科技公司的产品发布、投融资动态和战略变化。',
+      badge: '中国市场情报',
       noResults: '未找到新闻',
       noResultsDesc: '尝试调整您的筛选条件或搜索词以找到您要查找的内容。'
     },

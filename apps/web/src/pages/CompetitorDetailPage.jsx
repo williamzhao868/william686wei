@@ -7,7 +7,7 @@ import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import BackButton from '@/components/BackButton.jsx';
 import { Button } from '@/components/ui/button.jsx';
-import { competitorNewsData } from '@/data/competitorNewsData.js';
+import { chinaCompetitorNewsData } from '@/data/competitorNewsData.js';
 import { useLanguage } from '@/context/LanguageContext.jsx';
 
 const impactColors = {
@@ -25,8 +25,8 @@ function CompetitorDetailPage() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [id]);
 
-  const currentIndex = competitorNewsData.findIndex(item => item.id === id);
-  const rawItem = competitorNewsData[currentIndex];
+  const currentIndex = chinaCompetitorNewsData.findIndex(item => item.id === id);
+  const rawItem = chinaCompetitorNewsData[currentIndex];
 
   if (!rawItem) {
     return (
@@ -49,10 +49,10 @@ function CompetitorDetailPage() {
   const item = language === 'zh' && rawItem.zh ? { ...rawItem, ...rawItem.zh } : rawItem;
   
   const hasPrev = currentIndex > 0;
-  const hasNext = currentIndex < competitorNewsData.length - 1;
+  const hasNext = currentIndex < chinaCompetitorNewsData.length - 1;
   
-  const prevItem = hasPrev ? competitorNewsData[currentIndex - 1] : null;
-  const nextItem = hasNext ? competitorNewsData[currentIndex + 1] : null;
+  const prevItem = hasPrev ? chinaCompetitorNewsData[currentIndex - 1] : null;
+  const nextItem = hasNext ? chinaCompetitorNewsData[currentIndex + 1] : null;
 
   const formattedDate = new Date(item.date).toLocaleDateString(
     language === 'zh' ? 'zh-CN' : 'en-US', 

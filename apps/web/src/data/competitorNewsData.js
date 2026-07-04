@@ -372,3 +372,10 @@ export const competitorNewsData = [
     }
   }
 ];
+
+export const chinaCompetitorNewsData = competitorNewsData.filter(
+  (item) =>
+    Array.isArray(item.companies) &&
+    item.companies.length > 0 &&
+    item.companies.every((company) => company.type !== 'global')
+);
