@@ -1,17 +1,20 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Helmet } from 'react-helmet';
 import { Search, ChevronLeft, ChevronRight, FileX, RefreshCw } from 'lucide-react';
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import ToolReportCard from '@/components/ToolReportCard.jsx';
 import ActiveFilters from '@/components/ActiveFilters.jsx';
+import KeywordCloud from '@/components/KeywordCloud.jsx';
+import CompanyFilter from '@/components/CompanyFilter.jsx';
 import { Button } from '@/components/ui/button.jsx';
 import { Skeleton } from '@/components/ui/skeleton.jsx';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext.jsx';
 import pb from '@/lib/pocketbaseClient.js';
 import { getLocalToolArticleByRecord, getLocalToolArticles, mergeWithLocalContent } from '@/data/localContentData.js';
+import { buildKeywordCloudData, enrichContentForFilters } from '@/data/contentFilterUtils.js';
 
 const getLocalTools = () =>
   getLocalToolArticles()
@@ -26,6 +29,8 @@ function AIToolsPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [activeCategories, setActiveCategories] = useState([]);
+  const [activeKeywords, setActiveKeywords] = useState([]);
+  const [activeCompanies, setActiveCompanies] = useState([]);
   const { language } = useLanguage();
   const itemsPerPage = 9;
 
@@ -76,7 +81,24 @@ function AIToolsPage() {
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [searchQuery, activeCategories]);
+  }, [searchQuery, activeCategories, activeKeywords, activeCompanies]);
+
+  const filterableReports = useMemo(
+    () => reports.map(enrichContentForFilters),
+    [reports]
+  );
+  const keywordsData = useMemo(
+    () => buildKeywordCloudData(filterableReports),
+    [filterableReports]
+  );
+
+  const toggleKeyword = (keyword) => {
+    setActiveKeywords((prev) => prev.includes(keyword) ? prev.filter((item) => item !== keyword) : [...prev, keyword]);
+  };
+
+  const toggleCompany = (company) => {
+    setActiveCompanies((prev) => prev.includes(company) ? prev.filter((item) => item !== company) : [...prev, company]);
+  };
 
   const toggleCategory = (cat) => {
     setActiveCategories(prev => 
@@ -86,12 +108,14 @@ function AIToolsPage() {
 
   const handleClearFilters = () => {
     setActiveCategories([]);
+    setActiveKeywords([]);
+    setActiveCompanies([]);
     setSearchQuery('');
   };
 
   const categories = [...new Set(reports.map(a => a.category).filter(Boolean))];
 
-  const filteredReports = reports.filter(report => {
+  const filteredReports = filterableReports.filter(report => {
     const searchLower = searchQuery.toLowerCase();
     const matchesSearch = 
       (report.toolName && report.toolName.toLowerCase().includes(searchLower)) ||
@@ -99,8 +123,10 @@ function AIToolsPage() {
       (report.summary && report.summary.toLowerCase().includes(searchLower));
     
     const matchesCategory = activeCategories.length === 0 || activeCategories.includes(report.category);
+    const matchesKeyword = activeKeywords.length === 0 || activeKeywords.some((keyword) => report.filterKeywords.includes(keyword));
+    const matchesCompany = activeCompanies.length === 0 || activeCompanies.some((company) => report.companies.some((item) => item.en === company));
 
-    return matchesSearch && matchesCategory;
+    return matchesSearch && matchesCategory && matchesKeyword && matchesCompany;
   });
 
   const totalPages = Math.ceil(filteredReports.length / itemsPerPage);
@@ -137,15 +163,19 @@ function AIToolsPage() {
                 </p>
               </motion.div>
 
-              <div className="max-w-2xl relative">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                <input
-                  type="text"
-                  placeholder={language === 'zh' ? '搜索 AI 工具报告...' : 'Search tool reports...'}
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full h-14 pl-12 pr-4 rounded-2xl border border-border bg-background text-base focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-foreground placeholder:text-muted-foreground shadow-sm"
-                />
+              <div className="filter-section-container">
+                <div className="relative w-full mb-4">
+                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                  <input
+                    type="text"
+                    placeholder={language === 'zh' ? '搜索 AI 工具报告...' : 'Search tool reports...'}
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full h-12 pl-11 pr-4 rounded-xl border border-border bg-background text-base focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-foreground placeholder:text-muted-foreground shadow-sm"
+                  />
+                </div>
+                {!loading && <KeywordCloud keywords={keywordsData} activeKeywords={activeKeywords} onKeywordClick={toggleKeyword} />}
+                {!loading && <CompanyFilter selectedCompanies={activeCompanies} onCompanyToggle={toggleCompany} allArticles={filterableReports} />}
               </div>
               
               {categories.length > 0 && !loading && (
@@ -179,7 +209,11 @@ function AIToolsPage() {
               
               <ActiveFilters 
                 activeTags={activeCategories}
+                activeKeywords={activeKeywords}
+                activeCompanies={activeCompanies}
                 onRemoveTag={toggleCategory}
+                onRemoveKeyword={toggleKeyword}
+                onRemoveCompany={toggleCompany}
                 onClearAll={handleClearFilters}
                 resultCount={filteredReports.length}
               />
@@ -250,7 +284,7 @@ function AIToolsPage() {
                           ? '尝试调整搜索词或分类来找到您要找的内容。' 
                           : 'Try adjusting your search terms or categories to find what you are looking for.'}
                       </p>
-                      {searchQuery || activeCategories.length > 0 ? (
+                      {searchQuery || activeCategories.length > 0 || activeKeywords.length > 0 || activeCompanies.length > 0 ? (
                         <Button 
                           variant="default" 
                           className="rounded-full px-8"

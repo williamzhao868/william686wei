@@ -17,6 +17,28 @@ const getCompanyDisplayName = (companyEn, language) => {
   return language === 'zh' ? (companyMap[companyEn] || companyEn) : companyEn;
 };
 
+const getKeywordDisplayName = (keyword, language) => {
+  if (language !== 'zh') return keyword;
+  const keywordMap = {
+    agents: '智能体',
+    'enterprise-ai': '企业 AI',
+    'foundation-models': '基础模型',
+    coding: 'AI 编程',
+    productivity: '生产力',
+    automation: '自动化',
+    multimodal: '多模态',
+    robotics: '机器人',
+    hrtech: '人力资源科技',
+    cloud: '云与算力',
+    'open-source': '开源生态',
+    security: 'AI 安全',
+    research: 'AI 研究',
+    investment: '投融资',
+    data: '数据与 RAG',
+  };
+  return keywordMap[keyword] || keyword;
+};
+
 function ActiveFilters({ activeKeywords = [], activeTags = [], activeCompanies = [], onRemoveKeyword, onRemoveTag, onRemoveCompany, onClearAll, resultCount }) {
   const { t, language } = useLanguage();
   
@@ -70,7 +92,7 @@ function ActiveFilters({ activeKeywords = [], activeTags = [], activeCompanies =
             >
               <Badge variant="secondary" className="pl-1.5 pr-1 py-0.5 text-xs flex items-center gap-1 bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors">
                 <Hash className="h-3 w-3 opacity-70" />
-                {keyword}
+                {getKeywordDisplayName(keyword, language)}
                 <button 
                   onClick={() => onRemoveKeyword(keyword)}
                   className="p-0.5 rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition-colors ml-0.5"

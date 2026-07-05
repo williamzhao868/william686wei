@@ -1,11 +1,13 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Helmet } from 'react-helmet';
 import { Search, ChevronLeft, ChevronRight, FileX, RefreshCw } from 'lucide-react';
 import ArticleCard from '@/components/ArticleCard.jsx';
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import ActiveFilters from '@/components/ActiveFilters.jsx';
+import KeywordCloud from '@/components/KeywordCloud.jsx';
+import CompanyFilter from '@/components/CompanyFilter.jsx';
 import { Button } from '@/components/ui/button.jsx';
 import { Skeleton } from '@/components/ui/skeleton.jsx';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -17,6 +19,7 @@ import {
   getLocalInsightArticles,
   mergeWithLocalContent,
 } from '@/data/localContentData.js';
+import { buildKeywordCloudData, enrichContentForFilters } from '@/data/contentFilterUtils.js';
 
 const getLocalInsights = () => {
   const byTitle = new Map();
@@ -44,6 +47,8 @@ function InsightsPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [activeCategories, setActiveCategories] = useState([]);
+  const [activeKeywords, setActiveKeywords] = useState([]);
+  const [activeCompanies, setActiveCompanies] = useState([]);
   const { language } = useLanguage();
   const itemsPerPage = 12;
 
@@ -90,7 +95,24 @@ function InsightsPage() {
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [searchQuery, activeCategories]);
+  }, [searchQuery, activeCategories, activeKeywords, activeCompanies]);
+
+  const filterableArticles = useMemo(
+    () => articles.map(enrichContentForFilters),
+    [articles]
+  );
+  const keywordsData = useMemo(
+    () => buildKeywordCloudData(filterableArticles),
+    [filterableArticles]
+  );
+
+  const toggleKeyword = (keyword) => {
+    setActiveKeywords((prev) => prev.includes(keyword) ? prev.filter((item) => item !== keyword) : [...prev, keyword]);
+  };
+
+  const toggleCompany = (company) => {
+    setActiveCompanies((prev) => prev.includes(company) ? prev.filter((item) => item !== company) : [...prev, company]);
+  };
 
   const toggleCategory = (cat) => {
     setActiveCategories(prev => 
@@ -100,12 +122,14 @@ function InsightsPage() {
 
   const handleClearFilters = () => {
     setActiveCategories([]);
+    setActiveKeywords([]);
+    setActiveCompanies([]);
     setSearchQuery('');
   };
 
   const categories = [...new Set(articles.map(a => a.category).filter(Boolean))];
 
-  const filteredArticles = articles.filter(article => {
+  const filteredArticles = filterableArticles.filter(article => {
     const searchLower = searchQuery.toLowerCase();
     const matchesSearch = 
       (article.title && article.title.toLowerCase().includes(searchLower)) ||
@@ -113,8 +137,10 @@ function InsightsPage() {
       (article.summary && article.summary.toLowerCase().includes(searchLower));
     
     const matchesCategory = activeCategories.length === 0 || activeCategories.includes(article.category);
+    const matchesKeyword = activeKeywords.length === 0 || activeKeywords.some((keyword) => article.filterKeywords.includes(keyword));
+    const matchesCompany = activeCompanies.length === 0 || activeCompanies.some((company) => article.companies.some((item) => item.en === company));
 
-    return matchesSearch && matchesCategory;
+    return matchesSearch && matchesCategory && matchesKeyword && matchesCompany;
   });
 
   const totalPages = Math.ceil(filteredArticles.length / itemsPerPage);
@@ -151,15 +177,19 @@ function InsightsPage() {
                 </p>
               </motion.div>
 
-              <div className="max-w-2xl relative">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                <input
-                  type="text"
-                  placeholder={language === 'zh' ? '搜索文章...' : 'Search articles...'}
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full h-14 pl-12 pr-4 rounded-2xl border border-border bg-background text-base focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-foreground placeholder:text-muted-foreground shadow-sm"
-                />
+              <div className="filter-section-container">
+                <div className="relative w-full mb-4">
+                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                  <input
+                    type="text"
+                    placeholder={language === 'zh' ? '搜索文章...' : 'Search articles...'}
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full h-12 pl-11 pr-4 rounded-xl border border-border bg-background text-base focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-foreground placeholder:text-muted-foreground shadow-sm"
+                  />
+                </div>
+                {!loading && <KeywordCloud keywords={keywordsData} activeKeywords={activeKeywords} onKeywordClick={toggleKeyword} />}
+                {!loading && <CompanyFilter selectedCompanies={activeCompanies} onCompanyToggle={toggleCompany} allArticles={filterableArticles} />}
               </div>
               
               {categories.length > 0 && !loading && (
@@ -193,7 +223,11 @@ function InsightsPage() {
               
               <ActiveFilters 
                 activeTags={activeCategories}
+                activeKeywords={activeKeywords}
+                activeCompanies={activeCompanies}
                 onRemoveTag={toggleCategory}
+                onRemoveKeyword={toggleKeyword}
+                onRemoveCompany={toggleCompany}
                 onClearAll={handleClearFilters}
                 resultCount={filteredArticles.length}
               />
@@ -259,7 +293,7 @@ function InsightsPage() {
                           ? '尝试调整搜索词或分类来找到您要找的内容。' 
                           : 'Try adjusting your search terms or categories to find what you are looking for.'}
                       </p>
-                      {searchQuery || activeCategories.length > 0 ? (
+                      {searchQuery || activeCategories.length > 0 || activeKeywords.length > 0 || activeCompanies.length > 0 ? (
                         <Button 
                           variant="default" 
                           className="rounded-full px-8"

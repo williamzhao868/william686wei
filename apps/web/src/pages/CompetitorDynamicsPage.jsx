@@ -39,7 +39,7 @@ function CompetitorDynamicsPage() {
       itemKeywordsEn.forEach((kw, i) => {
         const zhKw = itemKeywordsZh[i] || kw;
         if (!kwMap[kw]) {
-          kwMap[kw] = { id: `kw-${kw}`, text: kw, zhText: zhKw, count: 0 };
+          kwMap[kw] = { id: kw, text: kw, zhText: zhKw, count: 0 };
         }
         kwMap[kw].count += 1;
       });

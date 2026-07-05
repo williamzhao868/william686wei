@@ -5,7 +5,7 @@ import { Hash, ChevronDown, ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button.jsx';
 import { keywordsData, articlesData } from '@/data/articlesData.js';
 
-function KeywordCloud({ activeKeywords = [], onKeywordClick }) {
+function KeywordCloud({ keywords, activeKeywords = [], onKeywordClick }) {
   const { language } = useLanguage();
   const [isExpanded, setIsExpanded] = useState(false);
   
@@ -34,7 +34,19 @@ function KeywordCloud({ activeKeywords = [], onKeywordClick }) {
     })).sort((a, b) => b.count - a.count);
   }, []);
   
-  const kwCounts = keywordStats.map(k => k.count);
+  const displayKeywords = useMemo(() => {
+    if (!keywords?.length) return keywordStats;
+    return keywords.map((keyword) => ({
+      ...keyword,
+      en: keyword.en || keyword.text || keyword.id,
+      zh: keyword.zh || keyword.zhText || keyword.text || keyword.id,
+      count: keyword.count || 1,
+    }));
+  }, [keywords, keywordStats]);
+
+  if (displayKeywords.length === 0) return null;
+
+  const kwCounts = displayKeywords.map(k => k.count);
   const minKwCount = Math.min(...kwCounts);
   const maxKwCount = Math.max(...kwCounts);
   
@@ -55,8 +67,8 @@ function KeywordCloud({ activeKeywords = [], onKeywordClick }) {
   };
 
   const INITIAL_COUNT = 12;
-  const hasMore = keywordStats.length > INITIAL_COUNT;
-  const visibleKeywords = isExpanded ? keywordStats : keywordStats.slice(0, INITIAL_COUNT);
+  const hasMore = displayKeywords.length > INITIAL_COUNT;
+  const visibleKeywords = isExpanded ? displayKeywords : displayKeywords.slice(0, INITIAL_COUNT);
 
   const handleKeywordClick = (keyword) => {
     if (onKeywordClick) {
