@@ -219,7 +219,7 @@ function AIToolsPage() {
               />
 
               {loading ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                   {[...Array(6)].map((_, i) => (
                     <div key={i} className="flex flex-col bg-card rounded-2xl p-6 border border-border h-full">
                       <div className="flex items-center gap-4 mb-4">
@@ -255,7 +255,7 @@ function AIToolsPage() {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
-                      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
                     >
                       {paginatedReports.map((report, index) => (
                         <ToolReportCard 
