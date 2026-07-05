@@ -112,7 +112,7 @@ function ArticleCard({ article, index = 0 }) {
         
         <div className="flex flex-col flex-1 p-6">
           <Link to={`/article/${article.id}`} className="block mb-3 group/link">
-            <h3 className="text-xl font-semibold leading-snug whitespace-nowrap overflow-hidden text-ellipsis group-hover/link:text-primary transition-colors duration-200">
+            <h3 className="text-[clamp(0.92rem,1.05vw,1.12rem)] font-semibold leading-tight whitespace-nowrap overflow-hidden text-ellipsis tracking-[-0.01em] group-hover/link:text-primary transition-colors duration-200">
               {article.title}
             </h3>
           </Link>
