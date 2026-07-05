@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Calendar, FileText, ExternalLink, Star, Loader2 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge.jsx';
 import { Button } from '@/components/ui/button.jsx';
@@ -8,8 +9,11 @@ import { useLanguage } from '@/context/LanguageContext.jsx';
 import { toast } from 'sonner';
 import { downloadPdfRecord, hasPdfAsset, resolvePdfFilename } from '@/lib/pdfUtils.js';
 
+const stripCategoryPrefix = (value = '') => String(value).replace(/^[A-Z]\s*[｜|]\s*/, '').trim();
+
 function ToolReportCard({ report, index = 0 }) {
   const { language } = useLanguage();
+  const navigate = useNavigate();
   const [isDownloading, setIsDownloading] = useState(false);
   
   const formattedDate = report.date ? new Date(report.date).toLocaleDateString(language === 'zh' ? 'zh-CN' : 'en-US', {
@@ -61,7 +65,19 @@ function ToolReportCard({ report, index = 0 }) {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="group h-full"
     >
-      <div className="h-full flex flex-col bg-card rounded-2xl p-6 border border-border transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+      <div
+        className="h-full flex flex-col bg-card rounded-2xl p-6 border border-border transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer"
+        onClick={() => navigate(`/ai-tools/${report.id}`)}
+        role="button"
+        tabIndex={0}
+        aria-label={`View details for ${report.toolName || report.title || 'AI tool report'}`}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            navigate(`/ai-tools/${report.id}`);
+          }
+        }}
+      >
         <div className="flex items-start gap-4 mb-4">
           <div className="h-12 w-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0 border border-primary/20">
             <FileText className="h-6 w-6" />
@@ -72,7 +88,7 @@ function ToolReportCard({ report, index = 0 }) {
             </h3>
             {report.category && (
               <Badge variant="outline" className="text-xs border-primary/20 text-primary bg-primary/5">
-                {report.category}
+                {stripCategoryPrefix(report.category)}
               </Badge>
             )}
           </div>

@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext.jsx';
 import { hasPdfAsset, resolvePdfFilename, resolvePdfUrl } from '@/lib/pdfUtils.js';
 
+const stripCategoryPrefix = (value = '') => String(value).replace(/^[A-Z]\s*[｜|]\s*/, '').trim();
+
 function InsightCard({ insight, index = 0 }) {
   const { language } = useLanguage();
   
@@ -29,7 +31,7 @@ function InsightCard({ insight, index = 0 }) {
       <div className="flex flex-wrap items-center gap-3 mb-4">
         {insight.category && (
           <Badge variant="secondary" className="text-xs font-medium bg-secondary text-secondary-foreground">
-            {insight.category}
+            {stripCategoryPrefix(insight.category)}
           </Badge>
         )}
         {formattedDate && (
