@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import { ArrowLeft, Calendar, ExternalLink, Share2, AlertCircle, Bot, FileText, Download } from 'lucide-react';
+import { ArrowLeft, Calendar, ExternalLink, Share2, AlertCircle, Bot, FileText, Download, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button.jsx';
 import { Skeleton } from '@/components/ui/skeleton.jsx';
 import Header from '@/components/Header.jsx';
@@ -104,6 +104,14 @@ export default function AIToolDetailPage() {
 
   const hasPdf = hasPdfAsset(tool);
   const pdfFilename = resolvePdfFilename(tool, 'tool-report.pdf');
+  const rawScore = Number(
+    tool.recommendationStars ||
+    tool.recommendationScore ||
+    tool.score ||
+    tool.overallScore ||
+    4
+  );
+  const displayScore = Math.max(0, Math.min(5, rawScore > 5 ? rawScore / 2 : rawScore));
 
   const handleDownload = async (e) => {
     e.preventDefault();
@@ -171,17 +179,16 @@ export default function AIToolDetailPage() {
                     </div>
                   </div>
 
-                  {tool.score && (
-                    <div className="flex flex-col items-center justify-center bg-card border border-border rounded-2xl p-4 min-w-[120px] shadow-sm">
-                      <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1">
-                        {language === 'zh' ? '推荐评分' : 'Score'}
-                      </span>
-                      <div className="flex items-center text-3xl font-bold text-primary">
-                        {tool.score}
-                        <span className="text-lg text-muted-foreground ml-1">/10</span>
-                      </div>
+                  <div className="flex flex-col items-center justify-center bg-card border border-border rounded-2xl p-4 min-w-[120px] shadow-sm">
+                    <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1 flex items-center gap-1">
+                      <Star className="w-4 h-4 fill-primary/20 text-primary" />
+                      {language === 'zh' ? '推荐评分' : 'Score'}
+                    </span>
+                    <div className="flex items-center text-3xl font-bold text-primary">
+                      {Number.isInteger(displayScore) ? displayScore : displayScore.toFixed(1)}
+                      <span className="text-lg text-muted-foreground ml-1">/5</span>
                     </div>
-                  )}
+                  </div>
                 </div>
 
                 {tool.summary && (

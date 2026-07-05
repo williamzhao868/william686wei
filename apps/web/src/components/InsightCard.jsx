@@ -1,11 +1,8 @@
 import React from 'react';
 import { Calendar, FileText, ExternalLink } from 'lucide-react';
-import { Badge } from '@/components/ui/badge.jsx';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext.jsx';
 import { hasPdfAsset, resolvePdfFilename, resolvePdfUrl } from '@/lib/pdfUtils.js';
-
-const stripCategoryPrefix = (value = '') => String(value).replace(/^[A-Z]\s*[｜|]\s*/, '').trim();
 
 function InsightCard({ insight, index = 0 }) {
   const { language } = useLanguage();
@@ -29,11 +26,6 @@ function InsightCard({ insight, index = 0 }) {
       className="group h-full flex flex-col bg-card text-card-foreground rounded-2xl overflow-hidden border border-border transition-all duration-300 hover:shadow-lg hover:border-primary/30 hover:-translate-y-1 p-6"
     >
       <div className="flex flex-wrap items-center gap-3 mb-4">
-        {insight.category && (
-          <Badge variant="secondary" className="text-xs font-medium bg-secondary text-secondary-foreground">
-            {stripCategoryPrefix(insight.category)}
-          </Badge>
-        )}
         {formattedDate && (
           <div className="flex items-center text-xs text-muted-foreground ml-auto">
             <Calendar className="h-3.5 w-3.5 mr-1" />

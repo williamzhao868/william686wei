@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import { ArrowLeft, Calendar, Tag, Share2, AlertCircle, FileText, ChevronRight, Download, Loader2 } from 'lucide-react';
+import { ArrowLeft, Calendar, Share2, AlertCircle, FileText, ChevronRight, Download, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button.jsx';
 import { Skeleton } from '@/components/ui/skeleton.jsx';
 import Header from '@/components/Header.jsx';
@@ -187,13 +187,6 @@ export default function ArticleDetailPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              {article.category && (
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wide bg-primary/10 text-primary mb-6">
-                  <Tag className="w-3 h-3 mr-1.5" />
-                  {article.category}
-                </span>
-              )}
-
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-foreground mb-8 text-balance" style={{letterSpacing: '-0.02em'}}>
                 {article.title}
               </h1>

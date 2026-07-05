@@ -9,8 +9,6 @@ import { useLanguage } from '@/context/LanguageContext.jsx';
 import { toast } from 'sonner';
 import { downloadPdfRecord, hasPdfAsset, resolvePdfFilename } from '@/lib/pdfUtils.js';
 
-const stripCategoryPrefix = (value = '') => String(value).replace(/^[A-Z]\s*[｜|]\s*/, '').trim();
-
 function ToolReportCard({ report, index = 0 }) {
   const { language } = useLanguage();
   const navigate = useNavigate();
@@ -86,11 +84,6 @@ function ToolReportCard({ report, index = 0 }) {
             <h3 className="text-lg font-bold leading-snug mb-1 line-clamp-2 group-hover:text-primary transition-colors">
               {report.toolName || report.title}
             </h3>
-            {report.category && (
-              <Badge variant="outline" className="text-xs border-primary/20 text-primary bg-primary/5">
-                {stripCategoryPrefix(report.category)}
-              </Badge>
-            )}
           </div>
           
           <div className="flex flex-col items-center justify-center bg-muted rounded-xl px-3 py-2 min-w-[72px] border border-border/50">
