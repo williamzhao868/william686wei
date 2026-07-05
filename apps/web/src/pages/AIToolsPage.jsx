@@ -32,7 +32,7 @@ function AIToolsPage() {
   const [activeKeywords, setActiveKeywords] = useState([]);
   const [activeCompanies, setActiveCompanies] = useState([]);
   const { language } = useLanguage();
-  const itemsPerPage = 9;
+  const itemsPerPage = 12;
 
   const pageTitle = language === 'zh' ? 'AI 工具基准报告' : 'AI Tool Benchmark Reports';
   const pageDesc = language === 'zh'
