@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, FileText, ChevronRight, Download } from 'lucide-react';
-import { Badge } from '@/components/ui/badge.jsx';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext.jsx';
 import pb from '@/lib/pocketbaseClient.js';
@@ -84,8 +83,6 @@ function ArticleCard({ article, index = 0 }) {
   const hasPdf = hasPdfAsset(article);
   const pdfHref = resolvePdfUrl(article);
   const pdfFilename = resolvePdfFilename(article, 'insight.pdf');
-  const isDailyInsight = /^AI Insight Daily[｜|]/.test(article.title || '');
-
   return (
     <motion.article
       initial={{ opacity: 0, y: 20 }}
@@ -114,20 +111,8 @@ function ArticleCard({ article, index = 0 }) {
         </div>
         
         <div className="flex flex-col flex-1 p-6">
-          <div className="flex flex-wrap gap-2 mb-3">
-            {article.category && (
-              <Badge variant="outline" className="text-xs border-primary/20 text-primary bg-primary/5">
-                {article.category}
-              </Badge>
-            )}
-          </div>
-
           <Link to={`/article/${article.id}`} className="block mb-3 group/link">
-            <h3 className={`${
-              isDailyInsight
-                ? 'text-[clamp(0.8rem,1.1vw,1rem)] tracking-tight whitespace-nowrap'
-                : 'text-xl line-clamp-2'
-            } font-semibold leading-snug group-hover/link:text-primary transition-colors duration-200`}>
+            <h3 className="text-xl line-clamp-2 font-semibold leading-snug group-hover/link:text-primary transition-colors duration-200">
               {article.title}
             </h3>
           </Link>

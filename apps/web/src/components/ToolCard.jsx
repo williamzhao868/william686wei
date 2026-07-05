@@ -10,6 +10,14 @@ function ToolCard({ tool, index = 0 }) {
   const pdfHref = resolvePdfUrl(tool);
   const hasPdf = hasPdfAsset(tool);
   const pdfFilename = resolvePdfFilename(tool, 'tool-report.pdf');
+  const rawScore = Number(
+    tool.recommendationStars ||
+    tool.recommendationScore ||
+    tool.score ||
+    tool.overallScore ||
+    4
+  );
+  const displayScore = Math.max(0, Math.min(5, rawScore > 5 ? rawScore / 2 : rawScore));
 
   return (
     <motion.div
@@ -35,10 +43,10 @@ function ToolCard({ tool, index = 0 }) {
               <h3 className="text-xl font-bold group-hover:text-primary transition-colors pr-12">
                 {tool.toolName}
               </h3>
-              {tool.recommendationScore && (
+              {(tool.recommendationScore || tool.score || tool.overallScore || tool.recommendationStars) && (
                 <div className="inline-flex items-center text-sm font-semibold text-primary mt-1">
                   <Star className="w-4 h-4 mr-1 fill-primary" />
-                  {tool.recommendationScore} / 10
+                  {Number.isInteger(displayScore) ? displayScore : displayScore.toFixed(1)} / 5
                 </div>
               )}
             </div>
