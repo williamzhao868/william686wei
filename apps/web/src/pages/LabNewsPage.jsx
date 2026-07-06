@@ -23,21 +23,36 @@ const categoryColors = {
 const teamMembers = [
   {
     id: 1,
+    name: '刘肖鲁',
+    avatarUrl: 'https://horizons-cdn.hostinger.com/b28ea7ca-961f-4e44-8fef-0dda445d1017/bd673b1b1bd0563e8163b7af18e83da5.png'
+  },
+  {
+    id: 2,
+    name: '秦君佩',
+    avatarUrl: 'https://horizons-cdn.hostinger.com/b28ea7ca-961f-4e44-8fef-0dda445d1017/c55503aad578327d862f26658685f4f2.png'
+  },
+  {
+    id: 3,
+    name: '赵伟东',
+    avatarUrl: 'https://horizons-cdn.hostinger.com/b28ea7ca-961f-4e44-8fef-0dda445d1017/e6437dc8079e04f280c57c54e4800517.png'
+  },
+  {
+    id: 4,
     name: '闫菁',
     avatarUrl: '/team-members/jianqing.png'
   },
   {
-    id: 2,
+    id: 5,
     name: '张舒翎',
     avatarUrl: '/team-members/zhangshuling.png'
   },
   {
-    id: 3,
+    id: 6,
     name: '黄瑞风',
     avatarUrl: '/team-members/huangruifeng.png'
   },
   {
-    id: 4,
+    id: 7,
     name: '伍斌',
     avatarUrl: '/team-members/wubin.png'
   }
