@@ -4,6 +4,7 @@ export const translations = {
     nav: {
       home: 'Home',
       insights: 'Insights',
+      hrPeers: 'US & Japan HR Peers',
       aiTools: 'AI Tools',
       competitorDynamics: 'Competitor Dynamics',
       labNews: 'Lab News',
@@ -85,6 +86,7 @@ export const translations = {
     nav: {
       home: '首页',
       insights: '最新洞察',
+      hrPeers: '美日人力资源同行',
       aiTools: 'AI工具',
       competitorDynamics: '竞争对手动态',
       labNews: '实验室新闻',
