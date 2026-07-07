@@ -12,7 +12,12 @@ const getCompanyDisplayName = (companyEn, language) => {
     'Alibaba': '阿里', 'Tencent': '腾讯', 'ByteDance': '字节', 'Baidu': '百度', 
     'JD.com': '京东', 'Huawei': '华为', 'Meituan': '美团', 'Didi': '滴滴', 'Xiaomi': '小米',
     'Beisen': '北森', 'Dayi': '大易', 'Xinrenxinshi': '薪人薪事', 'Moka': 'Moka', 
-    'Kangaroo': '袋鼠', 'Zhaopin': '智联招聘', '51job': '前程无忧'
+    'Kangaroo': '袋鼠', 'Zhaopin': '智联招聘', '51job': '前程无忧',
+    'Workday': 'Workday', 'ADP': 'ADP', 'Oracle': 'Oracle', 'SAP': 'SAP', 'UKG': 'UKG',
+    'Paychex': 'Paychex', 'BambooHR': 'BambooHR', 'Rippling': 'Rippling', 'Gusto': 'Gusto',
+    'Deel': 'Deel', 'Greenhouse': 'Greenhouse', 'Lever': 'Lever', 'LinkedIn': 'LinkedIn',
+    'ZipRecruiter': 'ZipRecruiter', 'ManpowerGroup': 'ManpowerGroup', 'Recruit': 'Recruit',
+    'Persol': 'Persol', 'World Intec': 'World Intec', 'Mynavi': 'Mynavi' 
   };
   return language === 'zh' ? (companyMap[companyEn] || companyEn) : companyEn;
 };
