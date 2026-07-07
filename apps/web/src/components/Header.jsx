@@ -14,7 +14,10 @@ function Header() {
   const { language, setLanguage, t } = useLanguage();
   const { isAuthenticated, logout } = useAuth();
 
-  const isActive = (path) => location.pathname === path;
+  const isActive = (path) => {
+    if (path === '/') return location.pathname === path;
+    return location.pathname === path || location.pathname.startsWith(`${path}/`);
+  };
 
   const navLinks = [
     { path: '/', label: t('nav.home') },

@@ -5,6 +5,7 @@ import ScrollToTop from './components/ScrollToTop.jsx';
 import HomePage from './pages/HomePage.jsx';
 import InsightsPage from './pages/InsightsPage.jsx';
 import HrPeersPage from './pages/HrPeersPage.jsx';
+import HrPeerDetailPage from './pages/HrPeerDetailPage.jsx';
 import ArticlesPage from './pages/ArticlesPage.jsx';
 import ArticleDetailPage from './pages/ArticleDetailPage.jsx';
 import AIToolsPage from './pages/AIToolsPage.jsx';
@@ -38,6 +39,7 @@ function App() {
             } />
             <Route path="/insights" element={<InsightsPage />} />
             <Route path="/hr-peers" element={<HrPeersPage />} />
+            <Route path="/hr-peers/:id" element={<HrPeerDetailPage />} />
             <Route path="/articles" element={<ArticlesPage />} />
             <Route path="/article/:id" element={<ArticleDetailPage />} />
             <Route path="/ai-tools" element={<AIToolsPage />} />

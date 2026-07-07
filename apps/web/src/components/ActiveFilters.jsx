@@ -16,8 +16,9 @@ const getCompanyDisplayName = (companyEn, language) => {
     'Workday': 'Workday', 'ADP': 'ADP', 'Oracle': 'Oracle', 'SAP': 'SAP', 'UKG': 'UKG',
     'Paychex': 'Paychex', 'BambooHR': 'BambooHR', 'Rippling': 'Rippling', 'Gusto': 'Gusto',
     'Deel': 'Deel', 'Greenhouse': 'Greenhouse', 'Lever': 'Lever', 'LinkedIn': 'LinkedIn',
-    'ZipRecruiter': 'ZipRecruiter', 'ManpowerGroup': 'ManpowerGroup', 'Recruit': 'Recruit',
-    'Persol': 'Persol', 'World Intec': 'World Intec', 'Mynavi': 'Mynavi' 
+    'ZipRecruiter': 'ZipRecruiter', 'ManpowerGroup': 'ManpowerGroup', 'Recruit Holdings': 'Recruit控股',
+    'Recruit': 'Recruit', 'PERSOL Holdings': 'PERSOL控股', 'Persol': 'Persol',
+    'World Intec': 'World Intec', 'Mynavi': 'Mynavi'
   };
   return language === 'zh' ? (companyMap[companyEn] || companyEn) : companyEn;
 };
@@ -26,6 +27,18 @@ const getKeywordDisplayName = (keyword, language) => {
   if (language !== 'zh') return keyword;
   const keywordMap = {
     agents: '智能体',
+    'ai-agents': 'AI 智能体',
+    recruiting: '招聘',
+    hiring: '用工招聘',
+    matching: '智能匹配',
+    workforce: '劳动力管理',
+    compliance: '合规',
+    interviews: '面试',
+    marketplace: '生态平台',
+    reporting: '行业报告',
+    'talent-shortage': '人才短缺',
+    'job-discovery': '职位发现',
+    'global-hr': '全球用工',
     'enterprise-ai': '企业 AI',
     'foundation-models': '基础模型',
     coding: 'AI 编程',

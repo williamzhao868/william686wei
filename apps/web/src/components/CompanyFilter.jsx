@@ -18,7 +18,7 @@ function CompanyFilter({ selectedCompanies = [], onCompanyToggle, allArticles = 
     {
       key: 'us-jp-hr',
       label: language === 'zh' ? '美日人力资源同行' : 'US & Japan HR Peers',
-      companies: ['Workday', 'ADP', 'Oracle', 'SAP', 'UKG', 'Paychex', 'BambooHR', 'Rippling', 'Gusto', 'Deel', 'Greenhouse', 'Lever', 'LinkedIn', 'ZipRecruiter', 'ManpowerGroup', 'Recruit', 'Persol', 'World Intec', 'Mynavi']
+      companies: ['Workday', 'ADP', 'ZipRecruiter', 'Greenhouse', 'ManpowerGroup', 'Recruit Holdings', 'PERSOL Holdings']
     }
   ];
 
@@ -118,33 +118,35 @@ function CompanyFilter({ selectedCompanies = [], onCompanyToggle, allArticles = 
         </div>
       ))}
 
-      <div className="space-y-3">
-        <div className="flex items-center justify-between gap-3">
-          <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-            {language === 'zh' ? '其他公司' : 'Other Companies'}
+      {remainingCompanies.length > 0 && (
+        <div className="space-y-3">
+          <div className="flex items-center justify-between gap-3">
+            <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+              {language === 'zh' ? '其他公司' : 'Other Companies'}
+            </div>
+            {hasMore && (
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="h-8 text-xs px-3 text-muted-foreground hover:text-foreground rounded-full transition-colors"
+              >
+                {isExpanded ? (
+                  <><ChevronUp className="h-3.5 w-3.5 mr-1.5" /> {language === 'zh' ? '收起' : 'Show less'}</>
+                ) : (
+                  <><ChevronDown className="h-3.5 w-3.5 mr-1.5" /> {language === 'zh' ? '展开所有' : 'Show all'}</>
+                )}
+              </Button>
+            )}
           </div>
-          {hasMore && (
-            <Button 
-              variant="ghost" 
-              size="sm" 
-              onClick={() => setIsExpanded(!isExpanded)}
-              className="h-8 text-xs px-3 text-muted-foreground hover:text-foreground rounded-full transition-colors"
-            >
-              {isExpanded ? (
-                <><ChevronUp className="h-3.5 w-3.5 mr-1.5" /> {language === 'zh' ? '收起' : 'Show less'}</>
-              ) : (
-                <><ChevronDown className="h-3.5 w-3.5 mr-1.5" /> {language === 'zh' ? '展开所有' : 'Show all'}</>
-              )}
-            </Button>
-          )}
-        </div>
 
-        <motion.div layout className="flex flex-wrap items-center gap-2.5">
-          <AnimatePresence mode="popLayout">
-            {visibleCompanies.map(renderCompanyChip)}
-          </AnimatePresence>
-        </motion.div>
-      </div>
+          <motion.div layout className="flex flex-wrap items-center gap-2.5">
+            <AnimatePresence mode="popLayout">
+              {visibleCompanies.map(renderCompanyChip)}
+            </AnimatePresence>
+          </motion.div>
+        </div>
+      )}
     </div>
   );
 }

@@ -69,9 +69,10 @@ function getArticleImage(article, index = 0) {
   return combinedPool[index % combinedPool.length];
 }
 
-function ArticleCard({ article, index = 0 }) {
+function ArticleCard({ article, index = 0, detailPath }) {
   const { language } = useLanguage();
   const [imgError, setImgError] = useState(false);
+  const targetPath = detailPath || `/article/${article.id}`;
   
   const formattedDate = new Date(article.date).toLocaleDateString(language === 'zh' ? 'zh-CN' : 'en-US', {
     year: 'numeric',
@@ -92,7 +93,7 @@ function ArticleCard({ article, index = 0 }) {
     >
       <div className="h-full flex flex-col bg-card rounded-2xl overflow-hidden border border-border transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
         <div className="block shrink-0 relative bg-muted h-40">
-          <Link to={`/article/${article.id}`} className="absolute inset-0 block overflow-hidden">
+          <Link to={targetPath} className="absolute inset-0 block overflow-hidden">
             {!imgError ? (
               <img 
                 src={imageUrl} 
@@ -111,7 +112,7 @@ function ArticleCard({ article, index = 0 }) {
         </div>
         
         <div className="flex flex-col flex-1 p-6">
-          <Link to={`/article/${article.id}`} className="block mb-3 group/link">
+          <Link to={targetPath} className="block mb-3 group/link">
             <h3 className="text-[clamp(0.92rem,1.05vw,1.12rem)] font-semibold leading-tight whitespace-nowrap overflow-hidden text-ellipsis tracking-[-0.01em] group-hover/link:text-primary transition-colors duration-200">
               {article.title}
             </h3>
@@ -140,7 +141,7 @@ function ArticleCard({ article, index = 0 }) {
                 </a>
               )}
               <Link 
-                to={`/article/${article.id}`} 
+                to={targetPath} 
                 className="flex items-center text-primary font-medium group-hover:text-primary/80 transition-colors"
               >
                 {language === 'zh' ? '阅读更多' : 'Read More'}
