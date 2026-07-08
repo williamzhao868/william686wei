@@ -3,8 +3,8 @@ export const translations = {
   en: {
     nav: {
       home: 'Home',
-      insights: 'Insights',
-      hrPeers: 'US & Japan HR Peers',
+      insights: 'Global AI Insights',
+      hrPeers: 'Global HR Tech Monitor',
       aiTools: 'AI Tools',
       competitorDynamics: 'Competitor Dynamics',
       labNews: 'Lab News',
@@ -44,7 +44,7 @@ export const translations = {
       all: 'All'
     },
     insights: {
-      title: 'Research Insights',
+      title: 'Global AI Insights',
       description: 'Explore our latest research findings, industry analysis, and technical insights.'
     },
     aiTools: {
@@ -85,8 +85,8 @@ export const translations = {
   zh: {
     nav: {
       home: '首页',
-      insights: '最新洞察',
-      hrPeers: '美日人力资源同行',
+      insights: '全球AI洞察',
+      hrPeers: '全球HR Tech竞品监测',
       aiTools: 'AI工具',
       competitorDynamics: '竞争对手动态',
       labNews: '实验室新闻',
@@ -126,7 +126,7 @@ export const translations = {
       all: '全部'
     },
     insights: {
-      title: '研究洞察',
+      title: '全球AI洞察',
       description: '探索我们最新的研究成果、行业分析和技术洞察。'
     },
     aiTools: {

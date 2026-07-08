@@ -22,6 +22,7 @@ function ToolReportCard({ report, index = 0 }) {
 
   const hasPdf = hasPdfAsset(report);
   const pdfFilename = resolvePdfFilename(report, 'report.pdf');
+  const usageTips = Array.isArray(report.usageTips) ? report.usageTips.slice(0, 2) : [];
   
   const rawScore = Number(
     report.recommendationStars ||
@@ -101,6 +102,22 @@ function ToolReportCard({ report, index = 0 }) {
         <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-1 line-clamp-3">
           {report.summary || report.shortDescription || report.description || 'No description available.'}
         </p>
+
+        {usageTips.length > 0 && (
+          <div className="mb-5 rounded-xl border border-border/60 bg-muted/30 p-3">
+            <div className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+              {language === 'zh' ? '使用技巧' : 'Usage Tips'}
+            </div>
+            <ul className="space-y-1.5 text-xs text-foreground/80 leading-relaxed">
+              {usageTips.map((tip, idx) => (
+                <li key={idx} className="flex gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
+                  <span className="line-clamp-2">{tip}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         <div className="mt-auto pt-4 border-t border-border/50">
           <div className="flex justify-between items-center mb-4">

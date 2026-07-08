@@ -5,11 +5,11 @@ import { Building2, ChevronDown, ChevronUp } from 'lucide-react';
 import { cn } from '@/lib/utils.js';
 import { Button } from '@/components/ui/button.jsx';
 
-function CompanyFilter({ selectedCompanies = [], onCompanyToggle, allArticles = [] }) {
+function CompanyFilter({ selectedCompanies = [], onCompanyToggle, allArticles = [], specialGroups: specialGroupsOverride = null }) {
   const { language } = useLanguage();
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const specialGroups = [
+  const defaultSpecialGroups = [
     {
       key: 'seven-little-dragons',
       label: language === 'zh' ? '七小龙' : 'Seven Dragons',
@@ -21,6 +21,8 @@ function CompanyFilter({ selectedCompanies = [], onCompanyToggle, allArticles = 
       companies: ['Workday', 'ADP', 'ZipRecruiter', 'Greenhouse', 'ManpowerGroup', 'Recruit Holdings', 'PERSOL Holdings']
     }
   ];
+
+  const specialGroups = specialGroupsOverride || defaultSpecialGroups;
 
   // Parse all articles to extract unique companies and their frequencies
   const companyStats = useMemo(() => {

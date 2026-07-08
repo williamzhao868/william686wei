@@ -112,6 +112,7 @@ export default function AIToolDetailPage() {
     4
   );
   const displayScore = Math.max(0, Math.min(5, rawScore > 5 ? rawScore / 2 : rawScore));
+  const usageTips = Array.isArray(tool.usageTips) ? tool.usageTips.slice(0, 3) : [];
 
   const handleDownload = async (e) => {
     e.preventDefault();
@@ -191,13 +192,29 @@ export default function AIToolDetailPage() {
                   </div>
                 </div>
 
-                {tool.summary && (
-                  <p className="text-xl text-muted-foreground leading-relaxed max-w-prose">
-                    {tool.summary}
-                  </p>
-                )}
-              </motion.div>
-            </div>
+              {tool.summary && (
+                <p className="text-xl text-muted-foreground leading-relaxed max-w-prose">
+                  {tool.summary}
+                </p>
+              )}
+
+              {usageTips.length > 0 && (
+                <section className="mt-10 p-6 bg-card border border-border rounded-2xl shadow-sm">
+                  <h2 className="text-2xl font-bold mb-4 text-foreground">
+                    {language === 'zh' ? '使用技巧' : 'Usage Tips'}
+                  </h2>
+                  <ul className="grid gap-3">
+                    {usageTips.map((tip, index) => (
+                      <li key={index} className="flex items-start gap-3 text-muted-foreground leading-relaxed">
+                        <span className="mt-2 h-2 w-2 rounded-full bg-primary shrink-0" />
+                        <span>{tip}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              )}
+            </motion.div>
+          </div>
           </div>
 
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">

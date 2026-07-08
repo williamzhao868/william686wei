@@ -115,6 +115,18 @@ function normalizeInsightContent(insight) {
 function normalizeToolContent(tool) {
   if (!tool) return null;
 
+  const usageTips = Array.isArray(tool.usageTips) && tool.usageTips.length > 0
+    ? tool.usageTips
+    : [
+        tool.testTask ? `先用真实场景复现：${tool.testTask}` : '先用一个真实任务做快速验证。',
+        Array.isArray(tool.useCases) && tool.useCases.length > 0
+          ? `优先测试这些场景：${tool.useCases.slice(0, 2).join('、')}`
+          : '优先测试高频工作流，而不是只看演示。',
+        tool.prosConsText
+          ? `结合优缺点判断：${tool.prosConsText.split(/[。.!?]/)[0]}`
+          : '把结果和成本、稳定性一起看。'
+      ].filter(Boolean);
+
   return {
     ...tool,
     type: 'C',
@@ -129,6 +141,7 @@ function normalizeToolContent(tool) {
     website: tool.website || tool.websiteUrl || '',
     pdfUrl: tool.pdfUrl || (tool.pdfFileName ? `/reports/pdf/${tool.pdfFileName}` : ''),
     pdfFileName: tool.pdfFileName || '',
+    usageTips,
   };
 }
 
@@ -213,7 +226,8 @@ export function mergeWithLocalContent(liveRecord, localRecord) {
     'date',
     'category',
     'toolName',
-    'score',
+      'score',
+      'usageTips',
   ];
 
   for (const field of preferredFields) {

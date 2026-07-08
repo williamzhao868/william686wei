@@ -20,6 +20,18 @@ function HrPeersPage() {
   const [activeTags, setActiveTags] = useState([]);
   const [activeCompanies, setActiveCompanies] = useState([]);
   const itemsPerPage = 7;
+  const specialGroups = useMemo(() => ([
+    {
+      key: 'western-track',
+      label: language === 'zh' ? '欧美赛道' : 'Western Markets',
+      companies: ['Workday', 'ADP', 'ZipRecruiter', 'Greenhouse', 'ManpowerGroup', 'LinkedIn', 'Deel']
+    },
+    {
+      key: 'apac-track',
+      label: language === 'zh' ? '亚太赛道' : 'APAC Track',
+      companies: ['Recruit Holdings', 'PERSOL Holdings', 'World Intec']
+    }
+  ]), [language]);
 
   const localizedData = useMemo(() => {
     return hrPeerArticles
@@ -95,12 +107,12 @@ function HrPeersPage() {
   return (
     <>
       <Helmet>
-        <title>{language === 'zh' ? '美日人力资源同行 - Engma AI Lab' : 'US & Japan HR Peers - Engma AI Lab'}</title>
+        <title>{language === 'zh' ? '全球HR Tech竞品监测 - Engma AI Lab' : 'Global HR Tech Monitor - Engma AI Lab'}</title>
         <meta
           name="description"
           content={language === 'zh'
-            ? '聚焦美国和日本的人力资源科技公司，跟踪真实官方动态、产品升级、招聘创新与市场变化。'
-            : 'Track real official updates from US and Japan HR companies across hiring, workforce, and AI transformation.'}
+            ? '聚焦全球人力资源科技竞品，跟踪真实官方动态、产品升级、招聘创新与市场变化。'
+            : 'Track real official updates from global HR tech companies across hiring, workforce, and AI transformation.'}
         />
       </Helmet>
 
@@ -117,15 +129,15 @@ function HrPeersPage() {
                 className="max-w-3xl mb-8"
               >
                 <div className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-sm font-medium text-primary mb-4">
-                  {language === 'zh' ? '美日 HR 同行' : 'US & Japan HR Peers'}
+                  {language === 'zh' ? '全球 HR Tech' : 'Global HR Tech'}
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4" style={{ letterSpacing: '-0.02em' }}>
-                  {language === 'zh' ? '美日人力资源同行' : 'US & Japan HR Peers'}
+                  {language === 'zh' ? '全球HR Tech竞品监测' : 'Global HR Tech Monitor'}
                 </h1>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   {language === 'zh'
-                    ? '聚焦美国和日本的人力资源公司，只保留真实官方内容，帮助你快速看懂同行在做什么。'
-                    : 'A focused view of real official updates from US and Japan HR companies.'}
+                    ? '聚焦全球人力资源科技竞品，只保留真实官方内容，帮助你快速看懂同行在做什么。'
+                    : 'A focused view of real official updates from global HR tech companies.'}
                 </p>
               </motion.div>
 
@@ -151,6 +163,7 @@ function HrPeersPage() {
                   selectedCompanies={activeCompanies}
                   onCompanyToggle={handleCompanyClick}
                   allArticles={localizedData}
+                  specialGroups={specialGroups}
                 />
               </div>
             </div>

@@ -121,8 +121,8 @@ export const hrPeerArticles = [
   {
     id: 'hr-peer-manpowergroup-ai-interviewing',
     title: 'ManpowerGroup Scales Human-First AI Interviewing',
-    summary: 'ManpowerGroup is pairing AI-assisted interviewing with human judgment to help companies handle large-scale hiring more consistently.',
-    fullContent: 'ManpowerGroup is taking a human-first approach to AI in recruitment. Instead of replacing recruiters, its positioning is about scaling consistent interviews and making hiring operations more manageable when volume spikes. That combination of AI support plus human oversight fits what many large employers want today.\n\nThe company\'s move also highlights how staffing firms are evolving: they are no longer just matching workers to roles, but becoming technology-enabled service providers that can handle screening, orchestration and candidate experience at scale.',
+    summary: 'ManpowerGroup is pairing AI-assisted interviewing with human judgment to help companies digitize flexible staffing and handle large-scale hiring more consistently.',
+    fullContent: 'ManpowerGroup is taking a human-first approach to AI in recruitment. Instead of replacing recruiters, its positioning is about digitizing flexible staffing and making hiring operations more manageable when volume spikes. That combination of AI support plus human oversight fits what many large employers want today.\n\nThe company\'s move also highlights how staffing firms are evolving: they are no longer just matching workers to roles, but becoming technology-enabled service providers that can handle screening, orchestration and candidate experience at scale.',
     date: '2026-03-03',
     category: ['Service Model', 'Hiring Operations'],
     tags: ['Recruiting', 'Enterprise Services'],
@@ -133,11 +133,80 @@ export const hrPeerArticles = [
     websiteUrl: 'https://www.manpowergroup.com/en/newsroom',
     zh: {
       title: 'ManpowerGroup 扩大“人机协同” AI 面试能力',
-      summary: 'ManpowerGroup 通过 AI 辅助面试配合人工判断，帮助企业更稳定地应对大规模招聘。',
-      fullContent: 'ManpowerGroup 采取的是一种“以人为本”的招聘 AI 路线。它并不是用 AI 替代招聘人员，而是把重点放在在高招聘量场景下提升面试一致性和运营可管理性。这种“AI 辅助 + 人工把关”的组合，正好符合许多大型雇主当前的需求。\n\n这也说明 staffing 公司正在转型：它们不再只是把人匹配到岗位，而是升级为技术型服务提供商，能够以更高效率完成筛选、流程编排和候选人体验管理。',
+      summary: 'ManpowerGroup 通过 AI 辅助面试配合人工判断，帮助企业更稳定地应对大规模招聘，并推进灵活用工数字化。',
+      fullContent: 'ManpowerGroup 采取的是一种“以人为本”的招聘 AI 路线。它并不是用 AI 替代招聘人员，而是把重点放在在高招聘量场景下提升面试一致性和运营可管理性。这种“AI 辅助 + 人工把关”的组合，正好符合许多大型雇主当前的需求。\n\n这也说明 staffing 公司正在转型：它们不再只是把人匹配到岗位，而是升级为技术型服务提供商，能够以更高效率完成筛选、流程编排、候选人体验管理和灵活用工数字化。',
       category: ['服务模型', '招聘运营'],
       tags: ['招聘', '企业服务'],
       keywords: ['面试', '人才短缺', '用工招聘'],
+      impactLevel: 'Medium'
+    }
+  },
+  {
+    id: 'hr-peer-linkedin-talent-graph',
+    title: 'LinkedIn Pushes Talent Intelligence Toward a Living Talent Graph',
+    summary: 'LinkedIn is using skills data, profile signals and hiring workflows to turn talent discovery into a more connected graph experience.',
+    fullContent: 'LinkedIn is not just a hiring marketplace anymore. Its real advantage is the talent graph: a dense layer of people, skills, jobs and career movement that can help recruiters understand where talent sits and how it changes over time. As LinkedIn keeps improving how signals, search and recommendations work together, it becomes more useful as a talent intelligence layer rather than a simple job board.\n\nFor HR peers, the takeaway is that data quality and graph depth are becoming strategic advantages. If a platform can connect people, skills and job demand more intelligently, it can support better sourcing, better matching and stronger hiring outcomes.',
+    date: '2026-06-18',
+    category: ['Platform Intelligence', 'Talent Graph'],
+    tags: ['Recruiting', 'Marketplace'],
+    keywords: ['matching', 'marketplace', 'global-hr'],
+    impactLevel: 'High',
+    companies: [{ en: 'LinkedIn', zh: 'LinkedIn' }],
+    imageUrl: getImg(0),
+    websiteUrl: 'https://business.linkedin.com/talent-solutions/blog',
+    zh: {
+      title: 'LinkedIn 将人才图谱做成“活”的招聘基础设施',
+      summary: 'LinkedIn 用技能数据、档案信号和招聘工作流，把人才发现升级成更连通的人才图谱体验。',
+      fullContent: 'LinkedIn 早已不只是招聘市场。它真正的优势是人才图谱：把人、技能、岗位和职业流动连接在一起的数据层，帮助招聘者理解人才在哪里，以及如何随时间变化。随着 LinkedIn 不断强化信号、搜索和推荐的协同，它更像人才情报层，而不只是职位板。\n\n对 HR 同行来说，关键启示是：数据质量和图谱深度正在变成战略优势。如果一个平台能更聪明地连接人、技能和岗位需求，它就能支持更好的搜寻、更好的匹配，以及更强的招聘结果。',
+      category: ['平台智能', '人才图谱'],
+      tags: ['招聘', '生态平台'],
+      keywords: ['智能匹配', '生态平台', '全球用工'],
+      impactLevel: 'High'
+    }
+  },
+  {
+    id: 'hr-peer-deel-global-payroll-saas',
+    title: 'Deel Positions Payroll as a Global HR SaaS Layer',
+    summary: 'Deel is building payroll, compliance and contractor operations into a single global HR software layer.',
+    fullContent: 'Deel is one of the clearest examples of payroll becoming software infrastructure instead of a back-office task. By combining payroll, compliance, contractor management and global HR operations into one product layer, Deel makes it easier for companies to hire across borders without stitching together a separate stack for every market.\n\nFor HR tech peers, the important message is that payroll is now part of the broader SaaS control plane for distributed work. Companies want a system that can handle local rules, contractor workflows and employee lifecycle operations in one place.',
+    date: '2026-06-20',
+    category: ['Platform', 'Global Payroll'],
+    tags: ['Payroll', 'Compliance'],
+    keywords: ['global-hr', 'compliance', 'marketplace'],
+    impactLevel: 'High',
+    companies: [{ en: 'Deel', zh: 'Deel' }],
+    imageUrl: getImg(1),
+    websiteUrl: 'https://www.deel.com/global-payroll/',
+    zh: {
+      title: 'Deel 把薪酬做成全球 HR SaaS 层',
+      summary: 'Deel 正在把薪酬、合规和外包人员管理整合成一个全球 HR 软件层。',
+      fullContent: 'Deel 是最典型的一个例子：薪酬正在从后台事务，变成软件基础设施。通过把薪酬、合规、外包人员管理和全球 HR 运营整合到同一层产品里，Deel 让企业更容易跨国招聘，而不用为每个市场单独拼接系统。\n\n对 HR Tech 同行来说，重要信号是：薪酬已经成为分布式工作时代的 SaaS 控制平面。企业希望有一个系统，同时处理当地规则、外包流程和员工生命周期管理。',
+      category: ['平台', '全球薪酬'],
+      tags: ['薪酬', '合规'],
+      keywords: ['全球用工', '合规', '生态平台'],
+      impactLevel: 'High'
+    }
+  },
+  {
+    id: 'hr-peer-world-intec-manufacturing-outsourcing',
+    title: 'World Intec Strengthens Manufacturing Outsourcing Services with Digital Operations',
+    summary: 'World Intec focuses on manufacturing outsourcing and service operations for industrial clients in Japan.',
+    fullContent: 'World Intec is a useful reminder that HR tech is not only about office hiring. In Japan, manufacturing outsourcing and staffing services still matter a great deal, especially when companies need stable labor supply, operational coverage and local execution at scale. World Intec\'s positioning shows how industrial outsourcing firms can become digital service operators rather than pure labor brokers.\n\nFor the HR market, this matters because industrial staffing and digital management are converging. The strongest players are the ones that can manage labor supply, site operations and service quality together.',
+    date: '2026-06-24',
+    category: ['Industrial Outsourcing', 'Service Operations'],
+    tags: ['Staffing', 'Operations'],
+    keywords: ['hiring', 'workforce', 'global-hr'],
+    impactLevel: 'Medium',
+    companies: [{ en: 'World Intec', zh: 'World Intec' }],
+    imageUrl: getImg(2),
+    websiteUrl: 'https://www.witc.co.jp/',
+    zh: {
+      title: 'World Intec 强化制造业外包与数字化运营',
+      summary: 'World Intec 聚焦日本制造业外包与服务运营，面向工业客户提供稳定用工能力。',
+      fullContent: 'World Intec 提醒我们：HR Tech 不只是办公室招聘。在日本，制造业外包和派遣服务依然非常重要，尤其是当企业需要稳定的劳动力供给、现场运营能力和规模化执行时。World Intec 的定位说明，工业外包公司也可以升级为数字化服务运营商，而不只是简单的人力中介。\n\n对 HR 市场来说，这一点很重要，因为工业派遣与数字化管理正在融合。真正强的公司，是能够把劳动力供给、现场运营和服务质量一起管理好的公司。',
+      category: ['工业外包', '服务运营'],
+      tags: ['派遣', '运营'],
+      keywords: ['用工招聘', '劳动力', '全球用工'],
       impactLevel: 'Medium'
     }
   },

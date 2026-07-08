@@ -52,7 +52,7 @@ function InsightsPage() {
   const { language } = useLanguage();
   const itemsPerPage = 12;
 
-  const pageTitle = language === 'zh' ? '研究洞察' : 'Research Insights';
+  const pageTitle = language === 'zh' ? '全球AI洞察' : 'Global AI Insights';
   const pageDesc = language === 'zh'
     ? '探索我们最新的研究成果、行业分析和技术洞察。'
     : 'Explore our latest research findings, industry analysis, and technical insights.';
@@ -167,7 +167,7 @@ function InsightsPage() {
                 className="max-w-3xl mb-12"
               >
                 <div className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-sm font-medium text-primary mb-6">
-                  Research & Insights
+                  Global AI Intelligence
                 </div>
                 <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6" style={{letterSpacing: '-0.02em'}}>
                   {pageTitle}
