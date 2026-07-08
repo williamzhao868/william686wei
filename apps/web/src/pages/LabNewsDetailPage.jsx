@@ -12,6 +12,7 @@ import { labNewsData } from '@/data/labNewsData.js';
 import { useLanguage } from '@/context/LanguageContext.jsx';
 import { toast } from 'sonner';
 import { downloadPdfRecord, hasPdfAsset, resolvePdfFilename } from '@/lib/pdfUtils.js';
+import { formatDateISO } from '@/lib/dateFormat.js';
 
 const categoryColors = {
   'Research Update': 'bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20',
@@ -60,10 +61,7 @@ function LabNewsDetailPage() {
   const prevItem = hasPrev ? labNewsData[currentIndex - 1] : null;
   const nextItem = hasNext ? labNewsData[currentIndex + 1] : null;
 
-  const formattedDate = new Date(newsItem.date).toLocaleDateString(
-    language === 'zh' ? 'zh-CN' : 'en-US', 
-    { year: 'numeric', month: 'long', day: 'numeric' }
-  );
+  const formattedDate = formatDateISO(newsItem.date);
 
   const hasPdf = hasPdfAsset(newsItem);
   const pdfFilename = resolvePdfFilename(newsItem, 'news.pdf');
@@ -171,7 +169,7 @@ function LabNewsDetailPage() {
                     className="rounded-full px-8 py-6 w-full sm:w-auto text-base"
                   >
                     <Download className="w-5 h-5 mr-2" />
-                    {language === 'zh' ? '下载 PDF' : 'Download PDF'}
+                    {language === 'zh' ? '下载PDF' : 'Download PDF'}
                   </Button>
                 </div>
               )}

@@ -14,6 +14,7 @@ import pb from '@/lib/pocketbaseClient.js';
 import { getLocalToolArticleByRecord, getLocalToolArticles, markdownToHtml, mergeWithLocalContent } from '@/data/localContentData.js';
 import { toast } from 'sonner';
 import { downloadPdfRecord, hasPdfAsset, resolvePdfFilename } from '@/lib/pdfUtils.js';
+import { formatDateISO } from '@/lib/dateFormat.js';
 
 export default function AIToolDetailPage() {
   const { toolId } = useParams();
@@ -98,9 +99,7 @@ export default function AIToolDetailPage() {
     );
   }
 
-  const formattedDate = tool.date ? new Date(tool.date).toLocaleDateString(language === 'zh' ? 'zh-CN' : 'en-US', { 
-    year: 'numeric', month: 'long', day: 'numeric' 
-  }) : '';
+  const formattedDate = formatDateISO(tool.date);
 
   const hasPdf = hasPdfAsset(tool);
   const pdfFilename = resolvePdfFilename(tool, 'tool-report.pdf');
@@ -266,7 +265,7 @@ export default function AIToolDetailPage() {
                     className="rounded-full px-8 py-6 w-full sm:w-auto text-base"
                   >
                     <Download className="w-5 h-5 mr-2" />
-                    {language === 'zh' ? '下载 PDF' : 'Download PDF'}
+                    {language === 'zh' ? '下载评测PDF' : 'Download PDF'}
                   </Button>
                 </div>
               ) : (

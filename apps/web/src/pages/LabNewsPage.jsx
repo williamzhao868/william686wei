@@ -10,6 +10,7 @@ import LabTimeline from '@/components/LabTimeline.jsx';
 import { motion } from 'framer-motion';
 import { labNewsData } from '@/data/labNewsData.js';
 import { useLanguage } from '@/context/LanguageContext.jsx';
+import { formatDateISO } from '@/lib/dateFormat.js';
 
 const categoryColors = {
   'Research Update': 'bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20',
@@ -116,11 +117,7 @@ function LabNewsPage() {
               <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
                 <div className="relative border-l-2 border-muted pl-8 md:pl-12 ml-4 md:ml-6 space-y-16">
                   {localizedNews.map((news, index) => {
-                    const formattedDate = new Date(news.date).toLocaleDateString(language === 'zh' ? 'zh-CN' : 'en-US', {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric'
-                    });
+                    const formattedDate = formatDateISO(news.date);
 
                     return (
                       <motion.div

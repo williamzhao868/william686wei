@@ -9,6 +9,7 @@ import BackButton from '@/components/BackButton.jsx';
 import { Button } from '@/components/ui/button.jsx';
 import { useLanguage } from '@/context/LanguageContext.jsx';
 import { hrPeerArticles, getHrPeerArticleById, hrPeerKeywordDefinitions } from '@/data/hrPeersData.js';
+import { formatDateISO } from '@/lib/dateFormat.js';
 
 const impactColors = {
   High: 'bg-red-500/10 text-red-600 border-red-500/20 dark:text-red-400',
@@ -54,10 +55,7 @@ export default function HrPeerDetailPage() {
   const prevItem = hasPrev ? hrPeerArticles[currentIndex - 1] : null;
   const nextItem = hasNext ? hrPeerArticles[currentIndex + 1] : null;
 
-  const formattedDate = new Date(item.date).toLocaleDateString(
-    language === 'zh' ? 'zh-CN' : 'en-US',
-    { year: 'numeric', month: 'long', day: 'numeric' }
-  );
+  const formattedDate = formatDateISO(item.date);
 
   const impactLabel = language === 'zh'
     ? (item.impactLevel === 'High' ? '高影响' : item.impactLevel === 'Medium' ? '中影响' : '低影响')

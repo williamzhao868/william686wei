@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext.jsx';
 import pb from '@/lib/pocketbaseClient.js';
 import { hasPdfAsset, resolvePdfFilename, resolvePdfUrl } from '@/lib/pdfUtils.js';
+import { formatDateISO } from '@/lib/dateFormat.js';
 
 const IMAGE_CATEGORIES = {
   AI_TECH: [
@@ -74,11 +75,7 @@ function ArticleCard({ article, index = 0, detailPath }) {
   const [imgError, setImgError] = useState(false);
   const targetPath = detailPath || `/article/${article.id}`;
   
-  const formattedDate = new Date(article.date).toLocaleDateString(language === 'zh' ? 'zh-CN' : 'en-US', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric'
-  });
+  const formattedDate = formatDateISO(article.date);
 
   const imageUrl = getArticleImage(article, index);
   const hasPdf = hasPdfAsset(article);
@@ -137,14 +134,14 @@ function ArticleCard({ article, index = 0, detailPath }) {
                   onClick={(event) => event.stopPropagation()}
                 >
                   <Download className="h-3.5 w-3.5 mr-1" />
-                  {language === 'zh' ? '下载 PDF' : 'Download PDF'}
+                  {language === 'zh' ? '下载PDF' : 'Download PDF'}
                 </a>
               )}
               <Link 
                 to={targetPath} 
                 className="flex items-center text-primary font-medium group-hover:text-primary/80 transition-colors"
               >
-                {language === 'zh' ? '阅读更多' : 'Read More'}
+                {language === 'zh' ? '查看详情' : 'Learn More'}
                 <ChevronRight className="h-3.5 w-3.5 ml-1 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>

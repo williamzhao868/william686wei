@@ -11,6 +11,7 @@ import CompanyFilter from '@/components/CompanyFilter.jsx';
 import { Button } from '@/components/ui/button.jsx';
 import { useLanguage } from '@/context/LanguageContext.jsx';
 import { hrPeerArticles, hrPeerKeywordDefinitions } from '@/data/hrPeersData.js';
+import { formatDateISO } from '@/lib/dateFormat.js';
 
 function HrPeersPage() {
   const { language } = useLanguage();
@@ -192,7 +193,7 @@ function HrPeersPage() {
                     className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
                   >
                     {paginatedArticles.map((article, index) => (
-                      <ArticleCard
+                    <ArticleCard
                         key={article.id}
                         article={article}
                         index={index}

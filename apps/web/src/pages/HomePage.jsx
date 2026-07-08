@@ -14,6 +14,7 @@ import { labNewsData } from '@/data/labNewsData.js';
 import { fallbackArticles } from '@/data/articlesFallbackData.js';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext.jsx';
+import { formatDateISO } from '@/lib/dateFormat.js';
 import pb from '@/lib/pocketbaseClient.js';
 import {
   getLocalToolArticleByRecord,
@@ -324,7 +325,7 @@ function HomePage() {
                     <div className="flex items-center gap-3 text-sm text-muted-foreground mb-3">
                       <span className="font-medium text-primary">{news.category}</span>
                       <span>•</span>
-                      <time dateTime={news.date}>{new Date(news.date).toLocaleDateString(language === 'zh' ? 'zh-CN' : 'en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</time>
+                      <time dateTime={news.date}>{formatDateISO(news.date)}</time>
                     </div>
                     <h3 className="text-xl font-bold leading-snug mb-3 group-hover:text-primary transition-colors">
                       {news.title}

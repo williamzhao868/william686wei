@@ -3,16 +3,13 @@ import { Calendar, FileText, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext.jsx';
 import { hasPdfAsset, resolvePdfFilename, resolvePdfUrl } from '@/lib/pdfUtils.js';
+import { formatDateISO } from '@/lib/dateFormat.js';
 
 function InsightCard({ insight, index = 0 }) {
   const { language } = useLanguage();
   
   const dateToUse = insight.date || insight.created;
-  const formattedDate = dateToUse ? new Date(dateToUse).toLocaleDateString(language === 'zh' ? 'zh-CN' : 'en-US', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric'
-  }) : '';
+  const formattedDate = formatDateISO(dateToUse);
 
   const pdfHref = resolvePdfUrl(insight);
   const hasPdf = hasPdfAsset(insight);

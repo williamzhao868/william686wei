@@ -3,13 +3,12 @@ import { Calendar, MapPin } from 'lucide-react';
 import { Badge } from '@/components/ui/badge.jsx';
 import { Button } from '@/components/ui/button.jsx';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/context/LanguageContext.jsx';
+import { formatDateISO } from '@/lib/dateFormat.js';
 
 function EventCard({ event, index = 0 }) {
-  const formattedDate = new Date(event.date).toLocaleDateString('en-US', {
-    month: 'short',
-    day: 'numeric',
-    year: 'numeric'
-  });
+  const { language } = useLanguage();
+  const formattedDate = formatDateISO(event.date);
   const eventUrl = event.websiteUrl || event.registrationLink || '#';
 
   return (
@@ -46,7 +45,7 @@ function EventCard({ event, index = 0 }) {
 
         <Button variant="outline" className="w-full mt-auto group" asChild>
           <a href={eventUrl} target="_blank" rel="noopener noreferrer">
-            Learn More
+            {language === 'zh' ? '了解更多' : 'Learn More'}
           </a>
         </Button>
       </div>

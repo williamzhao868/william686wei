@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Calendar, ChevronLeft, ChevronRight, Tag, Building2 } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext.jsx';
 import { Button } from '@/components/ui/button.jsx';
+import { formatDateISO } from '@/lib/dateFormat.js';
 
 const categoryColors = {
   'Research Update': 'bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20',
@@ -53,10 +54,7 @@ function LabNewsDetailModal({
 
   const item = language === 'zh' && newsItem.zh ? { ...newsItem, ...newsItem.zh } : newsItem;
 
-  const formattedDate = new Date(item.date).toLocaleDateString(
-    language === 'zh' ? 'zh-CN' : 'en-US', 
-    { year: 'numeric', month: 'long', day: 'numeric' }
-  );
+  const formattedDate = formatDateISO(item.date);
 
   return (
     <AnimatePresence>

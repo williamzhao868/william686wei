@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar } from 'lucide-react';
+import { formatDateISO } from '@/lib/dateFormat.js';
 
 const LabTimeline = ({ events }) => {
   return (
@@ -22,7 +23,7 @@ const LabTimeline = ({ events }) => {
           <div className="bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 group-hover:-translate-y-1">
             <div className="flex items-center text-sm font-medium text-primary mb-3">
               <Calendar className="w-4 h-4 mr-2" />
-              <time dateTime={event.date}>{event.date}</time>
+              <time dateTime={event.date}>{formatDateISO(event.date)}</time>
             </div>
             <p className="text-lg text-foreground leading-relaxed font-medium">
               {event.description}

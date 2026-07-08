@@ -136,7 +136,7 @@ export default function AdminArticlesPage() {
                           {article.author || '-'}
                         </td>
                         <td className="px-6 py-4 text-muted-foreground whitespace-nowrap">
-                          {article.date ? new Date(article.date).toLocaleDateString() : '-'}
+                          {article.date ? new Date(article.date).toISOString().slice(0, 10) : '-'}
                         </td>
                         <td className="px-6 py-4 text-right">
                           <div className="flex justify-end gap-2">

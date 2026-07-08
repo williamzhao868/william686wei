@@ -19,6 +19,7 @@ import {
   mergeWithLocalContent,
 } from '@/data/localContentData.js';
 import { downloadPdfRecord, hasPdfAsset, resolvePdfFilename } from '@/lib/pdfUtils.js';
+import { formatDateISO } from '@/lib/dateFormat.js';
 import { toast } from 'sonner';
 
 const getLocalArticleById = (id) =>
@@ -138,9 +139,7 @@ export default function ArticleDetailPage() {
     );
   }
 
-  const formattedDate = article.date ? new Date(article.date).toLocaleDateString(language === 'zh' ? 'zh-CN' : 'en-US', { 
-    year: 'numeric', month: 'long', day: 'numeric' 
-  }) : '';
+  const formattedDate = formatDateISO(article.date);
 
   const pdfRecord = getInsightPdfRecord(article);
   const hasPdf = hasPdfAsset(pdfRecord);
@@ -264,7 +263,7 @@ export default function ArticleDetailPage() {
                 ) : (
                   <Download className="w-5 h-5 mr-2" />
                 )}
-                {language === 'zh' ? '下载 PDF' : 'Download PDF'}
+                {language === 'zh' ? '下载PDF' : 'Download PDF'}
               </Button>
             </div>
 
@@ -301,7 +300,7 @@ export default function ArticleDetailPage() {
                 >
                   <div className="flex items-center gap-2 text-xs text-muted-foreground mb-3">
                     <Calendar className="w-3.5 h-3.5" />
-                    <span>{new Date(relArticle.date).toLocaleDateString(language === 'zh' ? 'zh-CN' : 'en-US')}</span>
+                    <span>{formatDateISO(relArticle.date)}</span>
                   </div>
                   <h4 className="text-lg font-bold leading-snug mb-3 group-hover:text-primary transition-colors line-clamp-2">
                     {relArticle.title}

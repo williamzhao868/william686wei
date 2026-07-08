@@ -24,7 +24,6 @@ function Header() {
     { path: '/insights', label: t('nav.insights') },
     { path: '/hr-peers', label: t('nav.hrPeers') },
     { path: '/ai-tools', label: t('nav.aiTools') },
-    { path: '/competitors', label: t('nav.competitorDynamics') },
     { path: '/lab-news', label: t('nav.labNews') },
     { path: '/ai-activities', label: t('nav.aiActivities') }
   ];
