@@ -12,30 +12,17 @@
   },
   "insights": [
     {
-      "id": "a-20260709-gpt56-sol",
+      "id": "a-20260710-chatgpt-ambitious-work",
       "targetTab": "最新洞察与出版物",
       "category": "A｜AI Insight Daily",
-      "title": "AI Insight Daily｜2026-07-09｜GPT-5.6 Sol",
-      "date": "2026-07-09",
-      "summary": "OpenAI 把 GPT-5.6 Sol 推向更稳的长任务推理，微软 365 Copilot 也开始把它当作默认模型之一。",
-      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80",
-      "pdfFileName": "Engma_A_AI_Insight_Daily_07092026_GPT_56_Sol.pdf",
-      "pdfUrl": "/reports/pdf/Engma_A_AI_Insight_Daily_07092026_GPT_56_Sol.pdf",
-      "sourceFileName": "Engma_A_AI_Insight_Daily_07092026_GPT_56_Sol.md",
-      "contentMarkdown": "# A：AI Insight Daily\n\n日期：2026-07-09\n\n## 1. OpenAI 发布 GPT-5.6 Sol，重点不只是“更聪明”，而是更稳、更适合长链路工作流和企业集成。\n\n**事件**\n\nOpenAI 发布 GPT-5.6 Sol，重点不只是“更聪明”，而是更稳、更适合长链路工作流和企业集成。\n\n**为什么重要**\n\n模型竞争开始从单次回答质量，转向长任务稳定性、上下文承接和企业默认选型。\n\n**影响**\n\n企业会更在意模型是否能持续执行、少跑偏、少返工；微软 365 Copilot 这类企业产品也更倾向把新模型纳入默认底座。\n\n**可落地机会**\n\nEngma 可以把这类模型当作研究和写作的默认底座，重点测试“长任务 + 中英混合 + 多轮追问”能力。\n\n**标签**\n\nOpenAI / GPT-5.6 / Enterprise Copilot / Agent Workflow\n\n**来源**\n\nhttps://openai.com/index/gpt-5-6/\n"
-    },
-    {
-      "id": "a-20260709-chatgpt-work",
-      "targetTab": "最新洞察与出版物",
-      "category": "A｜AI Insight Daily",
-      "title": "AI Insight Daily｜2026-07-09｜ChatGPT Work",
-      "date": "2026-07-09",
-      "summary": "OpenAI 把 ChatGPT 往“工作流助手”方向再推进一步，任务分解、跟进和持续执行更像真正的办公搭子。",
-      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80",
-      "pdfFileName": "Engma_A_AI_Insight_Daily_07092026_ChatGPT_Work.pdf",
-      "pdfUrl": "/reports/pdf/Engma_A_AI_Insight_Daily_07092026_ChatGPT_Work.pdf",
-      "sourceFileName": "Engma_A_AI_Insight_Daily_07092026_ChatGPT_Work.md",
-      "contentMarkdown": "# A：AI Insight Daily\n\n日期：2026-07-09\n\n## 1. ChatGPT Work 的方向不再是一次性问答，而是把待办、追问、提醒和上下文串起来。\n\n**事件**\n\nChatGPT Work 的方向不再是一次性问答，而是把待办、追问、提醒和上下文串起来。\n\n**为什么重要**\n\n这会把 AI 从“回答工具”推成“执行入口”，尤其适合研究、销售、运营、内容团队。\n\n**影响**\n\n企业内部会更容易把会议纪要、研究追踪、周报和提醒交给同一个模型链路。\n\n**可落地机会**\n\nEngma 可以优先测试“研究线索追踪 + 周报生成 + 后续提醒”三个场景。\n\n**标签**\n\nOpenAI / Workflows / Task Management / Enterprise Agent\n\n**来源**\n\nhttps://openai.com/index/chatgpt-for-your-most-ambitious-work/\n"
+      "title": "AI Insight Daily｜2026-07-10｜ChatGPT for Ambitious Work",
+      "date": "2026-07-10",
+      "summary": "OpenAI 继续把 ChatGPT 往“复杂工作伙伴”方向推进，强调它不只是聊天，而是能陪伴更长链路的工作。",
+      "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80",
+      "pdfFileName": "Engma_A_AI_Insight_Daily_07102026_ChatGPT_Ambitious_Work.pdf",
+      "pdfUrl": "/reports/pdf/Engma_A_AI_Insight_Daily_07102026_ChatGPT_Ambitious_Work.pdf",
+      "sourceFileName": "Engma_A_AI_Insight_Daily_07102026_ChatGPT_Ambitious_Work.md",
+      "contentMarkdown": "# A：AI Insight Daily\n\n日期：2026-07-10\n\n## 1. OpenAI 把 ChatGPT 继续推向“复杂工作伙伴”的定位。\n\n**事件**\n\nOpenAI 今天继续强化 ChatGPT 的工作伙伴定位，重点放在复杂任务、持续协作和更高质量输出。\n\n**为什么重要**\n\n模型竞争已经从“单次回答好不好”转向“能不能稳定陪你完成工作”。\n\n**影响**\n\n企业会更愿意把 ChatGPT 放进研究、汇报、内容、销售和内部协作流程里，而不只是当成问答工具。\n\n**可落地机会**\n\nEngma 可以继续把 ChatGPT 视为研究和写作底座，优先测试长任务、追问、总结和多轮协作场景。\n\n**标签**\n\nOpenAI / ChatGPT / 工作流 / 企业协作\n\n**来源**\n\nhttps://openai.com/index/chatgpt-for-your-most-ambitious-work/\n"
     },
     {
       "id": "a-20260708-nvidia-nemotron",
@@ -49,6 +36,19 @@
       "pdfUrl": "/reports/pdf/Engma_A_AI_Insight_Daily_07082026_NVIDIA_Nemotron.pdf",
       "sourceFileName": "Engma_A_AI_Insight_Daily_07082026_NVIDIA_Nemotron.md",
       "contentMarkdown": "# A：AI Insight Daily\n\n日期：2026-07-08\n\n## 1. NVIDIA 这次不是单纯发模型，而是把 agent harness、评测和框架联动起来。\n\n**事件**\n\nNVIDIA 这次不是单纯发模型，而是把 agent harness、评测和框架联动起来。\n\n**为什么重要**\n\n企业 Agent 的竞争点正从“会不会答”转向“能不能稳定接入工具链、按流程执行”。\n\n**影响**\n\n底层平台越来越像“Agent 操作系统”，上层应用会更依赖标准化 harness。\n\n**可落地机会**\n\nEngma 可以重点跟踪 agent harness、评测框架、可观测性和流程编排工具。\n\n**标签**\n\nNVIDIA / Nemotron / Deep Agents / Agent Harness\n\n**来源**\n\nhttps://nvidianews.nvidia.com/news/nvidia-nemotron-achieves-benchmark-leading-performance-with-langchain-deep-agents-harness\n"
+    },
+    {
+      "id": "a-20260707-aplus",
+      "targetTab": "最新洞察与出版物",
+      "category": "A｜AI Insight Daily",
+      "title": "AI Insight Daily｜2026-07-07｜Australian Payments Plus",
+      "date": "2026-07-07",
+      "summary": "OpenAI 客户案例显示，Australian Payments Plus 正把 ChatGPT Enterprise 和 Codex 用进更真实的支付业务工作流。",
+      "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80",
+      "pdfFileName": "Engma_A_AI_Insight_Daily_07072026_Australian_Payments_Plus.pdf",
+      "pdfUrl": "/reports/pdf/Engma_A_AI_Insight_Daily_07072026_Australian_Payments_Plus.pdf",
+      "sourceFileName": "Engma_A_AI_Insight_Daily_07072026_Australian_Payments_Plus.md",
+      "contentMarkdown": "# A：AI Insight Daily\n\n日期：2026-07-07\n\n## 1. Australian Payments Plus 把 ChatGPT Enterprise 和 Codex 变成支付业务里的实用工作流。\n\n**事件**\n\nOpenAI 展示 Australian Payments Plus（AP+）如何把 ChatGPT Enterprise 和 Codex 用在更真实的业务协作里，而不是停留在演示层。\n\n**为什么重要**\n\nAI 的竞争点已经从“会不会回答”变成“能不能帮业务团队持续处理复杂任务”。\n\n**影响**\n\n企业会更在意 AI 是否能接进现有流程、缩短研究和协作时间，并减少重复整理与返工。\n\n**可落地机会**\n\nEngma 可以把这类案例当作企业 AI 落地样板，重点看研究、运营、财务和内部知识协作场景。\n\n**标签**\n\nOpenAI / ChatGPT Enterprise / Codex / 企业工作流\n\n**来源**\n\nhttps://openai.com/index/australian-payments-plus/\n"
     },
     {
       "id": "a-20260706-lerobot",
@@ -210,12 +210,12 @@
   ],
   "tools": [
     {
-      "id": "c-20260709-gpt56-sol",
+      "id": "c-20260710-gpt56-sol",
       "targetTab": "AI 工具",
       "category": "C｜AI Tool Benchmark Report",
       "name": "GPT-5.6 Sol",
       "title": "GPT-5.6 Sol｜AI Tool Benchmark Report",
-      "date": "2026-07-09",
+      "date": "2026-07-10",
       "website": "https://openai.com/index/gpt-5-6/",
       "shortDescription": "更适合长任务、稳态推理和企业默认模型测试。",
       "fullDescription": "更适合长任务、稳态推理和企业默认模型测试。",
@@ -235,41 +235,10 @@
         "研究助手",
         "企业 Agent"
       ],
-      "pdfFileName": "Engma_C_AI_Tool_Benchmark_07092026_GPT_56_Sol.pdf",
-      "pdfUrl": "/reports/pdf/Engma_C_AI_Tool_Benchmark_07092026_GPT_56_Sol.pdf",
-      "sourceFileName": "Engma_C_AI_Tool_Benchmark_07092026_GPT_56_Sol.md",
-      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-09\n\n## GPT-5.6 Sol\n\n官网：https://openai.com/index/gpt-5-6/\n\n## 测试任务\n\n让模型连续处理一条行业信息：先摘要，再拆机会，再输出给业务同事的行动建议。\n\n## 结果\n\n长链路输出更稳，结构化整理更自然，适合做研究和写作底座。\n\n## 优缺点\n\n优点：优点：稳定、适合复杂链路。  \n缺点：缺点：成本和响应时间更要管。\n\n## 推荐指数\n\n4.7/5\n\n一句话：  \n更适合长任务、稳态推理和企业默认模型测试。\n\n来源：https://openai.com/index/gpt-5-6/\n"
-    },
-    {
-      "id": "c-20260709-chatgpt-work",
-      "targetTab": "AI 工具",
-      "category": "C｜AI Tool Benchmark Report",
-      "name": "ChatGPT Work",
-      "title": "ChatGPT Work｜AI Tool Benchmark Report",
-      "date": "2026-07-09",
-      "website": "https://openai.com/index/chatgpt-for-your-most-ambitious-work/",
-      "shortDescription": "适合持续跟进、待办管理和研究协作。",
-      "fullDescription": "适合持续跟进、待办管理和研究协作。",
-      "testTask": "连续追踪一条线索，自动整理待办、提醒和追问。",
-      "prosConsText": "优点：任务串联能力强。缺点：需要团队先统一输入格式。",
-      "recommendationStars": 4.6,
-      "overallScore": 9.2,
-      "ratings": {
-        "speed": 8.8,
-        "accuracy": 9.1,
-        "costEfficiency": 8.5,
-        "easeOfUse": 9.0
-      },
-      "pricing": "以官网为准",
-      "useCases": [
-        "项目跟进",
-        "研究追踪",
-        "会议待办"
-      ],
-      "pdfFileName": "Engma_C_AI_Tool_Benchmark_07092026_ChatGPT_Work.pdf",
-      "pdfUrl": "/reports/pdf/Engma_C_AI_Tool_Benchmark_07092026_ChatGPT_Work.pdf",
-      "sourceFileName": "Engma_C_AI_Tool_Benchmark_07092026_ChatGPT_Work.md",
-      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-09\n\n## ChatGPT Work\n\n官网：https://openai.com/index/chatgpt-for-your-most-ambitious-work/\n\n## 测试任务\n\n连续追踪一条线索，自动整理待办、提醒和追问。\n\n## 结果\n\n比纯聊天更像任务管理器，适合项目跟进。\n\n## 优缺点\n\n优点：优点：任务串联能力强。  \n缺点：缺点：需要团队把输入格式先统一。\n\n## 推荐指数\n\n4.6/5\n\n一句话：  \n适合持续跟进、待办管理和研究协作。\n\n来源：https://openai.com/index/chatgpt-for-your-most-ambitious-work/\n"
+      "pdfFileName": "Engma_C_AI_Tool_Benchmark_07102026_GPT_56_Sol.pdf",
+      "pdfUrl": "/reports/pdf/Engma_C_AI_Tool_Benchmark_07102026_GPT_56_Sol.pdf",
+      "sourceFileName": "Engma_C_AI_Tool_Benchmark_07102026_GPT_56_Sol.md",
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-10\n\n## GPT-5.6 Sol\n\n官网：https://openai.com/index/gpt-5-6/\n\n## 测试任务\n\n让模型连续处理一条行业信息：先摘要，再拆机会，再输出给业务同事的行动建议。\n\n## 结果\n\n长链路输出更稳，结构化整理更自然，适合做研究和写作底座。\n\n## 优缺点\n\n优点：稳定、适合复杂链路。  \n缺点：成本和响应时间需要额外管理。\n\n## 推荐指数\n\n4.7/5\n\n一句话：  \n更适合长任务、稳态推理和企业默认模型测试。\n\n来源：https://openai.com/index/gpt-5-6/\n"
     },
     {
       "id": "c-20260708-nvidia-nemotron",
@@ -301,6 +270,37 @@
       "pdfUrl": "/reports/pdf/Engma_C_AI_Tool_Benchmark_07082026_NVIDIA_Nemotron.pdf",
       "sourceFileName": "Engma_C_AI_Tool_Benchmark_07082026_NVIDIA_Nemotron.md",
       "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-08\n\n## NVIDIA Nemotron\n\n官网：https://nvidianews.nvidia.com/news/nvidia-nemotron-achieves-benchmark-leading-performance-with-langchain-deep-agents-harness\n\n## 测试任务\n\n用它配 LangChain Deep Agents Harness 组织一个多工具工作流。\n\n## 结果\n\n更适合企业级 Agent 编排和评测底座。\n\n## 优缺点\n\n优点：优点：Agent harness 观念清晰。  \n缺点：缺点：配置门槛比纯聊天工具高。\n\n## 推荐指数\n\n4.3/5\n\n一句话：  \n适合做 LangChain Deep Agents 一类的企业 Agent 编排测试。\n\n来源：https://nvidianews.nvidia.com/news/nvidia-nemotron-achieves-benchmark-leading-performance-with-langchain-deep-agents-harness\n"
+    },
+    {
+      "id": "c-20260707-chatgpt-work",
+      "targetTab": "AI 工具",
+      "category": "C｜AI Tool Benchmark Report",
+      "name": "ChatGPT Work",
+      "title": "ChatGPT Work｜AI Tool Benchmark Report",
+      "date": "2026-07-07",
+      "website": "https://chatgpt.com/",
+      "shortDescription": "适合把企业资料、任务和追问串成持续工作流。",
+      "fullDescription": "适合把企业资料、任务和追问串成持续工作流。",
+      "testTask": "让模型读取一段支付业务说明，先做摘要，再拆成行动项，再写给同事的工作建议。",
+      "prosConsText": "优点：适合复杂工作流和重复协作。缺点：需要清晰上下文，并保留人工复核。",
+      "recommendationStars": 4.5,
+      "overallScore": 9.0,
+      "ratings": {
+        "speed": 8.7,
+        "accuracy": 9.0,
+        "costEfficiency": 8.3,
+        "easeOfUse": 9.2
+      },
+      "pricing": "以官网为准",
+      "useCases": [
+        "企业协作",
+        "周报/纪要",
+        "复杂任务拆解"
+      ],
+      "pdfFileName": "Engma_C_AI_Tool_Benchmark_07072026_ChatGPT_Work.pdf",
+      "pdfUrl": "/reports/pdf/Engma_C_AI_Tool_Benchmark_07072026_ChatGPT_Work.pdf",
+      "sourceFileName": "Engma_C_AI_Tool_Benchmark_07072026_ChatGPT_Work.md",
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-07\n\n## ChatGPT Work\n\n官网：https://chatgpt.com/\n\n## 测试任务\n\n让模型读取一段支付业务说明，先做摘要，再拆成行动项，再写给同事的工作建议。\n\n## 结果\n\n它更适合做企业资料整理和跨部门协作，尤其是把复杂内容串成持续任务流。\n\n## 优缺点\n\n优点：适合复杂工作流和重复协作。  \n缺点：需要清晰上下文，并保留人工复核。\n\n## 推荐指数\n\n4.5/5\n\n一句话：  \nChatGPT Work 更像一个持续跟进工作的助手，而不是一次性回答工具。\n\n来源：https://openai.com/index/australian-payments-plus/\n"
     },
     {
       "id": "c-20260706-lerobot",
