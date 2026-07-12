@@ -27,6 +27,87 @@ export const hrPeerKeywordDefinitions = [
 
 export const hrPeerArticles = [
   {
+    id: 'hr-peer-workday-apac-leadership',
+    title: 'Workday Strengthens Asia Pacific Leadership for the Next AI Growth Phase',
+    summary: 'Workday keeps pushing its enterprise HR platform with a stronger APAC leadership footprint and more visible AI positioning for regional customers.',
+    fullContent: `Workday continues to reinforce its regional leadership and enterprise AI story. For HR buyers, that matters because it signals the company is still investing in the operating layer that sits underneath core HR, finance and workforce planning use cases. The broader takeaway is that large HR platforms are not only shipping features; they are also organizing their go-to-market around AI, governance and regional scale.
+
+For peers, this is a reminder that the competitive game is now as much about regional execution and platform trust as it is about product features.`,
+    date: '2026-07-08',
+    category: ['Leadership', 'Platform Strategy'],
+    tags: ['HR Technology', 'Enterprise AI'],
+    keywords: ['workforce', 'global-hr', 'ai-agents'],
+    impactLevel: 'Medium',
+    companies: [{ en: 'Workday', zh: 'Workday' }],
+    imageUrl: getImg(0),
+    websiteUrl: 'https://www.workday.com/en-us/company/latest/newsroom/press-releases.html',
+    zh: {
+      title: 'Workday 强化亚太领导层，继续推进 AI 增长',
+      summary: 'Workday 继续加强亚太区域的领导力配置，同时把企业 AI 作为平台增长的重要方向。',
+      fullContent: `Workday 继续强化区域领导层和企业 AI 叙事。对 HR 买家来说，这说明公司仍在投资 HR、财务和劳动力规划这些核心工作流之下的操作层。更大的信号是，大型 HR 平台不只是在发功能，而是在围绕 AI、治理和区域规模组织它们的市场策略。
+
+对同行来说，这提醒大家：竞争已经不只是功能多不多，而是看谁在区域执行和平台信任上做得更扎实。`,
+      category: ['领导层', '平台战略'],
+      tags: ['人力资源科技', '企业 AI'],
+      keywords: ['劳动力', '全球用工', 'AI 智能体'],
+      impactLevel: 'Medium'
+    }
+  },
+  {
+    id: 'hr-peer-adp-workforce-intelligence',
+    title: 'ADP Keeps Workforce Intelligence Close to Payroll and Labor Data',
+    summary: 'ADP is still anchoring its HR value proposition in payroll, labor-market intelligence and practical workflow support for employers.',
+    fullContent: `ADP remains one of the clearest examples of a payroll-first platform expanding into workforce intelligence. The company's recent motion shows that customers care less about isolated AI demos and more about whether core HR and payroll data can produce reliable planning signals. That is why payroll, compliance and labor analytics remain a strong moat.
+
+For HR peers, the message is simple: if you can control payroll and labor data, you can become the system that managers trust for operational decisions.`,
+    date: '2026-07-01',
+    category: ['Data Platform', 'Workforce Analytics'],
+    tags: ['HR Technology', 'Payroll'],
+    keywords: ['workforce', 'reporting', 'global-hr'],
+    impactLevel: 'High',
+    companies: [{ en: 'ADP', zh: 'ADP' }],
+    imageUrl: getImg(1),
+    websiteUrl: 'https://www.adp.com/about-adp/newsroom.aspx',
+    zh: {
+      title: 'ADP 继续把劳动力情报和薪酬数据绑在一起',
+      summary: 'ADP 仍然把薪酬、劳动力情报和日常流程支持放在企业 HR 的核心位置。',
+      fullContent: `ADP 仍然是一个典型的“薪酬先行”平台，并且持续向劳动力情报扩展。公司最新动作说明，客户真正关心的不是单独的 AI 演示，而是核心 HR 和薪酬数据能不能产出可靠的规划信号。所以，薪酬、合规和劳动力分析仍然是它的重要护城河。
+
+对 HR 同行来说，结论很直接：谁能控制薪酬和劳动力数据，谁就更容易成为管理者做运营决策时信任的系统。`,
+      category: ['数据平台', '劳动力分析'],
+      tags: ['人力资源科技', '薪酬'],
+      keywords: ['劳动力', '行业报告', '全球用工'],
+      impactLevel: 'High'
+    }
+  },
+  {
+    id: 'hr-peer-greenhouse-ai-notetaker-july',
+    title: 'Greenhouse Moves Its AI Notetaker Toward a July Launch Window',
+    summary: 'Greenhouse is pushing toward a July launch for AI notetaker capabilities that support structured hiring without making the process feel fully automated.',
+    fullContent: `Greenhouse is still leaning into structured hiring rather than shortcut hiring. Its AI notetaker direction shows a familiar HR pattern: keep the process human-led, but use AI to reduce note-taking and coordination overhead. For recruiting teams, that is useful because it improves consistency without forcing a full workflow rewrite.
+
+The broader lesson is that candidate experience still matters. If AI makes interviews feel colder or less transparent, employers lose trust even if they save time.`,
+    date: '2026-07-15',
+    category: ['Product Update', 'Candidate Experience'],
+    tags: ['Recruiting', 'Assessment'],
+    keywords: ['interviews', 'hiring', 'reporting'],
+    impactLevel: 'High',
+    companies: [{ en: 'Greenhouse', zh: 'Greenhouse' }],
+    imageUrl: getImg(2),
+    websiteUrl: 'https://www.greenhouse.com/newsroom/63-of-job-seekers-have-faced-an-ai-interview-most-havent-had-a-good-one-yet',
+    zh: {
+      title: 'Greenhouse 的 AI Notetaker 正走向 7 月上线',
+      summary: 'Greenhouse 正把 AI 面试记录功能推向 7 月发布窗口，强调结构化招聘而不是完全自动化。',
+      fullContent: `Greenhouse 仍然坚持“结构化招聘优先”，而不是一味追求自动化。它的 AI Notetaker 方向说明了 HR 行业的一种常见做法：保留人工主导的流程，但用 AI 降低记录和协同成本。对招聘团队来说，这很实用，因为它能提高一致性，同时不用完全重做工作流。
+
+更大的启示是：候选人体验依然重要。如果 AI 让面试体验更冷、更不透明，即使节省了时间，雇主也会失去信任。`,
+      category: ['产品更新', '候选人体验'],
+      tags: ['招聘', '评估'],
+      keywords: ['面试', '招聘', '行业报告'],
+      impactLevel: 'High'
+    }
+  },
+  {
     id: 'hr-peer-workday-agent-passport',
     title: 'Workday Launches Agent Passport for Enterprise AI Oversight',
     summary: 'Workday introduced Agent Passport to help enterprises register, verify and monitor AI agents inside HR and finance workflows.',

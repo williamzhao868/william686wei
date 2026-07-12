@@ -1,16 +1,44 @@
 {
   "site": "https://engmaailab.com",
-  "generatedDate": "2026-07-10",
+  "generatedDate": "2026-07-12",
   "mapping": {
     "最新洞察与出版物": "A｜AI Insight Daily",
     "AI 工具": "C｜AI Tool Benchmark Report"
   },
   "counts": {
-    "A": 16,
-    "C": 21,
-    "tools": 21
+    "A": 19,
+    "C": 24,
+    "tools": 24
   },
   "insights": [
+    {
+      "id": "a-20260710-gemini-study-notebooks",
+      "targetTab": "最新洞察与出版物",
+      "category": "A｜AI Insight Daily",
+      "title": "AI Insight Daily｜2026-07-10｜Gemini Study Notebooks 让学习工作台更轻",
+      "date": "2026-07-10",
+      "summary": "Google 把 Study notebooks 放进 Gemini app，AI 从通用聊天继续往学习和知识整理工作台延伸。",
+      "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80",
+      "pdfFileName": "Engma_A_AI_Insight_Daily_07102026_Gemini_Study_Notebooks.pdf",
+      "pdfUrl": "/reports/pdf/Engma_A_AI_Insight_Daily_07102026_Gemini_Study_Notebooks.pdf",
+      "sourceFileName": "Engma_A_AI_Insight_Daily_07102026_Gemini_Study_Notebooks.md",
+      "websiteUrl": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-study-notebooks/",
+      "contentMarkdown": "# A：AI Insight Daily\n\n日期：2026-07-10\n\n## 1. Gemini Study notebooks 把 AI 从“问答”进一步推到“学习工作台”。\n\n**事件**\n\nGoogle 在 Gemini app 里继续强化 Study notebooks，目标不是单纯回答问题，而是帮用户把资料变成更容易复习、整理和回看的学习结构。\n\n**为什么重要**\n\nAI 产品正在分化成两类：一类是通用聊天，另一类是具体工作台。Study notebooks 属于后者，说明 Google 想让 Gemini 更深入知识管理和学习流程。\n\n**影响**\n\n这会把 AI 的使用场景从“临时提问”推向“持续整理”。对研究、培训、咨询和内容团队来说，这种产品更接近日常可复用工具。\n\n**可落地机会**\n\nEngma 可以把“学习笔记、研究摘要、资料复盘”作为一个长期的观察面，重点看它是否能变成团队内部知识沉淀的低成本入口。\n\n**标签**\n\nGoogle / Gemini / Study notebooks / 知识整理\n\n**来源**\n\nhttps://blog.google/innovation-and-ai/products/gemini-app/gemini-study-notebooks/\n"
+    },
+    {
+      "id": "a-20260710-copilot-gpt56",
+      "targetTab": "最新洞察与出版物",
+      "category": "A｜AI Insight Daily",
+      "title": "AI Insight Daily｜2026-07-10｜GPT-5.6 进入 Microsoft 365 Copilot",
+      "date": "2026-07-10",
+      "summary": "Microsoft 把 GPT-5.6 直接接入 Microsoft 365 Copilot，企业 AI 继续向默认办公流渗透。",
+      "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80",
+      "pdfFileName": "Engma_A_AI_Insight_Daily_07102026_Microsoft_365_Copilot_GPT_56.pdf",
+      "pdfUrl": "/reports/pdf/Engma_A_AI_Insight_Daily_07102026_Microsoft_365_Copilot_GPT_56.pdf",
+      "sourceFileName": "Engma_A_AI_Insight_Daily_07102026_Microsoft_365_Copilot_GPT_56.md",
+      "websiteUrl": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/available-today-openai%E2%80%99s-gpt-5-6-in-microsoft-365-copilot/4533152",
+      "contentMarkdown": "# A：AI Insight Daily\n\n日期：2026-07-10\n\n## 1. GPT-5.6 进入 Microsoft 365 Copilot，企业 AI 继续向默认办公流渗透。\n\n**事件**\n\nMicrosoft 宣布在 Microsoft 365 Copilot 中提供 GPT-5.6，让更强的推理能力直接进入 Word、Excel、PowerPoint、Teams 和日常办公流程。\n\n**为什么重要**\n\n企业 AI 的竞争点，已经不只是模型能力本身，而是谁能先进入员工每天打开最多的办公软件。\n\n**影响**\n\n如果 Copilot 继续变强，企业采纳 AI 的门槛会进一步下降。用户不需要“专门去用 AI”，而是在原来的办公场景里顺手用上更强的模型。\n\n**可落地机会**\n\nEngma 可以把“办公系统里的默认 AI 助手”作为长期观察方向，重点看文档写作、表格分析、会议整理和跨部门协作的效率变化。\n\n**标签**\n\nMicrosoft / Copilot / GPT-5.6 / 企业办公\n\n**来源**\n\nhttps://techcommunity.microsoft.com/blog/microsoft365copilotblog/available-today-openai%E2%80%99s-gpt-5-6-in-microsoft-365-copilot/4533152\n\nhttps://openai.com/index/gpt-5-6/\n"
+    },
     {
       "id": "a-20260710-chatgpt-ambitious-work",
       "targetTab": "最新洞察与出版物",
@@ -23,6 +51,20 @@
       "pdfUrl": "/reports/pdf/Engma_A_AI_Insight_Daily_07102026_ChatGPT_Ambitious_Work.pdf",
       "sourceFileName": "Engma_A_AI_Insight_Daily_07102026_ChatGPT_Ambitious_Work.md",
       "contentMarkdown": "# A：AI Insight Daily\n\n日期：2026-07-10\n\n## 1. OpenAI 把 ChatGPT 继续推向“复杂工作伙伴”的定位。\n\n**事件**\n\nOpenAI 今天继续强化 ChatGPT 的工作伙伴定位，重点放在复杂任务、持续协作和更高质量输出。\n\n**为什么重要**\n\n模型竞争已经从“单次回答好不好”转向“能不能稳定陪你完成工作”。\n\n**影响**\n\n企业会更愿意把 ChatGPT 放进研究、汇报、内容、销售和内部协作流程里，而不只是当成问答工具。\n\n**可落地机会**\n\nEngma 可以继续把 ChatGPT 视为研究和写作底座，优先测试长任务、追问、总结和多轮协作场景。\n\n**标签**\n\nOpenAI / ChatGPT / 工作流 / 企业协作\n\n**来源**\n\nhttps://openai.com/index/chatgpt-for-your-most-ambitious-work/\n"
+    },
+    {
+      "id": "a-20260709-reflect-claude",
+      "targetTab": "最新洞察与出版物",
+      "category": "A｜AI Insight Daily",
+      "title": "AI Insight Daily｜2026-07-09｜Reflect with Claude 让 AI 使用更可复盘",
+      "date": "2026-07-09",
+      "summary": "Anthropic 用 Reflect with Claude 把使用模式和提问历史做得更可回看，强调 AI 不只是输出，也要能帮助用户复盘。",
+      "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop",
+      "pdfFileName": "Engma_A_AI_Insight_Daily_07092026_Reflect_with_Claude.pdf",
+      "pdfUrl": "/reports/pdf/Engma_A_AI_Insight_Daily_07092026_Reflect_with_Claude.pdf",
+      "sourceFileName": "Engma_A_AI_Insight_Daily_07092026_Reflect_with_Claude.md",
+      "websiteUrl": "https://www.anthropic.com/news/reflect-with-claude",
+      "contentMarkdown": "# A：AI Insight Daily\n\n日期：2026-07-09\n\n## 1. Reflect with Claude 把 AI 从“回答问题”推进到“帮助用户复盘”。\n\n**事件**\n\nAnthropic 推出 Reflect with Claude，让用户更容易回看提问历史、使用习惯和对话模式。\n\n**为什么重要**\n\nAI 产品正在从“生成内容”走向“辅助用户形成方法”。这类功能虽然不炫，但对长期使用习惯的影响很大。\n\n**影响**\n\n如果用户能看见自己怎么用 AI、在哪些场景最常卡住，就更容易把 AI 真正变成工作方法的一部分。\n\n**可落地机会**\n\nEngma 可以关注“复盘型 AI”方向：知识整理、方法沉淀、项目回顾、prompt 资产管理，这些都比单次问答更有长期价值。\n\n**标签**\n\nAnthropic / Claude / 复盘 / 使用习惯\n\n**来源**\n\nhttps://www.anthropic.com/news/reflect-with-claude\n"
     },
     {
       "id": "a-20260708-nvidia-nemotron",
@@ -239,6 +281,114 @@
       "pdfUrl": "/reports/pdf/Engma_C_AI_Tool_Benchmark_07102026_GPT_56_Sol.pdf",
       "sourceFileName": "Engma_C_AI_Tool_Benchmark_07102026_GPT_56_Sol.md",
       "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-10\n\n## GPT-5.6 Sol\n\n官网：https://openai.com/index/gpt-5-6/\n\n## 测试任务\n\n让模型连续处理一条行业信息：先摘要，再拆机会，再输出给业务同事的行动建议。\n\n## 结果\n\n长链路输出更稳，结构化整理更自然，适合做研究和写作底座。\n\n## 优缺点\n\n优点：稳定、适合复杂链路。  \n缺点：成本和响应时间需要额外管理。\n\n## 推荐指数\n\n4.7/5\n\n一句话：  \n更适合长任务、稳态推理和企业默认模型测试。\n\n来源：https://openai.com/index/gpt-5-6/\n"
+    },
+    {
+      "id": "c-20260710-gemini-study-notebooks",
+      "targetTab": "AI 工具",
+      "category": "C｜AI Tool Benchmark Report",
+      "name": "Gemini Study Notebooks",
+      "title": "Gemini Study Notebooks｜AI Tool Benchmark Report",
+      "date": "2026-07-10",
+      "website": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-study-notebooks/",
+      "shortDescription": "更适合把资料整理成可复习学习卡片的轻量工作台。",
+      "fullDescription": "Study notebooks 把 Gemini 从通用问答继续推向学习和知识整理工作台。",
+      "testTask": "把一组研究材料整理成笔记结构、复习卡片和下一步阅读建议。",
+      "prosConsText": "优点：学习路径清楚，适合知识整理。缺点：更适合学习和归纳，不适合重度执行任务。",
+      "recommendationStars": 4.3,
+      "overallScore": 8.6,
+      "ratings": {
+        "speed": 8.1,
+        "accuracy": 8.5,
+        "costEfficiency": 8.9,
+        "easeOfUse": 8.8
+      },
+      "pricing": "以官网为准",
+      "useCases": [
+        "学习整理",
+        "资料复盘",
+        "研究笔记"
+      ],
+      "usageTips": [
+        "先丢一组真实资料进去，看看它能不能形成稳定结构。",
+        "优先测试复习卡片、提纲和资料摘要，不要只看聊天。",
+        "适合做个人学习和研究，不适合直接替代执行型工作台。"
+      ],
+      "pdfFileName": "Engma_C_AI_Tool_Benchmark_Gemini_Study_Notebooks_07102026.pdf",
+      "pdfUrl": "/reports/pdf/Engma_C_AI_Tool_Benchmark_Gemini_Study_Notebooks_07102026.pdf",
+      "sourceFileName": "Engma_C_AI_Tool_Benchmark_Gemini_Study_Notebooks_07102026.md",
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-10\n\n## 工具名称\n\nGemini Study Notebooks\n\n官网：  \nhttps://blog.google/innovation-and-ai/products/gemini-app/gemini-study-notebooks/\n\n## 测试任务\n\n把一组研究材料整理成笔记结构、复习卡片和下一步阅读建议。\n\n## 结果数据\n\nStudy notebooks 把 Gemini 从通用问答继续推向学习和知识整理工作台。\n\n## 优缺点\n\n优点：学习路径清楚，适合知识整理。  \n缺点：更适合学习和归纳，不适合重度执行任务。\n\n## 推荐指数\n\n4.3/5\n\n一句话：  \n更适合把资料整理成可复习学习卡片的轻量工作台。\n\n## 使用技巧\n\n- 先丢一组真实资料进去，看看它能不能形成稳定结构。\n- 优先测试复习卡片、提纲和资料摘要，不要只看聊天。\n- 适合做个人学习和研究，不适合直接替代执行型工作台。\n\n来源：  \nhttps://blog.google/innovation-and-ai/products/gemini-app/gemini-study-notebooks/\n"
+    },
+    {
+      "id": "c-20260710-copilot-gpt56",
+      "targetTab": "AI 工具",
+      "category": "C｜AI Tool Benchmark Report",
+      "name": "Microsoft 365 Copilot GPT-5.6",
+      "title": "Microsoft 365 Copilot GPT-5.6｜AI Tool Benchmark Report",
+      "date": "2026-07-10",
+      "website": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/available-today-openai%E2%80%99s-gpt-5-6-in-microsoft-365-copilot/4533152",
+      "shortDescription": "更适合文档、表格和企业协作流的默认办公助手。",
+      "fullDescription": "GPT-5.6 进入 Microsoft 365 Copilot 后，核心价值不只是回答更聪明，而是更自然地嵌入 Word、Excel、PowerPoint 和 Teams。",
+      "testTask": "让它处理一份内部材料：先摘要、再提炼要点、再生成给管理层看的行动建议。",
+      "prosConsText": "优点：直接进办公流，适合企业默认助手。缺点：能力很强，但生态绑定也更强。",
+      "recommendationStars": 4.6,
+      "overallScore": 9.2,
+      "ratings": {
+        "speed": 8.7,
+        "accuracy": 9.3,
+        "costEfficiency": 8.0,
+        "easeOfUse": 9.1
+      },
+      "pricing": "以官网为准",
+      "useCases": [
+        "文档总结",
+        "表格分析",
+        "企业协作"
+      ],
+      "usageTips": [
+        "先拿一份真实 Word 或 PowerPoint 材料测试，不要只看演示。",
+        "优先测总结、改写、表格分析和行动项提炼。",
+        "把它放进日常办公流程里看，才知道是否真的省时间。"
+      ],
+      "pdfFileName": "Engma_C_AI_Tool_Benchmark_Microsoft_365_Copilot_GPT_56_07102026.pdf",
+      "pdfUrl": "/reports/pdf/Engma_C_AI_Tool_Benchmark_Microsoft_365_Copilot_GPT_56_07102026.pdf",
+      "sourceFileName": "Engma_C_AI_Tool_Benchmark_Microsoft_365_Copilot_GPT_56_07102026.md",
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-10\n\n## 工具名称\n\nMicrosoft 365 Copilot GPT-5.6\n\n官网：  \nhttps://techcommunity.microsoft.com/blog/microsoft365copilotblog/available-today-openai%E2%80%99s-gpt-5-6-in-microsoft-365-copilot/4533152\n\n## 测试任务\n\n让它处理一份内部材料：先摘要、再提炼要点、再生成给管理层看的行动建议。\n\n## 结果数据\n\nGPT-5.6 进入 Microsoft 365 Copilot 后，核心价值不只是回答更聪明，而是更自然地嵌入 Word、Excel、PowerPoint 和 Teams。\n\n## 优缺点\n\n优点：直接进办公流，适合企业默认助手。  \n缺点：能力很强，但生态绑定也更强。\n\n## 推荐指数\n\n4.6/5\n\n一句话：  \n更适合文档、表格和企业协作流的默认办公助手。\n\n## 使用技巧\n\n- 先拿一份真实 Word 或 PowerPoint 材料测试，不要只看演示。\n- 优先测总结、改写、表格分析和行动项提炼。\n- 把它放进日常办公流程里看，才知道是否真的省时间。\n\n来源：  \nhttps://techcommunity.microsoft.com/blog/microsoft365copilotblog/available-today-openai%E2%80%99s-gpt-5-6-in-microsoft-365-copilot/4533152\n"
+    },
+    {
+      "id": "c-20260709-reflect-claude",
+      "targetTab": "AI 工具",
+      "category": "C｜AI Tool Benchmark Report",
+      "name": "Reflect with Claude",
+      "title": "Reflect with Claude｜AI Tool Benchmark Report",
+      "date": "2026-07-09",
+      "website": "https://www.anthropic.com/news/reflect-with-claude",
+      "shortDescription": "更像一个轻量的 AI 使用复盘工具。",
+      "fullDescription": "它不只是产出答案，而是帮助用户回看历史、整理使用模式、优化提问方式。",
+      "testTask": "看它能不能帮团队复盘提问历史、整理 prompt 习惯和使用场景。",
+      "prosConsText": "优点：能帮助方法复盘。缺点：不是直接产出型工具，结果依赖用户习惯。",
+      "recommendationStars": 4.0,
+      "overallScore": 8.0,
+      "ratings": {
+        "speed": 7.8,
+        "accuracy": 8.1,
+        "costEfficiency": 8.2,
+        "easeOfUse": 8.0
+      },
+      "pricing": "以官网为准",
+      "useCases": [
+        "prompt 复盘",
+        "方法沉淀",
+        "使用习惯优化"
+      ],
+      "usageTips": [
+        "先回看一周内的真实对话，再判断是否有重复问题。",
+        "适合团队做 prompt 资产整理，而不是单次答案测试。",
+        "把它当复盘工具用，比当“生产力输出工具”更合适。"
+      ],
+      "pdfFileName": "Engma_C_AI_Tool_Benchmark_Reflect_with_Claude_07092026.pdf",
+      "pdfUrl": "/reports/pdf/Engma_C_AI_Tool_Benchmark_Reflect_with_Claude_07092026.pdf",
+      "sourceFileName": "Engma_C_AI_Tool_Benchmark_Reflect_with_Claude_07092026.md",
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-09\n\n## 工具名称\n\nReflect with Claude\n\n官网：  \nhttps://www.anthropic.com/news/reflect-with-claude\n\n## 测试任务\n\n看它能不能帮团队复盘提问历史、整理 prompt 习惯和使用场景。\n\n## 结果数据\n\n它不只是产出答案，而是帮助用户回看历史、整理使用模式、优化提问方式。\n\n## 优缺点\n\n优点：能帮助方法复盘。  \n缺点：不是直接产出型工具，结果依赖用户习惯。\n\n## 推荐指数\n\n4.0/5\n\n一句话：  \n更像一个轻量的 AI 使用复盘工具。\n\n## 使用技巧\n\n- 先回看一周内的真实对话，再判断是否有重复问题。\n- 适合团队做 prompt 资产整理，而不是单次答案测试。\n- 把它当复盘工具用，比当“生产力输出工具”更合适。\n\n来源：  \nhttps://www.anthropic.com/news/reflect-with-claude\n"
     },
     {
       "id": "c-20260708-nvidia-nemotron",

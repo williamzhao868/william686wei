@@ -1,5 +1,22 @@
 export const aiActivitiesData = [
   {
+    id: 'ev-011',
+    name: 'WAIC 2026',
+    date: '2026-07-17',
+    time: '09:00 AM - 05:00 PM CST',
+    location: 'Shanghai, China',
+    eventType: 'Conference',
+    description: 'World Artificial Intelligence Conference 2026 in Shanghai, focused on global AI governance, applications, infrastructure, and talent exchange.',
+    websiteUrl: 'https://www.worldaic.com.cn/',
+    registrationLink: 'https://www.worldaic.com.cn/',
+    zh: {
+      name: 'WAIC 2026 世界人工智能大会',
+      location: '中国上海',
+      eventType: '大会',
+      description: '2026 世界人工智能大会在上海举行，聚焦全球 AI 治理、应用、基础设施和人才交流。'
+    }
+  },
+  {
     id: 'ev-001',
     name: 'The AI Summit New York 2026',
     date: '2026-12-09',

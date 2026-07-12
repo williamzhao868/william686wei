@@ -81,6 +81,9 @@ function ArticleCard({ article, index = 0, detailPath }) {
   const hasPdf = hasPdfAsset(article);
   const pdfHref = resolvePdfUrl(article);
   const pdfFilename = resolvePdfFilename(article, 'insight.pdf');
+  const displayTitle = article.type === 'A'
+    ? (article.title || '').split('｜').slice(0, 2).join('｜') || article.title
+    : article.title;
   return (
     <motion.article
       initial={{ opacity: 0, y: 20 }}
@@ -94,7 +97,7 @@ function ArticleCard({ article, index = 0, detailPath }) {
             {!imgError ? (
               <img 
                 src={imageUrl} 
-                alt={article.title} 
+                alt={displayTitle} 
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 onError={() => setImgError(true)}
               />
@@ -110,8 +113,8 @@ function ArticleCard({ article, index = 0, detailPath }) {
         
         <div className="flex flex-col flex-1 p-6">
           <Link to={targetPath} className="block mb-3 group/link">
-            <h3 className="text-[clamp(0.92rem,1.05vw,1.12rem)] font-semibold leading-tight whitespace-nowrap overflow-hidden text-ellipsis tracking-[-0.01em] group-hover/link:text-primary transition-colors duration-200">
-              {article.title}
+            <h3 className="text-[clamp(0.84rem,0.95vw,1.02rem)] font-semibold leading-tight whitespace-nowrap overflow-hidden tracking-[-0.02em] group-hover/link:text-primary transition-colors duration-200">
+              {displayTitle}
             </h3>
           </Link>
 

@@ -28,6 +28,13 @@ const getLocalArticleById = (id) =>
   null;
 
 function getInsightPdfRecord(article) {
+  const existingPdfFileName = String(article?.pdfFileName || '').trim();
+  const existingPdfUrl = String(article?.pdfUrl || '').trim();
+
+  if (existingPdfFileName || existingPdfUrl) {
+    return article;
+  }
+
   const date = String(article?.date || article?.created || '').slice(0, 10);
   const match = date.match(/^(\d{4})-(\d{2})-(\d{2})$/);
   if (!match) return article;
