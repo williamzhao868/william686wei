@@ -39,6 +39,18 @@ const getLocalInsights = () => {
     .sort((a, b) => new Date(b.date || b.created || 0) - new Date(a.date || a.created || 0));
 };
 
+const dedupeInsightsByDate = (items) => {
+  const byDate = new Map();
+
+  for (const item of items) {
+    const key = String(item.date || '').slice(0, 10);
+    if (!key) continue;
+    if (!byDate.has(key)) byDate.set(key, item);
+  }
+
+  return [...byDate.values()].sort((a, b) => new Date(b.date || b.created || 0) - new Date(a.date || a.created || 0));
+};
+
 function InsightsPage() {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -80,10 +92,10 @@ function InsightsPage() {
         ...localItems.filter((item) => !liveTitles.has(String(item.title || '').trim())),
       ].sort((a, b) => new Date(b.date || b.created || 0) - new Date(a.date || a.created || 0));
 
-      setArticles(mergedItems);
+      setArticles(dedupeInsightsByDate(mergedItems));
     } catch (err) {
       console.error('Error fetching articles:', err);
-      setArticles(getLocalInsights());
+      setArticles(dedupeInsightsByDate(getLocalInsights()));
     } finally {
       setLoading(false);
     }

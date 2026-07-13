@@ -6,51 +6,24 @@
     "AI 工具": "C｜AI Tool Benchmark Report"
   },
   "counts": {
-    "A": 19,
+    "A": 17,
     "C": 24,
     "tools": 24
   },
   "insights": [
     {
-      "id": "a-20260710-gemini-study-notebooks",
-      "targetTab": "最新洞察与出版物",
-      "category": "A｜AI Insight Daily",
-      "title": "AI Insight Daily｜2026-07-10｜Gemini Study Notebooks 让学习工作台更轻",
-      "date": "2026-07-10",
-      "summary": "Google 把 Study notebooks 放进 Gemini app，AI 从通用聊天继续往学习和知识整理工作台延伸。",
-      "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80",
-      "pdfFileName": "Engma_A_AI_Insight_Daily_07102026_Gemini_Study_Notebooks.pdf",
-      "pdfUrl": "/reports/pdf/Engma_A_AI_Insight_Daily_07102026_Gemini_Study_Notebooks.pdf",
-      "sourceFileName": "Engma_A_AI_Insight_Daily_07102026_Gemini_Study_Notebooks.md",
-      "websiteUrl": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-study-notebooks/",
-      "contentMarkdown": "# A：AI Insight Daily\n\n日期：2026-07-10\n\n## 1. Gemini Study notebooks 把 AI 从“问答”进一步推到“学习工作台”。\n\n**事件**\n\nGoogle 在 Gemini app 里继续强化 Study notebooks，目标不是单纯回答问题，而是帮用户把资料变成更容易复习、整理和回看的学习结构。\n\n**为什么重要**\n\nAI 产品正在分化成两类：一类是通用聊天，另一类是具体工作台。Study notebooks 属于后者，说明 Google 想让 Gemini 更深入知识管理和学习流程。\n\n**影响**\n\n这会把 AI 的使用场景从“临时提问”推向“持续整理”。对研究、培训、咨询和内容团队来说，这种产品更接近日常可复用工具。\n\n**可落地机会**\n\nEngma 可以把“学习笔记、研究摘要、资料复盘”作为一个长期的观察面，重点看它是否能变成团队内部知识沉淀的低成本入口。\n\n**标签**\n\nGoogle / Gemini / Study notebooks / 知识整理\n\n**来源**\n\nhttps://blog.google/innovation-and-ai/products/gemini-app/gemini-study-notebooks/\n"
-    },
-    {
-      "id": "a-20260710-copilot-gpt56",
-      "targetTab": "最新洞察与出版物",
-      "category": "A｜AI Insight Daily",
-      "title": "AI Insight Daily｜2026-07-10｜GPT-5.6 进入 Microsoft 365 Copilot",
-      "date": "2026-07-10",
-      "summary": "Microsoft 把 GPT-5.6 直接接入 Microsoft 365 Copilot，企业 AI 继续向默认办公流渗透。",
-      "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80",
-      "pdfFileName": "Engma_A_AI_Insight_Daily_07102026_Microsoft_365_Copilot_GPT_56.pdf",
-      "pdfUrl": "/reports/pdf/Engma_A_AI_Insight_Daily_07102026_Microsoft_365_Copilot_GPT_56.pdf",
-      "sourceFileName": "Engma_A_AI_Insight_Daily_07102026_Microsoft_365_Copilot_GPT_56.md",
-      "websiteUrl": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/available-today-openai%E2%80%99s-gpt-5-6-in-microsoft-365-copilot/4533152",
-      "contentMarkdown": "# A：AI Insight Daily\n\n日期：2026-07-10\n\n## 1. GPT-5.6 进入 Microsoft 365 Copilot，企业 AI 继续向默认办公流渗透。\n\n**事件**\n\nMicrosoft 宣布在 Microsoft 365 Copilot 中提供 GPT-5.6，让更强的推理能力直接进入 Word、Excel、PowerPoint、Teams 和日常办公流程。\n\n**为什么重要**\n\n企业 AI 的竞争点，已经不只是模型能力本身，而是谁能先进入员工每天打开最多的办公软件。\n\n**影响**\n\n如果 Copilot 继续变强，企业采纳 AI 的门槛会进一步下降。用户不需要“专门去用 AI”，而是在原来的办公场景里顺手用上更强的模型。\n\n**可落地机会**\n\nEngma 可以把“办公系统里的默认 AI 助手”作为长期观察方向，重点看文档写作、表格分析、会议整理和跨部门协作的效率变化。\n\n**标签**\n\nMicrosoft / Copilot / GPT-5.6 / 企业办公\n\n**来源**\n\nhttps://techcommunity.microsoft.com/blog/microsoft365copilotblog/available-today-openai%E2%80%99s-gpt-5-6-in-microsoft-365-copilot/4533152\n\nhttps://openai.com/index/gpt-5-6/\n"
-    },
-    {
       "id": "a-20260710-chatgpt-ambitious-work",
       "targetTab": "最新洞察与出版物",
       "category": "A｜AI Insight Daily",
-      "title": "AI Insight Daily｜2026-07-10｜ChatGPT for Ambitious Work",
+      "title": "AI Insight Daily｜2026-07-10",
       "date": "2026-07-10",
-      "summary": "OpenAI 继续把 ChatGPT 往“复杂工作伙伴”方向推进，强调它不只是聊天，而是能陪伴更长链路的工作。",
+      "summary": "本周 AI 工作台继续往办公套件、学习笔记和复盘入口渗透，企业使用方式正在从聊天转向持续工作流。",
       "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80",
-      "pdfFileName": "Engma_A_AI_Insight_Daily_07102026_ChatGPT_Ambitious_Work.pdf",
-      "pdfUrl": "/reports/pdf/Engma_A_AI_Insight_Daily_07102026_ChatGPT_Ambitious_Work.pdf",
-      "sourceFileName": "Engma_A_AI_Insight_Daily_07102026_ChatGPT_Ambitious_Work.md",
-      "contentMarkdown": "# A：AI Insight Daily\n\n日期：2026-07-10\n\n## 1. OpenAI 把 ChatGPT 继续推向“复杂工作伙伴”的定位。\n\n**事件**\n\nOpenAI 今天继续强化 ChatGPT 的工作伙伴定位，重点放在复杂任务、持续协作和更高质量输出。\n\n**为什么重要**\n\n模型竞争已经从“单次回答好不好”转向“能不能稳定陪你完成工作”。\n\n**影响**\n\n企业会更愿意把 ChatGPT 放进研究、汇报、内容、销售和内部协作流程里，而不只是当成问答工具。\n\n**可落地机会**\n\nEngma 可以继续把 ChatGPT 视为研究和写作底座，优先测试长任务、追问、总结和多轮协作场景。\n\n**标签**\n\nOpenAI / ChatGPT / 工作流 / 企业协作\n\n**来源**\n\nhttps://openai.com/index/chatgpt-for-your-most-ambitious-work/\n"
+      "pdfFileName": "Engma_A_AI_Insight_Daily_07102026.pdf",
+      "pdfUrl": "/reports/pdf/Engma_A_AI_Insight_Daily_07102026.pdf",
+      "sourceFileName": "Engma_A_AI_Insight_Daily_07102026.md",
+      "contentMarkdown": "# A：AI Insight Daily\n\n日期：2026-07-10\n\n## 1. GPT-5.6 进入 Microsoft 365 Copilot，企业 AI 继续向默认办公流渗透。\n\n**事件**\n\nMicrosoft 宣布在 Microsoft 365 Copilot 中提供 GPT-5.6，让更强的推理能力直接进入 Word、Excel、PowerPoint、Teams 和日常办公流程。\n\n**为什么重要**\n\n企业 AI 的竞争点，已经不只是模型能力本身，而是谁能先进入员工每天打开最多的办公软件。\n\n**影响**\n\n如果 Copilot 继续变强，企业采纳 AI 的门槛会进一步下降。用户不需要“专门去用 AI”，而是在原来的办公场景里顺手用上更强的模型。\n\n**可落地机会**\n\nEngma 可以把“办公系统里的默认 AI 助手”作为长期观察方向，重点看文档写作、表格分析、会议整理和跨部门协作的效率变化。\n\n**标签**\n\nMicrosoft / Copilot / GPT-5.6 / 企业办公\n\n**来源**\n\nhttps://techcommunity.microsoft.com/blog/microsoft365copilotblog/available-today-openai%E2%80%99s-gpt-5-6-in-microsoft-365-copilot/4533152\n\n---\n\n## 2. Gemini Study notebooks 把 AI 从“问答”进一步推到“学习工作台”。\n\n**事件**\n\nGoogle 在 Gemini app 里继续强化 Study notebooks，目标不是单纯回答问题，而是帮用户把资料变成更容易复习、整理和回看的学习结构。\n\n**为什么重要**\n\nAI 产品正在分化成两类：一类是通用聊天，另一类是具体工作台。Study notebooks 属于后者，说明 Google 想让 Gemini 更深入知识管理和学习流程。\n\n**影响**\n\n这会把 AI 的使用场景从“临时提问”推向“持续整理”。对研究、培训、咨询和内容团队来说，这种产品更接近日常可复用工具。\n\n**可落地机会**\n\nEngma 可以把“学习笔记、研究摘要、资料复盘”作为一个长期的观察面，重点看它是否能变成团队内部知识沉淀的低成本入口。\n\n**标签**\n\nGoogle / Gemini / Study notebooks / 知识整理\n\n**来源**\n\nhttps://blog.google/innovation-and-ai/products/gemini-app/gemini-study-notebooks/\n\n---\n\n## 3. ChatGPT 继续向“复杂工作伙伴”定位推进。\n\n**事件**\n\nOpenAI 今天继续强化 ChatGPT 的工作伙伴定位，重点放在复杂任务、持续协作和更高质量输出。\n\n**为什么重要**\n\n模型竞争已经从“单次回答好不好”转向“能不能稳定陪你完成工作”。\n\n**影响**\n\n企业会更愿意把 ChatGPT 放进研究、汇报、内容、销售和内部协作流程里，而不只是当成问答工具。\n\n**可落地机会**\n\nEngma 可以继续把 ChatGPT 视为研究和写作底座，优先测试长任务、追问、总结和多轮协作场景。\n\n**标签**\n\nOpenAI / ChatGPT / 工作流 / 企业协作\n\n**来源**\n\nhttps://openai.com/index/chatgpt-for-your-most-ambitious-work/\n\n---\n\n## 4. Reflect with Claude 把 AI 从“回答问题”推进到“帮助用户复盘”。\n\n**事件**\n\nAnthropic 推出 Reflect with Claude，让用户更容易回看提问历史、使用习惯和对话模式。\n\n**为什么重要**\n\nAI 产品正在从“生成内容”走向“辅助用户形成方法”。这类功能虽然不炫，但对长期使用习惯的影响很大。\n\n**影响**\n\n如果用户能看见自己怎么用 AI、在哪些场景最常卡住，就更容易把 AI 真正变成工作方法的一部分。\n\n**可落地机会**\n\nEngma 可以关注“复盘型 AI”方向：知识整理、方法沉淀、项目回顾、prompt 资产管理，这些都比单次问答更有长期价值。\n\n**标签**\n\nAnthropic / Claude / 复盘 / 使用习惯\n\n**来源**\n\nhttps://www.anthropic.com/news/reflect-with-claude\n",
+      "websiteUrl": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/available-today-openai%E2%80%99s-gpt-5-6-in-microsoft-365-copilot/4533152"
     },
     {
       "id": "a-20260709-reflect-claude",
