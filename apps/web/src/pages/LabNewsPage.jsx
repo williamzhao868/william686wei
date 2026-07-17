@@ -23,11 +23,6 @@ const categoryColors = {
 
 const teamMembers = [
   {
-    id: 8,
-    name: '张雨蕾',
-    avatarUrl: '/team-members/zhangyulei.png'
-  },
-  {
     id: 1,
     name: '刘肖鲁',
     avatarUrl: 'https://horizons-cdn.hostinger.com/b28ea7ca-961f-4e44-8fef-0dda445d1017/bd673b1b1bd0563e8163b7af18e83da5.png'
@@ -61,6 +56,11 @@ const teamMembers = [
     id: 7,
     name: '伍斌',
     avatarUrl: '/team-members/wubin.png'
+  },
+  {
+    id: 8,
+    name: '张雨蕾',
+    avatarUrl: '/team-members/zhangyulei.png'
   }
 ];
 
