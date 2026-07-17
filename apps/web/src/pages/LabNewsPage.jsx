@@ -23,6 +23,11 @@ const categoryColors = {
 
 const teamMembers = [
   {
+    id: 8,
+    name: '张雨蕾',
+    avatarUrl: '/team-members/zhangyulei.png'
+  },
+  {
     id: 1,
     name: '刘肖鲁',
     avatarUrl: 'https://horizons-cdn.hostinger.com/b28ea7ca-961f-4e44-8fef-0dda445d1017/bd673b1b1bd0563e8163b7af18e83da5.png'
@@ -63,6 +68,10 @@ const timelineEvents = [
   {
     date: '2026-01-01',
     description: '中央研究院成立'
+  },
+  {
+    date: '2026-07-16',
+    description: '张雨蕾加入团队'
   },
   {
     date: '2026-06-01',
