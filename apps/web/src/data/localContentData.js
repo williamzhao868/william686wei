@@ -56,6 +56,9 @@ export function markdownToHtml(markdown = '') {
       flushParagraph();
       flushList();
       const level = headingMatch[1].length;
+      if (level === 2 && blocks.length > 0) {
+        blocks.push('<hr class="my-10 border-border/70" />');
+      }
       blocks.push(`<h${level}>${applyInlineMarkdown(headingMatch[2])}</h${level}>`);
       continue;
     }
