@@ -184,104 +184,128 @@ export default function ArticleDetailPage() {
       <Header />
 
       <main className="flex-1 pb-24">
-        <div className="bg-muted/20 pt-16 pb-16 border-b border-border mb-12">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+        <div className="relative overflow-hidden border-b border-border/60 bg-gradient-to-b from-muted/35 via-background to-background">
+          <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top_right,rgba(14,165,233,0.12),transparent_34%),radial-gradient(circle_at_bottom_left,rgba(59,130,246,0.08),transparent_30%)]" />
+          <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl pt-10 pb-14">
             <BackButton returnTo="/insights" />
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
+              className="mt-8 grid gap-8 lg:grid-cols-[1.15fr_0.85fr] items-start"
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-foreground mb-8 text-balance" style={{letterSpacing: '-0.02em'}}>
-                {article.title}
-              </h1>
+              <div className="space-y-6">
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="inline-flex items-center rounded-full border border-primary/20 bg-primary/8 px-3 py-1 text-xs font-semibold text-primary">
+                    {article.category || (language === 'zh' ? '洞察文章' : 'Insight')}
+                  </span>
+                  {formattedDate && (
+                    <span className="inline-flex items-center rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
+                      <Calendar className="mr-1.5 h-3.5 w-3.5 text-primary/70" />
+                      <time dateTime={article.date}>{formattedDate}</time>
+                    </span>
+                  )}
+                  {article.author && (
+                    <span className="inline-flex items-center rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
+                      {article.author}
+                    </span>
+                  )}
+                </div>
 
-              {article.summary && (
-                <p className="text-xl text-muted-foreground leading-relaxed mb-8 max-w-prose text-balance">
-                  {article.summary}
-                </p>
-              )}
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.02] tracking-[-0.04em] text-foreground text-balance">
+                  {article.title}
+                </h1>
 
-              <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground border-t border-border/50 pt-6">
-                {formattedDate && (
-                  <div className="flex items-center gap-2">
-                    <Calendar className="w-4 h-4 text-primary/60" />
-                    <time dateTime={article.date}>{formattedDate}</time>
-                  </div>
+                {article.summary && (
+                  <p className="max-w-3xl text-lg md:text-xl text-muted-foreground leading-8 text-balance">
+                    {article.summary}
+                  </p>
                 )}
-                {article.author && (
-                  <div className="flex items-center gap-2">
-                    <span className="font-medium">{article.author}</span>
+              </div>
+
+              <div className="lg:justify-self-end w-full max-w-md">
+                <div className="rounded-[28px] border border-border/70 bg-card/80 p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur-sm">
+                  <div className="flex items-center gap-4">
+                    <div className="h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
+                      <FileText className="h-6 w-6 text-primary" />
+                    </div>
+                    <div className="min-w-0">
+                      <h4 className="text-base font-bold">
+                        {language === 'zh' ? '下载完整报告' : 'Download Full Report'}
+                      </h4>
+                      <p className="text-sm text-muted-foreground truncate">
+                        {hasPdf 
+                          ? (pdfFilename || (language === 'zh' ? '文档准备就绪' : 'Document ready'))
+                          : (language === 'zh' ? '暂无可用 PDF' : 'PDF not available')}
+                      </p>
+                    </div>
                   </div>
-                )}
+
+                  <div className="mt-6 flex flex-col gap-3">
+                    <Button 
+                      onClick={hasPdf ? handleDownload : undefined}
+                      disabled={!hasPdf || isDownloading}
+                      variant={hasPdf ? "default" : "secondary"}
+                      className="rounded-full px-6 py-6 w-full text-base shadow-sm"
+                    >
+                      {isDownloading ? (
+                        <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                      ) : (
+                        <Download className="w-5 h-5 mr-2" />
+                      )}
+                      {language === 'zh' ? '下载PDF' : 'Download PDF'}
+                    </Button>
+                    <Button
+                      variant="outline"
+                      onClick={() => navigate('/insights')}
+                      className="rounded-full w-full"
+                    >
+                      <ArrowLeft className="w-4 h-4 mr-2" />
+                      {language === 'zh' ? '返回列表' : 'Back to List'}
+                    </Button>
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>
         </div>
 
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="mt-12"
           >
-            {article.contentMarkdown ? (
-              <div 
-                className="prose prose-lg dark:prose-invert max-w-none 
-                  prose-headings:font-bold prose-headings:tracking-tight
-                  prose-h2:mt-14 prose-h2:mb-6 prose-h3:mt-10 prose-h3:mb-5
-                  prose-p:my-5 prose-p:leading-8 prose-ul:my-6 prose-li:my-2
-                  prose-a:text-primary hover:prose-a:text-primary/80 transition-colors"
-                dangerouslySetInnerHTML={{ __html: markdownToHtml(article.contentMarkdown || '') }}
-              />
-            ) : article.content && article.content.trim() !== 'Full report available in PDF.' ? (
-              <div 
-                className="prose prose-lg dark:prose-invert max-w-none 
-                  prose-headings:font-bold prose-headings:tracking-tight
-                  prose-h2:mt-14 prose-h2:mb-6 prose-h3:mt-10 prose-h3:mb-5
-                  prose-p:my-5 prose-p:leading-8 prose-ul:my-6 prose-li:my-2
-                  prose-a:text-primary hover:prose-a:text-primary/80 transition-colors
-                  prose-img:rounded-2xl prose-img:border prose-img:border-border prose-img:shadow-sm"
-                dangerouslySetInnerHTML={{ __html: article.content }}
-              />
-            ) : null}
-
-            <div className="mt-12 p-8 bg-card border border-border rounded-2xl shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6">
-              <div className="flex items-center gap-4">
-                <div className="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                  <FileText className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold">
-                    {language === 'zh' ? '下载完整报告' : 'Download Full Report'}
-                  </h4>
-                  <p className="text-sm text-muted-foreground">
-                    {hasPdf 
-                      ? (pdfFilename || (language === 'zh' ? '文档准备就绪' : 'Document ready'))
-                      : (language === 'zh' ? '暂无可用 PDF' : 'PDF not available')}
-                  </p>
-                </div>
-              </div>
-              <Button 
-                onClick={hasPdf ? handleDownload : undefined}
-                disabled={!hasPdf || isDownloading}
-                variant={hasPdf ? "default" : "secondary"}
-                className="rounded-full px-8 py-6 w-full sm:w-auto text-base"
-              >
-                {isDownloading ? (
-                  <Loader2 className="w-5 h-5 mr-2 animate-spin" />
-                ) : (
-                  <Download className="w-5 h-5 mr-2" />
-                )}
-                {language === 'zh' ? '下载PDF' : 'Download PDF'}
-              </Button>
+            <div className="rounded-[30px] border border-border/70 bg-card px-5 py-8 sm:px-8 sm:py-10 shadow-[0_12px_40px_rgba(15,23,42,0.05)]">
+              {article.contentMarkdown ? (
+                <div 
+                  className="prose prose-lg dark:prose-invert max-w-none 
+                    prose-headings:font-bold prose-headings:tracking-tight
+                    prose-h2:mt-14 prose-h2:mb-6 prose-h3:mt-10 prose-h3:mb-5
+                    prose-p:my-5 prose-p:leading-8 prose-ul:my-6 prose-li:my-2
+                    prose-a:text-primary hover:prose-a:text-primary/80 transition-colors"
+                  dangerouslySetInnerHTML={{ __html: markdownToHtml(article.contentMarkdown || '') }}
+                />
+              ) : article.content && article.content.trim() !== 'Full report available in PDF.' ? (
+                <div 
+                  className="prose prose-lg dark:prose-invert max-w-none 
+                    prose-headings:font-bold prose-headings:tracking-tight
+                    prose-h2:mt-14 prose-h2:mb-6 prose-h3:mt-10 prose-h3:mb-5
+                    prose-p:my-5 prose-p:leading-8 prose-ul:my-6 prose-li:my-2
+                    prose-a:text-primary hover:prose-a:text-primary/80 transition-colors
+                    prose-img:rounded-2xl prose-img:border prose-img:border-border prose-img:shadow-sm"
+                  dangerouslySetInnerHTML={{ __html: article.content }}
+                />
+              ) : null}
             </div>
 
-            <div className="mt-16 pt-8 border-t border-border flex justify-between items-center">
-              <Button variant="outline" onClick={() => navigate('/insights')} className="rounded-full transition-all duration-200 active:scale-[0.98]">
-                <ArrowLeft className="w-4 h-4 mr-2" /> {language === 'zh' ? '返回列表' : 'Back to List'}
-              </Button>
+            <div className="mt-10 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <Share2 className="h-4 w-4" />
+                <span>{language === 'zh' ? '内容可分享，也可收藏到团队里继续看' : 'Share or save this article for later team discussion'}</span>
+              </div>
               <Button variant="ghost" onClick={() => {
                 if (navigator.share) {
                   navigator.share({ title: article.title, url: window.location.href });
