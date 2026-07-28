@@ -255,41 +255,41 @@ export default function ArticleDetailPage() {
               ) : null}
             </div>
 
-            <div className="mt-12 rounded-[28px] border border-border/70 bg-card/90 p-6 sm:p-8 shadow-[0_12px_40px_rgba(15,23,42,0.05)]">
-              <div className="flex flex-col gap-6">
-                <div className="flex items-center gap-4">
-                  <div className="h-12 w-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
-                    <FileText className="h-6 w-6 text-primary" />
+            <div className="mt-12 rounded-2xl border border-border/70 bg-card/90 px-4 py-4 sm:px-5 sm:py-4 shadow-[0_8px_24px_rgba(15,23,42,0.05)]">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex items-center gap-3 min-w-0">
+                  <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                    <FileText className="h-5 w-5 text-primary" />
                   </div>
                   <div className="min-w-0">
-                    <h4 className="text-base font-bold">
+                    <h4 className="text-sm font-semibold leading-tight">
                       {language === 'zh' ? '下载完整报告' : 'Download Full Report'}
                     </h4>
-                    <p className="text-sm text-muted-foreground truncate">
+                    <p className="text-xs text-muted-foreground truncate max-w-[18rem]">
                       {hasPdf
                         ? (pdfFilename || (language === 'zh' ? '文档准备就绪' : 'Document ready'))
                         : (language === 'zh' ? '暂无可用 PDF' : 'PDF not available')}
                     </p>
                   </div>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-[minmax(0,1.2fr)_minmax(180px,0.8fr)] gap-3 sm:gap-4 items-stretch">
+                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full sm:w-auto">
                   <Button
                     onClick={hasPdf ? handleDownload : undefined}
                     disabled={!hasPdf || isDownloading}
                     variant={hasPdf ? 'default' : 'secondary'}
-                    className="h-12 sm:h-14 rounded-full px-6 sm:px-8 w-full text-base font-semibold shadow-sm"
+                    className="h-10 sm:h-11 rounded-full px-5 w-full sm:w-auto text-sm font-semibold shadow-sm"
                   >
                     {isDownloading ? (
-                      <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
                     ) : (
-                      <Download className="w-5 h-5 mr-2" />
+                      <Download className="w-4 h-4 mr-2" />
                     )}
                     {language === 'zh' ? '下载PDF' : 'Download PDF'}
                   </Button>
                   <Button
                     variant="outline"
                     onClick={() => navigate('/insights')}
-                    className="h-12 sm:h-14 rounded-full px-6 sm:px-8 w-full text-base font-semibold"
+                    className="h-10 sm:h-11 rounded-full px-5 w-full sm:w-auto text-sm font-semibold"
                   >
                     <ArrowLeft className="w-4 h-4 mr-2" />
                     {language === 'zh' ? '返回列表' : 'Back to List'}
