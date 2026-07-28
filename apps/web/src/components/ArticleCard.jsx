@@ -70,6 +70,37 @@ function getArticleImage(article, index = 0) {
   return combinedPool[index % combinedPool.length];
 }
 
+function extractInsightSections(article) {
+  if (article?.type !== 'A') return [];
+  const source = String(article.contentMarkdown || article.fullContent || article.content || '');
+  if (!source) return [];
+
+  const sections = [];
+  const sectionRegex = /\*\*(.+?)\*\*\s*\n([\s\S]*?)(?=\n\*\*.+?\*\*\s*\n|\n##\s+\d+\.\s|$)/g;
+  let match;
+
+  while ((match = sectionRegex.exec(source)) !== null) {
+    const heading = String(match[1] || '').trim();
+    const body = String(match[2] || '').trim();
+    if (!heading || !body) continue;
+    if (/^来源$|^今日一句话判断$/.test(heading)) continue;
+    sections.push({ heading, body });
+  }
+
+  if (sections.length >= 4) return sections.slice(0, 4);
+
+  const fallbackLines = String(article.summary || article.content || '')
+    .split(/[。；;]\s*/)
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .slice(0, 4);
+
+  return fallbackLines.map((line, index) => ({
+    heading: `要点 ${index + 1}`,
+    body: line,
+  }));
+}
+
 function ArticleCard({ article, index = 0, detailPath }) {
   const { language } = useLanguage();
   const [imgError, setImgError] = useState(false);
@@ -84,6 +115,7 @@ function ArticleCard({ article, index = 0, detailPath }) {
   const displayTitle = article.type === 'A'
     ? (article.title || '').split('｜').slice(0, 2).join('｜') || article.title
     : article.title;
+  const insightSections = extractInsightSections(article);
   return (
     <motion.article
       initial={{ opacity: 0, y: 20 }}
@@ -118,9 +150,24 @@ function ArticleCard({ article, index = 0, detailPath }) {
             </h3>
           </Link>
 
-          <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-1 line-clamp-3">
-            {article.summary}
-          </p>
+          {insightSections.length > 0 ? (
+            <div className="mb-6 flex-1 space-y-3">
+              {insightSections.map((section, sectionIndex) => (
+                <div key={`${article.id}-${sectionIndex}`} className="space-y-1">
+                  <div className="text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-primary/80">
+                    {section.heading}
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
+                    {section.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-1 line-clamp-3">
+              {article.summary}
+            </p>
+          )}
 
           <div className="flex items-center justify-between gap-3 text-xs text-muted-foreground mt-auto pt-4 border-t border-border/50">
             <div className="flex items-center gap-2">
