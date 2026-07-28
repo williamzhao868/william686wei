@@ -1,14 +1,14 @@
 {
   "site": "https://engmaailab.com",
-  "generatedDate": "2026-07-12",
+  "generatedDate": "2026-07-28",
   "mapping": {
     "最新洞察与出版物": "A｜AI Insight Daily",
     "AI 工具": "C｜AI Tool Benchmark Report"
   },
   "counts": {
-    "A": 17,
-    "C": 24,
-    "tools": 24
+    "A": 21,
+    "C": 28,
+    "tools": 28
   },
   "insights": [
     {
@@ -221,6 +221,86 @@
       "pdfFileName": "Engma_A_AI_Insight_Daily_06082026.pdf",
       "sourceFileName": "Engma_A_AI_Insight_Daily_06082026.md",
       "contentMarkdown": "# A：AI Insight Daily\n\n日期：2026-06-08\n\n## 1. Sam Altman 投 Alfred，机器人软件平台开始变成新机会\n\n**事件**\n\nSam Altman 投了一家 9 个月大的机器人软件 startup：Alfred。这个团队有特斯拉背景，方向不是直接造一个机器人，而是做未来机器人可以执行不同任务的软件平台。\n\n**为什么重要**\n\n这件事说明机器人行业下一步不只是拼硬件。未来人形机器人进入工厂、仓库、家庭以后，真正的差异会在软件层：不同场景、不同家庭、不同企业，都需要定制任务。\n\n**影响**\n\n机器人控制软件会变成一个很大的市场。现在钱主要还在大模型和 Agent，但 Physical AI 起来之后，机器人操作系统、任务编排、训练数据、仿真环境都会变贵。\n\n**可落地机会**\n\nEngma 可以重点跟踪“机器人软件平台”这个方向。未来不一定要自己造机器人，但可以看机器人任务模板、行业工作流、训练数据服务、机器人应用层软件。\n\n**标签**\n\nPhysical AI / Humanoid Robotics / 机器人软件 / 任务定制\n\n**来源**\n\nhttps://www.businessinsider.com/sam-altman-startup-alfred-building-software-for-robots-and-cars-2026-6\n\n---\n\n## 2. NVIDIA 发布人形机器人参考设计，机器人开发进入“底层平台化”\n\n**事件**\n\nNVIDIA 发布开放人形机器人参考设计，相当于给研究机构和企业提供一套机器人开发底座。过去做机器人很多要从 0 开始，现在 NVIDIA 想把底层架构先搭好。\n\n**为什么重要**\n\nNVIDIA 做的不是单个机器人，而是机器人行业的“开发平台”。这和它在 AI 算力里的位置很像：不一定每个应用都是 NVIDIA 做，但底层工具、硬件和生态会围绕它展开。\n\n**影响**\n\n机器人行业会越来越像 AI 行业：上层公司拼应用，底层平台公司赚基础设施的钱。大学、实验室、机器人公司都会需要这种 reference design 来加快迭代。\n\n**可落地机会**\n\nEngma 可以把 NVIDIA 这条线理解成“卖铲子”。机器人产业越热，底层硬件、仿真、开发工具、训练平台越值钱。\n\n**标签**\n\nNVIDIA / 机器人底座 / Humanoid / AI 基础设施\n\n**来源**\n\nhttps://nvidianews.nvidia.com/news/nvidia-open-humanoid-robot-reference-design\n\n---\n\n## 3. Unitree IPO 过会，国内具身智能进入资本市场\n\n**事件**\n\n宇树科技科创板 IPO 于 2026 年 6 月 1 日通过上交所上市委会议审议，拟募资约 42.02 亿元，资金主要用于智能机器人模型研发和机器人本体研发。\n\n**为什么重要**\n\n这说明国内资金和政策正在把机器人当成一个确定性方向。宇树的路线很清楚：低成本硬件、自研关节、AI 模型、规模出货。\n\n**影响**\n\n国内机器人短期更可能先服务科研、工业、展演、政策项目和一带一路市场。它不一定很快进入北美高端消费市场，但在低成本和规模化方面有优势。\n\n**可落地机会**\n\nEngma 可以关注中国机器人企业的“低成本规模化路线”：硬件成本下降以后，真正能赚钱的是行业场景、软件任务包、售后运维和数据闭环。\n\n**标签**\n\n宇树科技 / 具身智能 / IPO / 中国机器人\n\n**来源**\n\nhttps://www.news.cn/fortune/20260602/d884707afea744ceb957811d4d400e63/c.html\n\n---\n\n## 4. 机器人训练数据开始进入真实家庭场景\n\n**事件**\n\n美国出现新的数据采集模式：让人戴头戴式摄像机去别人家免费做家务，比如打扫、洗碗、整理房间，用真实家庭动作数据训练机器人。\n\n**为什么重要**\n\n机器人要真正做家务，光靠实验室数据不够。每个家庭结构、物品摆放、清洁习惯都不一样，真实世界数据越多，机器人越容易从“演示能力”走向“可用能力”。\n\n**影响**\n\n未来机器人公司的关键资产可能不是硬件，而是高质量动作数据。谁能拿到更多真实场景的数据，谁就更容易训练出能干活的机器人。\n\n**可落地机会**\n\nEngma 可以关注“机器人数据服务”：家庭清洁数据、仓储拣货数据、制造业动作数据、标注与仿真数据。这类公司很可能成为 Physical AI 时代的新基础设施。\n\n**标签**\n\n机器人数据 / 家庭场景 / 训练数据 / Physical AI\n\n**来源**\n\n用户提供聊天记录整理\n\n---\n\n## 今日一句话判断\n\n机器人这条线已经很清楚了：短期看软件平台和数据，中期看工业和仓储落地，长期才是家庭机器人普及。真正值得盯的，不只是机器人本体，而是机器人背后的软件、数据和底层平台。"
+    },
+    {
+      "id": "a-20260727-openai-work-flow",
+      "targetTab": "最新洞察与出版物",
+      "category": "A｜AI Insight Daily",
+      "title": "AI Insight Daily｜2026-07-27",
+      "date": "2026-07-27",
+      "summary": "OpenAI 开始把“AI 改变工作内容”讲得更具体了：AI 不再只是聊天框，而是正在接管岗位里一段段可拆分、可衡量的工作流。",
+      "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop",
+      "pdfFileName": "Engma_A_AI_Insight_Daily_07272026_OpenAI_Work.pdf",
+      "sourceFileName": "Engma_A_AI_Insight_Daily_07272026_OpenAI_Work.md",
+      "companies": [
+        {
+          "en": "OpenAI",
+          "zh": "OpenAI"
+        },
+        {
+          "en": "Workday",
+          "zh": "Workday"
+        },
+        {
+          "en": "ADP",
+          "zh": "ADP"
+        }
+      ],
+      "contentMarkdown": "# A：全球AI洞察\n\n日期：2026-07-27\n\n## 1. OpenAI 把“AI 影响工作内容”这件事讲得更像企业管理语言了\n\n**事件**\n\nOpenAI 发布《How AI is expanding what people do at work》，核心不是继续强调模型参数，而是直接去讲：AI 正在把工作拆成更细的任务，然后接手其中一段。\n\n**为什么重要**\n\n我更看重这一点：AI 行业开始从“能力竞赛”转成“岗位竞赛”。谁能替掉一段重复工作、谁能把原来要三个人做的事情压缩成一个人加一个 AI 流程，谁就更接近付费场景。\n\n**我的判断**\n\n这篇文章最有价值的地方，是它把 AI 的价值从“回答问题”拉回到“改变组织的工作方式”。这也是为什么我一直觉得，真正有预算的客户不会只买一个聊天框，而是买一个能嵌进业务流程的系统。\n\n**可落地机会**\n\nEngma 后面做内容和产品，最好继续围绕“工作流怎么被 AI 改写”来写。比如把洞察拆成老板能直接判断的动作建议；把工具测试写成一线同事能马上照着用的步骤；把 AI 的价值写成省时间、省人、少返工，而不是只讲技术名词。像 Workday、ADP 这种系统型公司，也是在往这个方向走。\n\n**标签**\n\nOpenAI / 企业 AI / 工作流 / 生产力 / Agent\n\n**来源**\n\n[OpenAI 官方文章](https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/)\n\n**一句话判断**\n\nAI 现在最值得看的，不是它会不会聊天，而是它会不会把一段原本人工做的工作真正接走。"
+    },
+    {
+      "id": "a-20260724-claude-opus-5",
+      "targetTab": "最新洞察与出版物",
+      "category": "A｜AI Insight Daily",
+      "title": "AI Insight Daily｜2026-07-24",
+      "date": "2026-07-24",
+      "summary": "Anthropic 的 Claude Opus 5 把“更强推理”讲成了“更稳的长任务执行能力”，这说明前沿模型竞争已经从单轮问答，转向代码、研究和多步任务的持久作战。",
+      "image": "https://images.unsplash.com/photo-1677442135136-54c1f0f4e2a8?q=80&w=2070&auto=format&fit=crop",
+      "pdfFileName": "Engma_A_AI_Insight_Daily_07242026_Claude_Opus_5.pdf",
+      "sourceFileName": "Engma_A_AI_Insight_Daily_07242026_Claude_Opus_5.md",
+      "companies": [
+        {
+          "en": "Anthropic",
+          "zh": "Anthropic"
+        }
+      ],
+      "contentMarkdown": "# A：全球AI洞察\n\n日期：2026-07-24\n\n## 1. Claude Opus 5 说明前沿模型竞争已经进入“长任务稳定性”阶段\n\n**事件**\n\nAnthropic 在 7 月 24 日发布 Claude Opus 5，官方把重点放在 long-running agents、coding 和 professional work 上。也就是说，它不是只想证明自己“更聪明”，而是想证明自己“更适合把一个长任务稳稳做完”。\n\n**为什么重要**\n\n我认为这背后的信号很直接：大家已经不再满足于模型只会回答问题。真正的竞争点，是它能不能连续几轮保持判断，能不能在信息越来越多的时候不跑偏，能不能在复杂任务里少返工、少自我打架。\n\n**我的判断**\n\nClaude Opus 5 这一类模型，真正打动人的不是某个单项分数，而是它给人的整体感觉更像一个靠谱的高阶同事：能做事、能复核、能在长链路里记住前后文。这个阶段的差异，开始从“会不会”变成“稳不稳”。\n\n**可落地机会**\n\nEngma 在做工具测评和行业分析时，可以把这类模型重点放到三类任务上：长文研究、代码改写、跨步骤整理。因为这些任务最能看出模型是不是只会“答”，还是能真正“做完”。\n\n**标签**\n\nAnthropic / Claude / 长任务 / Coding / Agent\n\n**来源**\n\n[Anthropic 官方新闻](https://www.anthropic.com/news/claude-opus-5)\n\n**一句话判断**\n\n模型竞争已经不只是看谁答得更像人，而是看谁在长任务里更像一个靠谱的人。"
+    },
+    {
+      "id": "a-20260722-openai-presence",
+      "targetTab": "最新洞察与出版物",
+      "category": "A｜AI Insight Daily",
+      "title": "AI Insight Daily｜2026-07-22",
+      "date": "2026-07-22",
+      "summary": "OpenAI Presence 把企业 AI 的重点拉回“可部署、可治理、可交付”的现实层面：真正重要的不只是模型，而是能不能稳定进生产。",
+      "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop",
+      "pdfFileName": "Engma_A_AI_Insight_Daily_07222026_OpenAI_Presence.pdf",
+      "sourceFileName": "Engma_A_AI_Insight_Daily_07222026_OpenAI_Presence.md",
+      "companies": [
+        {
+          "en": "OpenAI",
+          "zh": "OpenAI"
+        }
+      ],
+      "contentMarkdown": "# A：全球AI洞察\n\n日期：2026-07-22\n\n## 1. OpenAI Presence 其实是在告诉市场：企业真正要买的是“可控的 AI 生产能力”\n\n**事件**\n\nOpenAI 在 7 月 22 日推出 Presence，定位不是普通聊天产品，而是一个可以把 voice 和 chat agents 真正部署到企业流程里的平台。它强调的是可靠性、守护规则、审批链路和升级机制。\n\n**为什么重要**\n\n这件事比表面上的“又出了一个产品”更关键。因为企业买 AI，最后一定会回到三个问题：能不能接系统、能不能按流程做事、出错了能不能兜住。Presence 回答的就是这三个问题。\n\n**我的判断**\n\n我一直觉得，企业 AI 最难的不是让模型说得好，而是让它在生产环境里一直说得对、做得对、还不乱做。Presence 的方向非常像真正的企业基础设施：它不是一个聊天产品，而是一个把 AI 变成运营能力的入口。\n\n**可落地机会**\n\nEngma 如果后面继续写企业 AI，最好把“模型能力”跟“落地能力”拆开讲。前者讲给技术看，后者讲给老板看。老板更在意的是：能不能缩短处理时间、能不能降低人工协调成本、能不能把高价值流程标准化。这个逻辑和 Workday、ADP 这些系统型公司也很接近。\n\n**标签**\n\nOpenAI / Enterprise AI / Agent Platform / Governance / Workflow\n\n**来源**\n\n[OpenAI 官方文章](https://openai.com/index/introducing-openai-presence/)\n\n**一句话判断**\n\n企业真正要买的不是一个会说话的 AI，而是一个能稳定进入生产环境的 AI。"
+    },
+    {
+      "id": "a-20260718-gpt-live",
+      "targetTab": "最新洞察与出版物",
+      "category": "A｜AI Insight Daily",
+      "title": "AI Insight Daily｜2026-07-18",
+      "date": "2026-07-18",
+      "summary": "GPT-Live 代表的是 AI 交互方式的升级：从“轮流答题”走向“实时对话”，这会直接改变语音助手、销售陪练和客服机器人的产品体验。",
+      "image": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=2070&auto=format&fit=crop",
+      "pdfFileName": "Engma_A_AI_Insight_Daily_07182026_GPT_Live.pdf",
+      "sourceFileName": "Engma_A_AI_Insight_Daily_07182026_GPT_Live.md",
+      "companies": [
+        {
+          "en": "OpenAI",
+          "zh": "OpenAI"
+        }
+      ],
+      "contentMarkdown": "# A：全球AI洞察\n\n日期：2026-07-18\n\n## 1. GPT-Live 的意义不是“更会说话”，而是把 AI 从问答工具改成实时协作对象\n\n**事件**\n\nOpenAI 在 7 月 8 日发布 GPT-Live 后，市场开始更认真地讨论实时语音和连续交互这件事。它最大的变化不是“声音更自然”，而是能在对话过程中持续听、持续说、持续判断，而不是一轮一轮机械接话。\n\n**为什么重要**\n\n这会直接改变用户对 AI 的感受。过去很多语音助手像是“你问我答”，现在更接近“你和我一起把事情做完”。这个差别很大，因为一旦对话变顺，AI 的使用频率和停留时长都会变高。\n\n**我的判断**\n\n我把这一代能力看成 AI 产品的真实入口升级。它不是为了炫技，而是为了让 AI 更像一个随时在线、不会卡壳、能接住上下文的协作者。对客服、销售陪练、会议助手、实时翻译这些场景来说，这个变化非常实在。\n\n**可落地机会**\n\nEngma 后面如果做 AI 工具测评，可以重点测“实时性”和“连续性”，而不只是看模型能不能答对题。因为很多工具在演示时都挺好，真正用起来，一旦有延迟、抢话、丢上下文，体验就立刻掉下来。\n\n**标签**\n\nOpenAI / Voice / Real-time AI / Conversation / Agent\n\n**来源**\n\n[OpenAI 官方文章](https://openai.com/index/introducing-gpt-live/)\n\n**一句话判断**\n\n真正的 AI 进化，不是说得更像人，而是让人和 AI 的协作更像一件自然的事。"
     }
   ],
   "tools": [
@@ -968,6 +1048,162 @@
       "pdfFileName": "Engma_C_AI_Tool_Benchmark_Hera_06082026.pdf",
       "sourceFileName": "Engma_C_AI_Tool_Benchmark_Hera_06082026.md",
       "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-06-08\n\n## Hera\n\n官网：https://www.ycombinator.com/companies/hera-video\n\n## 测试任务\n\n看它能不能快速做一个简单的 AI 动画介绍视频，比如 Engma AI Lab 的 introduction video。\n\n## 结果\n\nHera 是 YC 投的 AI motion design 工具，核心是把原来很费时间的动画设计，变成更快的生成和编辑流程。\n\n我的判断：  \n它适合做介绍视频、课程短片、活动宣传、PPT 动画素材。\n\n## 优缺点\n\n优点：方向清楚，适合不会做动画的人快速出效果。  \n缺点：复杂视频还是要人工审美和后期调整。\n\n## 推荐指数\n\n4 星\n\n一句话：  \n小团队做视频物料，可以先用这类工具省时间。\n\n来源：https://www.ycombinator.com/companies/hera-video"
+    },
+    {
+      "id": "c-20260727-openai-presence",
+      "targetTab": "AI 工具",
+      "category": "C｜AI Tool Benchmark Report",
+      "name": "OpenAI Presence",
+      "title": "OpenAI Presence｜AI Tool Benchmark Report",
+      "date": "2026-07-27",
+      "website": "https://openai.com/index/introducing-openai-presence/",
+      "shortDescription": "适合企业级 voice/chat agent 部署，重点看可控性、稳定性和工作流接入能力。",
+      "fullDescription": "适合企业级 voice/chat agent 部署，重点看可控性、稳定性和工作流接入能力。",
+      "testTask": "模拟一个 20 分钟的客服 / 销售对话，让它在不中断交流的前提下，持续提炼需求、引用知识库并输出行动项。",
+      "prosConsText": "优点：实时感强、对话连续、适合企业工作流。缺点：部署和治理门槛更高，需要先把权限和升级规则设计好。",
+      "recommendationStars": 4.4,
+      "overallScore": 8.8,
+      "score": 4.4,
+      "ratings": {
+        "speed": 9.0,
+        "accuracy": 8.8,
+        "costEfficiency": 8.0,
+        "easeOfUse": 8.6
+      },
+      "pricing": "以官网为准",
+      "useCases": [
+        "客服代理",
+        "销售陪练",
+        "内部问答",
+        "语音工作流"
+      ],
+      "pdfFileName": "Engma_C_AI_Tool_Benchmark_07272026_OpenAI_Presence.pdf",
+      "pdfUrl": "/reports/pdf/Engma_C_AI_Tool_Benchmark_07272026_OpenAI_Presence.pdf",
+      "sourceFileName": "Engma_C_AI_Tool_Benchmark_07272026_OpenAI_Presence.md",
+      "companies": [
+        {
+          "en": "OpenAI",
+          "zh": "OpenAI"
+        }
+      ],
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-27\n\n## OpenAI Presence\n\n官网：https://openai.com/index/introducing-openai-presence/\n\n## 测试任务\n\n模拟一个 20 分钟的客服 / 销售对话，让它在不中断交流的前提下，持续提炼需求、引用知识库并输出行动项。\n\n## 结果\n\nPresence 的优势不是“答得更花”，而是连续对话中的稳定感更强。它更像一个能在真实企业流程里接住上下文的前台执行层。\n\n## 优缺点\n\n优点：实时感强、对话连续、适合企业工作流。  \n缺点：部署和治理门槛更高，需要先把权限和升级规则设计好。\n\n## 推荐指数\n\n4.4/5\n\n一句话：  \n如果企业想把 voice/chat 真正接进生产环境，Presence 是更像基础设施的那一类产品。\n\n来源：https://openai.com/index/introducing-openai-presence/\n"
+    },
+    {
+      "id": "c-20260724-claude-opus-5",
+      "targetTab": "AI 工具",
+      "category": "C｜AI Tool Benchmark Report",
+      "name": "Claude Opus 5",
+      "title": "Claude Opus 5｜AI Tool Benchmark Report",
+      "date": "2026-07-24",
+      "website": "https://www.anthropic.com/news/claude-opus-5",
+      "shortDescription": "适合长任务、复杂推理和代码/研究类工作，重点看稳定性和多步执行能力。",
+      "fullDescription": "适合长任务、复杂推理和代码/研究类工作，重点看稳定性和多步执行能力。",
+      "testTask": "给它一份复杂业务材料，先做摘要、再拆机会、再输出给老板的行动建议，最后检查它能不能前后自洽。",
+      "prosConsText": "优点：长链路更稳、推理更细、适合专业工作。缺点：在成本和响应速度上仍然要做取舍。",
+      "recommendationStars": 4.7,
+      "overallScore": 9.4,
+      "score": 4.7,
+      "ratings": {
+        "speed": 8.6,
+        "accuracy": 9.4,
+        "costEfficiency": 8.0,
+        "easeOfUse": 8.8
+      },
+      "pricing": "以官网为准",
+      "useCases": [
+        "长任务研究",
+        "代码审查",
+        "专业写作",
+        "多步推理"
+      ],
+      "pdfFileName": "Engma_C_AI_Tool_Benchmark_07242026_Claude_Opus_5.pdf",
+      "pdfUrl": "/reports/pdf/Engma_C_AI_Tool_Benchmark_07242026_Claude_Opus_5.pdf",
+      "sourceFileName": "Engma_C_AI_Tool_Benchmark_07242026_Claude_Opus_5.md",
+      "companies": [
+        {
+          "en": "Anthropic",
+          "zh": "Anthropic"
+        }
+      ],
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-24\n\n## Claude Opus 5\n\n官网：https://www.anthropic.com/news/claude-opus-5\n\n## 测试任务\n\n给它一份复杂业务材料，先做摘要、再拆机会、再输出给老板的行动建议，最后检查它能不能前后自洽。\n\n## 结果\n\nClaude Opus 5 的表现更像一个稳一点、耐心一点的高阶同事。它不是只会快答，而是在长任务里维持判断、复核和连贯性。\n\n## 优缺点\n\n优点：长链路更稳、推理更细、适合专业工作。  \n缺点：在成本和响应速度上仍然要做取舍。\n\n## 推荐指数\n\n4.7/5\n\n一句话：  \n如果你要的是“能把复杂事情做完”的模型，Claude Opus 5 是这一波里最值得认真看的选项之一。\n\n来源：https://www.anthropic.com/news/claude-opus-5/\n"
+    },
+    {
+      "id": "c-20260722-gpt-live",
+      "targetTab": "AI 工具",
+      "category": "C｜AI Tool Benchmark Report",
+      "name": "GPT-Live",
+      "title": "GPT-Live｜AI Tool Benchmark Report",
+      "date": "2026-07-22",
+      "website": "https://openai.com/index/introducing-gpt-live/",
+      "shortDescription": "更适合实时语音、连续对话和边说边做的交互场景，重点看自然度和延迟。",
+      "fullDescription": "更适合实时语音、连续对话和边说边做的交互场景，重点看自然度和延迟。",
+      "testTask": "让它在语音里处理一个实时任务：一边听需求，一边整理行动项，还要能在背景有噪音时保持对话不断。",
+      "prosConsText": "优点：声音自然、连续对话感强、适合高频交互。缺点：复杂工作仍然要依赖后台更强的模型和清晰的控制逻辑。",
+      "recommendationStars": 4.5,
+      "overallScore": 9.0,
+      "score": 4.5,
+      "ratings": {
+        "speed": 9.2,
+        "accuracy": 8.8,
+        "costEfficiency": 8.1,
+        "easeOfUse": 9.1
+      },
+      "pricing": "以官网为准",
+      "useCases": [
+        "实时语音助手",
+        "销售陪练",
+        "会议助手",
+        "实时翻译"
+      ],
+      "pdfFileName": "Engma_C_AI_Tool_Benchmark_07182026_GPT_Live.pdf",
+      "pdfUrl": "/reports/pdf/Engma_C_AI_Tool_Benchmark_07182026_GPT_Live.pdf",
+      "sourceFileName": "Engma_C_AI_Tool_Benchmark_07182026_GPT_Live.md",
+      "companies": [
+        {
+          "en": "OpenAI",
+          "zh": "OpenAI"
+        }
+      ],
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-22\n\n## GPT-Live\n\n官网：https://openai.com/index/introducing-gpt-live/\n\n## 测试任务\n\n让它在语音里处理一个实时任务：一边听需求，一边整理行动项，还要能在背景有噪音时保持对话不断。\n\n## 结果\n\nGPT-Live 的优势在于对话感很连续，像是把 AI 从“等你说完再答”推进到了“边听边想边接话”。\n\n## 优缺点\n\n优点：声音自然、连续对话感强、适合高频交互。  \n缺点：复杂工作仍然要依赖后台更强的模型和清晰的控制逻辑。\n\n## 推荐指数\n\n4.5/5\n\n一句话：  \n如果产品要做实时语音体验，GPT-Live 属于这一类里最值得重点测的一档。\n\n来源：https://openai.com/index/introducing-gpt-live/\n"
+    },
+    {
+      "id": "c-20260721-workday-learning-sana",
+      "targetTab": "AI 工具",
+      "category": "C｜AI Tool Benchmark Report",
+      "name": "Workday Learning, powered by Sana",
+      "title": "Workday Learning, powered by Sana｜AI Tool Benchmark Report",
+      "date": "2026-07-21",
+      "website": "https://www.workday.com/en-us/products/talent-management/learning.html",
+      "shortDescription": "更适合企业学习、培训和知识内化，把内容制作和学习路径做成 AI-native 的工作流。",
+      "fullDescription": "更适合企业学习、培训和知识内化，把内容制作和学习路径做成 AI-native 的工作流。",
+      "testTask": "拿一份新员工 onboarding 材料，看看它能不能快速变成课程、测验和学习路径，并且能不能跟岗位和技能数据挂上钩。",
+      "prosConsText": "优点：非常贴近企业场景、内容生产快、治理和合规感强。缺点：更偏中大型组织，对小团队来说可能有点重。",
+      "recommendationStars": 4.2,
+      "overallScore": 8.4,
+      "score": 4.2,
+      "ratings": {
+        "speed": 8.8,
+        "accuracy": 8.6,
+        "costEfficiency": 7.8,
+        "easeOfUse": 8.2
+      },
+      "pricing": "以官网为准",
+      "useCases": [
+        "员工培训",
+        "课程生成",
+        "知识库学习",
+        "合规教育"
+      ],
+      "pdfFileName": "Engma_C_AI_Tool_Benchmark_07212026_Workday_Learning_Sana.pdf",
+      "pdfUrl": "/reports/pdf/Engma_C_AI_Tool_Benchmark_07212026_Workday_Learning_Sana.pdf",
+      "sourceFileName": "Engma_C_AI_Tool_Benchmark_07212026_Workday_Learning_Sana.md",
+      "companies": [
+        {
+          "en": "Workday",
+          "zh": "Workday"
+        }
+      ],
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-21\n\n## Workday Learning, powered by Sana\n\n官网：https://www.workday.com/en-us/products/talent-management/learning.html\n\n## 测试任务\n\n拿一份新员工 onboarding 材料，看看它能不能快速变成课程、测验和学习路径，并且能不能跟岗位和技能数据挂上钩。\n\n## 结果\n\n这类产品的价值不是“会不会生成内容”，而是能不能把学习、岗位、技能和管理动作连起来。它更像是企业内部的学习操作系统。\n\n## 优缺点\n\n优点：非常贴近企业场景、内容生产快、治理和合规感强。  \n缺点：更偏中大型组织，对小团队来说可能有点重。\n\n## 推荐指数\n\n4.2/5\n\n一句话：  \n如果公司本身就重视培训、合规和技能建设，这类产品比单纯的通用聊天工具更有实际价值。\n\n来源：https://www.workday.com/en-us/products/talent-management/learning.html\n"
     }
   ]
 }

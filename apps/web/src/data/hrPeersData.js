@@ -336,7 +336,199 @@ The broader lesson is that candidate experience still matters. If AI makes inter
       keywords: ['全球用工', '智能匹配', '合规'],
       impactLevel: 'High'
     }
+  },
+{
+  "id": "hr-peer-workday-learning-sana",
+  "title": "Workday Learning, powered by Sana Becomes Generally Available",
+  "summary": "Workday 把 Sana 的 AI-native learning 能力正式做成了可部署的企业学习层，继续往“岗位、技能、学习一体化”走。",
+  "fullContent": "Workday Learning, powered by Sana 的意义，不只是又出了一个学习产品，而是 Workday 在把 HR 的核心能力往“技能驱动”的方向再往前推了一步。它把学习内容创建、个人化推荐、实时 tutor、课程更新和治理合规放到同一层里，让学习不再是 HR 后台的孤岛，而是工作流里的一部分。\n\n对同行来说，这个动作说明企业学习的竞争重点已经变了。过去大家比的是课程库多不多、后台稳不稳；现在大家比的是能不能把员工的岗位、技能、培训和成长路径连起来。如果学习系统不能接住 HCM 数据，它就很难真的成为企业的运营层。",
+  "date": "2026-07-22",
+  "category": [
+    "Product Release",
+    "Learning Platform"
+  ],
+  "tags": [
+    "Learning",
+    "Enterprise AI"
+  ],
+  "keywords": [
+    "global-hr",
+    "reporting",
+    "ai-agents"
+  ],
+  "impactLevel": "High",
+  "companies": [
+    {
+      "en": "Workday",
+      "zh": "Workday"
+    }
+  ],
+  "imageUrl": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop",
+  "websiteUrl": "https://www.workday.com/en-us/products/talent-management/learning.html",
+  "zh": {
+    "title": "Workday Learning, powered by Sana 正式进入可用阶段",
+    "summary": "Workday 把 Sana 的 AI-native learning 能力正式做成企业可部署的学习层，继续推动岗位、技能和学习一体化。",
+    "fullContent": "Workday Learning, powered by Sana 的意义，不只是又出了一个学习产品，而是 Workday 在把 HR 的核心能力往“技能驱动”的方向再往前推了一步。它把学习内容创建、个人化推荐、实时 tutor、课程更新和治理合规放到同一层里，让学习不再是 HR 后台的孤岛，而是工作流里的一部分。\n\n对同行来说，这个动作说明企业学习的竞争重点已经变了。过去大家比的是课程库多不多、后台稳不稳；现在大家比的是能不能把员工的岗位、技能、培训和成长路径连起来。如果学习系统不能接住 HCM 数据，它就很难真的成为企业的运营层。",
+    "category": [
+      "产品发布",
+      "学习平台"
+    ],
+    "tags": [
+      "学习",
+      "企业 AI"
+    ],
+    "keywords": [
+      "全球用工",
+      "行业报告",
+      "AI 智能体"
+    ],
+    "impactLevel": "High"
   }
+},
+{
+  "id": "hr-peer-adp-ner-july-2026",
+  "title": "ADP National Employment Report Still Reads Like a High-Frequency Labor Signal",
+  "summary": "ADP 继续把工资和就业数据做成高频劳动力信号，这种数据层能力对 HR 和管理层都更有用。",
+  "fullContent": "ADP 的 National Employment Report 一直是我认为很有代表性的 HR 数据产品。它不是在讲一个“招聘故事”，而是在用 payroll data 去构建劳动力市场的高频观察窗口。这个产品价值大，是因为它可以比月度宏观数据更快地告诉企业：招工有没有放缓、薪酬有没有变动、哪些行业更活跃。\n\n对 HR 行业来说，这种高频数据本身就是护城河。谁能把 payroll、pay insights 和管理决策连起来，谁就更像一个真正的运营平台，而不是单纯的薪酬系统。",
+  "date": "2026-07-21",
+  "category": [
+    "Research",
+    "Labor Market Data"
+  ],
+  "tags": [
+    "Payroll",
+    "Workforce Analytics"
+  ],
+  "keywords": [
+    "reporting",
+    "global-hr",
+    "workforce"
+  ],
+  "impactLevel": "High",
+  "companies": [
+    {
+      "en": "ADP",
+      "zh": "ADP"
+    }
+  ],
+  "imageUrl": "https://images.unsplash.com/photo-1677442135136-54c1f0f4e2a8?q=80&w=2070&auto=format&fit=crop",
+  "websiteUrl": "https://adpemploymentreport.com/",
+  "zh": {
+    "title": "ADP National Employment Report 继续把劳动力数据做成高频信号",
+    "summary": "ADP 继续把薪酬和就业数据做成高频劳动力市场信号，对 HR 和管理层都很有参考价值。",
+    "fullContent": "ADP 的 National Employment Report 一直是我认为很有代表性的 HR 数据产品。它不是在讲一个“招聘故事”，而是在用 payroll data 去构建劳动力市场的高频观察窗口。这个产品价值大，是因为它可以比月度宏观数据更快地告诉企业：招工有没有放缓、薪酬有没有变动、哪些行业更活跃。\n\n对 HR 行业来说，这种高频数据本身就是护城河。谁能把 payroll、pay insights 和管理决策连起来，谁就更像一个真正的运营平台，而不是单纯的薪酬系统。",
+    "category": [
+      "研究",
+      "劳动力数据"
+    ],
+    "tags": [
+      "薪酬",
+      "劳动力分析"
+    ],
+    "keywords": [
+      "行业报告",
+      "全球用工",
+      "劳动力"
+    ],
+    "impactLevel": "High"
+  }
+},
+{
+  "id": "hr-peer-manpowergroup-q3-2026",
+  "title": "ManpowerGroup Q3 2026 Employment Outlook Survey Keeps the Focus on Hiring Intentions",
+  "summary": "ManpowerGroup 的 Q3 2026 调查继续强调招聘意愿、人才短缺和全球劳动力配置，这对大规模用工业务尤其关键。",
+  "fullContent": "ManpowerGroup 的 Employment Outlook Survey 之所以值得看，不是因为它又给出了一个单独数字，而是因为它把全球雇主的招聘预期放在同一张图里看。对于 staffing 和用工服务公司来说，这类 survey 的意义很大：它能提前判断企业是在扩张、观望还是收缩。\n\n我的判断是，ManpowerGroup 这类公司最有价值的地方，不只是“帮你找人”，而是帮你理解“什么时候更难找人、什么行业更缺人、哪些地区更需要灵活用工”。这已经不是传统中介逻辑，而是劳动力配置逻辑。",
+  "date": "2026-07-24",
+  "category": [
+    "Research",
+    "Workforce Planning"
+  ],
+  "tags": [
+    "Recruiting",
+    "Talent Shortage"
+  ],
+  "keywords": [
+    "talent-shortage",
+    "workforce",
+    "global-hr"
+  ],
+  "impactLevel": "High",
+  "companies": [
+    {
+      "en": "ManpowerGroup",
+      "zh": "ManpowerGroup"
+    }
+  ],
+  "imageUrl": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=2070&auto=format&fit=crop",
+  "websiteUrl": "https://www.manpowergroup.com/en/insights/report/q3-2026-manpowergroup-employment-outlook-survey",
+  "zh": {
+    "title": "ManpowerGroup Q3 2026 Employment Outlook Survey 继续盯紧招聘意愿",
+    "summary": "ManpowerGroup 的 Q3 2026 调查继续聚焦招聘预期、人才短缺和全球劳动力配置。",
+    "fullContent": "ManpowerGroup 的 Employment Outlook Survey 之所以值得看，不是因为它又给出了一个单独数字，而是因为它把全球雇主的招聘预期放在同一张图里看。对于 staffing 和用工服务公司来说，这类 survey 的意义很大：它能提前判断企业是在扩张、观望还是收缩。\n\n我的判断是，ManpowerGroup 这类公司最有价值的地方，不只是“帮你找人”，而是帮你理解“什么时候更难找人、什么行业更缺人、哪些地区更需要灵活用工”。这已经不是传统中介逻辑，而是劳动力配置逻辑。",
+    "category": [
+      "研究",
+      "劳动力规划"
+    ],
+    "tags": [
+      "招聘",
+      "人才短缺"
+    ],
+    "keywords": [
+      "人才短缺",
+      "劳动力",
+      "全球用工"
+    ],
+    "impactLevel": "High"
+  }
+},
+{
+  "id": "hr-peer-persol-wiffy",
+  "title": "PERSOL Holdings Invests in Wiffy to Strengthen Skilled Workforce Operations",
+  "summary": "PERSOL 通过投资 Wiffy，把日本 HR 服务的能力继续往“技能型外包 + 数字化运营”方向往前推。",
+  "fullContent": "PERSOL 投资 Wiffy 这件事，我会把它理解成一类非常典型的日本 HR 行业升级：它不只是把钱投到一个项目里，而是在寻找能够把“人力供给”变成“技能供给”的服务模式。Wiffy 本身做的是安装和售后服务，背后其实是一个很典型的 workforce development 模型：招聘、培训、派工、交付、再培训。\n\n这对 PERSOL 这样的公司很重要，因为它证明 HR 服务公司可以通过技术和流程设计，去做比传统派遣更深一层的事情。不是只卖人，而是卖稳定交付能力。",
+  "date": "2026-07-15",
+  "category": [
+    "Investment",
+    "Service Operations"
+  ],
+  "tags": [
+    "Recruiting",
+    "Global HR"
+  ],
+  "keywords": [
+    "global-hr",
+    "hiring",
+    "marketplace"
+  ],
+  "impactLevel": "High",
+  "companies": [
+    {
+      "en": "PERSOL Holdings",
+      "zh": "PERSOL Holdings"
+    }
+  ],
+  "imageUrl": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop",
+  "websiteUrl": "https://www.persol-group.co.jp/en/news/20260715_01/",
+  "zh": {
+    "title": "PERSOL Holdings 投资 Wiffy，强化技能型用工运营",
+    "summary": "PERSOL 通过投资 Wiffy，把 HR 服务继续往“技能型外包 + 数字化运营”方向推进。",
+    "fullContent": "PERSOL 投资 Wiffy 这件事，我会把它理解成一类非常典型的日本 HR 行业升级：它不只是把钱投到一个项目里，而是在寻找能够把“人力供给”变成“技能供给”的服务模式。Wiffy 本身做的是安装和售后服务，背后其实是一个很典型的 workforce development 模型：招聘、培训、派工、交付、再培训。\n\n这对 PERSOL 这样的公司很重要，因为它证明 HR 服务公司可以通过技术和流程设计，去做比传统派遣更深一层的事情。不是只卖人，而是卖稳定交付能力。",
+    "category": [
+      "投资",
+      "服务运营"
+    ],
+    "tags": [
+      "招聘",
+      "全球用工"
+    ],
+    "keywords": [
+      "全球用工",
+      "招聘",
+      "生态平台"
+    ],
+    "impactLevel": "High"
+  }
+}
 ];
 
 export const getHrPeerArticleById = (id) => hrPeerArticles.find((item) => item.id === id) || null;

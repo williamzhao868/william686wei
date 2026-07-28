@@ -32,6 +32,16 @@ const companyDefinitions = [
   { en: 'Huawei', zh: '华为', terms: ['huawei', '华为', '盘古'] },
   { en: 'Moka', zh: 'Moka', terms: ['moka'] },
   { en: 'Beisen', zh: '北森', terms: ['beisen', '北森'] },
+  { en: 'Workday', zh: 'Workday', terms: ['workday'] },
+  { en: 'ADP', zh: 'ADP', terms: ['adp'] },
+  { en: 'ZipRecruiter', zh: 'ZipRecruiter', terms: ['ziprecruiter'] },
+  { en: 'Greenhouse', zh: 'Greenhouse', terms: ['greenhouse'] },
+  { en: 'ManpowerGroup', zh: 'ManpowerGroup', terms: ['manpowergroup', 'manpower group'] },
+  { en: 'LinkedIn', zh: 'LinkedIn', terms: ['linkedin'] },
+  { en: 'Deel', zh: 'Deel', terms: ['deel'] },
+  { en: 'Recruit Holdings', zh: 'Recruit Holdings', terms: ['recruit holdings', 'recruit'] },
+  { en: 'PERSOL Holdings', zh: 'PERSOL Holdings', terms: ['persol', 'persol holdings'] },
+  { en: 'World Intec', zh: 'World Intec', terms: ['world intec', 'worldintec'] },
   { en: 'Asana', zh: 'Asana', terms: ['asana'] },
   { en: 'Notion', zh: 'Notion', terms: ['notion'] },
   { en: 'Perplexity', zh: 'Perplexity', terms: ['perplexity'] },
@@ -78,4 +88,3 @@ export const buildKeywordCloudData = (items) => keywordDefinitions
   .filter((definition) => definition.count > 0)
   .sort((a, b) => b.count - a.count)
   .slice(0, 15);
-
