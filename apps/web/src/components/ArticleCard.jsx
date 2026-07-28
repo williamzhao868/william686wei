@@ -101,6 +101,14 @@ function extractInsightSections(article) {
   }));
 }
 
+function getOneLineSummary(article) {
+  const text = String(article?.summary || article?.shortDescription || article?.content || '').trim();
+  if (!text) return '';
+  const normalized = text.replace(/\s+/g, ' ');
+  const sentenceMatch = normalized.match(/^(.+?[。！？!?；;])(?:\s|$)/);
+  return (sentenceMatch?.[1] || normalized).trim();
+}
+
 function ArticleCard({ article, index = 0, detailPath }) {
   const { language } = useLanguage();
   const [imgError, setImgError] = useState(false);
@@ -115,7 +123,7 @@ function ArticleCard({ article, index = 0, detailPath }) {
   const displayTitle = article.type === 'A'
     ? (article.title || '').split('｜').slice(0, 2).join('｜') || article.title
     : article.title;
-  const insightSections = extractInsightSections(article);
+  const oneLineSummary = getOneLineSummary(article);
   return (
     <motion.article
       initial={{ opacity: 0, y: 20 }}
@@ -150,24 +158,9 @@ function ArticleCard({ article, index = 0, detailPath }) {
             </h3>
           </Link>
 
-          {insightSections.length > 0 ? (
-            <div className="mb-6 flex-1 space-y-3">
-              {insightSections.map((section, sectionIndex) => (
-                <div key={`${article.id}-${sectionIndex}`} className="space-y-1">
-                  <div className="text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-primary/80">
-                    {section.heading}
-                  </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
-                    {section.body}
-                  </p>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-1 line-clamp-3">
-              {article.summary}
-            </p>
-          )}
+          <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-1 line-clamp-2">
+            {oneLineSummary || article.summary}
+          </p>
 
           <div className="flex items-center justify-between gap-3 text-xs text-muted-foreground mt-auto pt-4 border-t border-border/50">
             <div className="flex items-center gap-2">
