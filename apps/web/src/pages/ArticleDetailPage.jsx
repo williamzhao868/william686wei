@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import { ArrowLeft, Calendar, Share2, AlertCircle, FileText, ChevronRight, Download, Loader2 } from 'lucide-react';
+import { ArrowLeft, Calendar, AlertCircle, FileText, ChevronRight, Download, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button.jsx';
 import { Skeleton } from '@/components/ui/skeleton.jsx';
 import Header from '@/components/Header.jsx';
@@ -256,7 +256,7 @@ export default function ArticleDetailPage() {
             </div>
 
             <div className="mt-12 rounded-[28px] border border-border/70 bg-card/90 p-6 sm:p-8 shadow-[0_12px_40px_rgba(15,23,42,0.05)]">
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div className="flex flex-col gap-6">
                 <div className="flex items-center gap-4">
                   <div className="h-12 w-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
                     <FileText className="h-6 w-6 text-primary" />
@@ -272,12 +272,12 @@ export default function ArticleDetailPage() {
                     </p>
                   </div>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-[minmax(0,1.2fr)_minmax(180px,0.8fr)] gap-3 sm:gap-4 items-stretch">
                   <Button
                     onClick={hasPdf ? handleDownload : undefined}
                     disabled={!hasPdf || isDownloading}
-                    variant={hasPdf ? "default" : "secondary"}
-                    className="rounded-full px-6 py-6 w-full sm:w-auto text-base shadow-sm"
+                    variant={hasPdf ? 'default' : 'secondary'}
+                    className="h-12 sm:h-14 rounded-full px-6 sm:px-8 w-full text-base font-semibold shadow-sm"
                   >
                     {isDownloading ? (
                       <Loader2 className="w-5 h-5 mr-2 animate-spin" />
@@ -289,19 +289,10 @@ export default function ArticleDetailPage() {
                   <Button
                     variant="outline"
                     onClick={() => navigate('/insights')}
-                    className="rounded-full w-full sm:w-auto"
+                    className="h-12 sm:h-14 rounded-full px-6 sm:px-8 w-full text-base font-semibold"
                   >
                     <ArrowLeft className="w-4 h-4 mr-2" />
                     {language === 'zh' ? '返回列表' : 'Back to List'}
-                  </Button>
-                  <Button variant="ghost" onClick={() => {
-                    if (navigator.share) {
-                      navigator.share({ title: article.title, url: window.location.href });
-                    } else {
-                      navigator.clipboard.writeText(window.location.href);
-                    }
-                  }} className="rounded-full w-full sm:w-auto transition-all duration-200 active:scale-[0.98]">
-                    <Share2 className="w-4 h-4 mr-2" /> {language === 'zh' ? '分享' : 'Share'}
                   </Button>
                 </div>
               </div>
