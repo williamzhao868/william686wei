@@ -193,80 +193,34 @@ export default function ArticleDetailPage() {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="mt-8 grid gap-8 lg:grid-cols-[1.15fr_0.85fr] items-start"
+              className="mt-8 space-y-6"
             >
-              <div className="space-y-6">
-                <div className="flex flex-wrap items-center gap-3">
-                  <span className="inline-flex items-center rounded-full border border-primary/20 bg-primary/8 px-3 py-1 text-xs font-semibold text-primary">
-                    {article.category || (language === 'zh' ? '洞察文章' : 'Insight')}
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="inline-flex items-center rounded-full border border-primary/20 bg-primary/8 px-3 py-1 text-xs font-semibold text-primary">
+                  {article.category || (language === 'zh' ? '洞察文章' : 'Insight')}
+                </span>
+                {formattedDate && (
+                  <span className="inline-flex items-center rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
+                    <Calendar className="mr-1.5 h-3.5 w-3.5 text-primary/70" />
+                    <time dateTime={article.date}>{formattedDate}</time>
                   </span>
-                  {formattedDate && (
-                    <span className="inline-flex items-center rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
-                      <Calendar className="mr-1.5 h-3.5 w-3.5 text-primary/70" />
-                      <time dateTime={article.date}>{formattedDate}</time>
-                    </span>
-                  )}
-                  {article.author && (
-                    <span className="inline-flex items-center rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
-                      {article.author}
-                    </span>
-                  )}
-                </div>
-
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.02] tracking-[-0.04em] text-foreground text-balance">
-                  {article.title}
-                </h1>
-
-                {article.summary && (
-                  <p className="max-w-3xl text-lg md:text-xl text-muted-foreground leading-8 text-balance">
-                    {article.summary}
-                  </p>
+                )}
+                {article.author && (
+                  <span className="inline-flex items-center rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
+                    {article.author}
+                  </span>
                 )}
               </div>
 
-              <div className="lg:justify-self-end w-full max-w-md">
-                <div className="rounded-[28px] border border-border/70 bg-card/80 p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur-sm">
-                  <div className="flex items-center gap-4">
-                    <div className="h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
-                      <FileText className="h-6 w-6 text-primary" />
-                    </div>
-                    <div className="min-w-0">
-                      <h4 className="text-base font-bold">
-                        {language === 'zh' ? '下载完整报告' : 'Download Full Report'}
-                      </h4>
-                      <p className="text-sm text-muted-foreground truncate">
-                        {hasPdf 
-                          ? (pdfFilename || (language === 'zh' ? '文档准备就绪' : 'Document ready'))
-                          : (language === 'zh' ? '暂无可用 PDF' : 'PDF not available')}
-                      </p>
-                    </div>
-                  </div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.02] tracking-[-0.04em] text-foreground text-balance">
+                {article.title}
+              </h1>
 
-                  <div className="mt-6 flex flex-col gap-3">
-                    <Button 
-                      onClick={hasPdf ? handleDownload : undefined}
-                      disabled={!hasPdf || isDownloading}
-                      variant={hasPdf ? "default" : "secondary"}
-                      className="rounded-full px-6 py-6 w-full text-base shadow-sm"
-                    >
-                      {isDownloading ? (
-                        <Loader2 className="w-5 h-5 mr-2 animate-spin" />
-                      ) : (
-                        <Download className="w-5 h-5 mr-2" />
-                      )}
-                      {language === 'zh' ? '下载PDF' : 'Download PDF'}
-                    </Button>
-                    <Button
-                      variant="outline"
-                      onClick={() => navigate('/insights')}
-                      className="rounded-full w-full"
-                    >
-                      <ArrowLeft className="w-4 h-4 mr-2" />
-                      {language === 'zh' ? '返回列表' : 'Back to List'}
-                    </Button>
-                  </div>
-                </div>
-              </div>
+              {article.summary && (
+                <p className="max-w-3xl text-lg md:text-xl text-muted-foreground leading-8 text-balance">
+                  {article.summary}
+                </p>
+              )}
             </motion.div>
           </div>
         </div>
@@ -301,20 +255,56 @@ export default function ArticleDetailPage() {
               ) : null}
             </div>
 
-            <div className="mt-10 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <Share2 className="h-4 w-4" />
-                <span>{language === 'zh' ? '内容可分享，也可收藏到团队里继续看' : 'Share or save this article for later team discussion'}</span>
+            <div className="mt-12 rounded-[28px] border border-border/70 bg-card/90 p-6 sm:p-8 shadow-[0_12px_40px_rgba(15,23,42,0.05)]">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div className="flex items-center gap-4">
+                  <div className="h-12 w-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
+                    <FileText className="h-6 w-6 text-primary" />
+                  </div>
+                  <div className="min-w-0">
+                    <h4 className="text-base font-bold">
+                      {language === 'zh' ? '下载完整报告' : 'Download Full Report'}
+                    </h4>
+                    <p className="text-sm text-muted-foreground truncate">
+                      {hasPdf
+                        ? (pdfFilename || (language === 'zh' ? '文档准备就绪' : 'Document ready'))
+                        : (language === 'zh' ? '暂无可用 PDF' : 'PDF not available')}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+                  <Button
+                    onClick={hasPdf ? handleDownload : undefined}
+                    disabled={!hasPdf || isDownloading}
+                    variant={hasPdf ? "default" : "secondary"}
+                    className="rounded-full px-6 py-6 w-full sm:w-auto text-base shadow-sm"
+                  >
+                    {isDownloading ? (
+                      <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                    ) : (
+                      <Download className="w-5 h-5 mr-2" />
+                    )}
+                    {language === 'zh' ? '下载PDF' : 'Download PDF'}
+                  </Button>
+                  <Button
+                    variant="outline"
+                    onClick={() => navigate('/insights')}
+                    className="rounded-full w-full sm:w-auto"
+                  >
+                    <ArrowLeft className="w-4 h-4 mr-2" />
+                    {language === 'zh' ? '返回列表' : 'Back to List'}
+                  </Button>
+                  <Button variant="ghost" onClick={() => {
+                    if (navigator.share) {
+                      navigator.share({ title: article.title, url: window.location.href });
+                    } else {
+                      navigator.clipboard.writeText(window.location.href);
+                    }
+                  }} className="rounded-full w-full sm:w-auto transition-all duration-200 active:scale-[0.98]">
+                    <Share2 className="w-4 h-4 mr-2" /> {language === 'zh' ? '分享' : 'Share'}
+                  </Button>
+                </div>
               </div>
-              <Button variant="ghost" onClick={() => {
-                if (navigator.share) {
-                  navigator.share({ title: article.title, url: window.location.href });
-                } else {
-                  navigator.clipboard.writeText(window.location.href);
-                }
-              }} className="rounded-full transition-all duration-200 active:scale-[0.98]">
-                <Share2 className="w-4 h-4 mr-2" /> {language === 'zh' ? '分享' : 'Share'}
-              </Button>
             </div>
           </motion.div>
         </div>
