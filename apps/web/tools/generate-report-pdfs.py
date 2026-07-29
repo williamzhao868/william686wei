@@ -40,7 +40,7 @@ HEADING_FONT = "EngmaHeiti"
 
 def register_fonts() -> None:
   font_candidates = [
-      (BODY_FONT, "/System/Library/Fonts/Supplemental/Songti.ttc"),
+      (BODY_FONT, "/System/Library/Fonts/Supplemental/AppleGothic.ttf"),
       (HEADING_FONT, "/System/Library/Fonts/STHeiti Medium.ttc"),
   ]
 

@@ -9,6 +9,21 @@ body {
   overflow-x: clip;
 }
 
+.font-pingfang {
+  font-family:
+    "PingFang SC",
+    "PingFang TC",
+    "Hiragino Sans GB",
+    "Apple Gothic",
+    "AppleGothic",
+    "Helvetica Neue",
+    "Helvetica",
+    "Arial",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
 html {
   scroll-behavior: smooth;
 }

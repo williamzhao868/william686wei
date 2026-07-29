@@ -206,7 +206,7 @@ export default function ArticleDetailPage() {
 
       <Header />
 
-      <main className="flex-1 pb-24">
+      <main className="flex-1 pb-24 font-pingfang">
         <div className="relative overflow-hidden border-b border-border/60 bg-gradient-to-b from-muted/35 via-background to-background">
           <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top_right,rgba(14,165,233,0.12),transparent_34%),radial-gradient(circle_at_bottom_left,rgba(59,130,246,0.08),transparent_30%)]" />
           <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl pt-10 pb-14">

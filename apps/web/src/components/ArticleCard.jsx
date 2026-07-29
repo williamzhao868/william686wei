@@ -149,7 +149,7 @@ function ArticleCard({ article, index = 0, detailPath }) {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="group h-full"
     >
-      <div className="h-full flex flex-col bg-card rounded-2xl overflow-hidden border border-border transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+      <div className={`h-full flex flex-col bg-card rounded-2xl overflow-hidden border border-border transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${article.type === 'A' ? 'font-pingfang' : ''}`}>
         <div className="block shrink-0 relative bg-muted h-40">
           <Link to={targetPath} className="absolute inset-0 block overflow-hidden">
             {!imgError ? (
