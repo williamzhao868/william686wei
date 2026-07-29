@@ -1,20 +1,24 @@
-const images = [
-  'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2070&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2070&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2070&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=2070&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2070&auto=format&fit=crop&sat=-100',
-  'https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070&auto=format&fit=crop&sat=-80',
-  'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop'
+const hrPeerCoverImages = [
+  '/generated/hr-peer-covers/hr-peer-01.svg',
+  '/generated/hr-peer-covers/hr-peer-02.svg',
+  '/generated/hr-peer-covers/hr-peer-03.svg',
+  '/generated/hr-peer-covers/hr-peer-04.svg',
+  '/generated/hr-peer-covers/hr-peer-05.svg',
+  '/generated/hr-peer-covers/hr-peer-06.svg',
+  '/generated/hr-peer-covers/hr-peer-07.svg',
+  '/generated/hr-peer-covers/hr-peer-08.svg',
+  '/generated/hr-peer-covers/hr-peer-09.svg',
+  '/generated/hr-peer-covers/hr-peer-10.svg',
+  '/generated/hr-peer-covers/hr-peer-11.svg',
+  '/generated/hr-peer-covers/hr-peer-12.svg',
+  '/generated/hr-peer-covers/hr-peer-13.svg',
+  '/generated/hr-peer-covers/hr-peer-14.svg',
+  '/generated/hr-peer-covers/hr-peer-15.svg',
+  '/generated/hr-peer-covers/hr-peer-16.svg',
+  '/generated/hr-peer-covers/hr-peer-17.svg',
 ];
 
-const getImg = (index) => images[index] || images[index % images.length];
+const getHrPeerCoverImage = (index) => hrPeerCoverImages[index % hrPeerCoverImages.length];
 
 export const hrPeerKeywordDefinitions = [
   { id: 'ai-agents', en: 'AI Agents', zh: 'AI 智能体' },
@@ -645,9 +649,9 @@ For the HR tech market, Deel is a good reminder that the best AI use cases often
 }
 ];
 
-function enrichHrPeerArticle(article) {
+function enrichHrPeerArticle(article, index = 0) {
   if (!article || String(article.fullContent || '').includes('## 对 Engma 的价值')) {
-    return article;
+    return article ? { ...article, imageUrl: getHrPeerCoverImage(index) } : article;
   }
 
   const companyNames = (article.companies || [])
@@ -665,6 +669,7 @@ function enrichHrPeerArticle(article) {
 
   return {
     ...article,
+    imageUrl: getHrPeerCoverImage(index),
     fullContent: `${article.fullContent || article.summary || ''}\n\n## 对 Engma 的价值\n\n${engmaAngle}\n\n${opportunityText}\n\n${actionText}`,
     zh: article.zh
       ? {
@@ -675,6 +680,6 @@ function enrichHrPeerArticle(article) {
   };
 }
 
-export const hrPeerArticles = rawHrPeerArticles.map(enrichHrPeerArticle);
+export const hrPeerArticles = rawHrPeerArticles.map((article, index) => enrichHrPeerArticle(article, index));
 
 export const getHrPeerArticleById = (id) => hrPeerArticles.find((item) => item.id === id) || null;

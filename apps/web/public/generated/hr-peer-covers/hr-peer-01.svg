@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" fill="none">
+  <defs>
+    <linearGradient id="bg-0" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff6b6b"/>
+      <stop offset="48%" stop-color="#feca57"/>
+      <stop offset="100%" stop-color="#48dbfb"/>
+    </linearGradient>
+    <radialGradient id="orb-0" cx="50%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="40%" stop-color="#1dd1a1" stop-opacity="0.42"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur-0">
+      <feGaussianBlur stdDeviation="28"/>
+    </filter>
+    <filter id="shadow-0" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#0f172a" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="800" rx="28" fill="url(#bg-0)"/>
+  <rect width="1200" height="800" rx="28" fill="rgba(9, 14, 32, 0.25)"/>
+  <g filter="url(#blur-0)"><circle cx="333" cy="344" r="181" fill="#ff6b6b" opacity="0.14"/><circle cx="161" cy="614" r="196" fill="#feca57" opacity="0.21000000000000002"/><circle cx="507" cy="246" r="230" fill="#48dbfb" opacity="0.28"/><circle cx="763" cy="117" r="179" fill="#1dd1a1" opacity="0.35000000000000003"/></g>
+  <g opacity="0.95"><line x1="-80" y1="40" x2="1280" y2="160" stroke="#ff6b6b" stroke-width="2" opacity="0.18"/><line x1="-80" y1="96" x2="1280" y2="216" stroke="#feca57" stroke-width="2" opacity="0.22"/><line x1="-80" y1="152" x2="1280" y2="272" stroke="#48dbfb" stroke-width="2" opacity="0.26"/><line x1="-80" y1="208" x2="1280" y2="328" stroke="#1dd1a1" stroke-width="2" opacity="0.18"/><line x1="-80" y1="264" x2="1280" y2="384" stroke="#ff6b6b" stroke-width="2" opacity="0.22"/><line x1="-80" y1="320" x2="1280" y2="440" stroke="#feca57" stroke-width="2" opacity="0.26"/><line x1="-80" y1="376" x2="1280" y2="496" stroke="#48dbfb" stroke-width="2" opacity="0.18"/><line x1="-80" y1="432" x2="1280" y2="552" stroke="#1dd1a1" stroke-width="2" opacity="0.22"/><line x1="-80" y1="488" x2="1280" y2="608" stroke="#ff6b6b" stroke-width="2" opacity="0.26"/><line x1="-80" y1="544" x2="1280" y2="664" stroke="#feca57" stroke-width="2" opacity="0.18"/><line x1="-80" y1="600" x2="1280" y2="720" stroke="#48dbfb" stroke-width="2" opacity="0.22"/><line x1="-80" y1="656" x2="1280" y2="776" stroke="#1dd1a1" stroke-width="2" opacity="0.26"/></g>
+  <g opacity="0.85"><rect x="265" y="409" width="151" height="66" rx="33" fill="none" stroke="#feca57" stroke-width="4" opacity="0.22" transform="rotate(-31 340.5 442)"/><rect x="507" y="151" width="130" height="83" rx="41.5" fill="none" stroke="#48dbfb" stroke-width="4" opacity="0.25" transform="rotate(-31 572 192.5)"/><rect x="971" y="122" width="208" height="84" rx="42" fill="none" stroke="#1dd1a1" stroke-width="4" opacity="0.28" transform="rotate(-31 1075 164)"/><rect x="221" y="278" width="230" height="71" rx="35.5" fill="none" stroke="#ff6b6b" stroke-width="4" opacity="0.31" transform="rotate(-31 336 313.5)"/><rect x="309" y="148" width="317" height="61" rx="30.5" fill="none" stroke="#feca57" stroke-width="4" opacity="0.33999999999999997" transform="rotate(-31 467.5 178.5)"/><rect x="263" y="344" width="186" height="48" rx="24" fill="none" stroke="#48dbfb" stroke-width="4" opacity="0.37" transform="rotate(-31 356 368)"/></g>
+  <g filter="url(#shadow-0)">
+    <rect x="100" y="96" width="1000" height="520" rx="38" fill="rgba(255,255,255,0.10)" stroke="rgba(255,255,255,0.24)" stroke-width="2"/>
+    <rect x="138" y="156" width="924" height="130" rx="28" fill="rgba(10,14,27,0.42)"/>
+    <rect x="168" y="188" width="360" height="64" rx="32" fill="rgba(255,255,255,0.16)"/>
+    <text x="348" y="232" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="800" fill="#ffffff" letter-spacing="2">WD</text>
+    <text x="620" y="232" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="600" fill="rgba(255,255,255,0.90)">Leadership</text>
+  </g>
+  <g opacity="0.7"><rect x="130" y="569" width="122" height="25" rx="12.5" fill="#48dbfb" opacity="0.28" transform="rotate(10 191 581.5)"/><rect x="310" y="507" width="191" height="22" rx="11" fill="#1dd1a1" opacity="0.35000000000000003" transform="rotate(10 405.5 518)"/><rect x="490" y="579" width="136" height="22" rx="11" fill="#ff6b6b" opacity="0.42000000000000004" transform="rotate(10 558 590)"/><rect x="670" y="554" width="128" height="35" rx="17.5" fill="#feca57" opacity="0.49000000000000005" transform="rotate(10 734 571.5)"/><rect x="850" y="558" width="96" height="21" rx="10.5" fill="#48dbfb" opacity="0.56" transform="rotate(10 898 568.5)"/></g>
+  <circle cx="960" cy="150" r="115" fill="url(#orb-0)" opacity="0.9"/>
+  <circle cx="210" cy="620" r="90" fill="#1dd1a1" opacity="0.18" filter="url(#blur-0)"/>
+  <circle cx="980" cy="620" r="130" fill="#ffffff" opacity="0.08" filter="url(#blur-0)"/>
+</svg>

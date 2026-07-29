@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" fill="none">
+  <defs>
+    <linearGradient id="bg-10" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#81ecec"/>
+      <stop offset="48%" stop-color="#00b894"/>
+      <stop offset="100%" stop-color="#00cec9"/>
+    </linearGradient>
+    <radialGradient id="orb-10" cx="50%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="40%" stop-color="#0984e3" stop-opacity="0.42"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur-10">
+      <feGaussianBlur stdDeviation="28"/>
+    </filter>
+    <filter id="shadow-10" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#0f172a" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="800" rx="28" fill="url(#bg-10)"/>
+  <rect width="1200" height="800" rx="28" fill="rgba(9, 14, 32, 0.25)"/>
+  <g filter="url(#blur-10)"><circle cx="489" cy="631" r="115" fill="#00cec9" opacity="0.14"/><circle cx="464" cy="380" r="201" fill="#0984e3" opacity="0.21000000000000002"/><circle cx="320" cy="144" r="258" fill="#81ecec" opacity="0.28"/><circle cx="491" cy="183" r="179" fill="#00b894" opacity="0.35000000000000003"/></g>
+  <g opacity="0.95"><line x1="-80" y1="45" x2="1280" y2="165" stroke="#81ecec" stroke-width="2" opacity="0.18"/><line x1="-80" y1="101" x2="1280" y2="221" stroke="#00b894" stroke-width="2" opacity="0.22"/><line x1="-80" y1="157" x2="1280" y2="277" stroke="#00cec9" stroke-width="2" opacity="0.26"/><line x1="-80" y1="213" x2="1280" y2="333" stroke="#0984e3" stroke-width="2" opacity="0.18"/><line x1="-80" y1="269" x2="1280" y2="389" stroke="#81ecec" stroke-width="2" opacity="0.22"/><line x1="-80" y1="325" x2="1280" y2="445" stroke="#00b894" stroke-width="2" opacity="0.26"/><line x1="-80" y1="381" x2="1280" y2="501" stroke="#00cec9" stroke-width="2" opacity="0.18"/><line x1="-80" y1="437" x2="1280" y2="557" stroke="#0984e3" stroke-width="2" opacity="0.22"/><line x1="-80" y1="493" x2="1280" y2="613" stroke="#81ecec" stroke-width="2" opacity="0.26"/><line x1="-80" y1="549" x2="1280" y2="669" stroke="#00b894" stroke-width="2" opacity="0.18"/><line x1="-80" y1="605" x2="1280" y2="725" stroke="#00cec9" stroke-width="2" opacity="0.22"/><line x1="-80" y1="661" x2="1280" y2="781" stroke="#0984e3" stroke-width="2" opacity="0.26"/></g>
+  <g opacity="0.85"><rect x="309" y="113" width="264" height="55" rx="27.5" fill="none" stroke="#00b894" stroke-width="4" opacity="0.22" transform="rotate(-35 441 140.5)"/><rect x="328" y="75" width="295" height="50" rx="25" fill="none" stroke="#00cec9" stroke-width="4" opacity="0.25" transform="rotate(-35 475.5 100)"/><rect x="840" y="278" width="157" height="66" rx="33" fill="none" stroke="#0984e3" stroke-width="4" opacity="0.28" transform="rotate(-35 918.5 311)"/><rect x="377" y="428" width="240" height="45" rx="22.5" fill="none" stroke="#81ecec" stroke-width="4" opacity="0.31" transform="rotate(-35 497 450.5)"/><rect x="206" y="268" width="128" height="85" rx="42.5" fill="none" stroke="#00b894" stroke-width="4" opacity="0.33999999999999997" transform="rotate(-35 270 310.5)"/><rect x="387" y="388" width="239" height="81" rx="40.5" fill="none" stroke="#00cec9" stroke-width="4" opacity="0.37" transform="rotate(-35 506.5 428.5)"/></g>
+  <g filter="url(#shadow-10)">
+    <rect x="100" y="96" width="1000" height="520" rx="38" fill="rgba(255,255,255,0.10)" stroke="rgba(255,255,255,0.24)" stroke-width="2"/>
+    <rect x="138" y="156" width="924" height="130" rx="28" fill="rgba(10,14,27,0.42)"/>
+    <rect x="168" y="188" width="360" height="64" rx="32" fill="rgba(255,255,255,0.16)"/>
+    <text x="348" y="232" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="800" fill="#ffffff" letter-spacing="2">WI</text>
+    <text x="620" y="232" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="600" fill="rgba(255,255,255,0.90)">Operations</text>
+  </g>
+  <g opacity="0.7"><rect x="130" y="524" width="126" height="27" rx="13.5" fill="#00cec9" opacity="0.28" transform="rotate(30 193 537.5)"/><rect x="310" y="534" width="174" height="26" rx="13" fill="#0984e3" opacity="0.35000000000000003" transform="rotate(30 397 547)"/><rect x="490" y="535" width="105" height="20" rx="10" fill="#81ecec" opacity="0.42000000000000004" transform="rotate(30 542.5 545)"/><rect x="670" y="562" width="89" height="21" rx="10.5" fill="#00b894" opacity="0.49000000000000005" transform="rotate(30 714.5 572.5)"/><rect x="850" y="564" width="177" height="39" rx="19.5" fill="#00cec9" opacity="0.56" transform="rotate(30 938.5 583.5)"/></g>
+  <circle cx="960" cy="150" r="115" fill="url(#orb-10)" opacity="0.9"/>
+  <circle cx="210" cy="620" r="90" fill="#0984e3" opacity="0.18" filter="url(#blur-10)"/>
+  <circle cx="980" cy="620" r="130" fill="#ffffff" opacity="0.08" filter="url(#blur-10)"/>
+</svg>
