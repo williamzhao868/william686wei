@@ -20,7 +20,7 @@ function HrPeersPage() {
   const [activeKeywords, setActiveKeywords] = useState([]);
   const [activeTags, setActiveTags] = useState([]);
   const [activeCompanies, setActiveCompanies] = useState([]);
-  const itemsPerPage = 8;
+  const itemsPerPage = 12;
   const specialGroups = useMemo(() => ([
     {
       key: 'western-track',
