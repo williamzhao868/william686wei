@@ -25,7 +25,7 @@ export const hrPeerKeywordDefinitions = [
   { id: 'global-hr', en: 'Global HR', zh: '全球用工' }
 ];
 
-export const hrPeerArticles = [
+const rawHrPeerArticles = [
   {
     id: 'hr-peer-workday-apac-leadership',
     title: 'Workday Strengthens Asia Pacific Leadership for the Next AI Growth Phase',
@@ -638,5 +638,37 @@ For the HR tech market, Deel is a good reminder that the best AI use cases often
   }
 }
 ];
+
+function enrichHrPeerArticle(article) {
+  if (!article || String(article.fullContent || '').includes('## 对 Engma 的价值')) {
+    return article;
+  }
+
+  const companyNames = (article.companies || [])
+    .map((company) => company.zh || company.en || '')
+    .filter(Boolean)
+    .join('、');
+  const englishCompanies = (article.companies || [])
+    .map((company) => company.en || company.zh || '')
+    .filter(Boolean)
+    .join(', ');
+  const focusCompanyText = companyNames || englishCompanies || '这类公司';
+  const engmaAngle = `对 Engma 的启发：这条动向不只是“同行在做什么”，而是在告诉我们真正该盯的是 ${focusCompanyText} 背后的产品结构、交付节奏和商业路径。`;
+  const opportunityText = `可落地机会：Engma 后面可以把这类信息继续拆成“产品信号 / 客户价值 / 组织影响 / 可复用表达”四层，直接服务内容输出、客户沟通和内部判断。`;
+  const actionText = `我们可以怎么用：把它和 Engma 现有的洞察、工具测试、竞品监测串起来，形成更稳定的观察模板，帮助判断哪些能力值得继续追，哪些只是短期噪音。`;
+
+  return {
+    ...article,
+    fullContent: `${article.fullContent || article.summary || ''}\n\n## 对 Engma 的价值\n\n${engmaAngle}\n\n${opportunityText}\n\n${actionText}`,
+    zh: article.zh
+      ? {
+          ...article.zh,
+          fullContent: `${article.zh.fullContent || article.zh.summary || article.fullContent || article.summary || ''}\n\n## 对 Engma 的价值\n\n${engmaAngle}\n\n${opportunityText}\n\n${actionText}`,
+        }
+      : article.zh,
+  };
+}
+
+export const hrPeerArticles = rawHrPeerArticles.map(enrichHrPeerArticle);
 
 export const getHrPeerArticleById = (id) => hrPeerArticles.find((item) => item.id === id) || null;

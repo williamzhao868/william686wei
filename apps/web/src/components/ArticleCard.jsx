@@ -53,6 +53,14 @@ const KEYWORDS = {
 const ALL_UNIQUE_IMAGES = [...new Set(Object.values(IMAGE_CATEGORIES).flat())];
 
 function getArticleImage(article, index = 0) {
+  if (article.image) {
+    return article.image;
+  }
+
+  if (article.imageUrl) {
+    return article.imageUrl;
+  }
+
   if (article.featured_image) {
     return pb.files.getURL(article, article.featured_image);
   }
@@ -68,7 +76,9 @@ function getArticleImage(article, index = 0) {
   }
   
   const combinedPool = [...new Set([...matchedCategory, ...ALL_UNIQUE_IMAGES])];
-  return combinedPool[index % combinedPool.length];
+  const seed = String(article.id || article.title || index);
+  const hash = Array.from(seed).reduce((sum, char) => sum + char.charCodeAt(0), 0);
+  return combinedPool[hash % combinedPool.length];
 }
 
 function extractInsightSections(article) {
@@ -149,7 +159,7 @@ function ArticleCard({ article, index = 0, detailPath }) {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="group h-full"
     >
-      <div className={`h-full flex flex-col bg-card rounded-2xl overflow-hidden border border-border transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${article.type === 'A' ? 'font-pingfang' : ''}`}>
+      <div className="h-full flex flex-col bg-card rounded-2xl overflow-hidden border border-border transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
         <div className="block shrink-0 relative bg-muted h-40">
           <Link to={targetPath} className="absolute inset-0 block overflow-hidden">
             {!imgError ? (

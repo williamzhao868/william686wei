@@ -34,18 +34,48 @@ BASE_DIR = Path(__file__).resolve().parents[1]
 DATA_FILE = BASE_DIR / "src" / "data" / "Hostinger_A_C_Content_Data.json"
 OUTPUT_DIR = BASE_DIR / "public" / "reports" / "pdf"
 
-BODY_FONT = "EngmaSong"
-HEADING_FONT = "EngmaHeiti"
+BODY_FONT = "EngmaAppleBody"
+HEADING_FONT = "EngmaAppleHeading"
+
+
+def first_existing_path(candidates: Iterable[str]) -> str | None:
+  for candidate in candidates:
+    path = Path(candidate).expanduser()
+    if path.exists():
+      return str(path)
+  return None
 
 
 def register_fonts() -> None:
   font_candidates = [
-      (BODY_FONT, "/System/Library/Fonts/Supplemental/AppleGothic.ttf"),
-      (HEADING_FONT, "/System/Library/Fonts/STHeiti Medium.ttc"),
+      (
+          BODY_FONT,
+          first_existing_path(
+              [
+                  "/System/Library/Fonts/Supplemental/AppleGothic.ttf",
+                  "/System/Library/Fonts/STHeiti Light.ttc",
+                  "/System/Library/Fonts/STHeiti Medium.ttc",
+                  "/System/Library/Fonts/Supplemental/Songti.ttc",
+              ]
+          ),
+      ),
+      (
+          HEADING_FONT,
+          first_existing_path(
+              [
+                  "/System/Library/Fonts/STHeiti Medium.ttc",
+                  "/System/Library/Fonts/STHeiti Light.ttc",
+                  "/System/Library/Fonts/Supplemental/AppleGothic.ttf",
+                  "/System/Library/Fonts/Supplemental/Songti.ttc",
+              ]
+          ),
+      ),
   ]
 
   for font_name, font_path in font_candidates:
     if font_name in pdfmetrics.getRegisteredFontNames():
+      continue
+    if not font_path:
       continue
     pdfmetrics.registerFont(TTFont(font_name, font_path))
 

@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import { ArrowLeft, Calendar, ExternalLink, Share2, AlertCircle, Bot, FileText, Download, Star } from 'lucide-react';
+import { ArrowLeft, Calendar, ExternalLink, AlertCircle, Bot, FileText, Download, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button.jsx';
 import { Skeleton } from '@/components/ui/skeleton.jsx';
 import Header from '@/components/Header.jsx';
@@ -15,6 +15,39 @@ import { getLocalToolArticleByRecord, getLocalToolArticles, markdownToHtml, merg
 import { toast } from 'sonner';
 import { downloadPdfRecord, hasPdfAsset, resolvePdfFilename } from '@/lib/pdfUtils.js';
 import { formatDateISO } from '@/lib/dateFormat.js';
+
+
+function extractToolSections(markdown = '') {
+  const lines = String(markdown).replace(/\r\n/g, '\n').split('\n');
+  const sections = [];
+  let current = null;
+
+  const pushCurrent = () => {
+    if (!current) return;
+    const body = current.lines.join('\n').trim();
+    if (!body) return;
+    sections.push({ heading: current.heading, body });
+  };
+
+  for (const rawLine of lines) {
+    const line = String(rawLine || '');
+    const headingMatch = line.match(/^##\s+(.+)$/);
+    if (headingMatch) {
+      pushCurrent();
+      current = { heading: headingMatch[1].trim(), lines: [] };
+      continue;
+    }
+
+    if (!current) continue;
+    current.lines.push(line);
+  }
+
+  pushCurrent();
+
+  return sections
+    .filter((section) => section.heading && section.body)
+    .slice(0, 4);
+}
 
 export default function AIToolDetailPage() {
   const { toolId } = useParams();
@@ -112,6 +145,7 @@ export default function AIToolDetailPage() {
   );
   const displayScore = Math.max(0, Math.min(5, rawScore > 5 ? rawScore / 2 : rawScore));
   const usageTips = Array.isArray(tool.usageTips) ? tool.usageTips.slice(0, 3) : [];
+  const detailSections = extractToolSections(tool.contentMarkdown || tool.content || '');
 
   const handleDownload = async (e) => {
     e.preventDefault();
@@ -224,16 +258,23 @@ export default function AIToolDetailPage() {
               className="space-y-12"
             >
               <div className="pt-8 border-t border-border">
-                <h2 className="text-2xl font-bold mb-6 text-foreground">
+                <h2 className="text-2xl font-bold mb-4 text-foreground">
                   {language === 'zh' ? '详细评测' : 'Detailed Review'}
                 </h2>
-                {tool.contentMarkdown ? (
-                  <div 
-                    className="prose prose-lg dark:prose-invert max-w-none 
-                      prose-headings:font-bold prose-headings:tracking-tight
-                      prose-a:text-primary hover:prose-a:text-primary/80 transition-colors"
-                    dangerouslySetInnerHTML={{ __html: markdownToHtml(tool.contentMarkdown || '') }}
-                  />
+                {detailSections.length > 0 ? (
+                  <div className="grid gap-4 md:grid-cols-2">
+                    {detailSections.map((section, index) => (
+                      <section key={`${section.heading}-${index}`} className="rounded-2xl border border-border bg-card p-5 shadow-sm">
+                        <h3 className="text-lg font-semibold text-foreground mb-3">
+                          {section.heading}
+                        </h3>
+                        <div
+                          className="prose prose-sm dark:prose-invert max-w-none prose-p:my-2 prose-li:my-1 prose-h2:mt-4 prose-h2:mb-2 prose-h3:mt-3 prose-h3:mb-2"
+                          dangerouslySetInnerHTML={{ __html: markdownToHtml(section.body) }}
+                        />
+                      </section>
+                    ))}
+                  </div>
                 ) : tool.content && tool.content.trim() !== 'Full benchmark report available in PDF.' ? (
                   <div 
                     className="prose prose-lg dark:prose-invert max-w-none 
@@ -297,15 +338,6 @@ export default function AIToolDetailPage() {
               <div className="mt-16 pt-8 border-t border-border flex justify-between items-center">
                 <Button variant="outline" onClick={() => navigate('/ai-tools')} className="rounded-full transition-all duration-200 active:scale-[0.98]">
                   <ArrowLeft className="w-4 h-4 mr-2" /> {language === 'zh' ? '返回列表' : 'Back to List'}
-                </Button>
-                <Button variant="ghost" onClick={() => {
-                  if (navigator.share) {
-                    navigator.share({ title: tool.toolName || tool.title, url: window.location.href });
-                  } else {
-                    navigator.clipboard.writeText(window.location.href);
-                  }
-                }} className="rounded-full transition-all duration-200 active:scale-[0.98]">
-                  <Share2 className="w-4 h-4 mr-2" /> {language === 'zh' ? '分享' : 'Share'}
                 </Button>
               </div>
             </motion.div>

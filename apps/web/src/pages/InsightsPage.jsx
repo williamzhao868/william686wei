@@ -157,7 +157,7 @@ function InsightsPage() {
       <div className="min-h-screen flex flex-col bg-background">
         <Header />
 
-        <main className="flex-1 font-pingfang">
+        <main className="flex-1">
           <section className="py-16 md:py-24 bg-muted/20 border-b border-border/50">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <motion.div
