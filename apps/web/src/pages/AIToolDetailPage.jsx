@@ -17,38 +17,6 @@ import { downloadPdfRecord, hasPdfAsset, resolvePdfFilename } from '@/lib/pdfUti
 import { formatDateISO } from '@/lib/dateFormat.js';
 
 
-function extractToolSections(markdown = '') {
-  const lines = String(markdown).replace(/\r\n/g, '\n').split('\n');
-  const sections = [];
-  let current = null;
-
-  const pushCurrent = () => {
-    if (!current) return;
-    const body = current.lines.join('\n').trim();
-    if (!body) return;
-    sections.push({ heading: current.heading, body });
-  };
-
-  for (const rawLine of lines) {
-    const line = String(rawLine || '');
-    const headingMatch = line.match(/^##\s+(.+)$/);
-    if (headingMatch) {
-      pushCurrent();
-      current = { heading: headingMatch[1].trim(), lines: [] };
-      continue;
-    }
-
-    if (!current) continue;
-    current.lines.push(line);
-  }
-
-  pushCurrent();
-
-  return sections
-    .filter((section) => section.heading && section.body)
-    .slice(0, 4);
-}
-
 export default function AIToolDetailPage() {
   const { toolId } = useParams();
   const navigate = useNavigate();
@@ -145,7 +113,6 @@ export default function AIToolDetailPage() {
   );
   const displayScore = Math.max(0, Math.min(5, rawScore > 5 ? rawScore / 2 : rawScore));
   const usageTips = Array.isArray(tool.usageTips) ? tool.usageTips.slice(0, 3) : [];
-  const detailSections = extractToolSections(tool.contentMarkdown || tool.content || '');
 
   const handleDownload = async (e) => {
     e.preventDefault();
@@ -261,27 +228,17 @@ export default function AIToolDetailPage() {
                 <h2 className="text-2xl font-bold mb-4 text-foreground">
                   {language === 'zh' ? '详细评测' : 'Detailed Review'}
                 </h2>
-                {detailSections.length > 0 ? (
-                  <div className="grid gap-4 md:grid-cols-2">
-                    {detailSections.map((section, index) => (
-                      <section key={`${section.heading}-${index}`} className="rounded-2xl border border-border bg-card p-5 shadow-sm">
-                        <h3 className="text-lg font-semibold text-foreground mb-3">
-                          {section.heading}
-                        </h3>
-                        <div
-                          className="prose prose-sm dark:prose-invert max-w-none prose-p:my-2 prose-li:my-1 prose-h2:mt-4 prose-h2:mb-2 prose-h3:mt-3 prose-h3:mb-2"
-                          dangerouslySetInnerHTML={{ __html: markdownToHtml(section.body) }}
-                        />
-                      </section>
-                    ))}
+                {tool.contentMarkdown || tool.content ? (
+                  <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+                    <div
+                      className="prose prose-lg dark:prose-invert max-w-none 
+                        prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-foreground
+                        prose-h2:mt-10 prose-h2:mb-4 prose-h3:mt-8 prose-h3:mb-3
+                        prose-p:my-5 prose-p:leading-8 prose-ul:my-6 prose-li:my-2.5
+                        prose-a:text-primary hover:prose-a:text-primary/80 transition-colors"
+                      dangerouslySetInnerHTML={{ __html: markdownToHtml(tool.contentMarkdown || tool.content || '') }}
+                    />
                   </div>
-                ) : tool.content && tool.content.trim() !== 'Full benchmark report available in PDF.' ? (
-                  <div 
-                    className="prose prose-lg dark:prose-invert max-w-none 
-                      prose-headings:font-bold prose-headings:tracking-tight
-                      prose-a:text-primary hover:prose-a:text-primary/80 transition-colors"
-                    dangerouslySetInnerHTML={{ __html: tool.content }}
-                  />
                 ) : null}
               </div>
 

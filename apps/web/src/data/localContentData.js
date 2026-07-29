@@ -110,6 +110,9 @@ function normalizeInsightContent(insight) {
     type: 'A',
     summary: insight.summary || insight.shortDescription || insight.description || '',
     content: insight.content || insight.contentMarkdown || '',
+    image: insight.image || '',
+    imageUrl: insight.imageUrl || '',
+    featured_image: insight.featured_image || '',
     pdfUrl: insight.pdfUrl || (insight.pdfFileName ? `/reports/pdf/${insight.pdfFileName}` : ''),
     pdfFileName: insight.pdfFileName || '',
   };
@@ -140,6 +143,9 @@ function normalizeToolContent(tool) {
     fullDescription: tool.fullDescription || tool.content || tool.summary || '',
     content: tool.content || tool.fullDescription || tool.shortDescription || '',
     score: tool.score || tool.overallScore || (tool.recommendationStars ? tool.recommendationStars * 2 : 0),
+    image: tool.image || '',
+    imageUrl: tool.imageUrl || '',
+    featured_image: tool.featured_image || '',
     websiteUrl: tool.websiteUrl || tool.website || '',
     website: tool.website || tool.websiteUrl || '',
     pdfUrl: tool.pdfUrl || (tool.pdfFileName ? `/reports/pdf/${tool.pdfFileName}` : ''),
@@ -229,8 +235,11 @@ export function mergeWithLocalContent(liveRecord, localRecord) {
     'date',
     'category',
     'toolName',
-      'score',
-      'usageTips',
+    'image',
+    'imageUrl',
+    'featured_image',
+    'score',
+    'usageTips',
   ];
 
   for (const field of preferredFields) {
