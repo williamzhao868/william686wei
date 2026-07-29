@@ -633,7 +633,8 @@
       "pdfFileName": "Engma_C_AI_Tool_Benchmark_07102026_GPT_56_Sol.pdf",
       "pdfUrl": "/reports/pdf/Engma_C_AI_Tool_Benchmark_07102026_GPT_56_Sol.pdf",
       "sourceFileName": "Engma_C_AI_Tool_Benchmark_07102026_GPT_56_Sol.md",
-      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-10\n\n## GPT-5.6 Sol\n\n官网：https://openai.com/index/gpt-5-6/\n\n## 测试任务\n\n让模型连续处理一条行业信息：先摘要，再拆机会，再输出给业务同事的行动建议。\n\n## 结果\n\n长链路输出更稳，结构化整理更自然，适合做研究和写作底座。\n\n## 优缺点\n\n优点：稳定、适合复杂链路。  \n缺点：成本和响应时间需要额外管理。\n\n## 推荐指数\n\n4.7/5\n\n一句话：  \n更适合长任务、稳态推理和企业默认模型测试。\n\n来源：https://openai.com/index/gpt-5-6/\n"
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-10\n\n## GPT-5.6 Sol\n\n官网：https://openai.com/index/gpt-5-6/\n\n## 测试任务\n\n让模型连续处理一条行业信息：先摘要，再拆机会，再输出给业务同事的行动建议。\n\n## 结果\n\n长链路输出更稳，结构化整理更自然，适合做研究和写作底座。\n\n## 优缺点\n\n优点：稳定、适合复杂链路。  \n缺点：成本和响应时间需要额外管理。\n\n## 推荐指数\n\n4.7/5\n\n一句话：  \n更适合长任务、稳态推理和企业默认模型测试。\n\n来源：https://openai.com/index/gpt-5-6/\n",
+      "image": "/generated/tool-covers/c-20260710-gpt56-sol.png"
     },
     {
       "id": "c-20260710-gemini-study-notebooks",
@@ -669,7 +670,8 @@
       "pdfFileName": "Engma_C_AI_Tool_Benchmark_Gemini_Study_Notebooks_07102026.pdf",
       "pdfUrl": "/reports/pdf/Engma_C_AI_Tool_Benchmark_Gemini_Study_Notebooks_07102026.pdf",
       "sourceFileName": "Engma_C_AI_Tool_Benchmark_Gemini_Study_Notebooks_07102026.md",
-      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-10\n\n## 工具名称\n\nGemini Study Notebooks\n\n官网：  \nhttps://blog.google/innovation-and-ai/products/gemini-app/gemini-study-notebooks/\n\n## 测试任务\n\n把一组研究材料整理成笔记结构、复习卡片和下一步阅读建议。\n\n## 结果数据\n\nStudy notebooks 把 Gemini 从通用问答继续推向学习和知识整理工作台。\n\n## 优缺点\n\n优点：学习路径清楚，适合知识整理。  \n缺点：更适合学习和归纳，不适合重度执行任务。\n\n## 推荐指数\n\n4.3/5\n\n一句话：  \n更适合把资料整理成可复习学习卡片的轻量工作台。\n\n## 使用技巧\n\n- 先丢一组真实资料进去，看看它能不能形成稳定结构。\n- 优先测试复习卡片、提纲和资料摘要，不要只看聊天。\n- 适合做个人学习和研究，不适合直接替代执行型工作台。\n\n来源：  \nhttps://blog.google/innovation-and-ai/products/gemini-app/gemini-study-notebooks/\n"
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-10\n\n## 工具名称\n\nGemini Study Notebooks\n\n官网：  \nhttps://blog.google/innovation-and-ai/products/gemini-app/gemini-study-notebooks/\n\n## 测试任务\n\n把一组研究材料整理成笔记结构、复习卡片和下一步阅读建议。\n\n## 结果数据\n\nStudy notebooks 把 Gemini 从通用问答继续推向学习和知识整理工作台。\n\n## 优缺点\n\n优点：学习路径清楚，适合知识整理。  \n缺点：更适合学习和归纳，不适合重度执行任务。\n\n## 推荐指数\n\n4.3/5\n\n一句话：  \n更适合把资料整理成可复习学习卡片的轻量工作台。\n\n## 使用技巧\n\n- 先丢一组真实资料进去，看看它能不能形成稳定结构。\n- 优先测试复习卡片、提纲和资料摘要，不要只看聊天。\n- 适合做个人学习和研究，不适合直接替代执行型工作台。\n\n来源：  \nhttps://blog.google/innovation-and-ai/products/gemini-app/gemini-study-notebooks/\n",
+      "image": "/generated/tool-covers/c-20260710-gemini-study-notebooks.png"
     },
     {
       "id": "c-20260710-copilot-gpt56",
@@ -705,7 +707,8 @@
       "pdfFileName": "Engma_C_AI_Tool_Benchmark_Microsoft_365_Copilot_GPT_56_07102026.pdf",
       "pdfUrl": "/reports/pdf/Engma_C_AI_Tool_Benchmark_Microsoft_365_Copilot_GPT_56_07102026.pdf",
       "sourceFileName": "Engma_C_AI_Tool_Benchmark_Microsoft_365_Copilot_GPT_56_07102026.md",
-      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-10\n\n## 工具名称\n\nMicrosoft 365 Copilot GPT-5.6\n\n官网：  \nhttps://techcommunity.microsoft.com/blog/microsoft365copilotblog/available-today-openai%E2%80%99s-gpt-5-6-in-microsoft-365-copilot/4533152\n\n## 测试任务\n\n让它处理一份内部材料：先摘要、再提炼要点、再生成给管理层看的行动建议。\n\n## 结果数据\n\nGPT-5.6 进入 Microsoft 365 Copilot 后，核心价值不只是回答更聪明，而是更自然地嵌入 Word、Excel、PowerPoint 和 Teams。\n\n## 优缺点\n\n优点：直接进办公流，适合企业默认助手。  \n缺点：能力很强，但生态绑定也更强。\n\n## 推荐指数\n\n4.6/5\n\n一句话：  \n更适合文档、表格和企业协作流的默认办公助手。\n\n## 使用技巧\n\n- 先拿一份真实 Word 或 PowerPoint 材料测试，不要只看演示。\n- 优先测总结、改写、表格分析和行动项提炼。\n- 把它放进日常办公流程里看，才知道是否真的省时间。\n\n来源：  \nhttps://techcommunity.microsoft.com/blog/microsoft365copilotblog/available-today-openai%E2%80%99s-gpt-5-6-in-microsoft-365-copilot/4533152\n"
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-10\n\n## 工具名称\n\nMicrosoft 365 Copilot GPT-5.6\n\n官网：  \nhttps://techcommunity.microsoft.com/blog/microsoft365copilotblog/available-today-openai%E2%80%99s-gpt-5-6-in-microsoft-365-copilot/4533152\n\n## 测试任务\n\n让它处理一份内部材料：先摘要、再提炼要点、再生成给管理层看的行动建议。\n\n## 结果数据\n\nGPT-5.6 进入 Microsoft 365 Copilot 后，核心价值不只是回答更聪明，而是更自然地嵌入 Word、Excel、PowerPoint 和 Teams。\n\n## 优缺点\n\n优点：直接进办公流，适合企业默认助手。  \n缺点：能力很强，但生态绑定也更强。\n\n## 推荐指数\n\n4.6/5\n\n一句话：  \n更适合文档、表格和企业协作流的默认办公助手。\n\n## 使用技巧\n\n- 先拿一份真实 Word 或 PowerPoint 材料测试，不要只看演示。\n- 优先测总结、改写、表格分析和行动项提炼。\n- 把它放进日常办公流程里看，才知道是否真的省时间。\n\n来源：  \nhttps://techcommunity.microsoft.com/blog/microsoft365copilotblog/available-today-openai%E2%80%99s-gpt-5-6-in-microsoft-365-copilot/4533152\n",
+      "image": "/generated/tool-covers/c-20260710-copilot-gpt56.png"
     },
     {
       "id": "c-20260709-reflect-claude",
@@ -741,7 +744,8 @@
       "pdfFileName": "Engma_C_AI_Tool_Benchmark_Reflect_with_Claude_07092026.pdf",
       "pdfUrl": "/reports/pdf/Engma_C_AI_Tool_Benchmark_Reflect_with_Claude_07092026.pdf",
       "sourceFileName": "Engma_C_AI_Tool_Benchmark_Reflect_with_Claude_07092026.md",
-      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-09\n\n## 工具名称\n\nReflect with Claude\n\n官网：  \nhttps://www.anthropic.com/news/reflect-with-claude\n\n## 测试任务\n\n看它能不能帮团队复盘提问历史、整理 prompt 习惯和使用场景。\n\n## 结果数据\n\n它不只是产出答案，而是帮助用户回看历史、整理使用模式、优化提问方式。\n\n## 优缺点\n\n优点：能帮助方法复盘。  \n缺点：不是直接产出型工具，结果依赖用户习惯。\n\n## 推荐指数\n\n4.0/5\n\n一句话：  \n更像一个轻量的 AI 使用复盘工具。\n\n## 使用技巧\n\n- 先回看一周内的真实对话，再判断是否有重复问题。\n- 适合团队做 prompt 资产整理，而不是单次答案测试。\n- 把它当复盘工具用，比当“生产力输出工具”更合适。\n\n来源：  \nhttps://www.anthropic.com/news/reflect-with-claude\n"
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-09\n\n## 工具名称\n\nReflect with Claude\n\n官网：  \nhttps://www.anthropic.com/news/reflect-with-claude\n\n## 测试任务\n\n看它能不能帮团队复盘提问历史、整理 prompt 习惯和使用场景。\n\n## 结果数据\n\n它不只是产出答案，而是帮助用户回看历史、整理使用模式、优化提问方式。\n\n## 优缺点\n\n优点：能帮助方法复盘。  \n缺点：不是直接产出型工具，结果依赖用户习惯。\n\n## 推荐指数\n\n4.0/5\n\n一句话：  \n更像一个轻量的 AI 使用复盘工具。\n\n## 使用技巧\n\n- 先回看一周内的真实对话，再判断是否有重复问题。\n- 适合团队做 prompt 资产整理，而不是单次答案测试。\n- 把它当复盘工具用，比当“生产力输出工具”更合适。\n\n来源：  \nhttps://www.anthropic.com/news/reflect-with-claude\n",
+      "image": "/generated/tool-covers/c-20260709-reflect-claude.png"
     },
     {
       "id": "c-20260708-nvidia-nemotron",
@@ -772,7 +776,8 @@
       "pdfFileName": "Engma_C_AI_Tool_Benchmark_07082026_NVIDIA_Nemotron.pdf",
       "pdfUrl": "/reports/pdf/Engma_C_AI_Tool_Benchmark_07082026_NVIDIA_Nemotron.pdf",
       "sourceFileName": "Engma_C_AI_Tool_Benchmark_07082026_NVIDIA_Nemotron.md",
-      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-08\n\n## NVIDIA Nemotron\n\n官网：https://nvidianews.nvidia.com/news/nvidia-nemotron-achieves-benchmark-leading-performance-with-langchain-deep-agents-harness\n\n## 测试任务\n\n用它配 LangChain Deep Agents Harness 组织一个多工具工作流。\n\n## 结果\n\n更适合企业级 Agent 编排和评测底座。\n\n## 优缺点\n\n优点：优点：Agent harness 观念清晰。  \n缺点：缺点：配置门槛比纯聊天工具高。\n\n## 推荐指数\n\n4.3/5\n\n一句话：  \n适合做 LangChain Deep Agents 一类的企业 Agent 编排测试。\n\n来源：https://nvidianews.nvidia.com/news/nvidia-nemotron-achieves-benchmark-leading-performance-with-langchain-deep-agents-harness\n"
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-08\n\n## NVIDIA Nemotron\n\n官网：https://nvidianews.nvidia.com/news/nvidia-nemotron-achieves-benchmark-leading-performance-with-langchain-deep-agents-harness\n\n## 测试任务\n\n用它配 LangChain Deep Agents Harness 组织一个多工具工作流。\n\n## 结果\n\n更适合企业级 Agent 编排和评测底座。\n\n## 优缺点\n\n优点：优点：Agent harness 观念清晰。  \n缺点：缺点：配置门槛比纯聊天工具高。\n\n## 推荐指数\n\n4.3/5\n\n一句话：  \n适合做 LangChain Deep Agents 一类的企业 Agent 编排测试。\n\n来源：https://nvidianews.nvidia.com/news/nvidia-nemotron-achieves-benchmark-leading-performance-with-langchain-deep-agents-harness\n",
+      "image": "/generated/tool-covers/c-20260708-nvidia-nemotron.png"
     },
     {
       "id": "c-20260707-chatgpt-work",
@@ -803,7 +808,8 @@
       "pdfFileName": "Engma_C_AI_Tool_Benchmark_07072026_ChatGPT_Work.pdf",
       "pdfUrl": "/reports/pdf/Engma_C_AI_Tool_Benchmark_07072026_ChatGPT_Work.pdf",
       "sourceFileName": "Engma_C_AI_Tool_Benchmark_07072026_ChatGPT_Work.md",
-      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-07\n\n## ChatGPT Work\n\n官网：https://chatgpt.com/\n\n## 测试任务\n\n让模型读取一段支付业务说明，先做摘要，再拆成行动项，再写给同事的工作建议。\n\n## 结果\n\n它更适合做企业资料整理和跨部门协作，尤其是把复杂内容串成持续任务流。\n\n## 优缺点\n\n优点：适合复杂工作流和重复协作。  \n缺点：需要清晰上下文，并保留人工复核。\n\n## 推荐指数\n\n4.5/5\n\n一句话：  \nChatGPT Work 更像一个持续跟进工作的助手，而不是一次性回答工具。\n\n来源：https://openai.com/index/australian-payments-plus/\n"
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-07\n\n## ChatGPT Work\n\n官网：https://chatgpt.com/\n\n## 测试任务\n\n让模型读取一段支付业务说明，先做摘要，再拆成行动项，再写给同事的工作建议。\n\n## 结果\n\n它更适合做企业资料整理和跨部门协作，尤其是把复杂内容串成持续任务流。\n\n## 优缺点\n\n优点：适合复杂工作流和重复协作。  \n缺点：需要清晰上下文，并保留人工复核。\n\n## 推荐指数\n\n4.5/5\n\n一句话：  \nChatGPT Work 更像一个持续跟进工作的助手，而不是一次性回答工具。\n\n来源：https://openai.com/index/australian-payments-plus/\n",
+      "image": "/generated/tool-covers/c-20260707-chatgpt-work.png"
     },
     {
       "id": "c-20260706-lerobot",
@@ -834,7 +840,8 @@
       "pdfFileName": "Engma_C_AI_Tool_Benchmark_07062026_LeRobot.pdf",
       "pdfUrl": "/reports/pdf/Engma_C_AI_Tool_Benchmark_07062026_LeRobot.pdf",
       "sourceFileName": "Engma_C_AI_Tool_Benchmark_07062026_LeRobot.md",
-      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-06\n\n## LeRobot\n\n官网：https://nvidianews.nvidia.com/news/nvidia-and-hugging-face-bring-new-models-and-frameworks-to-lerobot-for-the-open-robotics-community\n\n## 测试任务\n\n模拟机器人数据和动作流程的快速搭建。\n\n## 结果\n\n适合做机器人研究和小规模验证。\n\n## 优缺点\n\n优点：优点：开源生态强。  \n缺点：缺点：仍需硬件、数据和大量场景打磨。\n\n## 推荐指数\n\n4.2/5\n\n一句话：  \n适合做 Physical AI 入门验证和机器人数据流程测试。\n\n来源：https://nvidianews.nvidia.com/news/nvidia-and-hugging-face-bring-new-models-and-frameworks-to-lerobot-for-the-open-robotics-community\n"
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-06\n\n## LeRobot\n\n官网：https://nvidianews.nvidia.com/news/nvidia-and-hugging-face-bring-new-models-and-frameworks-to-lerobot-for-the-open-robotics-community\n\n## 测试任务\n\n模拟机器人数据和动作流程的快速搭建。\n\n## 结果\n\n适合做机器人研究和小规模验证。\n\n## 优缺点\n\n优点：优点：开源生态强。  \n缺点：缺点：仍需硬件、数据和大量场景打磨。\n\n## 推荐指数\n\n4.2/5\n\n一句话：  \n适合做 Physical AI 入门验证和机器人数据流程测试。\n\n来源：https://nvidianews.nvidia.com/news/nvidia-and-hugging-face-bring-new-models-and-frameworks-to-lerobot-for-the-open-robotics-community\n",
+      "image": "/generated/tool-covers/c-20260706-lerobot.png"
     },
     {
       "id": "c-20260703-tabstack",
@@ -865,7 +872,8 @@
       "pdfFileName": "Engma_C_AI_Tool_Benchmark_Tabstack_07032026.pdf",
       "pdfUrl": "/reports/pdf/Engma_C_AI_Tool_Benchmark_Tabstack_07032026.pdf",
       "sourceFileName": "Engma_C_AI_Tool_Benchmark_Tabstack_07032026.md",
-      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-03\n\n## 工具名称\n\nTabstack\n\n官网：  \nhttps://tabstack.ai/\n\n## 测试任务\n\n判断它能不能把招聘网站上的职位信息，直接整理成结构化数据。\n\n## 结果数据\n\nTabstack 可以接收网页地址和指定字段，用一次 API 请求返回 JSON 数据，也支持网页研究和浏览器自动操作。\n\n官网提供 10,000 个免费 credits，不需要信用卡。\n\n本次为官网与技术文档验证，未使用 API Key 进行正式抓取。\n\n## 优缺点\n\n优点：不用自己维护浏览器和爬虫，适合做固定网页监测。  \n缺点：偏开发者工具，实际准确率和额度消耗还需要真实测试。\n\n## 推荐指数\n\n推荐指数：4 星\n\n一句话：  \n适合把日常网页情报采集做成自动化，但要先拿一个招聘网站小范围测试。\n\n来源：  \nhttps://tabstack.ai/\n\nhttps://docs.tabstack.ai/guides/how-to-use-automate-endpoint/\n"
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-03\n\n## 工具名称\n\nTabstack\n\n官网：  \nhttps://tabstack.ai/\n\n## 测试任务\n\n判断它能不能把招聘网站上的职位信息，直接整理成结构化数据。\n\n## 结果数据\n\nTabstack 可以接收网页地址和指定字段，用一次 API 请求返回 JSON 数据，也支持网页研究和浏览器自动操作。\n\n官网提供 10,000 个免费 credits，不需要信用卡。\n\n本次为官网与技术文档验证，未使用 API Key 进行正式抓取。\n\n## 优缺点\n\n优点：不用自己维护浏览器和爬虫，适合做固定网页监测。  \n缺点：偏开发者工具，实际准确率和额度消耗还需要真实测试。\n\n## 推荐指数\n\n推荐指数：4 星\n\n一句话：  \n适合把日常网页情报采集做成自动化，但要先拿一个招聘网站小范围测试。\n\n来源：  \nhttps://tabstack.ai/\n\nhttps://docs.tabstack.ai/guides/how-to-use-automate-endpoint/\n",
+      "image": "/generated/tool-covers/c-20260703-tabstack.png"
     },
     {
       "id": "c-20260702-acti",
@@ -896,7 +904,8 @@
       "pdfFileName": "Engma_C_AI_Tool_Benchmark_Acti_07022026.pdf",
       "pdfUrl": "/reports/pdf/Engma_C_AI_Tool_Benchmark_Acti_07022026.pdf",
       "sourceFileName": "Engma_C_AI_Tool_Benchmark_Acti_07022026.md",
-      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-02\n\n## 工具名称\n\nActi\n\n官网：  \nhttps://openacti.com/\n\n## 测试任务\n\n看它能不能在手机聊天时减少来回切换 App。\n\n## 结果数据\n\nActi 是一款 iOS 和 Android 的 Agent 键盘。用户在输入框里写出需求，长按 Acti Bar，即可查地点、找文档、生成会议链接或执行日历操作。\n\n早期测试用户两周内创建了超过 1,000 个自定义 Skills。产品目前免费。\n\n本次为公开资料验证，未授权手机键盘权限实测。\n\n## 优缺点\n\n优点：入口自然，不需要反复打开 AI App。  \n缺点：部分功能需要完整键盘权限，隐私和权限要谨慎。\n\n## 推荐指数\n\n推荐指数：4 星\n\n一句话：  \n想法很好，适合高频手机办公，但先小范围试用。\n\n来源：  \nhttps://openacti.com/\n\nhttps://techcrunch.com/2026/06/30/acti-puts-ai-agents-directly-into-your-smartphone-keyboard/\n"
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-02\n\n## 工具名称\n\nActi\n\n官网：  \nhttps://openacti.com/\n\n## 测试任务\n\n看它能不能在手机聊天时减少来回切换 App。\n\n## 结果数据\n\nActi 是一款 iOS 和 Android 的 Agent 键盘。用户在输入框里写出需求，长按 Acti Bar，即可查地点、找文档、生成会议链接或执行日历操作。\n\n早期测试用户两周内创建了超过 1,000 个自定义 Skills。产品目前免费。\n\n本次为公开资料验证，未授权手机键盘权限实测。\n\n## 优缺点\n\n优点：入口自然，不需要反复打开 AI App。  \n缺点：部分功能需要完整键盘权限，隐私和权限要谨慎。\n\n## 推荐指数\n\n推荐指数：4 星\n\n一句话：  \n想法很好，适合高频手机办公，但先小范围试用。\n\n来源：  \nhttps://openacti.com/\n\nhttps://techcrunch.com/2026/06/30/acti-puts-ai-agents-directly-into-your-smartphone-keyboard/\n",
+      "image": "/generated/tool-covers/c-20260702-acti.png"
     },
     {
       "id": "c-20260701-continuu-it",
@@ -927,7 +936,8 @@
       "pdfFileName": "Engma_C_AI_Tool_Benchmark_continuu_it_07012026.pdf",
       "pdfUrl": "/reports/pdf/Engma_C_AI_Tool_Benchmark_continuu_it_07012026.pdf",
       "sourceFileName": "Engma_C_AI_Tool_Benchmark_continuu_it_07012026.md",
-      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-01\n\n## 工具名称\n\ncontinuu.it\n\n官网：  \nhttps://www.continuu.it/\n\n## 测试任务\n\n看它能不能帮助人把长期没做完的项目重新推进。\n\n## 结果数据\n\n它会把项目拆成下一步任务，并保存之前的决定、阻碍和进度。项目 14 天没有变化时，会提醒选择继续、暂停、完成或放弃。\n\n目前为内测版。免费版支持 3 个活跃项目、50 个任务和每天 15 条 AI 消息。\n\n本次为公开资料验证，未进入内测后台。\n\n## 优缺点\n\n优点：场景很具体，重点是“完成”，不是继续增加任务。  \n缺点：仍在内测，实际提醒效果和稳定性需要继续观察。\n\n## 推荐指数\n\n推荐指数：4 星\n\n一句话：  \n适合项目多、容易搁置的人。小工具，但思路很实用。\n\n来源：  \nhttps://www.continuu.it/\n"
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-01\n\n## 工具名称\n\ncontinuu.it\n\n官网：  \nhttps://www.continuu.it/\n\n## 测试任务\n\n看它能不能帮助人把长期没做完的项目重新推进。\n\n## 结果数据\n\n它会把项目拆成下一步任务，并保存之前的决定、阻碍和进度。项目 14 天没有变化时，会提醒选择继续、暂停、完成或放弃。\n\n目前为内测版。免费版支持 3 个活跃项目、50 个任务和每天 15 条 AI 消息。\n\n本次为公开资料验证，未进入内测后台。\n\n## 优缺点\n\n优点：场景很具体，重点是“完成”，不是继续增加任务。  \n缺点：仍在内测，实际提醒效果和稳定性需要继续观察。\n\n## 推荐指数\n\n推荐指数：4 星\n\n一句话：  \n适合项目多、容易搁置的人。小工具，但思路很实用。\n\n来源：  \nhttps://www.continuu.it/\n",
+      "image": "/generated/tool-covers/c-20260701-continuu-it.png"
     },
     {
       "id": "c-20260624-readywhen",
@@ -957,7 +967,8 @@
       ],
       "pdfFileName": "Engma_C_AI_Tool_Benchmark_Readywhen_06242026.pdf",
       "sourceFileName": "Engma_C_AI_Tool_Benchmark_Readywhen_06242026.md",
-      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-06-24\n\n## 工具名称\n\nReadywhen\n\n官网：  \nhttps://www.producthunt.com/posts/readywhen-2\n\n## 测试任务\n\n看它能不能帮人盯住会议、邮件、Slack 里的 follow-up。\n\n## 结果数据\n\n它像一个很轻的 AI Chief of Staff。重点不是写内容，而是提醒你谁还没回、你答应了什么、下一步该做什么。\n\n## 优缺点\n\n优点：场景清楚，适合管理者、销售、项目负责人。  \n缺点：依赖邮件、日历、Slack 接入，权限和隐私要注意。\n\n## 推荐指数\n\n推荐指数：4 星\n\n一句话：  \n小工具，但实用。适合用来减少漏事。\n\n来源：  \nhttps://www.producthunt.com/posts/readywhen-2"
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-06-24\n\n## 工具名称\n\nReadywhen\n\n官网：  \nhttps://www.producthunt.com/posts/readywhen-2\n\n## 测试任务\n\n看它能不能帮人盯住会议、邮件、Slack 里的 follow-up。\n\n## 结果数据\n\n它像一个很轻的 AI Chief of Staff。重点不是写内容，而是提醒你谁还没回、你答应了什么、下一步该做什么。\n\n## 优缺点\n\n优点：场景清楚，适合管理者、销售、项目负责人。  \n缺点：依赖邮件、日历、Slack 接入，权限和隐私要注意。\n\n## 推荐指数\n\n推荐指数：4 星\n\n一句话：  \n小工具，但实用。适合用来减少漏事。\n\n来源：  \nhttps://www.producthunt.com/posts/readywhen-2",
+      "image": "/generated/tool-covers/c-20260624-readywhen.png"
     },
     {
       "id": "c-20260623-wispr-flow",
@@ -987,7 +998,8 @@
       ],
       "pdfFileName": "Engma_C_AI_Tool_Benchmark_Wispr_Flow_06232026.pdf",
       "sourceFileName": "Engma_C_AI_Tool_Benchmark_Wispr_Flow_06232026.md",
-      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-06-23\n\n## Wispr Flow\n\n官网：https://wisprflow.ai/\n\n## 测试任务\n\n把口语想法变成能直接发出去的文字。\n\n## 结果\n\n它就是一个很轻的语音转文字工具。  \n支持电脑和手机，有免费版，Pro 版大概 12-15 美元/月。\n\n我的判断：  \n适合不想打字、但每天要写邮件、日报、群消息的人。\n\n## 优缺点\n\n优点：上手快，场景清楚，日常办公能用。  \n缺点：私密内容别直接说，中文效果还要多试。\n\n## 推荐指数\n\n4 星\n\n一句话：  \n小工具，但有用。可以先让经常写东西的人试。\n\n来源：https://wisprflow.ai/ ｜ https://wisprflow.ai/pricing"
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-06-23\n\n## Wispr Flow\n\n官网：https://wisprflow.ai/\n\n## 测试任务\n\n把口语想法变成能直接发出去的文字。\n\n## 结果\n\n它就是一个很轻的语音转文字工具。  \n支持电脑和手机，有免费版，Pro 版大概 12-15 美元/月。\n\n我的判断：  \n适合不想打字、但每天要写邮件、日报、群消息的人。\n\n## 优缺点\n\n优点：上手快，场景清楚，日常办公能用。  \n缺点：私密内容别直接说，中文效果还要多试。\n\n## 推荐指数\n\n4 星\n\n一句话：  \n小工具，但有用。可以先让经常写东西的人试。\n\n来源：https://wisprflow.ai/ ｜ https://wisprflow.ai/pricing",
+      "image": "/generated/tool-covers/c-20260623-wispr-flow.png"
     },
     {
       "id": "c-20260623-read-ai",
@@ -1017,7 +1029,8 @@
       ],
       "pdfFileName": "Engma_C_AI_Tool_Benchmark_Read_AI_06232026.pdf",
       "sourceFileName": "Engma_C_AI_Tool_Benchmark_Read_AI_06232026.md",
-      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-06-23\n\n## 工具名称\n\nRead AI\n\n官网：  \nhttps://www.read.ai/\n\n## 测试任务\n\n看它能不能把会议纪要、行动项、会后跟进这些事情接过去。\n\n## 结果数据\n\n- 它不是单纯转文字\n- 更像一个会议里的 AI 助理\n- 会后能给总结、行动项、重点内容\n\n结论：  \n这个工具值得看。  \n因为它不是帮你记笔记，而是在帮你接会议杂活。\n\n## 优缺点\n\n优点：\n\n- 很实用\n- 对高频开会的人省时间比较直接\n\n缺点：\n\n- 很依赖会议场景\n- 如果会议本身少，价值感不会特别强\n\n## 推荐指数\n\n推荐指数：4 星\n\n建议：  \n重点把它当成“AI + 会议助理”这个方向来看。  \n这类工具如果成熟，对管理层、销售、项目和客户成功团队会比较有用。\n\n来源：  \nhttps://www.read.ai/  \nhttps://www.read.ai/meetings"
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-06-23\n\n## 工具名称\n\nRead AI\n\n官网：  \nhttps://www.read.ai/\n\n## 测试任务\n\n看它能不能把会议纪要、行动项、会后跟进这些事情接过去。\n\n## 结果数据\n\n- 它不是单纯转文字\n- 更像一个会议里的 AI 助理\n- 会后能给总结、行动项、重点内容\n\n结论：  \n这个工具值得看。  \n因为它不是帮你记笔记，而是在帮你接会议杂活。\n\n## 优缺点\n\n优点：\n\n- 很实用\n- 对高频开会的人省时间比较直接\n\n缺点：\n\n- 很依赖会议场景\n- 如果会议本身少，价值感不会特别强\n\n## 推荐指数\n\n推荐指数：4 星\n\n建议：  \n重点把它当成“AI + 会议助理”这个方向来看。  \n这类工具如果成熟，对管理层、销售、项目和客户成功团队会比较有用。\n\n来源：  \nhttps://www.read.ai/  \nhttps://www.read.ai/meetings",
+      "image": "/generated/tool-covers/c-20260623-read-ai.png"
     },
     {
       "id": "c-20260622-fyxer",
@@ -1047,7 +1060,8 @@
       ],
       "pdfFileName": "Engma_C_AI_Tool_Benchmark_Fyxer_06222026.pdf",
       "sourceFileName": "Engma_C_AI_Tool_Benchmark_Fyxer_06222026.md",
-      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-06-22\n\n## 工具名称\n\nFyxer\n\n官网：  \nhttps://www.fyxer.com/\n\n## 测试任务\n\n看它能不能把邮箱里这些很烦、但又天天要做的事情接过去。\n\n## 结果数据\n\n- 这个工具讲得很直接，就是邮箱里的 AI 助理\n- 它主要做三件事：分邮件、写回复、记会议纪要\n- Gmail 和 Outlook 都能用\n\n结论：  \n这个工具可以看。  \n它不是那种看起来很厉害但落不到地上的工具，做的就是最烦的那些杂活。\n\n## 优缺点\n\n优点：\n\n- 很贴近日常办公\n- 省时间这个价值比较直接\n\n缺点：\n\n- 很依赖邮箱和会议场景\n- 如果平时邮件不多，感受不会特别强\n\n## 推荐指数\n\n推荐指数：4 星\n\n建议：  \n重点把它当成“AI + 邮箱助理”这个方向来看。  \n这类工具如果成熟，对管理层、销售、招聘、客户成功这类高频沟通岗位会比较有价值。\n\n来源：  \nhttps://www.fyxer.com/  \nhttps://www.fyxer.com/ai-email-assistant"
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-06-22\n\n## 工具名称\n\nFyxer\n\n官网：  \nhttps://www.fyxer.com/\n\n## 测试任务\n\n看它能不能把邮箱里这些很烦、但又天天要做的事情接过去。\n\n## 结果数据\n\n- 这个工具讲得很直接，就是邮箱里的 AI 助理\n- 它主要做三件事：分邮件、写回复、记会议纪要\n- Gmail 和 Outlook 都能用\n\n结论：  \n这个工具可以看。  \n它不是那种看起来很厉害但落不到地上的工具，做的就是最烦的那些杂活。\n\n## 优缺点\n\n优点：\n\n- 很贴近日常办公\n- 省时间这个价值比较直接\n\n缺点：\n\n- 很依赖邮箱和会议场景\n- 如果平时邮件不多，感受不会特别强\n\n## 推荐指数\n\n推荐指数：4 星\n\n建议：  \n重点把它当成“AI + 邮箱助理”这个方向来看。  \n这类工具如果成熟，对管理层、销售、招聘、客户成功这类高频沟通岗位会比较有价值。\n\n来源：  \nhttps://www.fyxer.com/  \nhttps://www.fyxer.com/ai-email-assistant",
+      "image": "/generated/tool-covers/c-20260622-fyxer.png"
     },
     {
       "id": "c-20260618-facebook-ai-tools",
@@ -1077,7 +1091,8 @@
       ],
       "pdfFileName": "Engma_C_AI_Tool_Benchmark_Facebook_AI_Tools_06182026.pdf",
       "sourceFileName": "Engma_C_AI_Tool_Benchmark_Facebook_AI_Tools_06182026.md",
-      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-06-18\n\n## 工具名称\n\nFacebook AI Tools\n\n官网：  \nhttps://about.fb.com/news/2026/06/new-ai-tools-to-help-you-make-things-happen-on-facebook/\n\n## 测试任务\n\n看它值不值得测。  \n重点看：能不能直接帮助内容分发、互动和转化。\n\n## 结果数据\n\n- Meta 已经把新的 AI 工具直接接进 Facebook 里\n- 核心不是做聊天，而是帮用户找内容、做事、完成动作\n- 这说明 AI 正在直接长进平台流量入口\n\n结论：  \n这个方向值得看。  \n因为它不是独立 AI 工具，而是平台把 AI 变成了用户行为引导层。\n\n## 优缺点\n\n优点：\n\n- 离用户近\n- 容易直接放大流量和互动\n\n缺点：\n\n- 很依赖 Meta 平台\n- 更适合内容和社交场景\n\n## 推荐指数\n\n推荐指数：4 星\n\n建议：  \n重点把它当成“AI + 平台流量入口”来看。  \n以后很多 AI 产品，不一定是独立 App，而会直接长在平台里面。\n\n来源：  \nhttps://about.fb.com/news/2026/06/new-ai-tools-to-help-you-make-things-happen-on-facebook/"
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-06-18\n\n## 工具名称\n\nFacebook AI Tools\n\n官网：  \nhttps://about.fb.com/news/2026/06/new-ai-tools-to-help-you-make-things-happen-on-facebook/\n\n## 测试任务\n\n看它值不值得测。  \n重点看：能不能直接帮助内容分发、互动和转化。\n\n## 结果数据\n\n- Meta 已经把新的 AI 工具直接接进 Facebook 里\n- 核心不是做聊天，而是帮用户找内容、做事、完成动作\n- 这说明 AI 正在直接长进平台流量入口\n\n结论：  \n这个方向值得看。  \n因为它不是独立 AI 工具，而是平台把 AI 变成了用户行为引导层。\n\n## 优缺点\n\n优点：\n\n- 离用户近\n- 容易直接放大流量和互动\n\n缺点：\n\n- 很依赖 Meta 平台\n- 更适合内容和社交场景\n\n## 推荐指数\n\n推荐指数：4 星\n\n建议：  \n重点把它当成“AI + 平台流量入口”来看。  \n以后很多 AI 产品，不一定是独立 App，而会直接长在平台里面。\n\n来源：  \nhttps://about.fb.com/news/2026/06/new-ai-tools-to-help-you-make-things-happen-on-facebook/",
+      "image": "/generated/tool-covers/c-20260618-facebook-ai-tools.png"
     },
     {
       "id": "c-20260618-bond",
@@ -1107,7 +1122,8 @@
       ],
       "pdfFileName": "Engma_C_AI_Tool_Benchmark_Bond_06182026.pdf",
       "sourceFileName": "Engma_C_AI_Tool_Benchmark_Bond_06182026.md",
-      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-06-18\n\n## 工具名称\n\nBond\n\n官网：  \nhttps://www.producthunt.com/products/bond-12\n\n## 测试任务\n\n看它能不能直接帮人管任务、推任务、盯进度。\n\n## 结果数据\n\n- 它的定位很直接：`The AI to-do list that does itself`\n- 能把邮件、聊天、会议里的任务收进来\n- 不只是列待办，而是会帮你排优先级、准备会议、写跟进、找 blocker\n\n结论：  \n这个工具值得测。  \n因为它不是普通待办工具，而是在往“AI Chief of Staff”走。\n\n## 优缺点\n\n优点：\n\n- 很贴近真实办公流\n- 容易直接省时间\n\n缺点：\n\n- 依赖接入质量\n- 更适合管理者和知识工作团队\n\n## 推荐指数\n\n推荐指数：4.5 星\n\n建议：  \n重点把它当成“AI + 任务管理 + 助理替代”方向来看。  \n如果这类工具成熟，对办公效率提升会非常直接。\n\n来源：  \nhttps://www.producthunt.com/products/bond-12  \nhttps://www.producthunt.com/products/bond-12/awards"
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-06-18\n\n## 工具名称\n\nBond\n\n官网：  \nhttps://www.producthunt.com/products/bond-12\n\n## 测试任务\n\n看它能不能直接帮人管任务、推任务、盯进度。\n\n## 结果数据\n\n- 它的定位很直接：`The AI to-do list that does itself`\n- 能把邮件、聊天、会议里的任务收进来\n- 不只是列待办，而是会帮你排优先级、准备会议、写跟进、找 blocker\n\n结论：  \n这个工具值得测。  \n因为它不是普通待办工具，而是在往“AI Chief of Staff”走。\n\n## 优缺点\n\n优点：\n\n- 很贴近真实办公流\n- 容易直接省时间\n\n缺点：\n\n- 依赖接入质量\n- 更适合管理者和知识工作团队\n\n## 推荐指数\n\n推荐指数：4.5 星\n\n建议：  \n重点把它当成“AI + 任务管理 + 助理替代”方向来看。  \n如果这类工具成熟，对办公效率提升会非常直接。\n\n来源：  \nhttps://www.producthunt.com/products/bond-12  \nhttps://www.producthunt.com/products/bond-12/awards",
+      "image": "/generated/tool-covers/c-20260618-bond.png"
     },
     {
       "id": "c-20260617-claude-code-security",
@@ -1137,7 +1153,8 @@
       ],
       "pdfFileName": "Engma_C_AI_Tool_Benchmark_Claude_Code_Security_06172026.pdf",
       "sourceFileName": "Engma_C_AI_Tool_Benchmark_Claude_Code_Security_06172026.md",
-      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-06-17\n\n## 工具名称\n\nClaude Code Security\n\n官网：  \nhttps://www.anthropic.com/news/claude-code-security\n\n## 测试任务\n\n看它值不值得测。  \n重点看：能不能直接进代码安全审计流程。\n\n## 结果数据\n\n- Anthropic 把它定位成给 defenders 用的工具\n- 它能扫代码库、找漏洞、给修复建议\n- 目前是 Enterprise 和 Team 的 limited research preview\n\n结论：  \n这个工具值得看。  \n因为它不是普通 coding assistant，而是开始直接进安全工作流。\n\n## 优缺点\n\n优点：\n\n- 价值高，直接对准安全审计\n- 比普通代码生成更接近企业刚需\n\n缺点：\n\n- 还是偏技术团队\n- 目前还不是全面开放\n\n## 推荐指数\n\n推荐指数：4 星\n\n建议：  \n重点把它当成“AI + 安全审计”方向来看。  \n如果后面这一类工具成熟，价值会比普通写代码工具更高。\n\n来源：  \nhttps://www.anthropic.com/news/claude-code-security"
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-06-17\n\n## 工具名称\n\nClaude Code Security\n\n官网：  \nhttps://www.anthropic.com/news/claude-code-security\n\n## 测试任务\n\n看它值不值得测。  \n重点看：能不能直接进代码安全审计流程。\n\n## 结果数据\n\n- Anthropic 把它定位成给 defenders 用的工具\n- 它能扫代码库、找漏洞、给修复建议\n- 目前是 Enterprise 和 Team 的 limited research preview\n\n结论：  \n这个工具值得看。  \n因为它不是普通 coding assistant，而是开始直接进安全工作流。\n\n## 优缺点\n\n优点：\n\n- 价值高，直接对准安全审计\n- 比普通代码生成更接近企业刚需\n\n缺点：\n\n- 还是偏技术团队\n- 目前还不是全面开放\n\n## 推荐指数\n\n推荐指数：4 星\n\n建议：  \n重点把它当成“AI + 安全审计”方向来看。  \n如果后面这一类工具成熟，价值会比普通写代码工具更高。\n\n来源：  \nhttps://www.anthropic.com/news/claude-code-security",
+      "image": "/generated/tool-covers/c-20260617-claude-code-security.png"
     },
     {
       "id": "c-20260616-openai-codex",
@@ -1167,7 +1184,8 @@
       ],
       "pdfFileName": "Engma_C_AI_Tool_Benchmark_OpenAI_Codex_06162026.pdf",
       "sourceFileName": "Engma_C_AI_Tool_Benchmark_OpenAI_Codex_06162026.md",
-      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-06-16  \n参考标准：`AI情报与工具测试每日_每周落地方案-06042026.pdf`\n\n## 工具名称\n\nOpenAI Codex\n\n官网：  \nhttps://openai.com/index/codex-for-every-role-tool-workflow/\n\n## 测试任务\n\n今天主要看一个事：  \nCodex 到底能不能真正进入工作流。\n\n重点看：\n\n- 能不能读代码库\n- 能不能帮人改代码和写文档\n- 能不能配合插件、注释、分享页做团队协作\n\n## 结果数据\n\n- OpenAI 最近给 Codex 加了 role-specific plugins、Sites、annotations\n- GPT-5.4 也已经接进 Codex，长上下文和 computer use 都在往前推\n- 这说明 Codex 不是单纯写代码工具，而是在往“团队协作型 Agent”走\n\n结论：  \n这个工具值得继续重点观察。  \n它最有价值的地方，不是单次生成代码，而是开始进入真实团队工作流。\n\n## 优缺点\n\n优点：\n\n- 读代码库能力强\n- 适合改代码、补文档、做协作\n- 比单纯聊天式编程更接近真实工作流\n\n缺点：\n\n- 还是更适合技术团队\n- 真正落地要配合流程和权限管理\n- 非技术团队直接上手门槛还是有\n\n## 推荐指数\n\n推荐指数：4.5 星\n\n建议：  \n可以进 Engma AI Lab 工具库。  \n短期可以把它理解成“技术团队 Agent 工具”；长期看的是它能不能从代码场景继续扩到更多知识工作流。\n\n来源：  \nhttps://openai.com/index/codex-for-every-role-tool-workflow/  \nhttps://openai.com/index/introducing-gpt-5-4/"
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-06-16  \n参考标准：`AI情报与工具测试每日_每周落地方案-06042026.pdf`\n\n## 工具名称\n\nOpenAI Codex\n\n官网：  \nhttps://openai.com/index/codex-for-every-role-tool-workflow/\n\n## 测试任务\n\n今天主要看一个事：  \nCodex 到底能不能真正进入工作流。\n\n重点看：\n\n- 能不能读代码库\n- 能不能帮人改代码和写文档\n- 能不能配合插件、注释、分享页做团队协作\n\n## 结果数据\n\n- OpenAI 最近给 Codex 加了 role-specific plugins、Sites、annotations\n- GPT-5.4 也已经接进 Codex，长上下文和 computer use 都在往前推\n- 这说明 Codex 不是单纯写代码工具，而是在往“团队协作型 Agent”走\n\n结论：  \n这个工具值得继续重点观察。  \n它最有价值的地方，不是单次生成代码，而是开始进入真实团队工作流。\n\n## 优缺点\n\n优点：\n\n- 读代码库能力强\n- 适合改代码、补文档、做协作\n- 比单纯聊天式编程更接近真实工作流\n\n缺点：\n\n- 还是更适合技术团队\n- 真正落地要配合流程和权限管理\n- 非技术团队直接上手门槛还是有\n\n## 推荐指数\n\n推荐指数：4.5 星\n\n建议：  \n可以进 Engma AI Lab 工具库。  \n短期可以把它理解成“技术团队 Agent 工具”；长期看的是它能不能从代码场景继续扩到更多知识工作流。\n\n来源：  \nhttps://openai.com/index/codex-for-every-role-tool-workflow/  \nhttps://openai.com/index/introducing-gpt-5-4/",
+      "image": "/generated/tool-covers/c-20260616-openai-codex.png"
     },
     {
       "id": "c-20260616-meta-business-agent",
@@ -1197,7 +1215,8 @@
       ],
       "pdfFileName": "Engma_C_AI_Tool_Benchmark_Meta_Business_Agent_06162026.pdf",
       "sourceFileName": "Engma_C_AI_Tool_Benchmark_Meta_Business_Agent_06162026.md",
-      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-06-16\n\n## 工具名称\n\nMeta Business Agent\n\n官网：  \nhttps://about.fb.com/news/2026/06/meta-business-agent/\n\n## 测试任务\n\n看它能不能直接进销售和客服流程。\n\n## 结果数据\n\n- 已经进了 WhatsApp、Messenger、Instagram\n- 能答问题、推商品、约时间、筛线索\n\n结论：  \n这个工具值得看。  \n它不是普通聊天机器人，而是直接长在流量入口上。\n\n## 优缺点\n\n优点：\n\n- 离客户近\n- 容易直接转化\n\n缺点：\n\n- 很依赖 Meta 生态\n- 更适合商家场景\n\n## 推荐指数\n\n推荐指数：4.5 星\n\n建议：  \n重点把它当成“AI + 流量入口 + 转化工具”来看。\n\n来源：  \nhttps://about.fb.com/news/2026/06/meta-business-agent/"
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-06-16\n\n## 工具名称\n\nMeta Business Agent\n\n官网：  \nhttps://about.fb.com/news/2026/06/meta-business-agent/\n\n## 测试任务\n\n看它能不能直接进销售和客服流程。\n\n## 结果数据\n\n- 已经进了 WhatsApp、Messenger、Instagram\n- 能答问题、推商品、约时间、筛线索\n\n结论：  \n这个工具值得看。  \n它不是普通聊天机器人，而是直接长在流量入口上。\n\n## 优缺点\n\n优点：\n\n- 离客户近\n- 容易直接转化\n\n缺点：\n\n- 很依赖 Meta 生态\n- 更适合商家场景\n\n## 推荐指数\n\n推荐指数：4.5 星\n\n建议：  \n重点把它当成“AI + 流量入口 + 转化工具”来看。\n\n来源：  \nhttps://about.fb.com/news/2026/06/meta-business-agent/",
+      "image": "/generated/tool-covers/c-20260616-meta-business-agent.png"
     },
     {
       "id": "c-20260615-google-ai-studio",
@@ -1227,7 +1246,8 @@
       ],
       "pdfFileName": "Engma_C_AI_Tool_Benchmark_Google_AI_Studio_06152026.pdf",
       "sourceFileName": "Engma_C_AI_Tool_Benchmark_Google_AI_Studio_06152026.md",
-      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-06-15\n\n## 工具名称\n\nGoogle AI Studio\n\n官网：  \nhttps://ai.google.dev/aistudio  \nhttps://aistudio.google.com/\n\n## 测试任务\n\n看它值不值得测。  \n重点看：能不能快速试 Gemini，能不能快速做 demo。\n\n## 结果数据\n\n- Google 把它定位成从 prompt 到原型最快的入口\n- 现在已经不只是 playground 了，能接 Gemini API 和 Google 工具链\n\n结论：  \n值得测。  \n适合快速验证，适合做 demo。  \n但它不是长期企业工作台。\n\n## 优缺点\n\n优点：\n\n- 上手快\n- 做 demo 快\n- 试 Gemini 方便\n\n缺点：\n\n- 更像开发者工具\n- 不适合直接长期交付\n- 不在 Google 生态里，优势会变弱\n\n## 推荐指数\n\n推荐指数：4 星\n\n建议：  \n可以进 Engma AI Lab 工具库。  \n先拿它做 Gemini 测试和客户 demo 即可。\n\n来源：  \nhttps://ai.google.dev/aistudio  \nhttps://developers.googleblog.com/all-the-news-from-the-google-io-2026-developer-keynote/"
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-06-15\n\n## 工具名称\n\nGoogle AI Studio\n\n官网：  \nhttps://ai.google.dev/aistudio  \nhttps://aistudio.google.com/\n\n## 测试任务\n\n看它值不值得测。  \n重点看：能不能快速试 Gemini，能不能快速做 demo。\n\n## 结果数据\n\n- Google 把它定位成从 prompt 到原型最快的入口\n- 现在已经不只是 playground 了，能接 Gemini API 和 Google 工具链\n\n结论：  \n值得测。  \n适合快速验证，适合做 demo。  \n但它不是长期企业工作台。\n\n## 优缺点\n\n优点：\n\n- 上手快\n- 做 demo 快\n- 试 Gemini 方便\n\n缺点：\n\n- 更像开发者工具\n- 不适合直接长期交付\n- 不在 Google 生态里，优势会变弱\n\n## 推荐指数\n\n推荐指数：4 星\n\n建议：  \n可以进 Engma AI Lab 工具库。  \n先拿它做 Gemini 测试和客户 demo 即可。\n\n来源：  \nhttps://ai.google.dev/aistudio  \nhttps://developers.googleblog.com/all-the-news-from-the-google-io-2026-developer-keynote/",
+      "image": "/generated/tool-covers/c-20260615-google-ai-studio.png"
     },
     {
       "id": "c-20260612-asana-dash-asana-agentic-work-management",
@@ -1257,7 +1277,8 @@
       ],
       "pdfFileName": "Engma_C_AI_Tool_Benchmark_Asana_Dash_06122026.pdf",
       "sourceFileName": "Engma_C_AI_Tool_Benchmark_Asana_Dash_06122026.md",
-      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-06-12\n\n## 工具名称\n\nAsana Dash / Asana Agentic Work Management\n\n官网：https://asana.com/product/ai\n\n## 测试任务\n\n今天看一个偏企业办公场景的新工具：Asana Dash。\n\n它可以理解成一个 AI 项目助理，帮团队从会议、邮件和项目任务里，整理出今天最重要的事情和下一步行动。\n\n适合场景：\n\n- 客户项目跟进\n- 会议纪要整理\n- 任务分配\n- 项目晨报\n- 客户资料整理\n\n## 结果数据\n\n- 官方定位是 AI Chief of Staff，也就是 AI 版“工作参谋”\n- 它能从会议、邮件、任务里提炼优先级和 next action\n- 官方产品里包含 AI Teammates、AI Studio、Asana Dash、MCP 和 AI Connectors\n- 对 Engma 来说，比较适合项目管理、客户成功、培训交付和招聘流程辅助\n\n综合判断：这个工具适合放进 Engma AI Lab 工具库，作为“企业 Agent 办公流”的案例继续观察。\n\n## 优缺点\n\n优点：\n\n- 方向很对，符合企业 Agent 的趋势\n- 能减少项目跟进、会议整理和任务分配的时间\n- 适合做客户方案案例，讲起来也比较容易理解\n- 可以沉淀到 Engma AI Lab 工具库\n\n缺点：\n\n- 需要接入团队数据，否则效果会比较有限\n- 如果团队本来不用 Asana，会有迁移成本\n- 中文体验和国内办公软件集成还需要继续观察\n- 它适合做执行和整理，不适合替代复杂决策\n\n## 推荐指数\n\n推荐指数：4 星\n\n建议：可以先放入 Engma AI Lab 工具库，作为“Agent 类办公工具”继续观察。后续如果要测试，可以从“会议纪要整理 + 客户项目跟进”这两个小场景开始。"
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-06-12\n\n## 工具名称\n\nAsana Dash / Asana Agentic Work Management\n\n官网：https://asana.com/product/ai\n\n## 测试任务\n\n今天看一个偏企业办公场景的新工具：Asana Dash。\n\n它可以理解成一个 AI 项目助理，帮团队从会议、邮件和项目任务里，整理出今天最重要的事情和下一步行动。\n\n适合场景：\n\n- 客户项目跟进\n- 会议纪要整理\n- 任务分配\n- 项目晨报\n- 客户资料整理\n\n## 结果数据\n\n- 官方定位是 AI Chief of Staff，也就是 AI 版“工作参谋”\n- 它能从会议、邮件、任务里提炼优先级和 next action\n- 官方产品里包含 AI Teammates、AI Studio、Asana Dash、MCP 和 AI Connectors\n- 对 Engma 来说，比较适合项目管理、客户成功、培训交付和招聘流程辅助\n\n综合判断：这个工具适合放进 Engma AI Lab 工具库，作为“企业 Agent 办公流”的案例继续观察。\n\n## 优缺点\n\n优点：\n\n- 方向很对，符合企业 Agent 的趋势\n- 能减少项目跟进、会议整理和任务分配的时间\n- 适合做客户方案案例，讲起来也比较容易理解\n- 可以沉淀到 Engma AI Lab 工具库\n\n缺点：\n\n- 需要接入团队数据，否则效果会比较有限\n- 如果团队本来不用 Asana，会有迁移成本\n- 中文体验和国内办公软件集成还需要继续观察\n- 它适合做执行和整理，不适合替代复杂决策\n\n## 推荐指数\n\n推荐指数：4 星\n\n建议：可以先放入 Engma AI Lab 工具库，作为“Agent 类办公工具”继续观察。后续如果要测试，可以从“会议纪要整理 + 客户项目跟进”这两个小场景开始。",
+      "image": "/generated/tool-covers/c-20260612-asana-dash-asana-agentic-work-management.png"
     },
     {
       "id": "c-20260611-tavus",
@@ -1287,7 +1308,8 @@
       ],
       "pdfFileName": "Engma_C_AI_Tool_Benchmark_Tavus_06112026.pdf",
       "sourceFileName": "Engma_C_AI_Tool_Benchmark_Tavus_06112026.md",
-      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-06-11\n\n## Tavus\n\n官网：https://www.tavus.io/\n\n## 测试任务\n\n看它能不能用数字人替你开视频会议，或做客户沟通。\n\n## 结果\n\nTavus 的方向是 AI 视频分身。你上传照片、资料和过往表达风格，它可以生成一个更像你的数字人，用来做视频互动。\n\n我的判断：  \n这个工具很有意思，适合销售、客户成功、培训、创始人分身这类场景。\n\n## 优缺点\n\n优点：场景新，视频沟通的想象力大。  \n缺点：信任门槛高，不能乱用在正式客户场合。\n\n## 推荐指数\n\n4 星\n\n一句话：  \n适合先做 demo 和内部测试，直接替人见客户还要谨慎。\n\n来源：https://www.tavus.io/ ｜ https://x.com/tavus"
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-06-11\n\n## Tavus\n\n官网：https://www.tavus.io/\n\n## 测试任务\n\n看它能不能用数字人替你开视频会议，或做客户沟通。\n\n## 结果\n\nTavus 的方向是 AI 视频分身。你上传照片、资料和过往表达风格，它可以生成一个更像你的数字人，用来做视频互动。\n\n我的判断：  \n这个工具很有意思，适合销售、客户成功、培训、创始人分身这类场景。\n\n## 优缺点\n\n优点：场景新，视频沟通的想象力大。  \n缺点：信任门槛高，不能乱用在正式客户场合。\n\n## 推荐指数\n\n4 星\n\n一句话：  \n适合先做 demo 和内部测试，直接替人见客户还要谨慎。\n\n来源：https://www.tavus.io/ ｜ https://x.com/tavus",
+      "image": "/generated/tool-covers/c-20260611-tavus.png"
     },
     {
       "id": "c-20260609-microsoft-agents",
@@ -1317,7 +1339,8 @@
       ],
       "pdfFileName": "Engma_C_AI_Tool_Benchmark_Microsoft_Agents_06092026.pdf",
       "sourceFileName": "Engma_C_AI_Tool_Benchmark_Microsoft_Agents_06092026.md",
-      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-06-09\n\n## Microsoft Agents\n\n官网：https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work/\n\n## 测试任务\n\n看 Microsoft 的 Agent 方向，能不能承担企业里的基础办公任务。\n\n## 结果\n\n它的方向不是单独聊天，而是让 Agent 调用 Office、邮件、文件、数据库和业务系统。\n\n我的判断：  \n适合大企业，但成本和生态绑定会比较强。\n\n## 优缺点\n\n优点：和 Office、Azure、企业数据结合深。  \n缺点：贵，而且企业必须已经在 Microsoft 生态里。\n\n## 推荐指数\n\n4 星\n\n一句话：  \n大公司可以看，小团队不一定马上用得起。\n\n来源：https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work/"
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-06-09\n\n## Microsoft Agents\n\n官网：https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work/\n\n## 测试任务\n\n看 Microsoft 的 Agent 方向，能不能承担企业里的基础办公任务。\n\n## 结果\n\n它的方向不是单独聊天，而是让 Agent 调用 Office、邮件、文件、数据库和业务系统。\n\n我的判断：  \n适合大企业，但成本和生态绑定会比较强。\n\n## 优缺点\n\n优点：和 Office、Azure、企业数据结合深。  \n缺点：贵，而且企业必须已经在 Microsoft 生态里。\n\n## 推荐指数\n\n4 星\n\n一句话：  \n大公司可以看，小团队不一定马上用得起。\n\n来源：https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work/",
+      "image": "/generated/tool-covers/c-20260609-microsoft-agents.png"
     },
     {
       "id": "c-20260608-hera",
@@ -1347,7 +1370,8 @@
       ],
       "pdfFileName": "Engma_C_AI_Tool_Benchmark_Hera_06082026.pdf",
       "sourceFileName": "Engma_C_AI_Tool_Benchmark_Hera_06082026.md",
-      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-06-08\n\n## Hera\n\n官网：https://www.ycombinator.com/companies/hera-video\n\n## 测试任务\n\n看它能不能快速做一个简单的 AI 动画介绍视频，比如 Engma AI Lab 的 introduction video。\n\n## 结果\n\nHera 是 YC 投的 AI motion design 工具，核心是把原来很费时间的动画设计，变成更快的生成和编辑流程。\n\n我的判断：  \n它适合做介绍视频、课程短片、活动宣传、PPT 动画素材。\n\n## 优缺点\n\n优点：方向清楚，适合不会做动画的人快速出效果。  \n缺点：复杂视频还是要人工审美和后期调整。\n\n## 推荐指数\n\n4 星\n\n一句话：  \n小团队做视频物料，可以先用这类工具省时间。\n\n来源：https://www.ycombinator.com/companies/hera-video"
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-06-08\n\n## Hera\n\n官网：https://www.ycombinator.com/companies/hera-video\n\n## 测试任务\n\n看它能不能快速做一个简单的 AI 动画介绍视频，比如 Engma AI Lab 的 introduction video。\n\n## 结果\n\nHera 是 YC 投的 AI motion design 工具，核心是把原来很费时间的动画设计，变成更快的生成和编辑流程。\n\n我的判断：  \n它适合做介绍视频、课程短片、活动宣传、PPT 动画素材。\n\n## 优缺点\n\n优点：方向清楚，适合不会做动画的人快速出效果。  \n缺点：复杂视频还是要人工审美和后期调整。\n\n## 推荐指数\n\n4 星\n\n一句话：  \n小团队做视频物料，可以先用这类工具省时间。\n\n来源：https://www.ycombinator.com/companies/hera-video",
+      "image": "/generated/tool-covers/c-20260608-hera.png"
     },
     {
       "id": "c-20260727-openai-presence",
@@ -1386,7 +1410,8 @@
           "zh": "OpenAI"
         }
       ],
-      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-27\n\n## 1. OpenAI Presence 不是更会聊天，而是把语音前台变成可接工作流的执行层。\n\n**事件**\n\nOpenAI 发布 Presence 后，最值得看的不是它“能不能说话”，而是它能不能稳定处理一段真实业务对话：听需求、理解上下文、持续接住问题，并把后续动作传递给系统里的下一步。\n\n**为什么重要**\n\n很多企业级 voice/chat 产品，表面上像一个升级版语音助手，实际上还是停留在“问一句答一句”。Presence 的变化在于，它开始像前台执行层，不只是陪聊，而是准备承担对话、提炼、转写、交接和动作编排。\n\n**我的判断**\n\n我会把它理解成“企业语音入口的基础设施”而不是一个单点功能。真正有价值的地方，不在于回答多花，而在于它能不能在不打断人的前提下，把对话接成可管理的工作流。\n\n**可落地机会**\n\nEngma 后面如果继续看这类产品，重点不要只盯着模型听写效果，而是要看它能不能接客服、销售、内部支持、会议纪要、行动项分发这些真实岗位。谁能把语音自然接进系统，谁就更接近企业工作入口。\n\n**标签**\n\nOpenAI / Presence / 语音前台 / 企业工作流\n\n**来源**\n\nhttps://openai.com/index/introducing-openai-presence/\n\n---\n\n## 2. 企业真正需要的不是“会说话的 AI”，而是能把一段对话接成一串动作的系统。\n\n**事件**\n\n从 Presence 这一类产品往下看，行业正在把 voice/chat 从体验层推向流程层。也就是说，重点已经不只是声音自然不自然，而是它能不能理解一个问题背后的业务动作。\n\n**为什么重要**\n\n这背后其实是企业采购逻辑的变化。以前大家看 AI 工具，常常是看“答得准不准”；现在更现实的问题是：它能不能进入客服台、销售台、项目台，帮团队少一次重复确认、少一次转述、少一次手工记录。\n\n**我的判断**\n\n我觉得未来真正能活下来的语音 AI，不是那些只会“模拟人说话”的产品，而是能把对话变成结构化信息，再把结构化信息变成下一步任务的产品。它要有稳定性，也要有可控性，还要能被企业治理。\n\n**可落地机会**\n\nEngma 可以把“语音输入 + 任务拆解 + 系统交接”当成一个长期观察模板，专门测试它在销售、客服、会议、培训和内部支持场景里是不是能真正节省时间，而不是只制造演示效果。\n\n**标签**\n\n企业语音 / 对话编排 / 任务接续 / 工作流自动化\n\n**来源**\n\nhttps://openai.com/index/introducing-openai-presence/\n\n---\n\n## 3. 这类工具最重要的门槛，不是模型能力，而是稳定性、权限和治理。\n\n**事件**\n\n任何把 voice/chat 接进生产环境的产品，最后都要面对同一组问题：能不能一直在线、能不能正确处理权限、能不能把敏感信息控制住、能不能在复杂场景里保持一致。\n\n**为什么重要**\n\n如果一个系统只是在 demo 里好用，但一进真实工作场景就容易断线、误判、乱跳流程，那它就不可能成为企业的默认入口。企业要的是“可托付”，不是“好玩”。\n\n**我的判断**\n\n我认为未来企业级 AI 的竞争，会越来越像基础设施竞争。前台体验当然重要，但真正决定能不能大规模用起来的，还是治理能力：谁能管权限、管升级、管错误、管留痕，谁才能进核心流程。\n\n**可落地机会**\n\nEngma 后面做工具测试时，可以把“治理能力”单独列成一项：比如会话是否可追踪、动作是否可回放、是否支持人工接管、是否能和现有系统安全衔接。这个维度会比单纯看效果更接近真实采购。\n\n**标签**\n\n企业治理 / 安全控制 / 可回放 / 生产环境\n\n**来源**\n\nhttps://openai.com/index/introducing-openai-presence/\n\n---\n\n## 4. 我对这一类产品的最终判断，是它们正在把 AI 从“回答问题”推进到“接住岗位”。\n\n**事件**\n\n过去大多数 AI 产品都在回答问题，今天这类语音入口产品开始更像岗位的一部分：接电话、接需求、接行动项、接下一步。\n\n**为什么重要**\n\n这其实是一个很大的方向变化。模型不再只是“生成内容”，而是在尝试进入工作组织本身。谁能接住岗位，谁就更有机会变成企业真正离不开的系统。\n\n**我的判断**\n\n我会把 Presence 这类产品理解成一个信号：AI 正在从“工具”变成“工作环节”。它如果能把真实对话接成真实动作，那它就不只是产品，而是企业流程里的一个入口。\n\n**可落地机会**\n\nEngma 后面可以继续把这一类产品作为“岗位型 AI”去观察，重点看它是不是能帮企业减少人工转述、减少重复整理、减少流程断点。只要它能稳定接住一个岗位里的 20% 工作，它就已经很有价值了。\n\n**标签**\n\n岗位型 AI / 企业入口 / 流程接管 / 生产力\n\n**来源**\n\nhttps://openai.com/index/introducing-openai-presence/\n"
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-27\n\n## 1. OpenAI Presence 不是更会聊天，而是把语音前台变成可接工作流的执行层。\n\n**事件**\n\nOpenAI 发布 Presence 后，最值得看的不是它“能不能说话”，而是它能不能稳定处理一段真实业务对话：听需求、理解上下文、持续接住问题，并把后续动作传递给系统里的下一步。\n\n**为什么重要**\n\n很多企业级 voice/chat 产品，表面上像一个升级版语音助手，实际上还是停留在“问一句答一句”。Presence 的变化在于，它开始像前台执行层，不只是陪聊，而是准备承担对话、提炼、转写、交接和动作编排。\n\n**我的判断**\n\n我会把它理解成“企业语音入口的基础设施”而不是一个单点功能。真正有价值的地方，不在于回答多花，而在于它能不能在不打断人的前提下，把对话接成可管理的工作流。\n\n**可落地机会**\n\nEngma 后面如果继续看这类产品，重点不要只盯着模型听写效果，而是要看它能不能接客服、销售、内部支持、会议纪要、行动项分发这些真实岗位。谁能把语音自然接进系统，谁就更接近企业工作入口。\n\n**标签**\n\nOpenAI / Presence / 语音前台 / 企业工作流\n\n**来源**\n\nhttps://openai.com/index/introducing-openai-presence/\n\n---\n\n## 2. 企业真正需要的不是“会说话的 AI”，而是能把一段对话接成一串动作的系统。\n\n**事件**\n\n从 Presence 这一类产品往下看，行业正在把 voice/chat 从体验层推向流程层。也就是说，重点已经不只是声音自然不自然，而是它能不能理解一个问题背后的业务动作。\n\n**为什么重要**\n\n这背后其实是企业采购逻辑的变化。以前大家看 AI 工具，常常是看“答得准不准”；现在更现实的问题是：它能不能进入客服台、销售台、项目台，帮团队少一次重复确认、少一次转述、少一次手工记录。\n\n**我的判断**\n\n我觉得未来真正能活下来的语音 AI，不是那些只会“模拟人说话”的产品，而是能把对话变成结构化信息，再把结构化信息变成下一步任务的产品。它要有稳定性，也要有可控性，还要能被企业治理。\n\n**可落地机会**\n\nEngma 可以把“语音输入 + 任务拆解 + 系统交接”当成一个长期观察模板，专门测试它在销售、客服、会议、培训和内部支持场景里是不是能真正节省时间，而不是只制造演示效果。\n\n**标签**\n\n企业语音 / 对话编排 / 任务接续 / 工作流自动化\n\n**来源**\n\nhttps://openai.com/index/introducing-openai-presence/\n\n---\n\n## 3. 这类工具最重要的门槛，不是模型能力，而是稳定性、权限和治理。\n\n**事件**\n\n任何把 voice/chat 接进生产环境的产品，最后都要面对同一组问题：能不能一直在线、能不能正确处理权限、能不能把敏感信息控制住、能不能在复杂场景里保持一致。\n\n**为什么重要**\n\n如果一个系统只是在 demo 里好用，但一进真实工作场景就容易断线、误判、乱跳流程，那它就不可能成为企业的默认入口。企业要的是“可托付”，不是“好玩”。\n\n**我的判断**\n\n我认为未来企业级 AI 的竞争，会越来越像基础设施竞争。前台体验当然重要，但真正决定能不能大规模用起来的，还是治理能力：谁能管权限、管升级、管错误、管留痕，谁才能进核心流程。\n\n**可落地机会**\n\nEngma 后面做工具测试时，可以把“治理能力”单独列成一项：比如会话是否可追踪、动作是否可回放、是否支持人工接管、是否能和现有系统安全衔接。这个维度会比单纯看效果更接近真实采购。\n\n**标签**\n\n企业治理 / 安全控制 / 可回放 / 生产环境\n\n**来源**\n\nhttps://openai.com/index/introducing-openai-presence/\n\n---\n\n## 4. 我对这一类产品的最终判断，是它们正在把 AI 从“回答问题”推进到“接住岗位”。\n\n**事件**\n\n过去大多数 AI 产品都在回答问题，今天这类语音入口产品开始更像岗位的一部分：接电话、接需求、接行动项、接下一步。\n\n**为什么重要**\n\n这其实是一个很大的方向变化。模型不再只是“生成内容”，而是在尝试进入工作组织本身。谁能接住岗位，谁就更有机会变成企业真正离不开的系统。\n\n**我的判断**\n\n我会把 Presence 这类产品理解成一个信号：AI 正在从“工具”变成“工作环节”。它如果能把真实对话接成真实动作，那它就不只是产品，而是企业流程里的一个入口。\n\n**可落地机会**\n\nEngma 后面可以继续把这一类产品作为“岗位型 AI”去观察，重点看它是不是能帮企业减少人工转述、减少重复整理、减少流程断点。只要它能稳定接住一个岗位里的 20% 工作，它就已经很有价值了。\n\n**标签**\n\n岗位型 AI / 企业入口 / 流程接管 / 生产力\n\n**来源**\n\nhttps://openai.com/index/introducing-openai-presence/\n",
+      "image": "/generated/tool-covers/c-20260727-openai-presence.png"
     },
     {
       "id": "c-20260724-claude-opus-5",
@@ -1425,7 +1450,8 @@
           "zh": "Anthropic"
         }
       ],
-      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-24\n\n## Claude Opus 5\n\n官网：https://www.anthropic.com/news/claude-opus-5\n\n## 测试任务\n\n给它一份复杂业务材料，先做摘要、再拆机会、再输出给老板的行动建议，最后检查它能不能前后自洽。\n\n## 结果\n\nClaude Opus 5 的表现更像一个稳一点、耐心一点的高阶同事。它不是只会快答，而是在长任务里维持判断、复核和连贯性。\n\n## 优缺点\n\n优点：长链路更稳、推理更细、适合专业工作。  \n缺点：在成本和响应速度上仍然要做取舍。\n\n## 推荐指数\n\n4.7/5\n\n一句话：  \n如果你要的是“能把复杂事情做完”的模型，Claude Opus 5 是这一波里最值得认真看的选项之一。\n\n来源：https://www.anthropic.com/news/claude-opus-5/\n"
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-24\n\n## Claude Opus 5\n\n官网：https://www.anthropic.com/news/claude-opus-5\n\n## 测试任务\n\n给它一份复杂业务材料，先做摘要、再拆机会、再输出给老板的行动建议，最后检查它能不能前后自洽。\n\n## 结果\n\nClaude Opus 5 的表现更像一个稳一点、耐心一点的高阶同事。它不是只会快答，而是在长任务里维持判断、复核和连贯性。\n\n## 优缺点\n\n优点：长链路更稳、推理更细、适合专业工作。  \n缺点：在成本和响应速度上仍然要做取舍。\n\n## 推荐指数\n\n4.7/5\n\n一句话：  \n如果你要的是“能把复杂事情做完”的模型，Claude Opus 5 是这一波里最值得认真看的选项之一。\n\n来源：https://www.anthropic.com/news/claude-opus-5/\n",
+      "image": "/generated/tool-covers/c-20260724-claude-opus-5.png"
     },
     {
       "id": "c-20260722-gpt-live",
@@ -1464,7 +1490,8 @@
           "zh": "OpenAI"
         }
       ],
-      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-22\n\n## GPT-Live\n\n官网：https://openai.com/index/introducing-gpt-live/\n\n## 测试任务\n\n让它在语音里处理一个实时任务：一边听需求，一边整理行动项，还要能在背景有噪音时保持对话不断。\n\n## 结果\n\nGPT-Live 的优势在于对话感很连续，像是把 AI 从“等你说完再答”推进到了“边听边想边接话”。\n\n## 优缺点\n\n优点：声音自然、连续对话感强、适合高频交互。  \n缺点：复杂工作仍然要依赖后台更强的模型和清晰的控制逻辑。\n\n## 推荐指数\n\n4.5/5\n\n一句话：  \n如果产品要做实时语音体验，GPT-Live 属于这一类里最值得重点测的一档。\n\n来源：https://openai.com/index/introducing-gpt-live/\n"
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-22\n\n## GPT-Live\n\n官网：https://openai.com/index/introducing-gpt-live/\n\n## 测试任务\n\n让它在语音里处理一个实时任务：一边听需求，一边整理行动项，还要能在背景有噪音时保持对话不断。\n\n## 结果\n\nGPT-Live 的优势在于对话感很连续，像是把 AI 从“等你说完再答”推进到了“边听边想边接话”。\n\n## 优缺点\n\n优点：声音自然、连续对话感强、适合高频交互。  \n缺点：复杂工作仍然要依赖后台更强的模型和清晰的控制逻辑。\n\n## 推荐指数\n\n4.5/5\n\n一句话：  \n如果产品要做实时语音体验，GPT-Live 属于这一类里最值得重点测的一档。\n\n来源：https://openai.com/index/introducing-gpt-live/\n",
+      "image": "/generated/tool-covers/c-20260722-gpt-live.png"
     },
     {
       "id": "c-20260721-workday-learning-sana",
@@ -1503,7 +1530,8 @@
           "zh": "Workday"
         }
       ],
-      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-21\n\n## Workday Learning, powered by Sana\n\n官网：https://www.workday.com/en-us/products/talent-management/learning.html\n\n## 测试任务\n\n拿一份新员工 onboarding 材料，看看它能不能快速变成课程、测验和学习路径，并且能不能跟岗位和技能数据挂上钩。\n\n## 结果\n\n这类产品的价值不是“会不会生成内容”，而是能不能把学习、岗位、技能和管理动作连起来。它更像是企业内部的学习操作系统。\n\n## 优缺点\n\n优点：非常贴近企业场景、内容生产快、治理和合规感强。  \n缺点：更偏中大型组织，对小团队来说可能有点重。\n\n## 推荐指数\n\n4.2/5\n\n一句话：  \n如果公司本身就重视培训、合规和技能建设，这类产品比单纯的通用聊天工具更有实际价值。\n\n来源：https://www.workday.com/en-us/products/talent-management/learning.html\n"
+      "contentMarkdown": "# C：AI Tool Benchmark Report\n\n日期：2026-07-21\n\n## Workday Learning, powered by Sana\n\n官网：https://www.workday.com/en-us/products/talent-management/learning.html\n\n## 测试任务\n\n拿一份新员工 onboarding 材料，看看它能不能快速变成课程、测验和学习路径，并且能不能跟岗位和技能数据挂上钩。\n\n## 结果\n\n这类产品的价值不是“会不会生成内容”，而是能不能把学习、岗位、技能和管理动作连起来。它更像是企业内部的学习操作系统。\n\n## 优缺点\n\n优点：非常贴近企业场景、内容生产快、治理和合规感强。  \n缺点：更偏中大型组织，对小团队来说可能有点重。\n\n## 推荐指数\n\n4.2/5\n\n一句话：  \n如果公司本身就重视培训、合规和技能建设，这类产品比单纯的通用聊天工具更有实际价值。\n\n来源：https://www.workday.com/en-us/products/talent-management/learning.html\n",
+      "image": "/generated/tool-covers/c-20260721-workday-learning-sana.png"
     }
   ]
 }
