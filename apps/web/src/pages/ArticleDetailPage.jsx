@@ -28,11 +28,34 @@ const getLocalArticleById = (id) =>
   null;
 
 function getInsightPdfRecord(article) {
-  const existingPdfFileName = String(article?.pdfFileName || '').trim();
+  const existingPdfFileName = String(article?.pdfFileName || '').trim().split('/').filter(Boolean).pop() || '';
   const existingPdfUrl = String(article?.pdfUrl || '').trim();
 
-  if (existingPdfFileName || existingPdfUrl) {
-    return article;
+  const getPdfBasenameFromUrl = (url) => {
+    const normalized = String(url || '').trim();
+    if (!normalized) return '';
+
+    try {
+      const parsed = new URL(normalized, window.location.href);
+      return parsed.pathname.split('/').filter(Boolean).pop() || '';
+    } catch {
+      const cleaned = normalized.split('?')[0].split('#')[0];
+      return cleaned.split('/').filter(Boolean).pop() || '';
+    }
+  };
+
+  const buildLocalPdfUrl = (fileName) => {
+    const normalized = String(fileName || '').trim().split('/').filter(Boolean).pop() || '';
+    return normalized ? `/reports/pdf/${encodeURIComponent(normalized)}` : '';
+  };
+
+  const resolvedFileName = existingPdfFileName || getPdfBasenameFromUrl(existingPdfUrl);
+  if (resolvedFileName) {
+    return {
+      ...article,
+      pdfFileName: resolvedFileName,
+      pdfUrl: buildLocalPdfUrl(resolvedFileName),
+    };
   }
 
   const date = String(article?.date || article?.created || '').slice(0, 10);

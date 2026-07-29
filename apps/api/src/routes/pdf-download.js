@@ -4,6 +4,28 @@ import logger from '../utils/logger.js';
 
 const router = express.Router();
 
+function normalizePdfFileName(value) {
+  return String(value || '').trim().split('/').filter(Boolean).pop() || '';
+}
+
+function buildLocalPdfUrl(fileName) {
+  const normalized = normalizePdfFileName(fileName);
+  return normalized ? `/reports/pdf/${encodeURIComponent(normalized)}` : '';
+}
+
+function getPdfBasenameFromUrl(url) {
+  const normalized = String(url || '').trim();
+  if (!normalized) return '';
+
+  try {
+    const parsed = new URL(normalized, 'https://example.com');
+    return parsed.pathname.split('/').filter(Boolean).pop() || '';
+  } catch {
+    const cleaned = normalized.split('?')[0].split('#')[0];
+    return cleaned.split('/').filter(Boolean).pop() || '';
+  }
+}
+
 router.get('/:articleId', async (req, res) => {
   const { articleId } = req.params;
 
@@ -19,13 +41,17 @@ router.get('/:articleId', async (req, res) => {
     throw new Error(`Article not found: ${articleId}`);
   }
 
-  if (!article.pdfUrl) {
+  const localPdfUrl =
+    buildLocalPdfUrl(article.pdfFileName) ||
+    buildLocalPdfUrl(getPdfBasenameFromUrl(article.pdfUrl));
+
+  if (!localPdfUrl && !article.pdfUrl) {
     throw new Error(`PDF URL not available for article: ${articleId}`);
   }
 
   logger.info(`PDF download URL retrieved for article ${articleId}`);
 
-  res.json({ pdfUrl: article.pdfUrl });
+  res.json({ pdfUrl: localPdfUrl || article.pdfUrl });
 });
 
 export default router;
