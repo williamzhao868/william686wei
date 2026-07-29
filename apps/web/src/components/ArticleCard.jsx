@@ -8,6 +8,7 @@ import { useLanguage } from '@/context/LanguageContext.jsx';
 import pb from '@/lib/pocketbaseClient.js';
 import { downloadPdfRecord, hasPdfAsset, resolvePdfFilename } from '@/lib/pdfUtils.js';
 import { formatDateISO } from '@/lib/dateFormat.js';
+import { getInsightCoverImage } from '@/data/localContentData.js';
 
 const IMAGE_CATEGORIES = {
   AI_TECH: [
@@ -53,6 +54,13 @@ const KEYWORDS = {
 const ALL_UNIQUE_IMAGES = [...new Set(Object.values(IMAGE_CATEGORIES).flat())];
 
 function getArticleImage(article, index = 0) {
+  if (article.type === 'A') {
+    const insightImage = getInsightCoverImage(article, index);
+    if (insightImage) {
+      return insightImage;
+    }
+  }
+
   if (article.image) {
     return article.image;
   }

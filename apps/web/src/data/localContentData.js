@@ -84,6 +84,15 @@ export function markdownToHtml(markdown = '') {
 }
 
 const insightMap = new Map((contentData.insights || []).map((item) => [item.id, item]));
+const insightImagePool = (contentData.insights || [])
+  .map((item) => String(item.image || item.imageUrl || '').trim())
+  .filter(Boolean);
+const insightImageByTitle = new Map(
+  (contentData.insights || []).map((item) => [String(item.title || '').trim(), String(item.image || item.imageUrl || '').trim()])
+);
+const insightImageByDate = new Map(
+  (contentData.insights || []).map((item) => [String(item.date || '').slice(0, 10), String(item.image || item.imageUrl || '').trim()])
+);
 const allToolItems = [...(contentData.tools || [])];
 const knownToolNames = new Set(allToolItems.map((item) => String(item.toolName || item.name || '').trim().toLowerCase()));
 
@@ -198,6 +207,23 @@ export function getLocalInsightArticleByRecord(record) {
 
 export function getLocalInsightArticles() {
   return (contentData.insights || []).map((insight) => normalizeInsightContent(insight)).filter(Boolean);
+}
+
+export function getInsightCoverImage(article, fallbackIndex = 0) {
+  const title = String(article?.title || '').trim();
+  const date = String(article?.date || article?.created || '').slice(0, 10);
+  const pool = insightImagePool.filter(Boolean);
+
+  if (title && insightImageByTitle.has(title)) {
+    return insightImageByTitle.get(title) || '';
+  }
+
+  if (date && insightImageByDate.has(date)) {
+    return insightImageByDate.get(date) || '';
+  }
+
+  if (pool.length === 0) return '';
+  return pool[fallbackIndex % pool.length] || pool[0] || '';
 }
 
 export function getLocalToolByRecord(record) {
