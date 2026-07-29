@@ -79,15 +79,16 @@ export function resolvePdfUrl(record, { baseUrl = DEFAULT_COS_PDF_BASE_URL } = {
       return resolveRelativeUrl(localPdfUrl);
     }
 
-    if (isHttpUrl(pdfUrl)) {
-      return pdfUrl;
-    }
-
     if (pdfUrl.startsWith('/') || pdfUrl.startsWith('./') || pdfUrl.startsWith('../')) {
       return resolveRelativeUrl(pdfUrl);
     }
 
-    return `${baseUrl}${encodePathSegments(pdfUrl.replace(/^\/+/, ''))}`;
+    const remoteBasename = getPdfBasenameFromUrl(pdfUrl);
+    if (remoteBasename) {
+      return resolveRelativeUrl(`/reports/pdf/${encodePathSegments(remoteBasename)}`);
+    }
+
+    return '';
   }
 
   if (!localPdfUrl) {
@@ -188,10 +189,15 @@ export async function downloadPdfUrl(url, filename = 'document.pdf') {
     }
   }
 
-  anchor.href = parsedUrl.href;
-  document.body.appendChild(anchor);
-  anchor.click();
-  document.body.removeChild(anchor);
+  if (parsedUrl.origin === window.location.origin) {
+    anchor.href = parsedUrl.href;
+    document.body.appendChild(anchor);
+    anchor.click();
+    document.body.removeChild(anchor);
+    return;
+  }
+
+  throw new Error(`PDF not available locally: ${filename}`);
 }
 
 export async function downloadPdfRecord(record, options = {}) {
