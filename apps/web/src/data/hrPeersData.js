@@ -45,7 +45,7 @@ For peers, this is a reminder that the competitive game is now as much about reg
     keywords: ['workforce', 'global-hr', 'ai-agents'],
     impactLevel: 'Medium',
     companies: [{ en: 'Workday', zh: 'Workday' }],
-    imageUrl: getImg(0),
+    imageUrl: 'https://picsum.photos/seed/hr-peer-01/1200/800',
     websiteUrl: 'https://www.workday.com/en-us/company/latest/newsroom/press-releases.html',
     zh: {
       title: 'Workday 强化亚太领导层，继续推进 AI 增长',
@@ -72,7 +72,7 @@ For HR peers, the message is simple: if you can control payroll and labor data, 
     keywords: ['workforce', 'reporting', 'global-hr'],
     impactLevel: 'High',
     companies: [{ en: 'ADP', zh: 'ADP' }],
-    imageUrl: getImg(1),
+    imageUrl: 'https://picsum.photos/seed/hr-peer-02/1200/800',
     websiteUrl: 'https://www.adp.com/about-adp/newsroom.aspx',
     zh: {
       title: 'ADP 继续把劳动力情报和薪酬数据绑在一起',
@@ -99,7 +99,7 @@ The broader lesson is that candidate experience still matters. If AI makes inter
     keywords: ['interviews', 'hiring', 'reporting'],
     impactLevel: 'High',
     companies: [{ en: 'Greenhouse', zh: 'Greenhouse' }],
-    imageUrl: getImg(2),
+    imageUrl: 'https://picsum.photos/seed/hr-peer-03/1200/800',
     websiteUrl: 'https://www.greenhouse.com/newsroom/63-of-job-seekers-have-faced-an-ai-interview-most-havent-had-a-good-one-yet',
     zh: {
       title: 'Greenhouse 的 AI Notetaker 正走向 7 月上线',
@@ -124,7 +124,7 @@ The broader lesson is that candidate experience still matters. If AI makes inter
     keywords: ['ai-agents', 'workforce', 'compliance'],
     impactLevel: 'High',
     companies: [{ en: 'Workday', zh: 'Workday' }],
-    imageUrl: getImg(0),
+    imageUrl: 'https://picsum.photos/seed/hr-peer-04/1200/800',
     websiteUrl: 'https://www.workday.com/en-us/company/latest/newsroom/press-releases.html',
     zh: {
       title: 'Workday 推出 Agent Passport，强化企业 AI 治理',
@@ -147,7 +147,7 @@ The broader lesson is that candidate experience still matters. If AI makes inter
     keywords: ['ai-agents', 'marketplace', 'recruiting'],
     impactLevel: 'High',
     companies: [{ en: 'ADP', zh: 'ADP' }],
-    imageUrl: getImg(1),
+    imageUrl: 'https://picsum.photos/seed/hr-peer-05/1200/800',
     websiteUrl: 'https://www.adp.com/about-adp/newsroom.aspx',
     zh: {
       title: 'ADP Marketplace 引入 AI 智能体，简化日常工作',
@@ -170,7 +170,7 @@ The broader lesson is that candidate experience still matters. If AI makes inter
     keywords: ['job-discovery', 'hiring', 'ai-agents'],
     impactLevel: 'High',
     companies: [{ en: 'ZipRecruiter', zh: 'ZipRecruiter' }],
-    imageUrl: getImg(2),
+    imageUrl: 'https://picsum.photos/seed/hr-peer-06/1200/800',
     websiteUrl: 'https://www.ziprecruiter.com/blog/chatgpt-app/',
     zh: {
       title: 'ZipRecruiter 上线 ChatGPT 应用，重塑求职发现方式',
@@ -193,7 +193,7 @@ The broader lesson is that candidate experience still matters. If AI makes inter
     keywords: ['reporting', 'interviews', 'hiring'],
     impactLevel: 'High',
     companies: [{ en: 'Greenhouse', zh: 'Greenhouse' }],
-    imageUrl: getImg(3),
+    imageUrl: 'https://picsum.photos/seed/hr-peer-07/1200/800',
     websiteUrl: 'https://www.greenhouse.com/newsroom/63-of-job-seekers-have-faced-an-ai-interview-most-havent-had-a-good-one-yet',
     zh: {
       title: 'Greenhouse：63% 的求职者已经遇到过 AI 面试',
@@ -216,7 +216,7 @@ The broader lesson is that candidate experience still matters. If AI makes inter
     keywords: ['interviews', 'talent-shortage', 'hiring'],
     impactLevel: 'Medium',
     companies: [{ en: 'ManpowerGroup', zh: 'ManpowerGroup' }],
-    imageUrl: getImg(4),
+    imageUrl: 'https://picsum.photos/seed/hr-peer-08/1200/800',
     websiteUrl: 'https://www.manpowergroup.com/en/newsroom',
     zh: {
       title: 'ManpowerGroup 扩大“人机协同” AI 面试能力',
@@ -239,7 +239,7 @@ The broader lesson is that candidate experience still matters. If AI makes inter
     keywords: ['matching', 'marketplace', 'global-hr'],
     impactLevel: 'High',
     companies: [{ en: 'LinkedIn', zh: 'LinkedIn' }],
-    imageUrl: getImg(0),
+    imageUrl: 'https://picsum.photos/seed/hr-peer-09/1200/800',
     websiteUrl: 'https://business.linkedin.com/talent-solutions/blog',
     zh: {
       title: 'LinkedIn 将人才图谱做成“活”的招聘基础设施',
@@ -262,7 +262,7 @@ The broader lesson is that candidate experience still matters. If AI makes inter
     keywords: ['global-hr', 'compliance', 'marketplace'],
     impactLevel: 'High',
     companies: [{ en: 'Deel', zh: 'Deel' }],
-    imageUrl: getImg(1),
+    imageUrl: 'https://picsum.photos/seed/hr-peer-10/1200/800',
     websiteUrl: 'https://www.deel.com/global-payroll/',
     zh: {
       title: 'Deel 把薪酬做成全球 HR SaaS 层',
@@ -285,7 +285,7 @@ The broader lesson is that candidate experience still matters. If AI makes inter
     keywords: ['hiring', 'workforce', 'global-hr'],
     impactLevel: 'Medium',
     companies: [{ en: 'World Intec', zh: 'World Intec' }],
-    imageUrl: getImg(2),
+    imageUrl: 'https://picsum.photos/seed/hr-peer-11/1200/800',
     websiteUrl: 'https://www.witc.co.jp/',
     zh: {
       title: 'World Intec 强化制造业外包与数字化运营',
@@ -308,7 +308,7 @@ The broader lesson is that candidate experience still matters. If AI makes inter
     keywords: ['matching', 'job-discovery', 'recruiting'],
     impactLevel: 'High',
     companies: [{ en: 'Recruit Holdings', zh: 'Recruit控股' }],
-    imageUrl: getImg(5),
+    imageUrl: 'https://picsum.photos/seed/hr-peer-12/1200/800',
     websiteUrl: 'https://recruit-holdings.com/en/newsroom/20250910_0001/',
     zh: {
       title: 'Indeed FutureWorks 2025 把 AI 招聘放到核心位置',
@@ -331,7 +331,7 @@ The broader lesson is that candidate experience still matters. If AI makes inter
     keywords: ['global-hr', 'matching', 'compliance'],
     impactLevel: 'High',
     companies: [{ en: 'PERSOL Holdings', zh: 'PERSOL控股' }],
-    imageUrl: getImg(6),
+    imageUrl: 'https://picsum.photos/seed/hr-peer-13/1200/800',
     websiteUrl: 'https://www.persol-group.co.jp/en/news/20250207_01/',
     zh: {
       title: 'PERSOL Holdings 投资 Vahan，强化 AI 招聘能力',
@@ -548,7 +548,7 @@ The strategic point for HR peers is that LinkedIn is trying to turn its talent g
   keywords: ['ai-agents', 'matching', 'recruiting'],
   impactLevel: 'High',
   companies: [{ en: 'LinkedIn', zh: 'LinkedIn' }],
-  imageUrl: getImg(0),
+  imageUrl: 'https://picsum.photos/seed/hr-peer-14/1200/800',
   websiteUrl: 'https://www.linkedin.com/blog/engineering/search-and-discovery',
   zh: {
     title: 'LinkedIn 把 Hiring Assistant 往国际化招聘场景推进',
@@ -575,7 +575,7 @@ The more important implication is architectural. A semantic layer only becomes v
   keywords: ['job-discovery', 'matching', 'global-hr'],
   impactLevel: 'High',
   companies: [{ en: 'LinkedIn', zh: 'LinkedIn' }],
-  imageUrl: getImg(0),
+  imageUrl: 'https://picsum.photos/seed/hr-peer-15/1200/800',
   websiteUrl: 'https://www.linkedin.com/blog/engineering/search-and-discovery',
   zh: {
     title: 'LinkedIn 把语义搜索做成了人才发现的核心底座',
@@ -602,7 +602,7 @@ From a market point of view, this is a useful enterprise pattern. The strongest 
   keywords: ['interviews', 'hiring', 'ai-agents'],
   impactLevel: 'High',
   companies: [{ en: 'Greenhouse', zh: 'Greenhouse' }],
-  imageUrl: getImg(2),
+  imageUrl: 'https://picsum.photos/seed/hr-peer-16/1200/800',
   websiteUrl: 'https://www.greenhouse.com/newsroom',
   zh: {
     title: 'Greenhouse 用 AI 支持结构化招聘，而不是替代招聘',
@@ -629,7 +629,7 @@ For the HR tech market, Deel is a good reminder that the best AI use cases often
   keywords: ['global-hr', 'compliance', 'workforce'],
   impactLevel: 'High',
   companies: [{ en: 'Deel', zh: 'Deel' }],
-  imageUrl: getImg(1),
+  imageUrl: 'https://picsum.photos/seed/hr-peer-17/1200/800',
   websiteUrl: 'https://www.deel.com/blog',
   zh: {
     title: 'Deel 继续把 AI 用在薪酬、合规和流程护栏上',
