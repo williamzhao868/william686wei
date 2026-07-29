@@ -1,19 +1,37 @@
-import React from 'react';
-import { Calendar, FileText, ExternalLink } from 'lucide-react';
+import React, { useState } from 'react';
+import { Calendar, Download } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { toast } from 'sonner';
 import { useLanguage } from '@/context/LanguageContext.jsx';
-import { hasPdfAsset, resolvePdfFilename, resolvePdfUrl } from '@/lib/pdfUtils.js';
+import { downloadPdfRecord, hasPdfAsset, resolvePdfFilename } from '@/lib/pdfUtils.js';
 import { formatDateISO } from '@/lib/dateFormat.js';
 
 function InsightCard({ insight, index = 0 }) {
   const { language } = useLanguage();
+  const [isDownloading, setIsDownloading] = useState(false);
   
   const dateToUse = insight.date || insight.created;
   const formattedDate = formatDateISO(dateToUse);
 
-  const pdfHref = resolvePdfUrl(insight);
   const hasPdf = hasPdfAsset(insight);
   const pdfFilename = resolvePdfFilename(insight, 'insight.pdf');
+
+  const handleDownload = async (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (!hasPdf || isDownloading) return;
+
+    setIsDownloading(true);
+    try {
+      await downloadPdfRecord(insight, { fallbackName: pdfFilename });
+    } catch (err) {
+      console.error('Insight PDF download failed:', err);
+      toast.error(language === 'zh' ? '下载PDF失败' : 'Failed to download PDF');
+    } finally {
+      setIsDownloading(false);
+    }
+  };
 
   return (
     <motion.article
@@ -41,17 +59,17 @@ function InsightCard({ insight, index = 0 }) {
 
       {hasPdf && (
         <div className="mt-auto pt-4 border-t border-border/50">
-          <a
-            href={pdfHref}
-            download={pdfFilename}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-4 py-2 bg-primary text-primary-foreground rounded-lg font-medium transition-all duration-200 hover:brightness-110 active:scale-[0.98] w-full sm:w-auto"
+          <button
+            type="button"
+            onClick={handleDownload}
+            disabled={isDownloading}
+            className="inline-flex items-center justify-center px-4 py-2 bg-primary text-primary-foreground rounded-lg font-medium transition-all duration-200 hover:brightness-110 active:scale-[0.98] w-full sm:w-auto disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            <FileText className="w-4 h-4 mr-2" />
-            {language === 'zh' ? '查看 PDF' : 'View PDF'}
-            <ExternalLink className="w-3.5 h-3.5 ml-2 opacity-70" />
-          </a>
+            <Download className="w-4 h-4 mr-2" />
+            {isDownloading
+              ? (language === 'zh' ? '下载中...' : 'Downloading...')
+              : (language === 'zh' ? '下载PDF' : 'Download PDF')}
+          </button>
         </div>
       )}
     </motion.article>

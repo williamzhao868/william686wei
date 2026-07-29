@@ -528,6 +528,114 @@ The broader lesson is that candidate experience still matters. If AI makes inter
     ],
     "impactLevel": "High"
   }
+},
+{
+  id: 'hr-peer-linkedin-hiring-assistant-international',
+  title: 'LinkedIn Pushes Hiring Assistant Beyond Domestic Workflows',
+  summary: 'LinkedIn keeps moving its Hiring Assistant concept toward international hiring workflows, which matters because the real challenge is not the demo, but whether the system can stay useful across markets, languages and recruiter habits.',
+  fullContent: `LinkedIn's Hiring Assistant direction is interesting because it shows where the platform thinks the next layer of value sits: not just in sourcing candidates, but in helping recruiters move from search to action faster. When a product starts to handle more of the repetitive coordination around job discovery, outreach and candidate screening, the bar is no longer "does it work in one market?" The bar becomes "can it stay accurate, relevant and trusted when the recruiter stack gets more complex?"
+
+The strategic point for HR peers is that LinkedIn is trying to turn its talent graph into an operational layer. That means recruiter workflows, profile signals, semantic search and AI-assisted actions have to work together. If the system cannot connect those pieces cleanly, it stays a feature. If it can, it becomes part of the recruiting operating model.`,
+  date: '2026-06-08',
+  category: ['Platform Intelligence', 'AI Recruiting'],
+  tags: ['Recruiting', 'AI Agents'],
+  keywords: ['ai-agents', 'matching', 'recruiting'],
+  impactLevel: 'High',
+  companies: [{ en: 'LinkedIn', zh: 'LinkedIn' }],
+  imageUrl: getImg(0),
+  websiteUrl: 'https://www.linkedin.com/blog/engineering/search-and-discovery',
+  zh: {
+    title: 'LinkedIn 把 Hiring Assistant 往国际化招聘场景推进',
+    summary: 'LinkedIn 继续把 Hiring Assistant 往国际化招聘场景推进，关键不在演示本身，而在它能否跨市场、跨语言、跨招聘习惯保持可用。',
+    fullContent: `LinkedIn 的 Hiring Assistant 方向很有意思，因为它说明平台认为下一层价值不只在“找人”，而是在帮助招聘者更快从搜索走向行动。 当产品开始处理更多围绕职位发现、触达候选人和筛选流程的重复性工作时，真正的门槛就不是“它在一个市场里能不能跑”，而是“它能不能在更复杂的招聘体系里依然准确、相关、可信”。
+
+对 HR 同行来说，核心信号是：LinkedIn 正在尝试把人才图谱变成操作层。也就是说，招聘工作流、档案信号、语义搜索和 AI 辅助动作都必须协同起来。如果这些能力不能很好地串联起来，它只是一个功能；如果能串联起来，它就会变成招聘操作系统的一部分。`,
+    category: ['平台智能', 'AI 招聘'],
+    tags: ['招聘', 'AI 智能体'],
+    keywords: ['AI 智能体', '智能匹配', '招聘'],
+    impactLevel: 'High'
+  }
+},
+{
+  id: 'hr-peer-linkedin-semantic-search-scale',
+  title: 'LinkedIn Treats Semantic Search as Core Infrastructure for Talent Discovery',
+  summary: 'LinkedIn is moving recruiting search away from keyword matching and toward semantic understanding, which is the only way an AI-first talent graph can keep scaling cleanly.',
+  fullContent: `Semantic search matters in HR because candidate discovery breaks down quickly when recruiters depend on exact keywords. LinkedIn's direction suggests that the company wants search to understand intent, skill adjacency and role context instead of only literal term matching. That is a big shift. Once search starts to understand meaning, it can support better recommendations, more useful ranking and less manual filtering.
+
+The more important implication is architectural. A semantic layer only becomes valuable when it is wired into the platform's graph, ranking and recruiter workflows. Otherwise it stays a nice demo. LinkedIn's advantage is that it already sits on top of a dense talent network, so semantic search can improve the system without replacing the system.`,
+  date: '2026-06-11',
+  category: ['Search', 'Talent Discovery'],
+  tags: ['Recruiting', 'Marketplace'],
+  keywords: ['job-discovery', 'matching', 'global-hr'],
+  impactLevel: 'High',
+  companies: [{ en: 'LinkedIn', zh: 'LinkedIn' }],
+  imageUrl: getImg(0),
+  websiteUrl: 'https://www.linkedin.com/blog/engineering/search-and-discovery',
+  zh: {
+    title: 'LinkedIn 把语义搜索做成了人才发现的核心底座',
+    summary: 'LinkedIn 正在把招聘搜索从关键词匹配推进到语义理解，这也是 AI 时代的人才图谱能够继续扩展的关键。',
+    fullContent: `HR 场景里，语义搜索很重要，因为候选人发现很容易在“只认关键词”的模式里失真。LinkedIn 的方向说明，公司希望搜索理解的是意图、技能邻近关系和岗位上下文，而不是单纯的字面匹配。这是很大的变化。 一旦搜索开始理解语义，它就能支持更好的推荐、更有用的排序和更少的人工筛选。
+
+更关键的是架构层面的变化。语义层只有真正接入图谱、排序和招聘工作流，才会变成有用的能力，否则只是一个漂亮演示。LinkedIn 的优势在于它已经坐在密集的人才网络上，所以语义搜索可以在不推翻底层系统的情况下提升整个平台。`,
+    category: ['搜索', '人才发现'],
+    tags: ['招聘', '生态平台'],
+    keywords: ['职位发现', '智能匹配', '全球用工'],
+    impactLevel: 'High'
+  }
+},
+{
+  id: 'hr-peer-greenhouse-structured-ai-hiring',
+  title: 'Greenhouse Uses AI to Support Structured Hiring Instead of Replacing It',
+  summary: 'Greenhouse is shaping its AI story around structured hiring, better note-taking and more consistent interviews, which is a more credible enterprise direction than trying to fully automate the process.',
+  fullContent: `Greenhouse keeps taking the line that hiring should stay structured even when AI is added to the workflow. That matters because a lot of AI hiring products oversell automation and then run into trust problems. Greenhouse is taking a more practical route: reduce interviewer admin work, make notes cleaner, support consistency and preserve the human-led nature of hiring.
+
+From a market point of view, this is a useful enterprise pattern. The strongest HR products are not the ones that remove people from the process entirely. They are the ones that make the process less messy, less repetitive and easier to govern. In hiring, that usually wins.`,
+  date: '2026-06-10',
+  category: ['Product Update', 'Candidate Experience'],
+  tags: ['Recruiting', 'Assessment'],
+  keywords: ['interviews', 'hiring', 'ai-agents'],
+  impactLevel: 'High',
+  companies: [{ en: 'Greenhouse', zh: 'Greenhouse' }],
+  imageUrl: getImg(2),
+  websiteUrl: 'https://www.greenhouse.com/newsroom',
+  zh: {
+    title: 'Greenhouse 用 AI 支持结构化招聘，而不是替代招聘',
+    summary: 'Greenhouse 把 AI 叙事放在结构化招聘、面试记录和一致性上，这比完全自动化更像企业会买单的方向。',
+    fullContent: `Greenhouse 一直坚持：即使加上 AI，招聘也应该保持结构化。这很重要，因为很多 AI 招聘产品把自动化说得太满，最后往往会遇到信任问题。Greenhouse 走的是更实用的一条路：减少面试官的行政负担，让记录更整齐，提升一致性，同时保留招聘的人主导属性。
+
+从市场角度看，这是一种很有用的企业产品路径。真正强的 HR 产品，不是把人从流程里全部拿掉，而是让流程更少混乱、更少重复、也更容易治理。招聘场景里，这种思路通常更容易赢。`,
+    category: ['产品更新', '候选人体验'],
+    tags: ['招聘', '评估'],
+    keywords: ['面试', '招聘', 'AI 智能体'],
+    impactLevel: 'High'
+  }
+},
+{
+  id: 'hr-peer-deel-ai-payroll-compliance',
+  title: 'Deel Keeps Building AI Around Payroll, Compliance and Workflow Guardrails',
+  summary: 'Deel is pushing its AI story toward payroll accuracy, compliance support and operational guardrails, which is exactly where a global payroll SaaS player can create durable value.',
+  fullContent: `Deel's real moat is not "AI for the sake of AI." It is the fact that payroll, compliance and contractor operations already sit inside a high-friction global workflow. That means AI can be used where it is actually useful: catching errors earlier, reducing manual review, supporting local rule handling and making distributed work a little less fragile.
+
+For the HR tech market, Deel is a good reminder that the best AI use cases often show up in boring but expensive processes. When payroll and compliance are the parts that can break trust quickly, a small improvement in accuracy or review speed can be worth a lot.`,
+  date: '2026-07-23',
+  category: ['Platform', 'Global Payroll'],
+  tags: ['Payroll', 'Compliance'],
+  keywords: ['global-hr', 'compliance', 'workforce'],
+  impactLevel: 'High',
+  companies: [{ en: 'Deel', zh: 'Deel' }],
+  imageUrl: getImg(1),
+  websiteUrl: 'https://www.deel.com/blog',
+  zh: {
+    title: 'Deel 继续把 AI 用在薪酬、合规和流程护栏上',
+    summary: 'Deel 的 AI 重点放在薪酬准确性、合规支持和运营护栏，这正是全球薪酬 SaaS 最容易形成长期价值的地方。',
+    fullContent: `Deel 真正的护城河并不是“AI 这个词本身”，而是薪酬、合规和外包人员管理本来就处在高摩擦的全球工作流中。 这意味着 AI 应该被放到真正有用的地方：更早发现错误、减少人工复核、辅助处理当地规则，以及让分布式工作不要那么脆弱。
+
+对 HR Tech 市场来说，Deel 提醒我们：最好的 AI 场景往往不在最炫的地方，而是在最贵、最容易出错的地方。薪酬和合规一旦出问题，信任成本很高；而哪怕只是提升一点点准确性或复核速度，价值都很大。`,
+    category: ['平台', '全球薪酬'],
+    tags: ['薪酬', '合规'],
+    keywords: ['全球用工', '合规', '劳动力'],
+    impactLevel: 'High'
+  }
 }
 ];
 

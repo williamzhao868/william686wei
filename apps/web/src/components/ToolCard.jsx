@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Bot, ExternalLink, Star, ThumbsUp, ThumbsDown, FileText } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { hasPdfAsset, resolvePdfFilename, resolvePdfUrl } from '@/lib/pdfUtils.js';
+import { toast } from 'sonner';
+import { downloadPdfRecord, hasPdfAsset, resolvePdfFilename } from '@/lib/pdfUtils.js';
 
 function ToolCard({ tool, index = 0 }) {
   const navigate = useNavigate();
+  const [isDownloading, setIsDownloading] = useState(false);
 
-  const pdfHref = resolvePdfUrl(tool);
   const hasPdf = hasPdfAsset(tool);
   const pdfFilename = resolvePdfFilename(tool, 'tool-report.pdf');
   const rawScore = Number(
@@ -18,6 +19,23 @@ function ToolCard({ tool, index = 0 }) {
     4
   );
   const displayScore = Math.max(0, Math.min(5, rawScore > 5 ? rawScore / 2 : rawScore));
+
+  const handleDownload = async (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (!hasPdf || isDownloading) return;
+
+    setIsDownloading(true);
+    try {
+      await downloadPdfRecord(tool, { fallbackName: pdfFilename });
+    } catch (err) {
+      console.error('Tool PDF download failed:', err);
+      toast.error('Failed to download PDF');
+    } finally {
+      setIsDownloading(false);
+    }
+  };
 
   return (
     <motion.div
@@ -67,18 +85,16 @@ function ToolCard({ tool, index = 0 }) {
             </a>
           )}
           {hasPdf && (
-            <a 
-              href={pdfHref}
-              download={pdfFilename}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 text-xs font-medium bg-secondary/50 px-2 py-1 rounded-md"
-              title="View PDF Report"
+            <button
+              type="button"
+              onClick={handleDownload}
+              disabled={isDownloading}
+              className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 text-xs font-medium bg-secondary/50 px-2 py-1 rounded-md disabled:opacity-60 disabled:cursor-not-allowed"
+              title="Download PDF Report"
             >
               <FileText className="h-4 w-4" />
-              PDF
-            </a>
+              {isDownloading ? '...' : 'PDF'}
+            </button>
           )}
         </div>
 

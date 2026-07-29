@@ -38,11 +38,30 @@ function resolveRelativeUrl(pathname) {
   return new URL(pathname, window.location.origin).href;
 }
 
+function buildLocalPdfUrl(fileName) {
+  const normalized = normalizePdfValue(fileName);
+  if (!normalized) return '';
+
+  const basename = normalized.split('/').filter(Boolean).pop();
+  if (!basename) return '';
+
+  return `/reports/pdf/${encodePathSegments(basename)}`;
+}
+
 export function resolvePdfUrl(record, { baseUrl = DEFAULT_COS_PDF_BASE_URL } = {}) {
   if (!record || typeof record !== 'object') return '';
 
+  const pdfFileName = normalizePdfValue(record.pdfFileName);
+  const localPdfUrl = pdfFileName && !isPlaceholderPdfValue(pdfFileName)
+    ? buildLocalPdfUrl(pdfFileName)
+    : '';
+
   const pdfUrl = normalizePdfValue(record.pdfUrl);
   if (pdfUrl && !isPlaceholderPdfValue(pdfUrl)) {
+    if (localPdfUrl) {
+      return resolveRelativeUrl(localPdfUrl);
+    }
+
     if (isHttpUrl(pdfUrl)) {
       return pdfUrl;
     }
@@ -54,20 +73,11 @@ export function resolvePdfUrl(record, { baseUrl = DEFAULT_COS_PDF_BASE_URL } = {
     return `${baseUrl}${encodePathSegments(pdfUrl.replace(/^\/+/, ''))}`;
   }
 
-  const pdfFileName = normalizePdfValue(record.pdfFileName);
-  if (!pdfFileName || isPlaceholderPdfValue(pdfFileName)) {
+  if (!localPdfUrl) {
     return '';
   }
 
-  if (isHttpUrl(pdfFileName)) {
-    return pdfFileName;
-  }
-
-  if (pdfFileName.startsWith('/') || pdfFileName.startsWith('./') || pdfFileName.startsWith('../')) {
-    return resolveRelativeUrl(pdfFileName);
-  }
-
-  return `${baseUrl}${encodePathSegments(pdfFileName.replace(/^\/+/, ''))}`;
+  return resolveRelativeUrl(localPdfUrl);
 }
 
 export function resolvePdfFilename(record, fallbackName = 'document.pdf') {
@@ -119,6 +129,9 @@ export async function downloadPdfUrl(url, filename = 'document.pdf') {
   }
 
   const parsedUrl = new URL(url, window.location.href);
+  const localFallbackUrl = filename
+    ? resolveRelativeUrl(`/reports/pdf/${encodePathSegments(String(filename).split('/').filter(Boolean).pop() || filename)}`)
+    : '';
   const anchor = document.createElement('a');
   anchor.download = filename;
 
@@ -137,6 +150,25 @@ export async function downloadPdfUrl(url, filename = 'document.pdf') {
     }
   } catch (err) {
     console.warn('PDF fetch failed, falling back to direct link.', err);
+  }
+
+  if (localFallbackUrl && localFallbackUrl !== parsedUrl.href) {
+    try {
+      const fallbackResponse = await fetch(localFallbackUrl);
+
+      if (fallbackResponse.ok) {
+        const blob = await fallbackResponse.blob();
+        const blobUrl = window.URL.createObjectURL(blob);
+        anchor.href = blobUrl;
+        document.body.appendChild(anchor);
+        anchor.click();
+        document.body.removeChild(anchor);
+        window.setTimeout(() => window.URL.revokeObjectURL(blobUrl), 1000);
+        return;
+      }
+    } catch (err) {
+      console.warn('PDF local fallback failed, falling back to direct link.', err);
+    }
   }
 
   anchor.href = parsedUrl.href;

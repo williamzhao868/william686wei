@@ -3,9 +3,10 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, FileText, ChevronRight, Download } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { toast } from 'sonner';
 import { useLanguage } from '@/context/LanguageContext.jsx';
 import pb from '@/lib/pocketbaseClient.js';
-import { hasPdfAsset, resolvePdfFilename, resolvePdfUrl } from '@/lib/pdfUtils.js';
+import { downloadPdfRecord, hasPdfAsset, resolvePdfFilename } from '@/lib/pdfUtils.js';
 import { formatDateISO } from '@/lib/dateFormat.js';
 
 const IMAGE_CATEGORIES = {
@@ -112,18 +113,35 @@ function getOneLineSummary(article) {
 function ArticleCard({ article, index = 0, detailPath }) {
   const { language } = useLanguage();
   const [imgError, setImgError] = useState(false);
+  const [isDownloading, setIsDownloading] = useState(false);
   const targetPath = detailPath || `/article/${article.id}`;
   
   const formattedDate = formatDateISO(article.date);
 
   const imageUrl = getArticleImage(article, index);
   const hasPdf = hasPdfAsset(article);
-  const pdfHref = resolvePdfUrl(article);
   const pdfFilename = resolvePdfFilename(article, 'insight.pdf');
   const displayTitle = article.type === 'A'
     ? (article.title || '').split('｜').slice(0, 2).join('｜') || article.title
     : article.title;
   const oneLineSummary = getOneLineSummary(article);
+
+  const handleDownload = async (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (!hasPdf || isDownloading) return;
+
+    setIsDownloading(true);
+    try {
+      await downloadPdfRecord(article, { fallbackName: pdfFilename });
+    } catch (err) {
+      console.error('Article PDF download failed:', err);
+      toast.error(language === 'zh' ? '下载PDF失败' : 'Failed to download PDF');
+    } finally {
+      setIsDownloading(false);
+    }
+  };
   return (
     <motion.article
       initial={{ opacity: 0, y: 20 }}
@@ -170,15 +188,17 @@ function ArticleCard({ article, index = 0, detailPath }) {
             
             <div className="flex items-center gap-4">
               {hasPdf && (
-                <a
-                  href={pdfHref}
-                  download={pdfFilename}
-                  className="flex items-center text-primary font-medium hover:text-primary/80 transition-colors"
-                  onClick={(event) => event.stopPropagation()}
+                <button
+                  type="button"
+                  className="flex items-center text-primary font-medium hover:text-primary/80 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                  onClick={handleDownload}
+                  disabled={isDownloading}
                 >
                   <Download className="h-3.5 w-3.5 mr-1" />
-                  {language === 'zh' ? '下载PDF' : 'Download PDF'}
-                </a>
+                  {isDownloading
+                    ? (language === 'zh' ? '下载中...' : 'Downloading...')
+                    : (language === 'zh' ? '下载PDF' : 'Download PDF')}
+                </button>
               )}
               <Link 
                 to={targetPath} 
