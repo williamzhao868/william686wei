@@ -48,15 +48,32 @@ function buildLocalPdfUrl(fileName) {
   return `/reports/pdf/${encodePathSegments(basename)}`;
 }
 
+function getPdfBasenameFromUrl(url) {
+  const normalized = normalizePdfValue(url);
+  if (!normalized) return '';
+
+  try {
+    const base = typeof window !== 'undefined' ? window.location.href : 'https://example.com';
+    const parsed = new URL(normalized, base);
+    return parsed.pathname.split('/').filter(Boolean).pop() || '';
+  } catch {
+    const path = normalized.split('?')[0].split('#')[0];
+    return path.split('/').filter(Boolean).pop() || '';
+  }
+}
+
 export function resolvePdfUrl(record, { baseUrl = DEFAULT_COS_PDF_BASE_URL } = {}) {
   if (!record || typeof record !== 'object') return '';
 
   const pdfFileName = normalizePdfValue(record.pdfFileName);
-  const localPdfUrl = pdfFileName && !isPlaceholderPdfValue(pdfFileName)
-    ? buildLocalPdfUrl(pdfFileName)
+  const pdfUrl = normalizePdfValue(record.pdfUrl);
+  const inferredPdfName = pdfFileName && !isPlaceholderPdfValue(pdfFileName)
+    ? pdfFileName
+    : getPdfBasenameFromUrl(pdfUrl);
+  const localPdfUrl = inferredPdfName && !isPlaceholderPdfValue(inferredPdfName)
+    ? buildLocalPdfUrl(inferredPdfName)
     : '';
 
-  const pdfUrl = normalizePdfValue(record.pdfUrl);
   if (pdfUrl && !isPlaceholderPdfValue(pdfUrl)) {
     if (localPdfUrl) {
       return resolveRelativeUrl(localPdfUrl);
