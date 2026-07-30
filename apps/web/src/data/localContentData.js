@@ -83,6 +83,18 @@ export function markdownToHtml(markdown = '') {
   return blocks.join('\n');
 }
 
+function normalizeToolMarkdown(markdown = '') {
+  const text = String(markdown || '').replace(/\r\n/g, '\n').trim();
+  if (!text) return '';
+
+  const separatorIndex = text.indexOf('\n---');
+  if (separatorIndex === -1) {
+    return text;
+  }
+
+  return text.slice(0, separatorIndex).trim();
+}
+
 const insightMap = new Map((contentData.insights || []).map((item) => [item.id, item]));
 const insightImagePool = (contentData.insights || [])
   .map((item) => String(item.image || item.imageUrl || '').trim())
@@ -129,6 +141,7 @@ function normalizeInsightContent(insight) {
 
 function normalizeToolContent(tool) {
   if (!tool) return null;
+  const primaryContent = normalizeToolMarkdown(tool.contentMarkdown || tool.content || '');
 
   const usageTips = Array.isArray(tool.usageTips) && tool.usageTips.length > 0
     ? tool.usageTips
@@ -150,7 +163,8 @@ function normalizeToolContent(tool) {
     summary: tool.summary || tool.shortDescription || tool.fullDescription || '',
     shortDescription: tool.shortDescription || tool.summary || tool.fullDescription || '',
     fullDescription: tool.fullDescription || tool.content || tool.summary || '',
-    content: tool.content || tool.fullDescription || tool.shortDescription || '',
+    content: primaryContent || tool.content || tool.fullDescription || tool.shortDescription || '',
+    contentMarkdown: primaryContent || tool.contentMarkdown || tool.content || '',
     score: tool.score || tool.overallScore || (tool.recommendationStars ? tool.recommendationStars * 2 : 0),
     image: tool.image || '',
     imageUrl: tool.imageUrl || '',
