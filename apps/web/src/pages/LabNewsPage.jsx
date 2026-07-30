@@ -21,11 +21,6 @@ const teamMembers = [
     avatarUrl: 'https://horizons-cdn.hostinger.com/b28ea7ca-961f-4e44-8fef-0dda445d1017/c55503aad578327d862f26658685f4f2.png'
   },
   {
-    id: 3,
-    name: '赵伟东',
-    avatarUrl: 'https://horizons-cdn.hostinger.com/b28ea7ca-961f-4e44-8fef-0dda445d1017/e6437dc8079e04f280c57c54e4800517.png'
-  },
-  {
     id: 4,
     name: '闫菁',
     avatarUrl: '/team-members/jianqing.png'
@@ -44,6 +39,11 @@ const teamMembers = [
     id: 7,
     name: '伍斌',
     avatarUrl: '/team-members/wubin.png'
+  },
+  {
+    id: 3,
+    name: '赵伟东',
+    avatarUrl: 'https://horizons-cdn.hostinger.com/b28ea7ca-961f-4e44-8fef-0dda445d1017/e6437dc8079e04f280c57c54e4800517.png'
   },
   {
     id: 8,
