@@ -25,12 +25,12 @@ function HrPeersPage() {
     {
       key: 'western-track',
       label: language === 'zh' ? '欧美赛道' : 'Western Markets',
-      companies: ['Workday', 'ADP', 'ZipRecruiter', 'Greenhouse', 'ManpowerGroup', 'LinkedIn', 'Deel']
+      companies: ['Workday', 'ADP', 'Greenhouse', 'ManpowerGroup', 'LinkedIn', 'Deel']
     },
     {
       key: 'apac-track',
       label: language === 'zh' ? '亚太赛道' : 'APAC Track',
-      companies: ['Recruit Holdings', 'PERSOL Holdings', 'World Intec']
+      companies: ['Recruit Holdings', 'PERSOL Holdings', 'World Intec', 'Vahan', 'Wiffy']
     }
   ]), [language]);
 
@@ -48,7 +48,16 @@ function HrPeersPage() {
     localizedData.forEach((item) => {
       (item.keywords || []).forEach((keywordId) => {
         const existing = keywordMap.get(keywordId);
-        if (existing) existing.count += 1;
+        if (existing) {
+          existing.count += 1;
+        } else {
+          keywordMap.set(keywordId, {
+            id: keywordId,
+            en: keywordId.replace(/-/g, ' ').replace(/\b\w/g, (letter) => letter.toUpperCase()),
+            zh: keywordId.replace(/-/g, ' '),
+            count: 1,
+          });
+        }
       });
     });
 

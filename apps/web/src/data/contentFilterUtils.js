@@ -11,9 +11,18 @@ const keywordDefinitions = [
   { id: 'cloud', en: 'Cloud & Compute', zh: '云与算力', terms: ['cloud', 'compute', 'gpu', '云计算', '算力', '芯片'] },
   { id: 'open-source', en: 'Open Source', zh: '开源生态', terms: ['open source', 'open-source', '开源'] },
   { id: 'security', en: 'AI Security', zh: 'AI 安全', terms: ['security', 'safety', '安全', '合规'] },
-  { id: 'research', en: 'AI Research', zh: 'AI 研究', terms: ['research', 'benchmark', '研究', '评测', '基准'] },
+  { id: 'research', en: 'AI Research', zh: 'AI 研究', terms: ['research', 'researcher', '研究'] },
   { id: 'investment', en: 'Investment', zh: '投融资', terms: ['funding', 'investment', '融资', '投资', '收购'] },
   { id: 'data', en: 'Data & RAG', zh: '数据与 RAG', terms: ['rag', 'data', 'knowledge base', '数据', '知识库'] },
+  { id: 'voice-ai', en: 'Voice AI', zh: '语音 AI', terms: ['voice', 'audio', 'conversational ai', '语音', '实时对话'] },
+  { id: 'video-generation', en: 'Video Generation', zh: '视频生成', terms: ['video', 'motion', 'runway', '视频', '动画'] },
+  { id: 'design', en: 'AI Design', zh: 'AI 设计', terms: ['design', 'canva', 'gamma', '设计', '视觉', '海报', '演示'] },
+  { id: 'meetings', en: 'Meetings', zh: '会议协作', terms: ['meeting', 'meetings', 'notetaker', '会议', '纪要'] },
+  { id: 'knowledge-work', en: 'Knowledge Work', zh: '知识工作', terms: ['notebook', 'study', 'research', 'briefing', '资料', '研究', '简报'] },
+  { id: 'workflow-automation', en: 'Workflow Automation', zh: '工作流自动化', terms: ['workflow', 'zapier', 'agentic work', '自动化', '工作流', '流程'] },
+  { id: 'developer-tools', en: 'Developer Tools', zh: '开发者工具', terms: ['developer', 'firebase', 'sdk', 'xcode', '开发者', '插件'] },
+  { id: 'learning', en: 'Learning', zh: '学习培训', terms: ['learning', 'sana', 'training', '学习', '培训', '课程'] },
+  { id: 'compliance-ops', en: 'Compliance Ops', zh: '合规运营', terms: ['compliance', 'governance', 'payroll', '合规', '治理', '薪酬'] },
 ];
 
 const companyDefinitions = [
@@ -47,16 +56,48 @@ const companyDefinitions = [
   { en: 'Perplexity', zh: 'Perplexity', terms: ['perplexity'] },
   { en: 'Midjourney', zh: 'Midjourney', terms: ['midjourney'] },
   { en: 'Mistral', zh: 'Mistral', terms: ['mistral'] },
+  { en: 'Runway', zh: 'Runway', terms: ['runway', 'runwayml'] },
+  { en: 'ElevenLabs', zh: 'ElevenLabs', terms: ['elevenlabs'] },
+  { en: 'Notion', zh: 'Notion', terms: ['notion'] },
+  { en: 'Canva', zh: 'Canva', terms: ['canva'] },
+  { en: 'Zapier', zh: 'Zapier', terms: ['zapier'] },
+  { en: 'Gamma', zh: 'Gamma', terms: ['gamma'] },
+  { en: 'Perplexity', zh: 'Perplexity', terms: ['perplexity'] },
+  { en: 'NotebookLM', zh: 'NotebookLM', terms: ['notebooklm'] },
+  { en: 'Read AI', zh: 'Read AI', terms: ['read ai'] },
+  { en: 'Wispr Flow', zh: 'Wispr Flow', terms: ['wispr flow', 'wispr'] },
+  { en: 'Fyxer', zh: 'Fyxer', terms: ['fyxer'] },
+  { en: 'Bond', zh: 'Bond', terms: ['bond'] },
+  { en: 'Readywhen', zh: 'Readywhen', terms: ['readywhen'] },
+  { en: 'Tavus', zh: 'Tavus', terms: ['tavus'] },
+  { en: 'Hera', zh: 'Hera', terms: ['hera'] },
+  { en: 'Tabstack', zh: 'Tabstack', terms: ['tabstack'] },
+  { en: 'Acti', zh: 'Acti', terms: ['acti'] },
+  { en: 'LeRobot', zh: 'LeRobot', terms: ['lerobot'] },
+  { en: 'Edgee', zh: 'Edgee', terms: ['edgee', 'edgee'] },
+  { en: 'Workday', zh: 'Workday', terms: ['workday', 'sana'] },
+  { en: 'Vahan', zh: 'Vahan', terms: ['vahan'] },
+  { en: 'Wiffy', zh: 'Wiffy', terms: ['wiffy'] },
 ];
+
+const stripGenericAnalysisSections = (value = '') => String(value)
+  .replace(/\n---\n\n## Engma 深度拆解[\s\S]*$/i, '')
+  .replace(/\n## Engma 深度拆解[\s\S]*$/i, '')
+  .replace(/\n## Engma 详细评测[\s\S]*$/i, '')
+  .replace(/\n## 扩展评测[\s\S]*$/i, '');
 
 const searchableText = (item) => [
   item.title,
   item.toolName,
+  item.name,
+  item.website,
+  item.websiteUrl,
+  ...(Array.isArray(item.useCases) ? item.useCases : []),
   item.summary,
   item.shortDescription,
   item.fullDescription,
-  item.content,
-  item.contentMarkdown,
+  stripGenericAnalysisSections(item.content),
+  stripGenericAnalysisSections(item.contentMarkdown),
 ].filter(Boolean).join(' ').toLowerCase();
 
 const includesTerm = (text, term) => {
@@ -73,11 +114,14 @@ export const enrichContentForFilters = (item) => {
   const keywords = keywordDefinitions
     .filter((definition) => definition.terms.some((term) => includesTerm(text, term)))
     .map((definition) => definition.id);
-  const companies = companyDefinitions
+  const companyMap = new Map();
+  companyDefinitions
     .filter((definition) => definition.terms.some((term) => includesTerm(text, term)))
-    .map(({ en, zh }) => ({ en, zh }));
+    .forEach(({ en, zh }) => {
+      if (!companyMap.has(en)) companyMap.set(en, { en, zh });
+    });
 
-  return { ...item, filterKeywords: keywords, companies };
+  return { ...item, filterKeywords: [...new Set(keywords)], companies: [...companyMap.values()] };
 };
 
 export const buildKeywordCloudData = (items) => keywordDefinitions

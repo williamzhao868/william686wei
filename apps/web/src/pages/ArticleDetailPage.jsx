@@ -260,8 +260,8 @@ export default function ArticleDetailPage() {
                 <div 
                   className="prose prose-lg dark:prose-invert max-w-none 
                     prose-headings:font-bold prose-headings:tracking-tight
-                    prose-h2:mt-16 prose-h2:mb-7 prose-h3:mt-12 prose-h3:mb-6
-                    prose-p:my-6 prose-p:leading-8 prose-ul:my-7 prose-li:my-2.5
+                    prose-h2:mt-10 prose-h2:mb-4 prose-h3:mt-8 prose-h3:mb-4
+                    prose-p:my-4 prose-p:leading-8 prose-ul:my-5 prose-li:my-2
                     prose-a:text-primary hover:prose-a:text-primary/80 transition-colors"
                   dangerouslySetInnerHTML={{ __html: markdownToHtml(article.contentMarkdown || '') }}
                 />
@@ -269,8 +269,8 @@ export default function ArticleDetailPage() {
                 <div 
                   className="prose prose-lg dark:prose-invert max-w-none 
                     prose-headings:font-bold prose-headings:tracking-tight
-                    prose-h2:mt-16 prose-h2:mb-7 prose-h3:mt-12 prose-h3:mb-6
-                    prose-p:my-6 prose-p:leading-8 prose-ul:my-7 prose-li:my-2.5
+                    prose-h2:mt-10 prose-h2:mb-4 prose-h3:mt-8 prose-h3:mb-4
+                    prose-p:my-4 prose-p:leading-8 prose-ul:my-5 prose-li:my-2
                     prose-a:text-primary hover:prose-a:text-primary/80 transition-colors
                     prose-img:rounded-2xl prose-img:border prose-img:border-border prose-img:shadow-sm"
                   dangerouslySetInnerHTML={{ __html: article.content }}

@@ -17,11 +17,12 @@ function applyInlineMarkdown(text) {
     .replace(/\[(.+?)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noreferrer noopener">$1</a>');
 }
 
-export function markdownToHtml(markdown = '') {
+export function markdownToHtml(markdown = '', options = {}) {
   const lines = String(markdown).replace(/\r\n/g, '\n').split('\n');
   const blocks = [];
   let paragraph = [];
   let inList = false;
+  const showSectionBreaks = options.sectionBreaks !== false;
 
   const flushParagraph = () => {
     if (!paragraph.length) return;
@@ -56,7 +57,7 @@ export function markdownToHtml(markdown = '') {
       flushParagraph();
       flushList();
       const level = headingMatch[1].length;
-      if (level === 2 && blocks.length > 0) {
+      if (showSectionBreaks && level === 2 && blocks.length > 0) {
         blocks.push('<hr class="my-10 border-border/70" />');
       }
       blocks.push(`<h${level}>${applyInlineMarkdown(headingMatch[2])}</h${level}>`);
@@ -122,6 +123,7 @@ const toolTitleMap = new Map(allToolItems.map((item) => [String(item.title || ''
 const insightPdfMap = new Map((contentData.insights || []).map((item) => [String(item.pdfFileName || '').trim(), item]));
 const toolPdfMap = new Map(allToolItems.map((item) => [String(item.pdfFileName || '').trim(), item]));
 const insightDateMap = new Map((contentData.insights || []).map((item) => [String(item.date || '').slice(0, 10), item]));
+const toolDateMap = new Map(allToolItems.map((item) => [String(item.date || '').slice(0, 10), item]));
 
 function normalizeInsightContent(insight) {
   if (!insight) return null;
@@ -243,6 +245,11 @@ export function getInsightCoverImage(article, fallbackIndex = 0) {
 export function getLocalToolByRecord(record) {
   return (
     pickFirstMatch(record, [toolMap], ['id']) ||
+    pickFirstMatch(
+      { reportDate: String(record?.date || record?.created || '').slice(0, 10) },
+      [toolDateMap],
+      ['reportDate']
+    ) ||
     pickFirstMatch(record, [toolTitleMap], ['title', 'toolName']) ||
     pickFirstMatch(record, [toolPdfMap], ['pdfFileName']) ||
     null

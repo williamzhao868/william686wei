@@ -19,6 +19,11 @@ const getCompanyDisplayName = (companyEn, language) => {
     'ZipRecruiter': 'ZipRecruiter', 'ManpowerGroup': 'ManpowerGroup', 'Recruit Holdings': 'Recruit控股',
     'Recruit': 'Recruit', 'PERSOL Holdings': 'PERSOL控股', 'Persol': 'Persol',
     'World Intec': 'World Intec', 'Mynavi': 'Mynavi'
+    , 'Runway': 'Runway', 'ElevenLabs': 'ElevenLabs', 'Notion': 'Notion', 'Canva': 'Canva',
+    'Zapier': 'Zapier', 'Gamma': 'Gamma', 'Perplexity': 'Perplexity', 'NotebookLM': 'NotebookLM',
+    'Read AI': 'Read AI', 'Wispr Flow': 'Wispr Flow', 'Fyxer': 'Fyxer', 'Bond': 'Bond',
+    'Readywhen': 'Readywhen', 'Tavus': 'Tavus', 'Hera': 'Hera', 'Tabstack': 'Tabstack',
+    'Acti': 'Acti', 'LeRobot': 'LeRobot', 'Edgee': 'Edgee', 'Vahan': 'Vahan', 'Wiffy': 'Wiffy'
   };
   return language === 'zh' ? (companyMap[companyEn] || companyEn) : companyEn;
 };
@@ -53,6 +58,15 @@ const getKeywordDisplayName = (keyword, language) => {
     research: 'AI 研究',
     investment: '投融资',
     data: '数据与 RAG',
+    'voice-ai': '语音 AI',
+    'video-generation': '视频生成',
+    design: 'AI 设计',
+    meetings: '会议协作',
+    'knowledge-work': '知识工作',
+    'workflow-automation': '工作流自动化',
+    'developer-tools': '开发者工具',
+    learning: '学习培训',
+    'compliance-ops': '合规运营',
   };
   return keywordMap[keyword] || keyword;
 };

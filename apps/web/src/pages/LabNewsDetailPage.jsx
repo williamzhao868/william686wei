@@ -123,14 +123,18 @@ function LabNewsDetailPage() {
                 </div>
               </header>
 
-              {newsItem.image && (
-                <figure className="mb-12 rounded-2xl overflow-hidden border border-border shadow-sm bg-muted">
-                  <img 
-                    src={newsItem.image} 
-                    alt={newsItem.title} 
-                    className="w-full h-auto max-h-[500px] object-cover"
-                  />
-                </figure>
+              {(newsItem.images?.length > 0 || newsItem.image) && (
+                <div className="mb-12 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {(newsItem.images?.length ? newsItem.images : [newsItem.image]).map((imageSrc, index) => (
+                    <figure key={imageSrc} className="rounded-2xl overflow-hidden border border-border shadow-sm bg-muted">
+                      <img
+                        src={imageSrc}
+                        alt={`${newsItem.title} ${index + 1}`}
+                        className="w-full aspect-[4/3] object-cover"
+                      />
+                    </figure>
+                  ))}
+                </div>
               )}
 
               <div className="prose prose-lg dark:prose-invert max-w-none text-muted-foreground leading-relaxed mb-16">

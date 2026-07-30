@@ -9,18 +9,7 @@ function CompanyFilter({ selectedCompanies = [], onCompanyToggle, allArticles = 
   const { language } = useLanguage();
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const defaultSpecialGroups = [
-    {
-      key: 'seven-little-dragons',
-      label: language === 'zh' ? '七小龙' : 'Seven Dragons',
-      companies: ['OpenAI', 'Anthropic', 'Google', 'Microsoft', 'Meta', 'NVIDIA', 'Apple']
-    },
-    {
-      key: 'us-jp-hr',
-      label: language === 'zh' ? '美日人力资源同行' : 'US & Japan HR Peers',
-      companies: ['Workday', 'ADP', 'ZipRecruiter', 'Greenhouse', 'ManpowerGroup', 'Recruit Holdings', 'PERSOL Holdings']
-    }
-  ];
+  const defaultSpecialGroups = [];
 
   const specialGroups = specialGroupsOverride || defaultSpecialGroups;
 

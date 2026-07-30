@@ -224,19 +224,26 @@ export default function AIToolDetailPage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="space-y-12"
             >
-              <div className="pt-8 border-t border-border">
-                <h2 className="text-2xl font-bold mb-4 text-foreground">
+              <div className="pt-5 border-t border-border">
+                <h2 className="text-2xl font-bold mb-3 text-foreground">
                   {language === 'zh' ? '详细评测' : 'Detailed Review'}
                 </h2>
                 {tool.contentMarkdown || tool.content ? (
-                  <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+                  <div className="rounded-xl border border-border bg-card p-5 sm:p-6 shadow-sm">
                     <div
-                      className="prose prose-lg dark:prose-invert max-w-none 
-                        prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-foreground
-                        prose-h2:mt-10 prose-h2:mb-4 prose-h3:mt-8 prose-h3:mb-3
-                        prose-p:my-5 prose-p:leading-8 prose-ul:my-6 prose-li:my-2.5
-                        prose-a:text-primary hover:prose-a:text-primary/80 transition-colors"
-                      dangerouslySetInnerHTML={{ __html: markdownToHtml(tool.contentMarkdown || tool.content || '') }}
+                      className="max-w-none text-[15px] leading-7 text-foreground/90
+                        [&>h1]:m-0 [&>h1]:rounded-lg [&>h1]:bg-muted/55 [&>h1]:px-4 [&>h1]:py-3
+                        [&>h1]:text-base [&>h1]:font-semibold [&>h1]:leading-6 [&>h1]:text-foreground
+                        [&>h2]:mt-4 [&>h2]:mb-2 [&>h2]:border-l-4 [&>h2]:border-primary
+                        [&>h2]:bg-muted/35 [&>h2]:px-3 [&>h2]:py-1.5
+                        [&>h2]:text-[15px] [&>h2]:font-semibold [&>h2]:leading-6 [&>h2]:text-foreground
+                        [&>h3]:mt-3 [&>h3]:mb-1.5 [&>h3]:text-[15px] [&>h3]:font-semibold [&>h3]:text-foreground
+                        [&>p]:my-2 [&>p]:leading-7
+                        [&>ul]:my-2 [&>ul]:list-disc [&>ul]:pl-5 [&>ul>li]:my-1 [&>ul>li]:leading-6
+                        [&>hr]:my-3 [&>hr]:border-border/70
+                        [&_strong]:font-semibold [&_strong]:text-foreground
+                        [&_a]:text-primary hover:[&_a]:text-primary/80 [&_a]:transition-colors"
+                      dangerouslySetInnerHTML={{ __html: markdownToHtml(tool.contentMarkdown || tool.content || '', { sectionBreaks: false }) }}
                     />
                   </div>
                 ) : null}

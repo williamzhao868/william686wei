@@ -163,17 +163,21 @@ def build_styles() -> RenderStyles:
           fontSize=11.5,
           leading=17,
           textColor=colors.HexColor("#64748b"),
-          spaceAfter=14,
+          spaceAfter=8,
       ),
       h2=ParagraphStyle(
           "EngmaH2",
           parent=base["Heading2"],
           fontName=HEADING_FONT,
-          fontSize=15.5,
-          leading=21,
+          fontSize=13.5,
+          leading=18,
           textColor=colors.HexColor("#0f172a"),
-          spaceBefore=12,
-          spaceAfter=6,
+          backColor=colors.HexColor("#f8fafc"),
+          borderColor=colors.HexColor("#e2e8f0"),
+          borderWidth=0.6,
+          borderPadding=(4, 6, 4),
+          spaceBefore=6,
+          spaceAfter=4,
       ),
       h3=ParagraphStyle(
           "EngmaH3",
@@ -182,8 +186,8 @@ def build_styles() -> RenderStyles:
           fontSize=13,
           leading=18,
           textColor=colors.HexColor("#0f172a"),
-          spaceBefore=10,
-          spaceAfter=5,
+          spaceBefore=6,
+          spaceAfter=3,
       ),
       body=ParagraphStyle(
           "EngmaBody",
@@ -192,7 +196,7 @@ def build_styles() -> RenderStyles:
           fontSize=11.2,
           leading=18,
           textColor=colors.HexColor("#111827"),
-          spaceAfter=6,
+          spaceAfter=3,
       ),
       bullet=ParagraphStyle(
           "EngmaBullet",
@@ -204,7 +208,7 @@ def build_styles() -> RenderStyles:
           firstLineIndent=0,
           bulletIndent=0,
           textColor=colors.HexColor("#111827"),
-          spaceAfter=5,
+          spaceAfter=3,
       ),
       note=ParagraphStyle(
           "EngmaNote",
@@ -213,7 +217,7 @@ def build_styles() -> RenderStyles:
           fontSize=10.2,
           leading=15,
           textColor=colors.HexColor("#475569"),
-          spaceAfter=4,
+          spaceAfter=2,
       ),
       small=ParagraphStyle(
           "EngmaSmall",
@@ -245,13 +249,13 @@ def markdown_to_story(markdown: str, styles: RenderStyles) -> List[object]:
       continue
 
     if pending_blank:
-      story.append(Spacer(1, 8 + 3 * min(pending_blank, 3)))
+      story.append(Spacer(1, 2 + min(pending_blank, 2)))
       pending_blank = 0
 
     if looks_like_separator(line):
       story.append(Spacer(1, 6))
       story.append(HRFlowable(width="100%", thickness=0.8, color=colors.HexColor("#e2e8f0")))
-      story.append(Spacer(1, 6))
+      story.append(Spacer(1, 4))
       continue
 
     if line.startswith("### "):
