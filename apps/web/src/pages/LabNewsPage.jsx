@@ -65,7 +65,7 @@ const timelineEvents = [
     date: '2026-07-19',
     description: '团队成员参加 WAIC 2026',
     summary: '围绕前沿 AI 应用、企业落地、Agent 工作流、具身智能和 AI 基础设施方向进行现场学习与行业观察。',
-    image: '/lab-news/waic_2026_01.jpg',
+    image: '/lab-news-assets/waic_2026_01.jpg',
     newsId: 'lab-news-20260719-waic'
   },
   {

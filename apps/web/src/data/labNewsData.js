@@ -8,8 +8,8 @@ export const labNewsData = [
     date: '2026-07-19',
     category: 'Team Announcement',
     source: 'Engma AI Lab',
-    image: '/lab-news/waic_2026_01.jpg',
-    images: ['/lab-news/waic_2026_01.jpg', '/lab-news/waic_2026_02.jpg'],
+    image: '/lab-news-assets/waic_2026_01.jpg',
+    images: ['/lab-news-assets/waic_2026_01.jpg', '/lab-news-assets/waic_2026_02.jpg'],
     keywords: ['WAIC', 'AI Conference', 'Team Learning', 'Enterprise AI'],
     zh: {
       title: '团队成员参加 WAIC 2026',
