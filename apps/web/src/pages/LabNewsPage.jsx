@@ -54,6 +54,13 @@ const teamMembers = [
 
 const timelineEvents = [
   {
+    date: '2026-07-31',
+    description: '团队成员参加 ChinaJoy 2026',
+    summary: '围绕 AI 内容、数字娱乐体验和大型活动现场用工组织进行现场观察，判断 AI 概念传播快于真实体验落地。',
+    image: '/lab-news-assets/chinajoy_2026_0731_william.jpg',
+    newsId: 'lab-news-20260731-chinajoy'
+  },
+  {
     date: '2026-01-01',
     description: '中央研究院成立'
   },

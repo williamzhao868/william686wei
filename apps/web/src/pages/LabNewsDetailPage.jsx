@@ -141,16 +141,31 @@ function LabNewsDetailPage() {
                 <p className="text-xl text-foreground font-medium leading-relaxed mb-8">
                   {newsItem.description}
                 </p>
-                <p>
-                  {language === 'zh' 
-                    ? '随着我们在人工智能研究领域的不断深入，这一里程碑标志着我们在构建更安全、更高效的系统方面迈出了重要一步。我们的团队致力于突破现有技术的界限，同时确保我们的模型在实际应用中保持高度的可靠性和对齐性。' 
-                    : 'As we continue to push the boundaries of artificial intelligence research, this milestone marks a significant step forward in building safer and more efficient systems. Our team is dedicated to advancing the state of the art while ensuring our models remain highly reliable and aligned in real-world applications.'}
-                </p>
-                <p>
-                  {language === 'zh'
-                    ? '未来几个月，我们将分享更多关于此项目的技术细节和基准测试结果。我们期待与更广泛的开源社区和行业合作伙伴合作，共同推动这些创新的应用。'
-                    : 'In the coming months, we will share more technical details and benchmark results regarding this project. We look forward to collaborating with the broader open-source community and industry partners to drive the application of these innovations.'}
-                </p>
+                {newsItem.contentSections?.length ? (
+                  newsItem.contentSections.map((section) => (
+                    <section key={section.title} className="not-prose mb-7 rounded-xl border border-border bg-card/60 p-5 sm:p-6">
+                      <h2 className="mb-3 text-xl font-semibold text-foreground">
+                        {section.title}
+                      </h2>
+                      <p className="text-base leading-7 text-muted-foreground">
+                        {section.body}
+                      </p>
+                    </section>
+                  ))
+                ) : (
+                  <>
+                    <p>
+                      {language === 'zh' 
+                        ? '随着我们在人工智能研究领域的不断深入，这一里程碑标志着我们在构建更安全、更高效的系统方面迈出了重要一步。我们的团队致力于突破现有技术的界限，同时确保我们的模型在实际应用中保持高度的可靠性和对齐性。' 
+                        : 'As we continue to push the boundaries of artificial intelligence research, this milestone marks a significant step forward in building safer and more efficient systems. Our team is dedicated to advancing the state of the art while ensuring our models remain highly reliable and aligned in real-world applications.'}
+                    </p>
+                    <p>
+                      {language === 'zh'
+                        ? '未来几个月，我们将分享更多关于此项目的技术细节和基准测试结果。我们期待与更广泛的开源社区和行业合作伙伴合作，共同推动这些创新的应用。'
+                        : 'In the coming months, we will share more technical details and benchmark results regarding this project. We look forward to collaborating with the broader open-source community and industry partners to drive the application of these innovations.'}
+                    </p>
+                  </>
+                )}
               </div>
 
               {hasPdf && (
