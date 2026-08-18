@@ -677,7 +677,7 @@
       "title": "AI Insight Daily｜2026-08-03",
       "date": "2026-08-03",
       "summary": "AI 分发不再只是产品问题，而是平台规则、默认入口和用户触达权的竞争。",
-      "image": "/generated/insight-covers/insight-30.jpg",
+      "image": "/generated/insight-covers/real-01.png",
       "pdfFileName": "Engma_A_AI_Insight_Daily_08032026_platform_entry.pdf",
       "sourceFileName": "Engma_A_AI_Insight_Daily_08032026_platform_entry.md",
       "companies": [
@@ -707,7 +707,7 @@
       "title": "AI Insight Daily｜2026-08-04",
       "date": "2026-08-04",
       "summary": "AI 正在进入学习、培训和代码实践场景，从“给答案”转向“组织练习和产出”。",
-      "image": "/generated/insight-covers/insight-31.jpg",
+      "image": "/generated/insight-covers/real-02.png",
       "pdfFileName": "Engma_A_AI_Insight_Daily_08042026_learning_codex.pdf",
       "sourceFileName": "Engma_A_AI_Insight_Daily_08042026_learning_codex.md",
       "companies": [
@@ -737,7 +737,7 @@
       "title": "AI Insight Daily｜2026-08-05",
       "date": "2026-08-05",
       "summary": "开发者工具、Agent API 和开放连接开始成为 AI 落地的底层竞争点。",
-      "image": "/generated/insight-covers/a-20260728-1-workday.png",
+      "image": "/generated/insight-covers/real-03.png",
       "pdfFileName": "Engma_A_AI_Insight_Daily_08052026_agent_toolchain.pdf",
       "sourceFileName": "Engma_A_AI_Insight_Daily_08052026_agent_toolchain.md",
       "companies": [
@@ -767,7 +767,7 @@
       "title": "AI Insight Daily｜2026-08-06",
       "date": "2026-08-06",
       "summary": "模型竞争进入价格、速度、稳定性和可获得性的综合阶段。",
-      "image": "/generated/insight-covers/a-20260727-2-copilot.png",
+      "image": "/generated/insight-covers/real-04.png",
       "pdfFileName": "Engma_A_AI_Insight_Daily_08062026_model_performance.pdf",
       "sourceFileName": "Engma_A_AI_Insight_Daily_08062026_model_performance.md",
       "companies": [
@@ -797,7 +797,7 @@
       "title": "AI Insight Daily｜2026-08-07",
       "date": "2026-08-07",
       "summary": "前沿模型安全正在从粗暴拦截变成更精细的风险控制。",
-      "image": "/generated/insight-covers/a-20260724-0-copilot.png",
+      "image": "/generated/insight-covers/real-05.png",
       "pdfFileName": "Engma_A_AI_Insight_Daily_08072026_safety_refinement.pdf",
       "sourceFileName": "Engma_A_AI_Insight_Daily_08072026_safety_refinement.md",
       "companies": [
@@ -827,7 +827,7 @@
       "title": "AI Insight Daily｜2026-08-10",
       "date": "2026-08-10",
       "summary": "AI 正在进入安全防御和企业财务函数，开始处理更严肃的业务系统。",
-      "image": "/generated/insight-covers/a-20260723-4-ambitious.png",
+      "image": "/generated/insight-covers/real-06.png",
       "pdfFileName": "Engma_A_AI_Insight_Daily_08102026_cyber_finance.pdf",
       "sourceFileName": "Engma_A_AI_Insight_Daily_08102026_cyber_finance.md",
       "companies": [
@@ -857,7 +857,7 @@
       "title": "AI Insight Daily｜2026-08-11",
       "date": "2026-08-11",
       "summary": "ChatGPT 商业化、广告测试和云渠道同时推进，AI 平台进入多商业模式并行阶段。",
-      "image": "/generated/insight-covers/a-20260722-3-gemini.png",
+      "image": "/generated/insight-covers/real-07.png",
       "pdfFileName": "Engma_A_AI_Insight_Daily_08112026_monetization_channels.pdf",
       "sourceFileName": "Engma_A_AI_Insight_Daily_08112026_monetization_channels.md",
       "companies": [
@@ -887,7 +887,7 @@
       "title": "AI Insight Daily｜2026-08-12",
       "date": "2026-08-12",
       "summary": "企业 AI 主线从“辅助”转向“执行”，客户开始要求真实流程结果。",
-      "image": "/generated/insight-covers/a-20260721-2-copilot.png",
+      "image": "/generated/insight-covers/real-08.png",
       "pdfFileName": "Engma_A_AI_Insight_Daily_08122026_enterprise_execution.pdf",
       "sourceFileName": "Engma_A_AI_Insight_Daily_08122026_enterprise_execution.md",
       "companies": [
@@ -917,7 +917,7 @@
       "title": "AI Insight Daily｜2026-08-13",
       "date": "2026-08-13",
       "summary": "速度、表格小应用和个人 Agent 更新共同指向一个趋势：AI 必须更快完成具体工作。",
-      "image": "/generated/insight-covers/a-20260720-1-workday.png",
+      "image": "/generated/insight-covers/insight-31.jpg",
       "pdfFileName": "Engma_A_AI_Insight_Daily_08132026_speed_workflow.pdf",
       "sourceFileName": "Engma_A_AI_Insight_Daily_08132026_speed_workflow.md",
       "companies": [
@@ -947,7 +947,7 @@
       "title": "AI Insight Daily｜2026-08-14",
       "date": "2026-08-14",
       "summary": "AI 内容识别、文本水印和欧盟合规让生成式 AI 进入可追踪阶段。",
-      "image": "/generated/insight-covers/a-20260717-0-copilot.png",
+      "image": "/generated/insight-covers/insight-30.jpg",
       "pdfFileName": "Engma_A_AI_Insight_Daily_08142026_watermark_compliance.pdf",
       "sourceFileName": "Engma_A_AI_Insight_Daily_08142026_watermark_compliance.md",
       "companies": [
@@ -977,7 +977,7 @@
       "title": "AI Insight Daily｜2026-08-17",
       "date": "2026-08-17",
       "summary": "A2A 进入 Agentic AI Foundation，Agent 互操作从概念走向标准化竞争。",
-      "image": "/generated/insight-covers/a-20260716-4-ambitious.png",
+      "image": "/generated/insight-covers/insight-29.jpg",
       "pdfFileName": "Engma_A_AI_Insight_Daily_08172026_agent_standards.pdf",
       "sourceFileName": "Engma_A_AI_Insight_Daily_08172026_agent_standards.md",
       "companies": [
@@ -1007,7 +1007,7 @@
       "title": "AI Insight Daily｜2026-08-18",
       "date": "2026-08-18",
       "summary": "AI 行业一边走向重资产算力扩张，一边走向开放协议协作。",
-      "image": "/generated/insight-covers/a-20260715-3-gemini.png",
+      "image": "/generated/insight-covers/insight-28.jpg",
       "pdfFileName": "Engma_A_AI_Insight_Daily_08182026_infrastructure_standard.pdf",
       "sourceFileName": "Engma_A_AI_Insight_Daily_08182026_infrastructure_standard.md",
       "companies": [
